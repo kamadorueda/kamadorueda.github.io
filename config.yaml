@@ -1,0 +1,39 @@
+author: kamadorueda
+enableRobotsTXT: true
+enableEmoji: true
+baseURL: https://kamadorueda.github.io/
+languageCode: es
+menu:
+  - main:
+    name: Posts
+    identifier: posts
+    url: /posts/
+params:
+  author: kamadorueda
+  authorimage: avatar.png
+  copyright: " "
+  dateformat: Jan 2, 2006
+  description: Technology, thoughts, opinions
+  highlightjs: true
+  highlightjsstyle: github
+  license: CC BY-NC-SA 4.0
+  licenseURL: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  mainSections:
+  - posts
+  postNavigation: true
+  relatedPosts: true
+  include_toc: true
+  showBuiltWith: true
+  social:
+    email: kamadorueda@gmail.com
+    facebook: kedavamaru
+    github: kamadorueda
+    gitlab: kamadoatfluid
+    keybase: kamado
+    instagram: kamadorueda
+    linkedin: kamadorueda
+permalinks:
+  posts: /:year/:month/:slug/
+  vn: /:year/:month/:slug/
+theme: hyde-hyde
+title: Kevin Amado
