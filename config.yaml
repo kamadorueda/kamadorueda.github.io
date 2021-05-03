@@ -1,12 +1,15 @@
 author: kamadorueda
-enableRobotsTXT: true
+enableGitInfo: true
 enableEmoji: true
+enableRobotsTXT: true
 baseURL: https://kamadorueda.github.io/
-languageCode: es
+defaultContentLanguage: en
+# disqusShortname: https-kamadorueda-github-io
+languageCode: en
 menu:
-  - main:
+  main:
+  - identifier: posts
     name: Posts
-    identifier: posts
     url: /posts/
 params:
   author: kamadorueda
@@ -35,5 +38,6 @@ params:
 permalinks:
   posts: /:year/:month/:slug/
   vn: /:year/:month/:slug/
+publishDir: docs
 theme: hyde-hyde
 title: Kevin Amado
