@@ -35,6 +35,7 @@ params:
     keybase: kamado
     instagram: kamadorueda
     linkedin: kamadorueda
+    patreon: kamadorueda
 permalinks:
   posts: /:year/:month/:slug/
   vn: /:year/:month/:slug/
