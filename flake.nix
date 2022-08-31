@@ -10,6 +10,7 @@
       name = "main";
       packages = [
         nixpkgs.hugo
+        nixpkgs.go
       ];
     };
   };
