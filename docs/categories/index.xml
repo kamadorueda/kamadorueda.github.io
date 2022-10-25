@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Categories on Kevin Amado</title>
-    <link>https://kamadorueda.github.io/categories/</link>
-    <description>Recent content in Categories on Kevin Amado</description>
+    <title>Categories on Kevin Amado&#39;s Website</title>
+    <link>https://kamadorueda.com/categories/</link>
+    <description>Recent content in Categories on Kevin Amado&#39;s Website</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 05 May 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://kamadorueda.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Colombia</title>
-      <link>https://kamadorueda.github.io/categories/colombia/</link>
-      <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://kamadorueda.github.io/categories/colombia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Economy</title>
-      <link>https://kamadorueda.github.io/categories/economy/</link>
-      <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://kamadorueda.github.io/categories/economy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Politics</title>
-      <link>https://kamadorueda.github.io/categories/politics/</link>
-      <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://kamadorueda.github.io/categories/politics/</guid>
-      <description></description>
-    </item>
-    
+    <language>en</language><atom:link href="https://kamadorueda.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

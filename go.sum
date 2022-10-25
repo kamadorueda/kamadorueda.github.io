@@ -1,2 +1,6 @@
+github.com/adityatelange/hugo-PaperMod v0.0.0-20220828101040-275d0e9be7a4 h1:cue5drRf1DG0gYjOk0EgVqTkjQChEyzTVvF2grs45nU=
+github.com/adityatelange/hugo-PaperMod v0.0.0-20220828101040-275d0e9be7a4/go.mod h1:HCHxNMKYdGafUYjVV3ICiAqznZK2yH0iI53jqcDFDdQ=
+github.com/htr3n/hyde-hyde v1.0.0 h1:49OX2BhIj+7s/+Zj2OK2MzmlBn1ZhGuIuxrwQgN1R9Y=
+github.com/htr3n/hyde-hyde v1.0.0/go.mod h1:g1t0wJ9s7VUgxMo9hQQOJPQy2LPcSnmAWHzm8a4wbdM=
 github.com/htr3n/hyde-hyde v2.0.2+incompatible h1:CNMhiXOvTnTMwqIRTRMwTtt6yuhXn7Yi5nqIx1BP9KU=
 github.com/htr3n/hyde-hyde v2.0.2+incompatible/go.mod h1:g1t0wJ9s7VUgxMo9hQQOJPQy2LPcSnmAWHzm8a4wbdM=

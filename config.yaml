@@ -1,39 +1,59 @@
-author: kamadorueda
-enableGitInfo: true
-enableEmoji: true
-enableRobotsTXT: true
-baseURL: https://kamadorueda.github.io/
+baseURL: https://kamadorueda.com/
 defaultContentLanguage: en
+enableEmoji: true
+enableGitInfo: true
+enableRobotsTXT: true
 languageCode: en
 menu:
   main:
+    - identifier: calendar
+      name: Calendar
+      url: /calendar/
     - identifier: posts
       name: Posts
       url: /posts/
+module:
+  imports:
+    - path: github.com/adityatelange/hugo-PaperMod
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
 params:
-  author: kamadorueda
-  authorimage: avatar.png
-  copyright: "Kevin Amado"
-  dateformat: Jan 2, 2006
-  # description: Technology, thoughts, opinions
-  highlightjs: true
-  highlightjsstyle: github
-  license: CC BY-NC-SA 4.0
-  licenseURL: https://creativecommons.org/licenses/by-nc-sa/4.0/
-  mainSections:
-    - about
-    - posts
-  postNavigation: true
-  relatedPosts: true
-  include_toc: true
-  showBuiltWith: true
-  social:
-    email: kamadorueda@gmail.com
-    github: kamadorueda
-    linkedin: kamadorueda
+  # ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
+  ShowReadingTime: true
+  # ShowShareButtons: true
+  ShowToc: true
+  ShowWordCount: true
+  TocOpen: true
+  editPost:
+    Text: Suggest Changes
+    URL: https://github.com/kamadorueda/kamadorueda.github.io/edit/main/content
+    appendFilePath: true
+  profileMode:
+    buttons:
+      - name: Calendar
+        url: /calendar/
+      - name: Posts
+        url: /posts/
+    enabled: true
+    imageHeight: 120
+    imageTitle: <title of image as alt>
+    imageWidth: 120
+    subtitle: This place is about technology, opinion, and thoughts
+    title: "Welcome to my website \U0001F44B"
+  socialIcons:
+    - name: LinkedIn
+      url: https://linkedin.com/in/kamadorueda
+    - name: GitHub
+      url: https://github.com/kamadorueda
+    - name: Email
+      url: mailto:kamadorueda@gmail.com
 permalinks:
   posts: /:year/:month/:slug/
   vn: /:year/:month/:slug/
 publishDir: docs
-theme: hyde-hyde
-title: Kevin Amado
+title: Kevin Amado's Website
