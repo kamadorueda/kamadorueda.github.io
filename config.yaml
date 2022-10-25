@@ -6,9 +6,9 @@ enableRobotsTXT: true
 languageCode: en
 menu:
   main:
-    - identifier: calendar
-      name: Calendar
-      url: /calendar/
+    - identifier: contact
+      name: Contact
+      url: /contact/
     - identifier: posts
       name: Posts
       url: /posts/
@@ -35,8 +35,8 @@ params:
     appendFilePath: true
   profileMode:
     buttons:
-      - name: Calendar
-        url: /calendar/
+      - name: Contact
+        url: /contact/
       - name: Posts
         url: /posts/
     enabled: true
