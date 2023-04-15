@@ -1,0 +1,5 @@
+procs:
+  ci:
+    cmd: [ci]
+  frontend:
+    cmd: [frontend]

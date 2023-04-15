@@ -1,0 +1,47 @@
+{
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "styled-components": "^5.3.9",
+    "ts-pattern": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "babel-loader": "^9.1.2",
+    "babel-plugin-styled-components": "^2.1.1",
+    "eslint": "^8.38.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-better-styled-components": "^1.1.2",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "gh-pages": "^5.0.0",
+    "prettier": "^2.8.7",
+    "terser": "^5.16.9",
+    "typescript": "^5.0.4",
+    "vite": "^4.2.1"
+  },
+  "main": "src/index.tsx",
+  "name": "kamadorueda",
+  "private": true,
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css}\" \"*.{cjs,ts}\"",
+    "lint": "eslint --max-warnings=0 \"src/**/*\"",
+    "gh-pages": "gh-pages",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}
