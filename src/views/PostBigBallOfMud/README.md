@@ -1,37 +1,3 @@
-# Big Ball of Mud
-
-Big Ball of Mud is a highly influential paper in software engineering, written by
-Brian Foote and Joseph Yoder in 1999. The paper describes a common
-phenomenon in software development where a software system becomes a
-"big ball of mud" - a complex, disorganized and difficult-to-maintain
-mess of code.
-
-<!-- Still, this approach endures and thrives. Why is this
-architecture so popular? Is it as bad as it seems, or might it serve as
-a way-station on the road to more enduring, elegant artifacts? What
-forces drive good programmers to build ugly systems? Can we avoid this?
-Should we? How can we make such systems better? -->
-
-The first thing that caught my attention from this paper is that at a first glance, calling our code a "big ball of mud" looks like an undesirable property, yet, this is not always the case, and we can look at it through the lenses of rational [decision making](https://en.wikipedia.org/wiki/Decision-making): Architecture can be seen as a risk, it will consume short-term resources that in certain occasions are better directed towards catching a market opportunity. Furthermore, Architecture is expensive, and an investment on it usually doesn't pay off immediately. Those expenses need to be weighed against allowing a system to slip into premature decline and obsolescence.
-
-That being said, and assuming that good architecture is the optional decision for your use case. It's very important to first understand what forces drive producing Big Balls of Mud:
-
-- Inexperience: There is absolute, fresh out of school inexperience. A good architect may lack domain experience, or a domain expert may not have architectural experience. Employee turnover can wreak havoc on an organization’s institutional memory, with the perhaps dubious consolation of bringing fresh blood aboard.
-- Visibility: Architecture is neglected is that much of it is "under the hood", where nobody can see it. If the system works, and it can be shipped, who cares what it looks like on the inside?
-- Complexity: Software often reflects the inherent complexity of the application domain. See "essential complexity". And often, the architecture of the system reflects the sprawl and history of the organization that built it. See "conway's law".
-- Change: New requirements arise all the time. The "right" thing to do might be to redesign the system. The more likely result is that the architecture of the system will be perturbed to address the new requirements, without considering the effect of those changes in the integrity of the system.
-- Scale: Managing a large project is a qualitatively different problem from managing a small one, just as leading a division of infantry into battle is different from commanding a small special forces team
-
-## Forces
-
-<!-- Inexperience can take a number of guises. There is absolute, fresh out of school inexperience. A good architect may lack domain experience, or a domain expert who knows the code cold may not have architectural experience.
-
-Employee turnover can wreak havoc on an organization’s institutional memory, with the perhaps dubious consolation of bringing fresh blood aboard. -->
-
-<!--
-Indeed, one of the reasons that architecture is neglected is that much of it is "under the hood", where nobody can see it. If the system works, and it can be shipped, who cares what it looks like on the inside?
- -->
-
 <!--  a complex system may be an accurate reflection of our immature understanding of a complex problem.  -->
 
 <!-- A somewhat ramshackle rat's nest might be a state-of-the-art architecture for a poorly understood domain -->
@@ -40,8 +6,26 @@ Indeed, one of the reasons that architecture is neglected is that much of it is 
 
 <!-- gain more experience in such domains, we should increasingly direct our energies to gleaning more enduring architectural abstractions from them. -->
 
-<!-- Indeed, to a substantial extent, much of this chapter describes the disease, while the patterns above describe what we believe can be the cure: a flexible, adaptive, feedback-driven development process in which design and refactoring pervade the lifecycle of each artifact, component, and framework, within and beyond the applications that incubate them.
+// Workmanship: Architects who live in the house they are building have an obvious incentive to insure that things are done properly, since they will directly reap the consequences when they do not. The idea of the architect-builder is a central theme of Alexander's work. Who better to resolve the forces impinging upon each design issue as it arises as the person who is going to have to live with these decisions? The architect-builder will be the direct beneficiary of his or her own workmanship and care. Mistakes and shortcuts will merely foul his or her own nest.
 
-Forces
+// Design space might be thought of as a vast, dark, largely unexplored forest. Useful potential paths through it might be thought of as encompassing working programs. The space off to the sides of these paths is much larger realm of non-working programs. From any given point, a few small steps in most directions take you from a working to a non-working program. From time to time, there are forks in the path, indicating a choice among working alternatives. In unexplored territory, the prudent strategy is never to stray too far from the path. Now, if one has a map, a shortcut through the trekless thicket that might save miles may be evident. Of course, pioneers, by definition, don’t have maps. By taking small steps in any direction, they know that it is never more than a few steps back to a working system.
 
- -->
+// Some years ago, Harlan Mills proposed that any software system should be grown by incremental development. That is, the system first be made to run, even though it does nothing useful except call the proper set of dummy subprograms. Then, bit by bit, it is fleshed out, with the subprograms in turn being developed into actions or calls to empty stubs in the level below.
+
+// …
+
+// Nothing in the past decade has so radically changed my own practice, and its effectiveness.
+
+// …
+
+// One always has, at every stage, in the process, a working system. I find that teams can grow much more complex entities in four months than they can build.
+Microsoft mandates that a DAILY BUILD of each product be performed at the end of each working day. Nortel adheres to the slightly less demanding requirement that a working build be generated at the end of each week [Brooks 1995][Cusumano & Shelby 1995]. Indeed, this approach, and keeping the last working version around, are nearly universal practices among successful maintenance programmers.
+
+Another vital factor in ensuring a system's continued vitality is a commitment to rigorous testing [Marick 1995][Bach 1994]. It's hard to keep a system working if you don't have a way of making sure it works. Testing is one of pillars of Extreme Programming. XP practices call for the development of unit tests before a single line of code is written.
+
+"Our basic argument is that there isn't any such thing as a building. A building properly conceived is several layers of longevity of built components".
+
+Therefore, factor your system so that artifacts that change at similar rates are together.
+"separate that which changes from that which doesn't" [Roberts & Johnson 1998] writ large.
+
+There is a limit to how much chaos an individual can tolerate before being overwhelmed. At first glance, a BIG BALL OF MUD can inspire terror and despair in the hearts of those who would try to tame it. The first step on the road to architectural integrity can be to identify the disordered parts of the system, and isolate them from the rest of it. Once the problem areas are identified and hemmed in, they can be gentrified using a divide and conquer strategy.

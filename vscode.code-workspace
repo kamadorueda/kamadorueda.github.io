@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "jkillian.custom-local-formatters"
+    },
+    "customLocalFormatters.formatters": [
+      {
+        "command": "pnpm exec prettier --parser babel",
+        "languages": [
+          "javascript",
+          "javascriptreact"
+        ]
+      },
+      {
+        "command": "pnpm exec prettier --parser babel-ts",
+        "languages": [
+          "typescript",
+          "typescriptreact"
+        ]
+      }
+    ]
+  }
+}

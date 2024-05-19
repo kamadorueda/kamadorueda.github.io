@@ -15,9 +15,9 @@
           name = "ci";
           runtimeInputs = [nixpkgs.nodejs];
           text = ''
-            npm run format
-            npm run lint -- --fix
-            npm run lint
+            pnpm run format
+            pnpm run lint --fix
+            pnpm run lint
           '';
         };
 
@@ -25,7 +25,7 @@
           name = "frontend";
           runtimeInputs = [nixpkgs.nodejs];
           text = ''
-            npm run dev
+            npm exec vite
           '';
         };
 
@@ -33,10 +33,13 @@
           name = "deploy";
           runtimeInputs = [nixpkgs.nodejs];
           text = ''
-            npm run build
-            npm run gh-pages -- -d dist
+            pnpm exec tsc
+            pnpm exec vite build
+            pnpm exec gh-pages -d dist
           '';
         };
+
+        nodePackages = nixpkgs.nodePackages_latest;
 
         resize = nixpkgs.writeShellApplication {
           name = "resize";
@@ -57,7 +60,8 @@
             kamadorueda.deploy
             kamadorueda.frontend
             kamadorueda.resize
-            nixpkgs.nodejs
+            kamadorueda.nodePackages.nodejs
+            kamadorueda.nodePackages.pnpm
             nixpkgs.mprocs
           ];
         };

@@ -8,20 +8,5 @@ export default defineConfig({
       "~": path.resolve(__dirname, "./src"),
     },
   },
-  plugins: [
-    react({
-      babel: {
-        plugins: [
-          [
-            "babel-plugin-styled-components",
-            {
-              displayName: true,
-              fileName: false,
-              pure: true,
-            },
-          ],
-        ],
-      },
-    }),
-  ],
+  plugins: [react()],
 });

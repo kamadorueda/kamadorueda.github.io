@@ -1,8 +1,10 @@
+import { router } from "./router";
 import { createRoot } from "react-dom/client";
-import { Main } from "~/components/Main";
+import { RouterProvider } from "react-router-dom";
+import "./index.css";
 
 const node = document.getElementById("root") as HTMLElement;
 const root = createRoot(node);
 
 // eslint-disable-next-line fp/no-unused-expression
-root.render(<Main />);
+root.render(<RouterProvider router={router} />);
