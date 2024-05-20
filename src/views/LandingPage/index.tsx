@@ -7,7 +7,7 @@ import orca3000x4000 from "./orca3000x4000.jpg";
 import orca300x400 from "./orca300x400.jpg";
 import orca600x800 from "./orca600x800.jpg";
 import { Transition } from "@headlessui/react";
-import { clsx } from "clsx";
+import { clsx } from "clsx/lite";
 
 export const LandingPage = () => (
   <Transition
