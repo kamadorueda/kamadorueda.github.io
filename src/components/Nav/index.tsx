@@ -4,13 +4,13 @@ import { routes } from "~/routes";
 import { tw } from "~/tw";
 
 const link = tw(
-  "inline-flex h-full items-center px-1 font-bold text-gray-600",
+  "block h-12 px-1 pt-3 font-bold text-gray-600",
   // Focus
   "focus-visible:border-2 focus-visible:border-blue-500 focus-visible:text-blue-500 focus-visible:outline-none",
   // Hover
-  "hover:border-b-2 hover:border-black hover:text-black",
+  "hover:border-b-2 hover:border-black hover:text-gray-900",
 );
-const active = tw("border-b-2 border-black text-black");
+const active = tw("hidden lg:block");
 
 export const Nav: FC = () => {
   const [matches] = useMatches();
@@ -18,7 +18,7 @@ export const Nav: FC = () => {
     matches === undefined ? { pathname: undefined } : matches;
 
   return (
-    <nav className="m-auto h-12 w-fit space-x-4 rounded-full border border-gray-200 px-5 shadow shadow-gray-200">
+    <nav className="m-auto flex w-fit flex-wrap items-center gap-x-2 rounded-full border border-gray-200 px-5 shadow shadow-gray-200">
       <Link
         className={tw(link, routes.About.path === pathname && active)}
         to={routes.About.path}

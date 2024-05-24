@@ -9,32 +9,35 @@ export const About = () => (
       <Nav />
 
       <main className="mt-8 text-center lg:mt-8">
-        <h1 className="mt-8 text-4xl font-bold text-black">
-          <img
-            alt="Kevin's profile"
-            className={tw(
-              "inline h-16 w-16 rounded-full",
-              // Hover
-              "hover:scale-125 hover:fill-black hover:transition-all",
-            )}
-            src="https://avatars.githubusercontent.com/u/47480384?v=4"
-          />
-          <span className="ml-4">Software Engineer and hobbyist Painter</span>
+        <img
+          alt="Kevin's profile"
+          className={tw(
+            "m-auto h-16 w-16 rounded-full",
+            // Hover
+            "hover:scale-125 hover:fill-black hover:transition-all",
+          )}
+          src="https://avatars.githubusercontent.com/u/47480384?v=4"
+        />
+
+        <h1 className="mt-4 text-4xl font-bold text-gray-900">
+          Software Engineer and hobbyist Painter
         </h1>
 
-        <p className="mt-8 text-justify text-xl text-black">
+        <p className="mt-4 text-xl text-gray-900">
           I'm Kevin, a Software Engineer based in Calgary, Canada who paints in
           his free time.
         </p>
+      </main>
 
-        <div className="mt-8 space-x-8">
+      <aside className="mt-8">
+        <div className="m-auto w-fit space-x-8">
           <a
             className="group inline-block focus-visible:outline-none"
             href="mailto:kamadorueda@gmail.com"
           >
             <svg
               className={tw(
-                "h-8 w-8 fill-gray-500 p-1",
+                "h-8 w-8 fill-gray-600 p-1",
                 // Hover
                 "group-hover:scale-125 group-hover:fill-black group-hover:transition-all",
                 // Focus
@@ -52,7 +55,7 @@ export const About = () => (
           >
             <svg
               className={tw(
-                "h-8 w-8 fill-gray-500 p-1",
+                "h-8 w-8 fill-gray-600 p-1",
                 // Hover
                 "group-hover:scale-125 group-hover:fill-black group-hover:transition-all",
                 // Focus
@@ -70,7 +73,7 @@ export const About = () => (
           >
             <svg
               className={tw(
-                "h-8 w-8 fill-gray-500 p-1",
+                "h-8 w-8 fill-gray-600 p-1",
                 // Hover
                 "group-hover:scale-125 group-hover:fill-black group-hover:transition-all",
                 // Focus
@@ -83,7 +86,7 @@ export const About = () => (
             </svg>
           </a>
         </div>
-      </main>
+      </aside>
 
       {/* SVG Icons from https://simpleicons.org/ */}
       <svg className="hidden" xmlns="http://www.w3.org/2000/svg">
