@@ -141,27 +141,31 @@ export const LandingPage = () => (
             </a>
           </div>
 
-          <div className="my-16 overflow-x-auto">
-            <div className="m-auto w-max space-x-16 p-4">
+          <div className="my-16 overflow-x-auto outline">
+            <div className="m-auto w-max space-x-16 p-4 outline">
               <a
                 className={clsx(
                   "group inline-block focus-visible:outline-none",
                 )}
                 href={koi3000x4000}
               >
-                <img
-                  alt="A koi fish Kevin painted"
-                  className={clsx(
-                    "object-scale-up h-96 w-72 rounded-2xl shadow grayscale transition",
-                    "-rotate-2",
-                    // Hover
-                    "group-hover:grayscale-0",
-                    // Focus
-                    "group-focus-visible:border-2 group-focus-visible:border-blue-500 group-focus-visible:fill-blue-500 group-focus-visible:p-1 group-focus-visible:outline-none group-focus-visible:grayscale-0",
-                  )}
-                  sizes="(max-width: 300px) 300px, (max-width: 600px) 600px, (max-width: 1200px) 1200px, (max-width: 3000px) 3000px, 3000px"
-                  srcSet={`${koi300x400} 300w, ${koi600x800} 600w, ${koi1200x1600} 1200w, ${koi3000x4000} 3000w`}
-                />
+                <picture>
+                  <source media="(max-width: 300px)" srcSet={koi300x400} />
+                  <source media="(max-width: 600px)" srcSet={koi600x800} />
+                  <source media="(max-width: 1200px)" srcSet={koi1200x1600} />
+                  <img
+                    className={clsx(
+                      "object-scale-up h-96 w-72 rounded-2xl shadow grayscale transition",
+                      "-rotate-2",
+                      // Hover
+                      "group-hover:grayscale-0",
+                      // Focus
+                      "group-focus-visible:border-2 group-focus-visible:border-blue-500 group-focus-visible:fill-blue-500 group-focus-visible:p-1 group-focus-visible:outline-none group-focus-visible:grayscale-0",
+                    )}
+                    alt="A koi fish Kevin painted"
+                    src={koi3000x4000}
+                  />
+                </picture>
               </a>
               <a
                 className={clsx(
@@ -169,19 +173,23 @@ export const LandingPage = () => (
                 )}
                 href={orca3000x4000}
               >
-                <img
-                  alt="An orca Kevin painted"
-                  className={clsx(
-                    "object-scale-up h-96 w-72 rounded-2xl shadow grayscale transition",
-                    "rotate-2",
-                    // Hover
-                    "group-hover:grayscale-0",
-                    // Focus
-                    "group-focus-visible:border-2 group-focus-visible:border-blue-500 group-focus-visible:fill-blue-500 group-focus-visible:p-1 group-focus-visible:outline-none group-focus-visible:grayscale-0",
-                  )}
-                  sizes="(max-width: 300px) 300px, (max-width: 600px) 600px, (max-width: 1200px) 1200px, (max-width: 3000px) 3000px, 3000px"
-                  srcSet={`${orca300x400} 300w, ${orca600x800} 600w, ${orca1200x1600} 1200w, ${orca3000x4000} 3000w`}
-                />
+                <picture>
+                  <source media="(max-width: 300px)" srcSet={orca300x400} />
+                  <source media="(max-width: 600px)" srcSet={orca600x800} />
+                  <source media="(max-width: 1200px)" srcSet={orca1200x1600} />
+                  <img
+                    className={clsx(
+                      "object-scale-up h-96 w-72 rounded-2xl shadow grayscale transition",
+                      "rotate-2",
+                      // Hover
+                      "group-hover:grayscale-0",
+                      // Focus
+                      "group-focus-visible:border-2 group-focus-visible:border-blue-500 group-focus-visible:fill-blue-500 group-focus-visible:p-1 group-focus-visible:outline-none group-focus-visible:grayscale-0",
+                    )}
+                    alt="An orca Kevin painted"
+                    src={orca3000x4000}
+                  />
+                </picture>
               </a>
             </div>
           </div>
