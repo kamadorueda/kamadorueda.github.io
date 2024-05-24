@@ -1,5 +1,8 @@
 export const routes = {
-  landingPage: {
-    path: "/",
+  About: {
+    path: "/about",
   },
-};
+  Gallery: {
+    path: "/gallery",
+  },
+} as const;
