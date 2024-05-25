@@ -1,6 +1,7 @@
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { FC } from "react";
 import { Link, useMatches } from "react-router-dom";
+import { match } from "ts-pattern";
 import { routes } from "~/routes";
 import { tw } from "~/tw";
 
@@ -24,9 +25,12 @@ const largeLinkActive = tw("border-b-2 border-gray-900 text-gray-900");
 
 export const Nav: FC = () => {
   const [matches] = useMatches();
-  const { pathname } =
+
+  const current = match(matches)
+    .with({ pathname: routes.About.path }, () => "About" as const)
+    .with({ pathname: routes.Gallery.path }, () => "Gallery" as const)
     // eslint-disable-next-line fp/no-nil
-    matches === undefined ? { pathname: undefined } : matches;
+    .otherwise(() => undefined);
 
   return (
     <nav className="">
@@ -34,17 +38,11 @@ export const Nav: FC = () => {
       <div className="hidden sm:block">
         <div className="m-auto flex w-fit flex-wrap items-center gap-x-2 rounded-full border border-gray-200 px-4 shadow shadow-gray-200">
           <AboutLink
-            className={tw(
-              largeLink,
-              routes.About.path === pathname && largeLinkActive,
-            )}
+            className={tw(largeLink, current === "About" && largeLinkActive)}
           />
           <ProjectsLink className={tw(largeLink)} />
           <GalleryLink
-            className={tw(
-              largeLink,
-              routes.Gallery.path === pathname && largeLinkActive,
-            )}
+            className={tw(largeLink, current === "Gallery" && largeLinkActive)}
           />
           <ResumeLink className={tw(largeLink)} />
         </div>
@@ -83,7 +81,7 @@ export const Nav: FC = () => {
                     "group-hover:text-gray-900",
                   )}
                 >
-                  Navigation
+                  {current === undefined ? "Navigation" : current}
                 </span>
               )}
             </>
@@ -97,17 +95,11 @@ export const Nav: FC = () => {
           )}
         >
           <AboutLink
-            className={tw(
-              smallLink,
-              routes.About.path === pathname && smallLinkActive,
-            )}
+            className={tw(smallLink, current === "About" && smallLinkActive)}
           />
           <ProjectsLink className={smallLink} />
           <GalleryLink
-            className={tw(
-              smallLink,
-              routes.Gallery.path === pathname && smallLinkActive,
-            )}
+            className={tw(smallLink, current === "Gallery" && smallLinkActive)}
           />
           <ResumeLink className={smallLink} />
         </PopoverPanel>

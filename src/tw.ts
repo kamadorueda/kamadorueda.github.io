@@ -1,3 +1,3 @@
-import { clsx } from "clsx/lite";
+import { clsx } from "clsx";
 
 export { clsx as tw };
