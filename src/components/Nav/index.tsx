@@ -27,13 +27,13 @@ export const Nav: FC = () => {
   const [matches] = useMatches();
 
   const current = match(matches)
+    .with({ pathname: "/" }, () => "About" as const)
     .with({ pathname: routes.About.path }, () => "About" as const)
     .with({ pathname: routes.Gallery.path }, () => "Gallery" as const)
-    // eslint-disable-next-line fp/no-nil
-    .otherwise(() => undefined);
+    .otherwise(() => "Page Not Found");
 
   return (
-    <nav className="">
+    <nav className="sm:pt-8">
       {/* Large menu */}
       <div className="hidden sm:block">
         <div className="m-auto flex w-fit flex-wrap items-center gap-x-2 rounded-full border border-gray-200 px-4 shadow shadow-gray-200">
@@ -49,10 +49,10 @@ export const Nav: FC = () => {
       </div>
 
       {/* Small menu */}
-      <Popover className="m-auto grid w-64 auto-cols-max grid-flow-col items-start rounded border border-gray-200 p-4 pb-0 shadow shadow-gray-200 sm:hidden">
+      <Popover className="flex w-full items-start border-b border-gray-200 pl-4 pr-4 pt-4 shadow shadow-gray-200  sm:hidden">
         <PopoverButton
           className={tw(
-            "group mb-4 grid w-min auto-cols-min grid-flow-col items-center gap-x-4 transition-all",
+            "group mb-4 flex w-full items-center gap-x-4  transition-all data-[open]:w-fit",
             // Focus
             "focus-visible:border-2 focus-visible:border-blue-500 focus-visible:text-blue-500 focus-visible:outline-none",
           )}
@@ -81,7 +81,7 @@ export const Nav: FC = () => {
                     "group-hover:text-gray-900",
                   )}
                 >
-                  {current === undefined ? "Navigation" : current}
+                  {current}
                 </span>
               )}
             </>
@@ -89,7 +89,7 @@ export const Nav: FC = () => {
         </PopoverButton>
         <PopoverPanel
           className={tw(
-            "mb-4 ml-4 mr-2 grid items-center gap-y-4 border-l border-gray-200 pl-6",
+            "mb-4 ml-4 mr-2 grid grow items-center gap-y-4 border-l border-gray-200 pl-6",
             // Focus
             "focus-visible:outline-none",
           )}

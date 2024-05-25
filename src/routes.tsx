@@ -5,4 +5,7 @@ export const routes = {
   Gallery: {
     path: "/gallery",
   },
+  NotFound: {
+    path: "/not-found",
+  },
 } as const;

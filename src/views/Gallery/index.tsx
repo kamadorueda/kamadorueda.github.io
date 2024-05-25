@@ -3,7 +3,7 @@ import { Koi } from "./Koi";
 import { Ladybug } from "./Ladybug";
 import { Orca } from "./Orca";
 import { FC } from "react";
-import { Body } from "~/components/Body";
+import { Body, Main } from "~/components/Body";
 import { Nav } from "~/components/Nav";
 import { Transition } from "~/components/Transition";
 import { tw } from "~/tw";
@@ -35,7 +35,7 @@ export const Gallery: FC = () => (
     <Body>
       <Nav />
 
-      <main className="mt-4 lg:mt-8">
+      <Main>
         <h1 className="sr-only">Gallery</h1>
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:gap-8">
           <li>
@@ -117,7 +117,7 @@ export const Gallery: FC = () => (
             </a>
           </li>
         </ul>
-      </main>
+      </Main>
     </Body>
   </Transition>
 );

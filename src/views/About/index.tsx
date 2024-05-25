@@ -1,4 +1,4 @@
-import { Body } from "~/components/Body";
+import { Body, Main } from "~/components/Body";
 import { Nav } from "~/components/Nav";
 import { Transition } from "~/components/Transition";
 import { tw } from "~/tw";
@@ -7,8 +7,7 @@ export const About = () => (
   <Transition>
     <Body>
       <Nav />
-
-      <main className="mt-8 text-center lg:mt-8">
+      <Main className="m-auto max-w-xl text-center">
         <img
           alt="Kevin's profile"
           className={tw(
@@ -27,9 +26,9 @@ export const About = () => (
           I'm Kevin, a Software Engineer based in Calgary, Canada who paints in
           his free time.
         </p>
-      </main>
+      </Main>
 
-      <aside className="mt-8">
+      <aside className="mt-16">
         <div className="m-auto w-fit space-x-8">
           <a
             className="group inline-block focus-visible:outline-none"
