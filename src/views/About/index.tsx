@@ -14,16 +14,16 @@ export const About = () => (
           className={tw(
             "m-auto h-16 w-16 rounded-full",
             // Hover
-            "hover:scale-125 hover:fill-black hover:transition-all",
+            "hover:scale-125 hover:fill-gray-900 hover:transition-all",
           )}
           src="https://avatars.githubusercontent.com/u/47480384?v=4"
         />
 
-        <h1 className="mt-4 text-4xl font-bold text-gray-900">
+        <h1 className="mt-4 text-2xl font-bold text-gray-900">
           Software Engineer and hobbyist Painter
         </h1>
 
-        <p className="mt-4 text-xl text-gray-900">
+        <p className="mt-4 text-gray-500">
           I'm Kevin, a Software Engineer based in Calgary, Canada who paints in
           his free time.
         </p>
@@ -37,9 +37,9 @@ export const About = () => (
           >
             <svg
               className={tw(
-                "h-8 w-8 fill-gray-600 p-1",
+                "h-8 w-8 fill-gray-500 p-1",
                 // Hover
-                "group-hover:scale-125 group-hover:fill-black group-hover:transition-all",
+                "group-hover:scale-125 group-hover:fill-gray-900 group-hover:transition-all",
                 // Focus
                 "group-focus-visible:border-2 group-focus-visible:border-blue-500 group-focus-visible:fill-blue-500 group-focus-visible:outline-none",
               )}
@@ -55,9 +55,9 @@ export const About = () => (
           >
             <svg
               className={tw(
-                "h-8 w-8 fill-gray-600 p-1",
+                "h-8 w-8 fill-gray-500 p-1",
                 // Hover
-                "group-hover:scale-125 group-hover:fill-black group-hover:transition-all",
+                "group-hover:scale-125 group-hover:fill-gray-900 group-hover:transition-all",
                 // Focus
                 "group-focus-visible:border-2 group-focus-visible:border-blue-500 group-focus-visible:fill-blue-500 group-focus-visible:outline-none",
               )}
@@ -73,9 +73,9 @@ export const About = () => (
           >
             <svg
               className={tw(
-                "h-8 w-8 fill-gray-600 p-1",
+                "h-8 w-8 fill-gray-500 p-1",
                 // Hover
-                "group-hover:scale-125 group-hover:fill-black group-hover:transition-all",
+                "group-hover:scale-125 group-hover:fill-gray-900 group-hover:transition-all",
                 // Focus
                 "group-focus-visible:border-2 group-focus-visible:border-blue-500 group-focus-visible:fill-blue-500 group-focus-visible:outline-none",
               )}

@@ -1,21 +1,21 @@
-import { FC } from "react";
-import { tw } from "~/tw";
-import { Koi } from "./Koi";
-import { Orca } from "./Orca";
 import { Avocado } from "./Avocado";
+import { Koi } from "./Koi";
 import { Ladybug } from "./Ladybug";
-import { Transition } from "~/components/Transition";
-import { Nav } from "~/components/Nav";
+import { Orca } from "./Orca";
+import { FC } from "react";
 import { Body } from "~/components/Body";
+import { Nav } from "~/components/Nav";
+import { Transition } from "~/components/Transition";
+import { tw } from "~/tw";
 
 const link = tw(
   "group block",
   // Focus
-  "focus-visible:border-2 focus-visible:border-blue-500 focus-visible:fill-blue-500 focus-visible:p-1 focus-visible:font-bold focus-visible:outline-none",
+  "focus-visible:border-2 focus-visible:border-blue-500 focus-visible:fill-blue-500 focus-visible:p-1 focus-visible:outline-none",
 );
 
 const image = tw(
-  "object-scale-up  w-full rounded-2xl shadow transition lg:grayscale",
+  "object-scale-up w-full rounded-2xl shadow transition lg:grayscale",
   // Hover
   "group-hover:grayscale-0",
   // Focus
@@ -23,11 +23,11 @@ const image = tw(
 );
 
 const caption = tw(
-  "block text-center text-gray-900",
-  // Hover
-  "group-hover:font-bold",
+  "block text-center text-gray-500",
   // Focus
-  "group-focus-visible:font-bold",
+  "group-focus-visible:text-blue-500",
+  // Hover
+  "group-hover:text-gray-900",
 );
 
 export const Gallery: FC = () => (
@@ -45,9 +45,9 @@ export const Gallery: FC = () => (
                 <source media="(max-width: 600px)" srcSet={Koi._600x800} />
                 <source media="(max-width: 1200px)" srcSet={Koi._1200x1600} />
                 <img
-                  loading="lazy"
-                  className={image}
                   alt="A koi fish Kevin painted"
+                  className={image}
+                  loading="lazy"
                   src={Koi._3000x4000}
                 />
               </picture>
@@ -63,9 +63,9 @@ export const Gallery: FC = () => (
                 <source media="(max-width: 600px)" srcSet={Orca._600x800} />
                 <source media="(max-width: 1200px)" srcSet={Orca._1200x1600} />
                 <img
-                  loading="lazy"
-                  className={image}
                   alt="An Orca Kevin painted"
+                  className={image}
+                  loading="lazy"
                   src={Orca._3000x4000}
                 />
               </picture>
@@ -84,9 +84,9 @@ export const Gallery: FC = () => (
                   srcSet={Avocado._1200x1600}
                 />
                 <img
-                  loading="lazy"
-                  className={image}
                   alt="An avocado Kevin painted"
+                  className={image}
+                  loading="lazy"
                   src={Avocado._2400x3200}
                 />
                 <span aria-hidden className={caption}>
@@ -105,9 +105,9 @@ export const Gallery: FC = () => (
                   srcSet={Ladybug._1200x1600}
                 />
                 <img
-                  loading="lazy"
-                  className={image}
                   alt="A ladybug Kevin painted"
+                  className={image}
+                  loading="lazy"
                   src={Ladybug._3000x4000}
                 />
                 <span aria-hidden className={caption}>

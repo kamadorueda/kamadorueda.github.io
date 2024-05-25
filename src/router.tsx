@@ -1,3 +1,4 @@
+import { Gallery } from "./views/Gallery";
 import {
   Route,
   createHashRouter,
@@ -5,14 +6,13 @@ import {
 } from "react-router-dom";
 import { routes } from "~/routes";
 import { About } from "~/views/About";
-import { Gallery } from "./views/Gallery";
 
 export const router = createHashRouter(
   createRoutesFromElements(
     <>
-      <Route path={"/"} element={<About />} />
-      <Route path={routes.About.path} element={<About />} />
-      <Route path={routes.Gallery.path} element={<Gallery />} />
+      <Route element={<About />} path={"/"} />
+      <Route element={<About />} path={routes.About.path} />
+      <Route element={<Gallery />} path={routes.Gallery.path} />
     </>,
   ),
 );
