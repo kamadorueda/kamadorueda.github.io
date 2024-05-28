@@ -3,121 +3,109 @@ import { Koi } from "./Koi";
 import { Ladybug } from "./Ladybug";
 import { Orca } from "./Orca";
 import { FC } from "react";
-import { Body, Main } from "~/components/Body";
+import { Helmet } from "react-helmet";
+import { Body } from "~/components/Body";
+import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
-import { Transition } from "~/components/Transition";
 import { tw } from "~/tw";
 
 const link = tw(
-  "group block",
+  "group block rounded p-2 transition",
   // Focus
-  "focus-visible:border-2 focus-visible:border-blue-500 focus-visible:fill-blue-500 focus-visible:p-1 focus-visible:outline-none",
+  "focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500",
+  // Hover
+  "hover:bg-slate-50",
 );
+
+const heading = tw("text-center text-xl font-bold text-slate-900");
 
 const image = tw(
-  "object-scale-up w-full rounded-2xl shadow transition lg:grayscale",
-  // Hover
-  "group-hover:grayscale-0",
+  "object-scale-up w-full transition lg:grayscale",
   // Focus
   "group-focus-visible:grayscale-0",
-);
-
-const caption = tw(
-  "block text-center text-gray-500",
-  // Focus
-  "group-focus-visible:text-blue-500",
   // Hover
-  "group-hover:text-gray-900",
+  "group-hover:grayscale-0",
 );
 
 export const Gallery: FC = () => (
-  <Transition>
-    <Body>
-      <Nav />
+  <Body>
+    <Helmet>
+      <title>Kevin Amado's Paintings</title>
+      <meta content="Kevin Amado's Paintings" name="og:title" />
+      <meta content="Acrylic paintings." name="og:description" />
+      <meta content="website" name="og:type" />
+    </Helmet>
 
-      <Main>
-        <h1 className="sr-only">Gallery</h1>
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:gap-8">
-          <li>
-            <a className={link} href={Koi._3000x4000}>
-              <picture>
-                <source media="(max-width: 300px)" srcSet={Koi._300x400} />
-                <source media="(max-width: 600px)" srcSet={Koi._600x800} />
-                <source media="(max-width: 1200px)" srcSet={Koi._1200x1600} />
-                <img
-                  alt="A koi fish Kevin painted"
-                  className={image}
-                  loading="lazy"
-                  src={Koi._3000x4000}
-                />
-              </picture>
-              <span aria-hidden className={caption}>
-                Koi Fish
-              </span>
-            </a>
-          </li>
-          <li>
-            <a className={link} href={Orca._3000x4000}>
-              <picture>
-                <source media="(max-width: 300px)" srcSet={Orca._300x400} />
-                <source media="(max-width: 600px)" srcSet={Orca._600x800} />
-                <source media="(max-width: 1200px)" srcSet={Orca._1200x1600} />
-                <img
-                  alt="An Orca Kevin painted"
-                  className={image}
-                  loading="lazy"
-                  src={Orca._3000x4000}
-                />
-              </picture>
-              <span aria-hidden className={caption}>
-                Orca
-              </span>
-            </a>
-          </li>
-          <li>
-            <a className={link} href={Avocado._2400x3200}>
-              <picture>
-                <source media="(max-width: 300px)" srcSet={Avocado._300x400} />
-                <source media="(max-width: 600px)" srcSet={Avocado._600x800} />
-                <source
-                  media="(max-width: 1200px)"
-                  srcSet={Avocado._1200x1600}
-                />
-                <img
-                  alt="An avocado Kevin painted"
-                  className={image}
-                  loading="lazy"
-                  src={Avocado._2400x3200}
-                />
-                <span aria-hidden className={caption}>
-                  Avocado
-                </span>
-              </picture>
-            </a>
-          </li>
-          <li>
-            <a className={link} href={Ladybug._3000x4000}>
-              <picture>
-                <source media="(max-width: 300px)" srcSet={Ladybug._300x400} />
-                <source media="(max-width: 600px)" srcSet={Ladybug._600x800} />
-                <source
-                  media="(max-width: 1200px)"
-                  srcSet={Ladybug._1200x1600}
-                />
-                <img
-                  alt="A ladybug Kevin painted"
-                  className={image}
-                  loading="lazy"
-                  src={Ladybug._3000x4000}
-                />
-                <span aria-hidden className={caption}>
-                  Ladybug
-                </span>
-              </picture>
-            </a>
-          </li>
-        </ul>
-      </Main>
-    </Body>
-  </Transition>
+    <Nav />
+
+    <Main>
+      <h1 className="sr-only">Gallery</h1>
+      <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:gap-8">
+        <li>
+          <a className={link} href={Koi._3000x4000}>
+            <h2 className={heading}>Koi Fish</h2>
+            <picture>
+              <source media="(max-width: 300px)" srcSet={Koi._300x400} />
+              <source media="(max-width: 600px)" srcSet={Koi._600x800} />
+              <source media="(max-width: 1200px)" srcSet={Koi._1200x1600} />
+              <img
+                alt="A koi fish Kevin painted"
+                className={image}
+                loading="lazy"
+                src={Koi._3000x4000}
+              />
+            </picture>
+          </a>
+        </li>
+        <li>
+          <a className={link} href={Orca._3000x4000}>
+            <h2 className={heading}>Orca</h2>
+            <picture>
+              <source media="(max-width: 300px)" srcSet={Orca._300x400} />
+              <source media="(max-width: 600px)" srcSet={Orca._600x800} />
+              <source media="(max-width: 1200px)" srcSet={Orca._1200x1600} />
+              <img
+                alt="An Orca Kevin painted"
+                className={image}
+                loading="lazy"
+                src={Orca._3000x4000}
+              />
+            </picture>
+          </a>
+        </li>
+        <li>
+          <a className={link} href={Avocado._2400x3200}>
+            <h2 className={heading}>Avocado</h2>
+            <picture>
+              <source media="(max-width: 300px)" srcSet={Avocado._300x400} />
+              <source media="(max-width: 600px)" srcSet={Avocado._600x800} />
+              <source media="(max-width: 1200px)" srcSet={Avocado._1200x1600} />
+              <img
+                alt="An avocado Kevin painted"
+                className={image}
+                loading="lazy"
+                src={Avocado._2400x3200}
+              />
+            </picture>
+          </a>
+        </li>
+        <li>
+          <a className={link} href={Ladybug._3000x4000}>
+            <h2 className={heading}>Ladybug</h2>
+            <picture>
+              <source media="(max-width: 300px)" srcSet={Ladybug._300x400} />
+              <source media="(max-width: 600px)" srcSet={Ladybug._600x800} />
+              <source media="(max-width: 1200px)" srcSet={Ladybug._1200x1600} />
+              <img
+                alt="A ladybug Kevin painted"
+                className={image}
+                loading="lazy"
+                src={Ladybug._3000x4000}
+              />
+            </picture>
+          </a>
+        </li>
+      </ul>
+    </Main>
+  </Body>
 );

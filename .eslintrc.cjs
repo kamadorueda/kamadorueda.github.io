@@ -3,7 +3,6 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:fp/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -71,7 +70,6 @@ module.exports = {
   plugins: [
     "@typescript-eslint",
     "better-styled-components",
-    "fp",
     "import",
     "jsx-a11y",
     "sort-keys-fix",

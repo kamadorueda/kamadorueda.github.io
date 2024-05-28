@@ -7,3 +7,24 @@
     @apply text-red-700;
   }
 }
+
+/*
+
+Design system:
+
+- Headers:
+  - text-xl font-bold text-slate-900
+  - text-lg font-bold text-slate-900
+
+- Text: text-slate-500
+
+- Link: text-slate-500 underline underline-offset-2 transition
+  - focus:text-blue-500 focus:outline focus:outline-1 focus:outline-blue-500
+  - hover:text-slate-900
+
+- Contextual link: text-slate-500 transition
+  - active:underline underline-offset-2
+  - focus:text-blue-500 focus:outline focus:outline-1 focus:outline-blue-500
+  - hover:text-slate-900
+
+*/

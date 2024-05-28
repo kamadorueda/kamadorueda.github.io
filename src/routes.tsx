@@ -8,4 +8,7 @@ export const routes = {
   NotFound: {
     path: "/not-found",
   },
+  Thoughts: {
+    path: "/thoughts",
+  },
 } as const;

@@ -1,3 +1,2 @@
-import { clsx } from "clsx";
-
-export { clsx as tw };
+export const tw = (...classNames: (string | undefined | false)[]) =>
+  classNames.filter((className) => typeof className === "string").join(" ");
