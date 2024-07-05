@@ -9,8 +9,8 @@ import { FC } from "react";
 
 export const metadata = {
   id: "financial-literacy",
-  minutes: 4,
-  summary: "Discounting luck, what makes an investor successful?",
+  minutes: 5,
+  summary: "The hidden losses of doing nothing",
   tags: ["finances", "investing"],
   title: "Financial Literacy",
   timestamp: "2024-05-27",
@@ -22,31 +22,39 @@ export const Content: FC = () => (
       Many people want to accumulate wealth throughout their life. Some succeed,
       some fail. Luck plays a role in this, but some factors are in our control.
       The financial education that you expose yourself to will help you avoid
-      costly mistakes, protect your principal and achieve an adequate return on
-      your investments.
+      costly mistakes and achieve an adequate return on your investments.
     </Paragraph>
 
     <Paragraph>
-      Until your have enough positive cash flow to start accumulating assets
-      your priority should be growing your income and/or reducing your expenses.
-      Most people increase their income by getting a better paying job, starting
-      a side-hustle, and so on. Most people reduce their expenses by controlling
-      their discretionary spending and being conscious and responsible with
-      debt.
+      Everybody starts somewhere. Until you have enough positive cash flow to
+      start accumulating assets your priority should be growing your income
+      and/or reducing your expenses. Most people increase their income by
+      getting a better paying job, starting a side-hustle, and so on. Most
+      people reduce their expenses by controlling their discretionary spending
+      and being conscious and responsible with debt.
     </Paragraph>
 
     <Paragraph>
       As your cash flows allow you to set some money aside, it becomes
       increasingly important to engage in Financial Planning as a mean to ensure
-      you can fund your future spending needs. Even though "invisible", the
-      compounding effect of Inflation, Opportunity Costs, and Risk are always
-      out there to get you.
+      you can accomplish your goals. There is always a point where the money you
+      loose due to inflation, plus the money you forego by not investing your
+      money in the right place relative to your objectives will exceed any new
+      savings you add, thus giving the illusion of saving but not getting you
+      richer in reality.
     </Paragraph>
 
     <Paragraph>
-      As you approach this stage, I highly recommend you consume the following
-      resources, for they are rational and grounded, and after studying them
-      myself, I can speak of their value:
+      As you approach this stage, I highly recommend you educate yourself
+      financially. Make a plan. Is it retirement? Is it a trip a couple years
+      from now? Is it your kids education? Maybe you are saving for a rainy day?
+      You can optimize your investments for that and get there faster, with less
+      effort, and with more certainty.
+    </Paragraph>
+
+    <Paragraph>
+      Some resources I've found extremely valuable, in order of how easy they
+      are to digest for a beginner are:
     </Paragraph>
 
     <UnorderedList>
@@ -65,37 +73,68 @@ export const Content: FC = () => (
           The Intelligent Investor by Benjamin Graham.
         </ExternalLink>
       </ListItem>
+      <ListItem>
+        <ExternalLink to="https://en.wikipedia.org/wiki/Security_Analysis_(book)">
+          Security Analysis by Benjamin Graham.
+        </ExternalLink>
+      </ListItem>
     </UnorderedList>
 
     <Paragraph>
-      If you are still not convinced, let's compare two scenarios from the
-      lenses of a Canadian investor:
+      Alternatively, most banks have a division of advisors that can help you.
+      Simply make sure there is an alignment of incentives, otherwise they may
+      just try to sell you (for a commission) a more expensive and not
+      necessarily better version of an&nbsp;
+      <ExternalLink to="https://www.blackrock.com/ca/investors/en/learning-centre/etf-education/asset-allocation-etfs">
+        Asset Allocation Fund
+      </ExternalLink>
+      , a&nbsp;
+      <ExternalLink to="https://www.ishares.com/us/strategies/what-is-a-target-date-fund">
+        Target Date Fund.
+      </ExternalLink>
+      , or some type of fixed-income security like a&nbsp;
+      <ExternalLink to="https://www.blackrock.com/ca/investors/en/products/239414/ishares-premium-money-market-etf">
+        Money Market Fund
+      </ExternalLink>
+      .
+    </Paragraph>
+
+    <Paragraph>
+      If my words still don't wake you up, maybe numbers will:
     </Paragraph>
 
     <OrderedList>
       <ListItem>
-        In Canada, the Consumer Price Index has increased from 125.8 to 160.6 in
-        10 years. That's a 27.6% loss on purchasing power.
+        For someone who leaves their money in a checking account, your loss is
+        equivalent to inflation. In Canada, one way to measure it is through the
+        Consumer Price Index, which increased from 125.8 to 160.6 in 10 years.
+        That's a 27.6% loss.
       </ListItem>
       <ListItem>
-        Now assume you invest your money and achieve a 3% yearly return on your
-        Investments after inflation (nothing fancy, historically speaking), and
-        assume a 50% tax rate (very high, for most people. Includes
-        distributions and capital gains). That's a 17.2% gain after inflation.
+        If you leave your money in a mediocre savings account, namely one that
+        pays significantly less than the return on the lowest possible risk.
+        Then you loose Inflation plus the difference between what your savings
+        account pays and what a decent savings account would pay, minus costs
+        and taxes, if any. For Canada, this can be measured through the&nbsp;
+        <ExternalLink to="https://www.bankofcanada.ca/rates/interest-rates/corra/">
+          Canadian Overnight Repo Rate
+        </ExternalLink>
+        , which in the last three years alone represents a loss around 9.5% (not
+        including Inflation costs or taxes).
+      </ListItem>
+      <ListItem>
+        If you are willing to take on more risk, a fund that invests in stocks
+        and bonds and compounds over a couple years may make a huge difference.
+        A 3% annualized return or more after inflation, costs and taxes is not
+        uncommon. You may even start withdrawing the surplus after a while
+        without depleting it, in fact, this is how many pension funds and
+        university endowments work.
       </ListItem>
     </OrderedList>
 
-    <Paragraph>There is a performance gap of 44.8% between them.</Paragraph>
-
     <Paragraph>
-      It may be luck if your income today is not 44.8% higher than the average.
-      Maybe by chance you ended up in an industry that pays average wages. Most
-      people could not have predicted the highest paying industry 10 years in
-      advance and get on it ahead of time, but with the power of Financial
-      Knowledge, it may not make any difference to your wealth 10 years from now
-      when compared to someone that had luck but no Financial Literacy.
+      This is a long way of saying: Treat your finances with the same priorities
+      you treat other aspects of your life.
     </Paragraph>
-
-    <Paragraph>Focus on what you can control.</Paragraph>
   </>
 );

@@ -41,13 +41,11 @@ export const About = () => (
         src="https://avatars.githubusercontent.com/u/47480384?v=4"
       />
 
-      <h1 className="mt-4 text-xl font-bold text-slate-900">
-        Software Engineer and hobbyist Painter
-      </h1>
+      <h1 className="mt-4 text-xl font-bold text-slate-900">Kevin Amado</h1>
 
       <p className="mt-4 text-slate-500">
-        I'm Kevin, a Software Engineer based in Calgary, Canada who paints in
-        his free time.
+        I'm a Software Engineer based in Calgary, Canada. I share in this
+        website some of the things that I do and think about.
       </p>
     </Main>
 
