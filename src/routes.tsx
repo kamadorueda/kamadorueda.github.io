@@ -2,6 +2,9 @@ export const routes = {
   About: {
     path: "/about",
   },
+  Disclaimers: {
+    path: "/disclaimers",
+  },
   Gallery: {
     path: "/gallery",
   },

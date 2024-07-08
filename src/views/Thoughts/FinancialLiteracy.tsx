@@ -1,11 +1,13 @@
+import { FC } from "react";
 import {
   ExternalLink,
   OrderedList,
   Paragraph,
   UnorderedList,
   ListItem,
-} from "./Content";
-import { FC } from "react";
+  InternalLink,
+} from "~/components/Typography";
+import { routes } from "~/routes";
 
 export const metadata = {
   id: "financial-literacy",
@@ -133,8 +135,14 @@ export const Content: FC = () => (
     </OrderedList>
 
     <Paragraph>
-      This is a long way of saying: Treat your finances with the same priorities
+      This is a long way of saying: Treat your finances with the same importance
       you treat other aspects of your life.
     </Paragraph>
+
+    <aside>
+      <Paragraph>
+        <InternalLink to={routes.Disclaimers.path}>Disclaimers</InternalLink>
+      </Paragraph>
+    </aside>
   </>
 );

@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import { Body } from "~/components/Body";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
+import { Header, Paragraph } from "~/components/Typography";
 import { tw } from "~/tw";
 
 const a = tw(
@@ -41,12 +42,12 @@ export const About = () => (
         src="https://avatars.githubusercontent.com/u/47480384?v=4"
       />
 
-      <h1 className="mt-4 text-xl font-bold text-slate-900">Kevin Amado</h1>
+      <Header className="mt-4">Kevin Amado</Header>
 
-      <p className="mt-4 text-slate-500">
+      <Paragraph>
         I'm a Software Engineer based in Calgary, Canada. I share in this
         website some of the things that I do and think about.
-      </p>
+      </Paragraph>
     </Main>
 
     <aside className="mb-8">
