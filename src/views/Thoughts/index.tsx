@@ -40,7 +40,7 @@ export const Thoughts: FC = () => {
               .map((thought) => (
                 <li
                   className={tw(
-                    "relative divide-slate-500 rounded p-4 text-center",
+                    "relative divide-slate-500 rounded p-2 text-center",
                     "hover:bg-slate-50",
                   )}
                   key={thought.metadata.id}
