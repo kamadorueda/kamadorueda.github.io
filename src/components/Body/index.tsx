@@ -9,8 +9,8 @@ export const Body: FC<PropsWithChildren> = (props) => (
     enterTo="opacity-100"
     show={true}
   >
-    <div className="min-h-screen min-w-80 bg-slate-50">
-      <div className="m-auto min-h-screen max-w-5xl bg-white pb-4 shadow shadow-slate-200 lg:pb-8">
+    <div className="min-h-screen min-w-80 bg-gradient-to-tr from-slate-200 to-slate-50">
+      <div className="m-auto min-h-screen max-w-5xl bg-white pb-4 outline  outline-1 outline-slate-200 lg:pb-8">
         {props.children}
       </div>
     </div>

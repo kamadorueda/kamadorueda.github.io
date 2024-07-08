@@ -14,7 +14,7 @@ export const Header: FC<PropsWithChildren & ClassNameProp> = (props) => (
 );
 
 export const Paragraph: FC<PropsWithChildren> = (props) => (
-  <p className="mt-4 text-slate-500">{props.children}</p>
+  <p className="mt-4 text-justify text-slate-500">{props.children}</p>
 );
 
 const link = tw(
@@ -50,5 +50,5 @@ export const OrderedList: FC<PropsWithChildren> = (props) => (
 );
 
 export const ListItem: FC<PropsWithChildren> = (props) => (
-  <li className="text-slate-500">{props.children}</li>
+  <li className="text-justify text-slate-500">{props.children}</li>
 );

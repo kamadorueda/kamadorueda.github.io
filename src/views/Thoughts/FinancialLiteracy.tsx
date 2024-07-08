@@ -139,7 +139,7 @@ export const Content: FC = () => (
       you treat other aspects of your life.
     </Paragraph>
 
-    <aside>
+    <aside className="mt-8">
       <Paragraph>
         <InternalLink to={routes.Disclaimers.path}>Disclaimers</InternalLink>
       </Paragraph>

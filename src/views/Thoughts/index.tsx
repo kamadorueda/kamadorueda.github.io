@@ -6,6 +6,7 @@ import { Body } from "~/components/Body";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
 import { Time } from "~/components/Time";
+import { Header } from "~/components/Typography";
 import { tw } from "~/tw";
 
 const thoughts = {
@@ -32,7 +33,7 @@ export const Thoughts: FC = () => {
       {thought === undefined ? (
         <Main>
           <h1 className="sr-only">Thoughts</h1>
-          <ul className="m-auto max-w-lg space-y-8">
+          <ul className="m-auto grid max-w-sm grid-cols-1 gap-4 lg:gap-8">
             {Object.values(thoughts)
               .toSorted((a, b) =>
                 a.metadata.timestamp.localeCompare(b.metadata.timestamp),
@@ -40,7 +41,7 @@ export const Thoughts: FC = () => {
               .map((thought) => (
                 <li
                   className={tw(
-                    "relative divide-slate-500 rounded p-2 text-center",
+                    "relative rounded p-2 text-center  outline outline-1 outline-slate-200",
                     "hover:bg-slate-50",
                   )}
                   key={thought.metadata.id}
@@ -48,9 +49,7 @@ export const Thoughts: FC = () => {
                   <h2 className="text-xl font-bold text-slate-900">
                     {thought.metadata.title}
                   </h2>
-                  <p className="mt-2 text-slate-500">
-                    {thought.metadata.summary}
-                  </p>
+                  <p className="text-slate-500">{thought.metadata.summary}</p>
 
                   <dl className="mt-2 text-xs *:inline">
                     <dt className="sr-only">Written at</dt>
@@ -100,13 +99,11 @@ export const Thoughts: FC = () => {
               <meta content={tag} key={tag} name="article:tag" />
             ))}
           </Helmet>
-          <h1 className="text-center text-xl font-bold text-slate-900">
-            {thought.metadata.title}
-          </h1>
+          <Header>{thought.metadata.title}</Header>
           <p className="text-center text-slate-500">
             {thought.metadata.summary}
           </p>
-          <div className="mt-8 text-justify">
+          <div className="mt-8">
             <thought.Content />
           </div>
         </Main>

@@ -10,7 +10,7 @@ import { Nav } from "~/components/Nav";
 import { tw } from "~/tw";
 
 const link = tw(
-  "group block rounded p-2 transition",
+  "group block rounded p-2 outline outline-1 outline-slate-200 transition",
   // Focus
   "focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500",
   // Hover

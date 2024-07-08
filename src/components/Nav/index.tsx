@@ -30,7 +30,7 @@ export const Nav: FC = () => {
     <nav className="sm:pt-8">
       {/* Large menu */}
       <div className="hidden sm:block">
-        <div className="m-auto flex w-fit flex-wrap items-center space-x-2 rounded-full border border-slate-200 px-4 shadow shadow-slate-200">
+        <div className="m-auto flex w-fit flex-wrap items-center space-x-2 rounded-full px-4 outline outline-1 outline-slate-200">
           <AboutLink
             className={tw(largeLink, current === "About" && linkActive)}
           />
