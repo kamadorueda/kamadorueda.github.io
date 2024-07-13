@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 import { Body } from "~/components/Body";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
+import { ExternalLink, Header, Paragraph } from "~/components/Typography";
 import { tw } from "~/tw";
 
 const link = tw(
@@ -39,8 +40,39 @@ export const Gallery: FC = () => (
     <Nav />
 
     <Main>
-      <h1 className="sr-only">Gallery</h1>
-      <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:gap-8">
+      <Header>Gallery</Header>
+      <Paragraph>
+        This is a small collection of&nbsp;
+        <ExternalLink to="https://en.wikipedia.org/wiki/Still_life">
+          Still Life
+        </ExternalLink>
+        &nbsp;and animals that I painted with acrylics from&nbsp;
+        <ExternalLink to="https://mgraham.com/artists-colors/acrylics/">
+          M. Graham & Co
+        </ExternalLink>
+        . All paintings were made with four colors:&nbsp;
+        <ExternalLink to="https://mgraham.com/artists-colors/acrylics/">
+          Cadmium Red
+        </ExternalLink>
+        ,&nbsp;
+        <ExternalLink to="https://mgraham.com/acrylic-paints/cadmium-yellow-060/">
+          Cadmium Yellow
+        </ExternalLink>
+        ,&nbsp;
+        <ExternalLink to="https://mgraham.com/acrylic-paints/ultramarine-blue-190/">
+          Ultramarine Blue
+        </ExternalLink>
+        , and&nbsp;
+        <ExternalLink to="https://mgraham.com/acrylic-paints/titanium-white-180/">
+          Titanium White,
+        </ExternalLink>
+        &nbsp;which I mix by hand.
+      </Paragraph>
+      <Paragraph>
+        You can click on any of the images below to see them in maximum
+        resolution.
+      </Paragraph>
+      <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:gap-8">
         <li>
           <a className={link} href={Koi._3000x4000}>
             <h2 className={heading}>Koi Fish</h2>
@@ -106,6 +138,14 @@ export const Gallery: FC = () => (
           </a>
         </li>
       </ul>
+      <Paragraph>
+        I'd like to add a&nbsp;
+        <ExternalLink to="https://en.wikipedia.org/wiki/Portrait">
+          Portrait
+        </ExternalLink>
+        &nbsp;to the collection at some point. For now, some of the paintings I
+        like the most decorate the walls in my home.
+      </Paragraph>
     </Main>
   </Body>
 );

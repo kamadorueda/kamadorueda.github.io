@@ -16,90 +16,26 @@ const linkActive = tw("underline underline-offset-2");
 
 const largeLink = tw(link, "block h-12 px-1 pt-3");
 
+type CurrentLocation = "About" | "Gallery" | "Thoughts" | "Other";
+
 export const Nav: FC = () => {
   const [matches] = useMatches();
 
-  const current = match(matches)
+  const current: CurrentLocation = match(matches)
     .with({ pathname: "/" }, () => "About" as const)
     .with({ pathname: routes.About.path }, () => "About" as const)
     .with({ pathname: routes.Gallery.path }, () => "Gallery" as const)
     .with({ pathname: routes.Thoughts.path }, () => "Thoughts" as const)
-    .otherwise(() => "Page Not Found");
+    .otherwise(() => "Other" as const);
 
   return (
     <nav className="sm:pt-8">
-      {/* Large menu */}
       <div className="hidden sm:block">
-        <div className="m-auto flex w-fit flex-wrap items-center space-x-2 rounded-full px-4 outline outline-1 outline-slate-200">
-          <AboutLink
-            className={tw(largeLink, current === "About" && linkActive)}
-          />
-          <GalleryLink
-            className={tw(largeLink, current === "Gallery" && linkActive)}
-          />
-          <ProjectsLink className={tw(largeLink)} />
-          <ResumeLink className={tw(largeLink)} />
-          <ThoughtsLink
-            className={tw(largeLink, current === "Thoughts" && linkActive)}
-          />
-        </div>
+        <DesktopNav current={current} />
       </div>
-
-      {/* Small menu */}
-      <Popover className="flex w-full items-start border-b border-slate-200 pl-4 pr-4 pt-4 shadow shadow-slate-200  sm:hidden">
-        <PopoverButton
-          className={tw(
-            "group mb-4 flex w-full items-center gap-x-4 transition data-[open]:w-fit",
-            // Focus
-            "focus-visible:text-blue-500 focus-visible:outline focus-visible:outline-blue-500",
-          )}
-        >
-          {({ open }) => (
-            <>
-              <svg
-                className={tw(
-                  "h-8 w-8 stroke-slate-500 transition",
-                  // Focus
-                  "group-focus-visible:stroke-blue-500",
-                  // Hover
-                  "group-hover:stroke-slate-900",
-                )}
-                role="img"
-              >
-                <use xlinkHref={open ? "#close-button" : "#menu"} />
-              </svg>
-              {!open && (
-                <span
-                  className={tw(
-                    "text-slate-500 transition",
-                    // Focus
-                    "group-focus-visible:text-blue-500",
-                    // Hover
-                    "group-hover:text-slate-900 group-hover:underline",
-                  )}
-                >
-                  {current}
-                </span>
-              )}
-            </>
-          )}
-        </PopoverButton>
-        <PopoverPanel
-          className={tw(
-            "mb-4 ml-4 mr-2 grid grow items-center gap-y-4 border-l border-slate-200 pl-6",
-          )}
-        >
-          <AboutLink className={tw(link, current === "About" && linkActive)} />
-          <GalleryLink
-            className={tw(link, current === "Gallery" && linkActive)}
-          />
-          <ProjectsLink className={link} />
-          <ResumeLink className={link} />
-          <ThoughtsLink
-            className={tw(link, current === "Thoughts" && linkActive)}
-          />
-        </PopoverPanel>
-      </Popover>
+      <div className="sm:hidden">
+        <MobileNav current={current} />
+      </div>
 
       {/* SVG Icons */}
       <svg className="hidden" xmlns="http://www.w3.org/2000/svg">
@@ -123,6 +59,75 @@ export const Nav: FC = () => {
     </nav>
   );
 };
+
+const DesktopNav: FC<{ current: CurrentLocation }> = ({ current }) => (
+  <div className="m-auto flex w-fit flex-wrap items-center space-x-2 rounded-full px-4 outline outline-1 outline-slate-200">
+    <AboutLink className={tw(largeLink, current === "About" && linkActive)} />
+    <GalleryLink
+      className={tw(largeLink, current === "Gallery" && linkActive)}
+    />
+    <ProjectsLink className={tw(largeLink)} />
+    <ResumeLink className={tw(largeLink)} />
+    <ThoughtsLink
+      className={tw(largeLink, current === "Thoughts" && linkActive)}
+    />
+  </div>
+);
+
+const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
+  <Popover className="flex w-full items-start border-b border-slate-200 pl-4 pr-4 pt-4 shadow shadow-slate-200">
+    <PopoverButton
+      className={tw(
+        "group mb-4 flex w-full items-center gap-x-4 transition data-[open]:w-fit",
+        // Focus
+        "focus-visible:text-blue-500 focus-visible:outline focus-visible:outline-blue-500",
+      )}
+    >
+      {({ open }) => (
+        <>
+          <svg
+            className={tw(
+              "h-8 w-8 stroke-slate-500 transition",
+              // Focus
+              "group-focus-visible:stroke-blue-500",
+              // Hover
+              "group-hover:stroke-slate-900",
+            )}
+            role="img"
+          >
+            <use xlinkHref={open ? "#close-button" : "#menu"} />
+          </svg>
+          {!open && (
+            <span
+              className={tw(
+                "text-slate-500 transition",
+                // Focus
+                "group-focus-visible:text-blue-500",
+                // Hover
+                "group-hover:text-slate-900 group-hover:underline",
+              )}
+            >
+              Kevin Amado
+            </span>
+          )}
+        </>
+      )}
+    </PopoverButton>
+    <PopoverPanel
+      className={tw(
+        "mb-4 ml-4 mr-2 grid grow items-center gap-y-4 border-l border-slate-200 pl-6",
+      )}
+    >
+      <AboutLink className={tw(link, current === "About" && linkActive)} />
+      <GalleryLink className={tw(link, current === "Gallery" && linkActive)} />
+      <ProjectsLink className={link} />
+      <ResumeLink className={link} />
+      <ThoughtsLink
+        className={tw(link, current === "Thoughts" && linkActive)}
+      />
+    </PopoverPanel>
+  </Popover>
+);
 
 const AboutLink: FC<{
   className: string;

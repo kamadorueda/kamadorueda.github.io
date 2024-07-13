@@ -6,7 +6,7 @@ import { Body } from "~/components/Body";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
 import { Time } from "~/components/Time";
-import { Header } from "~/components/Typography";
+import { Header, Paragraph } from "~/components/Typography";
 import { tw } from "~/tw";
 
 const thoughts = {
@@ -32,8 +32,13 @@ export const Thoughts: FC = () => {
 
       {thought === undefined ? (
         <Main>
-          <h1 className="sr-only">Thoughts</h1>
-          <ul className="m-auto grid max-w-sm grid-cols-1 gap-4 lg:gap-8">
+          <Header>Thoughts</Header>
+          <Paragraph>
+            This is a collection of writings on topics I've found interesting
+            over time.
+          </Paragraph>
+          <Paragraph>You can click on any of them to read more.</Paragraph>
+          <ul className="m-auto mt-8 grid grid-cols-1 gap-4 lg:gap-8">
             {Object.values(thoughts)
               .toSorted((a, b) =>
                 a.metadata.timestamp.localeCompare(b.metadata.timestamp),
