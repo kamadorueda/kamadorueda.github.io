@@ -12,7 +12,7 @@ const a = tw(
 );
 
 const svg = tw(
-  "h-8 w-8 fill-slate-500 p-1 transition",
+  "h-8 w-8 fill-slate-600 p-1 transition",
   // Focus
   "group-focus-visible:fill-blue-500",
   // Hover
@@ -32,21 +32,10 @@ export const About = () => (
     </Helmet>
     <Nav />
     <Main className="m-auto max-w-xl text-center">
-      <img
-        alt="Kevin's profile"
-        className={tw(
-          "m-auto h-16 w-16 rounded-full transition",
-          // Hover
-          "hover:scale-125 hover:fill-slate-900",
-        )}
-        src="https://avatars.githubusercontent.com/u/47480384?v=4"
-      />
-
-      <Header className="mt-4">Kevin Amado</Header>
-
+      <Header>Kevin Amado</Header>
+      <Paragraph>I'm a Software Engineer based in Calgary, Canada.</Paragraph>
       <Paragraph>
-        I'm a Software Engineer based in Calgary, Canada. I share in this
-        website some of the things that I do and think about.
+        I share in this website some of the things that I do and think about.
       </Paragraph>
     </Main>
 

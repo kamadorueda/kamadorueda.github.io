@@ -11,14 +11,14 @@ import { ExternalLink, Header, Paragraph } from "~/components/Typography";
 import { tw } from "~/tw";
 
 const link = tw(
-  "group block rounded p-2 outline outline-1 outline-slate-200 transition",
+  "group block rounded p-2 text-center outline outline-1 outline-slate-200 transition",
   // Focus
   "focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500",
   // Hover
   "hover:bg-slate-50",
 );
 
-const heading = tw("text-center text-xl font-bold text-slate-900");
+const heading = tw("text-xl font-bold text-slate-900");
 
 const image = tw(
   "object-scale-up w-full transition lg:grayscale",
@@ -75,7 +75,9 @@ export const Gallery: FC = () => (
       <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:gap-8">
         <li>
           <a className={link} href={Koi._3000x4000}>
-            <h2 className={heading}>Koi Fish</h2>
+            <span aria-hidden className={heading}>
+              Koi Fish
+            </span>
             <picture>
               <source media="(max-width: 300px)" srcSet={Koi._300x400} />
               <source media="(max-width: 600px)" srcSet={Koi._600x800} />
@@ -91,7 +93,7 @@ export const Gallery: FC = () => (
         </li>
         <li>
           <a className={link} href={Orca._3000x4000}>
-            <h2 className={heading}>Orca</h2>
+            <span className={heading}>Orca</span>
             <picture>
               <source media="(max-width: 300px)" srcSet={Orca._300x400} />
               <source media="(max-width: 600px)" srcSet={Orca._600x800} />
@@ -107,7 +109,7 @@ export const Gallery: FC = () => (
         </li>
         <li>
           <a className={link} href={Avocado._2400x3200}>
-            <h2 className={heading}>Avocado</h2>
+            <span className={heading}>Avocado</span>
             <picture>
               <source media="(max-width: 300px)" srcSet={Avocado._300x400} />
               <source media="(max-width: 600px)" srcSet={Avocado._600x800} />
@@ -123,7 +125,7 @@ export const Gallery: FC = () => (
         </li>
         <li>
           <a className={link} href={Ladybug._3000x4000}>
-            <h2 className={heading}>Ladybug</h2>
+            <span className={heading}>Ladybug</span>
             <picture>
               <source media="(max-width: 300px)" srcSet={Ladybug._300x400} />
               <source media="(max-width: 600px)" srcSet={Ladybug._600x800} />
@@ -141,7 +143,7 @@ export const Gallery: FC = () => (
       <Paragraph>
         I'd like to add a&nbsp;
         <ExternalLink to="https://en.wikipedia.org/wiki/Portrait">
-          Portrait
+          portrait
         </ExternalLink>
         &nbsp;to the collection at some point. For now, some of the paintings I
         like the most decorate the walls in my home.

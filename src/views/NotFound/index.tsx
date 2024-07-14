@@ -13,11 +13,11 @@ export const NotFound: FC = () => (
       <h1 className="m-auto max-w-xl text-xl font-bold text-slate-900">
         Page not found
       </h1>
-      <p className="mt-4 text-slate-500">
+      <p className="mt-4 text-slate-600">
         Perhaps you may want to visit our&nbsp;
         <Link
           className={tw(
-            "text-slate-500 underline underline-offset-2 transition",
+            "text-slate-600 underline underline-offset-2 transition",
             // Focus
             "focus-visible:text-blue-500 focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500",
             // Hover

@@ -35,9 +35,8 @@ export const Thoughts: FC = () => {
           <Header>Thoughts</Header>
           <Paragraph>
             This is a collection of writings on topics I've found interesting
-            over time.
+            over time. You can click on any of them to read more.
           </Paragraph>
-          <Paragraph>You can click on any of them to read more.</Paragraph>
           <ul className="m-auto mt-8 grid grid-cols-1 gap-4 lg:gap-8">
             {Object.values(thoughts)
               .toSorted((a, b) =>
@@ -54,24 +53,24 @@ export const Thoughts: FC = () => {
                   <h2 className="text-xl font-bold text-slate-900">
                     {thought.metadata.title}
                   </h2>
-                  <p className="text-slate-500">{thought.metadata.summary}</p>
+                  <p className="text-slate-600">{thought.metadata.summary}</p>
 
                   <dl className="mt-2 text-xs *:inline">
                     <dt className="sr-only">Written at</dt>
                     <dd>
                       <Time
-                        className="text-slate-500"
+                        className="text-slate-600"
                         dateTime={thought.metadata.timestamp}
                       />
                     </dd>
                     <dt className="sr-only">Time to read</dt>
-                    <dd className="ml-4 text-slate-500">
+                    <dd className="ml-4 text-slate-600">
                       {thought.metadata.minutes} minutes read.
                     </dd>
                   </dl>
                   <button
                     className={tw(
-                      "mt-2 text-slate-500 underline underline-offset-2 transition",
+                      "mt-2 text-slate-600 underline underline-offset-2 transition",
                       "rounded before:absolute before:inset-0",
                       // Focus
                       "focus-visible:outline-none before:focus-visible:text-blue-500 before:focus-visible:outline before:focus-visible:outline-1 before:focus-visible:outline-blue-500",
@@ -105,7 +104,7 @@ export const Thoughts: FC = () => {
             ))}
           </Helmet>
           <Header>{thought.metadata.title}</Header>
-          <p className="text-center text-slate-500">
+          <p className="text-center text-slate-600">
             {thought.metadata.summary}
           </p>
           <div className="mt-8">
