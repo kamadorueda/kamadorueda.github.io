@@ -88,10 +88,10 @@ const DesktopNav: FC<{ current: CurrentLocation }> = ({ current }) => (
           "rounded-l-full pl-4",
         )}
       />
+      <ProjectsLink className={tw(largeLink)} />
       <GalleryLink
         className={tw(largeLink, current === "Gallery" && linkActive)}
       />
-      <ProjectsLink className={tw(largeLink)} />
       <ResumeLink className={tw(largeLink)} />
       <ThoughtsLink
         className={tw(
@@ -175,10 +175,10 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
         <AboutLink
           className={tw(smallLink, current === "About" && linkActive)}
         />
+        <ProjectsLink className={smallLink} />
         <GalleryLink
           className={tw(smallLink, current === "Gallery" && linkActive)}
         />
-        <ProjectsLink className={smallLink} />
         <ResumeLink className={smallLink} />
         <ThoughtsLink
           className={tw(smallLink, current === "Thoughts" && linkActive)}
@@ -207,14 +207,17 @@ const GalleryLink: FC<{
 const ProjectsLink: FC<{
   className: string;
 }> = (props) => (
-  <a
-    className={props.className}
-    href="https://github.com/kamadorueda"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
+  <Link className={props.className} to={routes.Projects.path}>
     Projects
-  </a>
+  </Link>
+  // <a
+  //   className={props.className}
+  //   href="https://github.com/kamadorueda"
+  //   rel="noopener noreferrer"
+  //   target="_blank"
+  // >
+  //   Projects
+  // </a>
 );
 
 const ResumeLink: FC<{

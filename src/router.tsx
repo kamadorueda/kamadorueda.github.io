@@ -9,6 +9,7 @@ import { About } from "~/views/About";
 import { Disclaimers } from "~/views/Disclaimers";
 import { Gallery } from "~/views/Gallery";
 import { NotFound } from "~/views/NotFound";
+import { Projects } from "~/views/Projects";
 import { Thoughts } from "~/views/Thoughts";
 
 export const router = createHashRouter(
@@ -19,6 +20,7 @@ export const router = createHashRouter(
       <Route element={<Disclaimers />} path={routes.Disclaimers.path} />
       <Route element={<Gallery />} path={routes.Gallery.path} />
       <Route element={<NotFound />} path={routes.NotFound.path} />
+      <Route element={<Projects />} path={routes.Projects.path} />
       <Route element={<Thoughts />} path={routes.Thoughts.path} />
 
       <Route element={<Navigate to={routes.NotFound.path} />} path="*" />

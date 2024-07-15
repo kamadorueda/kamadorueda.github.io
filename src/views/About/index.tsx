@@ -36,9 +36,10 @@ export const About = () => (
 
     <Main className="m-auto max-w-xl text-center">
       <Header>Kevin Amado</Header>
-      <Paragraph>I'm a Software Engineer based in Calgary, Canada.</Paragraph>
       <Paragraph>
-        I share in this website some of the things that I do and think about.
+        I'm a Software Engineer based in Calgary, Canada.
+        <br />I share in this website some of the things that I do and think
+        about.
       </Paragraph>
     </Main>
 

@@ -13,6 +13,12 @@ export const Header: FC<PropsWithChildren & ClassNameProp> = (props) => (
   </h1>
 );
 
+export const Header2: FC<PropsWithChildren & ClassNameProp> = (props) => (
+  <h2 className={tw("mt-16 text-lg font-bold text-slate-900", props.className)}>
+    {props.children}
+  </h2>
+);
+
 export const Paragraph: FC<PropsWithChildren & ClassNameProp> = (props) => (
   <p className={tw("mt-4 text-slate-600", props.className)}>{props.children}</p>
 );
@@ -23,6 +29,14 @@ const link = tw(
   "focus-visible:text-blue-500 focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500",
   // Hover
   "hover:text-slate-900",
+);
+
+export const ButtonLink: FC<PropsWithChildren & { onClick(): void }> = (
+  props,
+) => (
+  <button className={link} onClick={props.onClick}>
+    {props.children}
+  </button>
 );
 
 export const InternalLink: FC<PropsWithChildren & { to: string }> = (props) => (
@@ -38,13 +52,13 @@ export const ExternalLink: FC<PropsWithChildren & { to: string }> = (props) => (
 );
 
 export const UnorderedList: FC<PropsWithChildren> = (props) => (
-  <ul className="ml-8 mt-4 list-outside list-disc marker:text-slate-600">
+  <ul className="ml-8 mt-4 list-outside list-disc space-y-1 marker:text-slate-600">
     {props.children}
   </ul>
 );
 
 export const OrderedList: FC<PropsWithChildren> = (props) => (
-  <ol className="ml-8 mt-4 list-outside list-disc marker:text-slate-600">
+  <ol className="ml-8 mt-4 list-outside list-disc space-y-1 marker:text-slate-600">
     {props.children}
   </ol>
 );

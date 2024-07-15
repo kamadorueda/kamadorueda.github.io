@@ -11,6 +11,9 @@ export const routes = {
   NotFound: {
     path: "/not-found",
   },
+  Projects: {
+    path: "/projects",
+  },
   Thoughts: {
     path: "/thoughts",
   },
