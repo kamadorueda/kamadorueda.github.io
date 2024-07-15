@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import { Helmet } from "react-helmet";
 import { Body } from "~/components/Body";
+import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
 import { Header, Paragraph } from "~/components/Typography";
@@ -58,5 +59,7 @@ export const Disclaimers: FunctionComponent = () => (
         relying on this information.
       </Paragraph>
     </Main>
+
+    <Footer />
   </Body>
 );

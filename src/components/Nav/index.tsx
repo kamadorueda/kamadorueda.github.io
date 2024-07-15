@@ -36,7 +36,7 @@ export const Nav: FC = () => {
     .otherwise(() => "Other" as const);
 
   return (
-    <nav className="sm:pt-8">
+    <nav>
       <div className="hidden sm:block">
         <DesktopNav current={current} />
       </div>
@@ -76,7 +76,7 @@ export const Nav: FC = () => {
 };
 
 const DesktopNav: FC<{ current: CurrentLocation }> = ({ current }) => (
-  <div className="align-center flex px-2 sm:px-8 lg:px-16">
+  <div className="align-center flex">
     <div className="flex flex-1">
       <Image className="" />
     </div>
@@ -106,7 +106,7 @@ const DesktopNav: FC<{ current: CurrentLocation }> = ({ current }) => (
 );
 
 const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
-  <div className="flex px-2 py-2">
+  <div className="flex">
     <div className="flex flex-1">
       <Image className="h-10 w-10" />
     </div>

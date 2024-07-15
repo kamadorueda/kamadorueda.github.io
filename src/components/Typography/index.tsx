@@ -13,8 +13,8 @@ export const Header: FC<PropsWithChildren & ClassNameProp> = (props) => (
   </h1>
 );
 
-export const Paragraph: FC<PropsWithChildren> = (props) => (
-  <p className="mt-4 text-slate-600">{props.children}</p>
+export const Paragraph: FC<PropsWithChildren & ClassNameProp> = (props) => (
+  <p className={tw("mt-4 text-slate-600", props.className)}>{props.children}</p>
 );
 
 const link = tw(

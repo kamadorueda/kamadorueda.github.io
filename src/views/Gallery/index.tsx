@@ -5,6 +5,7 @@ import { Orca } from "./Orca";
 import { FC } from "react";
 import { Helmet } from "react-helmet";
 import { Body } from "~/components/Body";
+import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
 import { ExternalLink, Header, Paragraph } from "~/components/Typography";
@@ -149,5 +150,6 @@ export const Gallery: FC = () => (
         like the most decorate the walls in my home.
       </Paragraph>
     </Main>
+    <Footer />
   </Body>
 );

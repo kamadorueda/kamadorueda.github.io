@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import { Body } from "~/components/Body";
+import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
 import { Header, Paragraph } from "~/components/Typography";
@@ -30,7 +31,9 @@ export const About = () => (
       />
       <meta content="website" name="og:type" />
     </Helmet>
+
     <Nav />
+
     <Main className="m-auto max-w-xl text-center">
       <Header>Kevin Amado</Header>
       <Paragraph>I'm a Software Engineer based in Calgary, Canada.</Paragraph>
@@ -39,7 +42,7 @@ export const About = () => (
       </Paragraph>
     </Main>
 
-    <aside className="mb-8">
+    <aside className="mt-8">
       <div className="m-auto w-fit space-x-8">
         <a className={a} href="mailto:kamadorueda@gmail.com">
           <svg className={svg} role="img">
@@ -61,6 +64,8 @@ export const About = () => (
         </a>
       </div>
     </aside>
+
+    <Footer />
 
     {/* SVG Icons from https://simpleicons.org/ */}
     <svg className="hidden" xmlns="http://www.w3.org/2000/svg">
