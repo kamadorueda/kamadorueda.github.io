@@ -23,7 +23,7 @@ const linkActive = tw("underline underline-offset-2");
 const smallLink = tw(link, "py-4 pl-4 pr-4");
 const largeLink = tw(link, "px-2 py-2");
 
-type CurrentLocation = "About" | "Gallery" | "Thoughts" | "Other";
+type CurrentLocation = "About" | "Gallery" | "Projects" | "Thoughts" | "Other";
 
 export const Nav: FC = () => {
   const [matches] = useMatches();
@@ -32,6 +32,7 @@ export const Nav: FC = () => {
     .with({ pathname: "/" }, () => "About" as const)
     .with({ pathname: routes.About.path }, () => "About" as const)
     .with({ pathname: routes.Gallery.path }, () => "Gallery" as const)
+    .with({ pathname: routes.Projects.path }, () => "Projects" as const)
     .with({ pathname: routes.Thoughts.path }, () => "Thoughts" as const)
     .otherwise(() => "Other" as const);
 
@@ -88,7 +89,9 @@ const DesktopNav: FC<{ current: CurrentLocation }> = ({ current }) => (
           "rounded-l-full pl-4",
         )}
       />
-      <ProjectsLink className={tw(largeLink)} />
+      <ProjectsLink
+        className={tw(largeLink, current === "Projects" && linkActive)}
+      />
       <GalleryLink
         className={tw(largeLink, current === "Gallery" && linkActive)}
       />
@@ -175,7 +178,9 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
         <AboutLink
           className={tw(smallLink, current === "About" && linkActive)}
         />
-        <ProjectsLink className={smallLink} />
+        <ProjectsLink
+          className={tw(smallLink, current === "Projects" && linkActive)}
+        />
         <GalleryLink
           className={tw(smallLink, current === "Gallery" && linkActive)}
         />
