@@ -5,10 +5,19 @@
     }
   ],
   "settings": {
+    "[html]": {
+      "editor.defaultFormatter": "jkillian.custom-local-formatters"
+    },
     "[typescriptreact]": {
       "editor.defaultFormatter": "jkillian.custom-local-formatters"
     },
     "customLocalFormatters.formatters": [
+      {
+        "command": "pnpm exec prettier --parser html",
+        "languages": [
+          "html"
+        ]
+      },
       {
         "command": "pnpm exec prettier --parser babel",
         "languages": [

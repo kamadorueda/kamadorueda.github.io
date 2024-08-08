@@ -6,22 +6,16 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import { FC } from "react";
-import { Link, useMatches } from "react-router-dom";
+import { useMatches } from "react-router-dom";
 import { match } from "ts-pattern";
+import { ExternalLink, InternalLink } from "~/components/Typography";
 import { routes } from "~/routes";
-import { tw } from "~/tw";
+import { ClassNameProp, tw } from "~/tw";
 
-const link = tw(
-  "text-slate-600 transition",
-  // Focus
-  "focus-visible:text-blue-500 focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500",
-  // Hover
-  "hover:bg-slate-50 hover:text-slate-900",
-);
-const linkActive = tw("underline underline-offset-2");
+const linkInactive = "no-underline";
 
-const smallLink = tw(link, "py-4 pl-4 pr-4");
-const largeLink = tw(link, "px-2 py-2");
+const smallLink = tw("py-4 pl-4 pr-4", linkInactive);
+const largeLink = "px-2 py-2";
 
 type CurrentLocation = "About" | "Gallery" | "Projects" | "Thoughts" | "Other";
 
@@ -81,25 +75,25 @@ const DesktopNav: FC<{ current: CurrentLocation }> = ({ current }) => (
     <div className="flex flex-1">
       <Image className="" />
     </div>
-    <div className="m-auto grid w-fit grid-flow-col items-center rounded-full outline outline-1 outline-slate-300">
+    <div className="coutline m-auto grid w-fit grid-flow-col items-center rounded-full">
       <AboutLink
         className={tw(
           largeLink,
-          current === "About" && linkActive,
+          current !== "About" && linkInactive,
           "rounded-l-full pl-4",
         )}
       />
       <ProjectsLink
-        className={tw(largeLink, current === "Projects" && linkActive)}
+        className={tw(largeLink, current !== "Projects" && linkInactive)}
       />
       <GalleryLink
-        className={tw(largeLink, current === "Gallery" && linkActive)}
+        className={tw(largeLink, current !== "Gallery" && linkInactive)}
       />
-      <ResumeLink className={tw(largeLink)} />
+      <ResumeLink className={tw(largeLink, linkInactive)} />
       <ThoughtsLink
         className={tw(
           largeLink,
-          current === "Thoughts" && linkActive,
+          current !== "Thoughts" && linkInactive,
           "rounded-r-full pr-4",
         )}
       />
@@ -116,57 +110,43 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
     <Popover className="">
       <PopoverButton
         className={tw(
-          "group flex items-center gap-x-2 rounded-full px-8 py-3 outline outline-1 outline-slate-300 transition",
-          // Focus
-          "focus-visible:text-blue-500 focus-visible:outline focus-visible:outline-blue-500",
-          // Hover
-          "hover:bg-slate-50",
+          "coutline group flex items-center gap-x-2 rounded-full px-8 py-3 text-ctext transition",
+          "cfocus-visible",
+          "chover-bg",
         )}
       >
-        <span
-          className={tw(
-            "text-slate-600 transition",
-            // Focus
-            "group-focus-visible:text-blue-500",
-            // Hover
-            "group-hover:text-slate-900 group-hover:underline",
-          )}
-        >
-          Menu
-        </span>
+        <span>Menu</span>
         <svg
           className={tw(
-            "h-4 w-4 stroke-slate-600 transition",
+            "h-4 w-4 stroke-ctext",
             // Focus
-            "group-focus-visible:stroke-blue-500",
+            "group-focus-visible:stroke-cfocus",
             // Hover
-            "group-hover:stroke-slate-900",
+            "group-hover:stroke-ctextdark",
           )}
           role="img"
         >
           <use xlinkHref="#chevron-down" />
         </svg>
       </PopoverButton>
-      <PopoverBackdrop className="fixed inset-0 z-10 bg-slate-900/40 backdrop-blur-sm" />
-      <PopoverPanel className="fixed inset-x-0 z-10 m-auto grid w-64 items-center rounded bg-white outline outline-1 outline-slate-300">
+      <PopoverBackdrop className="fixed inset-0 z-10 bg-ctextdark/60 backdrop-blur-sm" />
+      <PopoverPanel className="coutline fixed inset-x-0 z-10 m-auto grid w-64 items-center rounded bg-cbgdefault">
         <div className="flex items-center justify-between">
-          <span className="pl-4 text-slate-600 transition">Menu</span>
+          <span className="pl-4 text-ctext">Menu</span>
           <CloseButton
             className={tw(
               "group z-10 m-1 rounded-full p-3",
-              // Focus
-              "focus-visible:text-blue-500 focus-visible:outline focus-visible:outline-blue-500",
-              // Hover
-              "hover:bg-slate-50",
+              "cfocus-visible",
+              "chover-bg",
             )}
           >
             <svg
               className={tw(
-                "h-6 w-6 stroke-slate-600 transition",
+                "h-6 w-6 stroke-ctext transition",
                 // Focus
-                "group-focus-visible:stroke-blue-500",
+                "group-focus-visible:stroke-cfocus",
                 // Hover
-                "group-hover:stroke-slate-900",
+                "group-hover:stroke-ctextdark",
               )}
               role="img"
             >
@@ -175,7 +155,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
             <span className="sr-only">Close Menu</span>
           </CloseButton>
         </div>
-        <div className="outline outline-1 outline-slate-300" />
+        <div className="coutline" />
         {current !== "About" && <AboutLink className={smallLink} />}
         {current !== "Projects" && <ProjectsLink className={smallLink} />}
         {current !== "Gallery" && <GalleryLink className={smallLink} />}
@@ -186,69 +166,47 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
   </div>
 );
 
-const AboutLink: FC<{
-  className: string;
-}> = (props) => (
-  <Link className={props.className} to={routes.About.path}>
+const AboutLink: FC<ClassNameProp> = (props) => (
+  <InternalLink className={props.className} to={routes.About.path}>
     About
-  </Link>
+  </InternalLink>
 );
 
-const GalleryLink: FC<{
-  className: string;
-}> = (props) => (
-  <Link className={props.className} to={routes.Gallery.path}>
+const GalleryLink: FC<ClassNameProp> = (props) => (
+  <InternalLink className={props.className} to={routes.Gallery.path}>
     Gallery
-  </Link>
+  </InternalLink>
 );
 
-const ProjectsLink: FC<{
-  className: string;
-}> = (props) => (
-  <Link className={props.className} to={routes.Projects.path}>
+const ProjectsLink: FC<ClassNameProp> = (props) => (
+  <InternalLink className={props.className} to={routes.Projects.path}>
     Projects
-  </Link>
-  // <a
-  //   className={props.className}
-  //   href="https://github.com/kamadorueda"
-  //   rel="noopener noreferrer"
-  //   target="_blank"
-  // >
-  //   Projects
-  // </a>
+  </InternalLink>
 );
 
-const ResumeLink: FC<{
-  className: string;
-}> = (props) => (
-  <a
+const ResumeLink: FC<ClassNameProp> = (props) => (
+  <ExternalLink
     className={props.className}
-    href="https://linkedin.com/in/kamadorueda"
-    rel="noopener noreferrer"
-    target="_blank"
+    to="https://linkedin.com/in/kamadorueda"
   >
     Resume
-  </a>
+  </ExternalLink>
 );
 
-const ThoughtsLink: FC<{
-  className: string;
-}> = (props) => (
-  <Link className={props.className} to={routes.Thoughts.path}>
+const ThoughtsLink: FC<ClassNameProp> = (props) => (
+  <InternalLink className={props.className} to={routes.Thoughts.path}>
     Thoughts
-  </Link>
+  </InternalLink>
 );
 
-const Image: FC<{
-  className: string;
-}> = (props) => (
+const Image: FC<ClassNameProp> = (props) => (
   <img
     alt="Kevin's profile"
     aria-hidden
     className={tw(
       "h-12 w-12 rounded-full transition",
       // Hover
-      "hover:scale-125 hover:fill-slate-900",
+      "hover:scale-125",
       props.className,
     )}
     src="https://avatars.githubusercontent.com/u/47480384?v=4"

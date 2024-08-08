@@ -3,28 +3,19 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply text-red-700;
+  .coutline {
+    @apply outline outline-1 outline-coutline;
+  }
+
+  .cunderline {
+    @apply underline underline-offset-2;
+  }
+
+  .chover-bg {
+    @apply hover:bg-cbg hover:text-ctextdark;
+  }
+
+  .cfocus-visible {
+    @apply focus-visible:text-cfocus focus-visible:outline focus-visible:outline-1 focus-visible:outline-cfocus;
   }
 }
-
-/*
-
-Design system:
-
-- Headers:
-  - text-xl font-bold text-slate-900
-  - text-lg font-bold text-slate-900
-
-- Text: text-slate-600
-
-- Link: text-slate-600 underline underline-offset-2 transition
-  - focus:text-blue-500 focus:outline focus:outline-1 focus:outline-blue-500
-  - hover:text-slate-900
-
-- Contextual link: text-slate-600 transition
-  - active:underline underline-offset-2
-  - focus:text-blue-500 focus:outline focus:outline-1 focus:outline-blue-500
-  - hover:text-slate-900
-
-*/

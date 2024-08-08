@@ -11,13 +11,7 @@ import { Nav } from "~/components/Nav";
 import { ExternalLink, Header, Paragraph } from "~/components/Typography";
 import { tw } from "~/tw";
 
-const link = tw(
-  "group block rounded text-center outline outline-1 outline-slate-300 transition",
-  // Focus
-  "focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500",
-  // Hover
-  "hover:bg-slate-50",
-);
+const link = tw("coutline group block rounded");
 
 const image = tw(
   "object-scale-up w-full rounded transition lg:grayscale",
@@ -50,7 +44,7 @@ export const Gallery: FC = () => (
       </Paragraph>
       <ul className="mt-4 columns-2 gap-4 space-y-4 md:columns-4">
         <li>
-          <a className={link} href={Koi._3000x4000}>
+          <ExternalLink className={link} to={Koi._3000x4000}>
             <picture>
               <source media="(max-width: 300px)" srcSet={Koi._300x400} />
               <source media="(max-width: 600px)" srcSet={Koi._600x800} />
@@ -62,10 +56,10 @@ export const Gallery: FC = () => (
                 src={Koi._3000x4000}
               />
             </picture>
-          </a>
+          </ExternalLink>
         </li>
         <li>
-          <a className={link} href={Orca._3000x4000}>
+          <ExternalLink className={link} to={Orca._3000x4000}>
             <picture>
               <source media="(max-width: 300px)" srcSet={Orca._300x400} />
               <source media="(max-width: 600px)" srcSet={Orca._600x800} />
@@ -77,10 +71,10 @@ export const Gallery: FC = () => (
                 src={Orca._3000x4000}
               />
             </picture>
-          </a>
+          </ExternalLink>
         </li>
         <li>
-          <a className={link} href={Avocado._2400x3200}>
+          <ExternalLink className={link} to={Avocado._2400x3200}>
             <picture>
               <source media="(max-width: 300px)" srcSet={Avocado._300x400} />
               <source media="(max-width: 600px)" srcSet={Avocado._600x800} />
@@ -92,10 +86,10 @@ export const Gallery: FC = () => (
                 src={Avocado._2400x3200}
               />
             </picture>
-          </a>
+          </ExternalLink>
         </li>
         <li>
-          <a className={link} href={Ladybug._3000x4000}>
+          <ExternalLink className={link} to={Ladybug._3000x4000}>
             <picture>
               <source media="(max-width: 300px)" srcSet={Ladybug._300x400} />
               <source media="(max-width: 600px)" srcSet={Ladybug._600x800} />
@@ -107,7 +101,7 @@ export const Gallery: FC = () => (
                 src={Ladybug._3000x4000}
               />
             </picture>
-          </a>
+          </ExternalLink>
         </li>
       </ul>
       <Paragraph>

@@ -3,21 +3,17 @@ import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
-import { Header, Paragraph } from "~/components/Typography";
+import { ExternalLink, Header, Paragraph } from "~/components/Typography";
 import { tw } from "~/tw";
 
-const a = tw(
-  "group inline-block transition",
-  // Focus
-  "focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500",
-);
+const a = tw("group inline-block transition");
 
 const svg = tw(
-  "h-8 w-8 fill-slate-600 p-1 transition",
+  "h-8 w-8 fill-ctext p-1 transition",
   // Focus
-  "group-focus-visible:fill-blue-500",
+  "group-focus-visible:fill-cfocus",
   // Hover
-  "group-hover:scale-110 group-hover:fill-slate-900",
+  "group-hover:scale-110 group-hover:fill-ctextdark",
 );
 
 export const About = () => (
@@ -45,24 +41,24 @@ export const About = () => (
 
     <aside className="mt-8">
       <div className="m-auto w-fit space-x-8">
-        <a className={a} href="mailto:kamadorueda@gmail.com">
+        <ExternalLink className={a} to="mailto:kamadorueda@gmail.com">
           <svg className={svg} role="img">
             <title>Kevin's Email</title>
             <use xlinkHref="#gmail"></use>
           </svg>
-        </a>
-        <a className={a} href="https://github.com/kamadorueda">
+        </ExternalLink>
+        <ExternalLink className={a} to="https://github.com/kamadorueda">
           <svg className={svg} role="img">
             <title>Kevin's GitHub profile</title>
             <use xlinkHref="#github"></use>
           </svg>
-        </a>
-        <a className={a} href="https://linkedin.com/in/kamadorueda">
+        </ExternalLink>
+        <ExternalLink className={a} to="https://linkedin.com/in/kamadorueda">
           <svg className={svg} role="img">
             <title>Kevin's LinkedIn profile</title>
             <use xlinkHref="#linkedin"></use>
           </svg>
-        </a>
+        </ExternalLink>
       </div>
     </aside>
 
