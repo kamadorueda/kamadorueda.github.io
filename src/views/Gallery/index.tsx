@@ -12,7 +12,7 @@ import { ExternalLink, Header, Paragraph } from "~/components/Typography";
 import { tw } from "~/tw";
 
 const link = tw(
-  "group block rounded text-center outline outline-1 outline-slate-200 transition",
+  "group block rounded text-center outline outline-1 outline-slate-300 transition",
   // Focus
   "focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500",
   // Hover

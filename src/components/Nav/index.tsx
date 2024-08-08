@@ -81,7 +81,7 @@ const DesktopNav: FC<{ current: CurrentLocation }> = ({ current }) => (
     <div className="flex flex-1">
       <Image className="" />
     </div>
-    <div className="m-auto grid w-fit grid-flow-col items-center rounded-full outline outline-1 outline-slate-200">
+    <div className="m-auto grid w-fit grid-flow-col items-center rounded-full outline outline-1 outline-slate-300">
       <AboutLink
         className={tw(
           largeLink,
@@ -116,7 +116,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
     <Popover className="">
       <PopoverButton
         className={tw(
-          "group flex items-center gap-x-2 rounded-full px-8 py-3 outline outline-1 outline-slate-200 transition",
+          "group flex items-center gap-x-2 rounded-full px-8 py-3 outline outline-1 outline-slate-300 transition",
           // Focus
           "focus-visible:text-blue-500 focus-visible:outline focus-visible:outline-blue-500",
           // Hover
@@ -148,7 +148,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
         </svg>
       </PopoverButton>
       <PopoverBackdrop className="fixed inset-0 z-10 bg-slate-900/40 backdrop-blur-sm" />
-      <PopoverPanel className="fixed inset-x-0 z-10 m-auto grid w-64 items-center rounded bg-white outline outline-1 outline-slate-200">
+      <PopoverPanel className="fixed inset-x-0 z-10 m-auto grid w-64 items-center rounded bg-white outline outline-1 outline-slate-300">
         <div className="flex items-center justify-between">
           <span className="pl-4 text-slate-600 transition">Menu</span>
           <CloseButton
@@ -175,7 +175,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
             <span className="sr-only">Close Menu</span>
           </CloseButton>
         </div>
-        <div className="outline outline-1 outline-slate-200" />
+        <div className="outline outline-1 outline-slate-300" />
         {current !== "About" && <AboutLink className={smallLink} />}
         {current !== "Projects" && <ProjectsLink className={smallLink} />}
         {current !== "Gallery" && <GalleryLink className={smallLink} />}
