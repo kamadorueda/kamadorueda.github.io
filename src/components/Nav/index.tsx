@@ -116,7 +116,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
     <Popover className="">
       <PopoverButton
         className={tw(
-          "group flex items-center gap-x-2 rounded-full px-4 py-2 outline outline-1 outline-slate-200 transition",
+          "group flex items-center gap-x-2 rounded-full px-8 py-3 outline outline-1 outline-slate-200 transition",
           // Focus
           "focus-visible:text-blue-500 focus-visible:outline focus-visible:outline-blue-500",
           // Hover
@@ -150,7 +150,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
       <PopoverBackdrop className="fixed inset-0 z-10 bg-slate-900/40 backdrop-blur-sm" />
       <PopoverPanel className="fixed inset-x-0 z-10 m-auto grid w-64 items-center rounded bg-white outline outline-1 outline-slate-200">
         <div className="flex items-center justify-between">
-          <span className="pl-4 text-slate-600 transition">Navigation</span>
+          <span className="pl-4 text-slate-600 transition">Menu</span>
           <CloseButton
             className={tw(
               "group z-10 m-1 rounded-full p-3",
@@ -172,22 +172,15 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
             >
               <use xlinkHref="#close-button" />
             </svg>
+            <span className="sr-only">Close Menu</span>
           </CloseButton>
         </div>
         <div className="outline outline-1 outline-slate-200" />
-        <AboutLink
-          className={tw(smallLink, current === "About" && linkActive)}
-        />
-        <ProjectsLink
-          className={tw(smallLink, current === "Projects" && linkActive)}
-        />
-        <GalleryLink
-          className={tw(smallLink, current === "Gallery" && linkActive)}
-        />
+        {current !== "About" && <AboutLink className={smallLink} />}
+        {current !== "Projects" && <ProjectsLink className={smallLink} />}
+        {current !== "Gallery" && <GalleryLink className={smallLink} />}
         <ResumeLink className={smallLink} />
-        <ThoughtsLink
-          className={tw(smallLink, current === "Thoughts" && linkActive)}
-        />
+        {current !== "Thoughts" && <ThoughtsLink className={smallLink} />}
       </PopoverPanel>
     </Popover>
   </div>
