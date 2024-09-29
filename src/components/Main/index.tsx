@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
-import { tw } from "~/tw";
+import { ClassNameProp, tw } from "~/tw";
 
-export const Main: FC<PropsWithChildren & { className?: string }> = (props) => (
+export const Main: FC<PropsWithChildren & ClassNameProp> = (props) => (
   <main className={tw("mt-24", props.className)}>{props.children}</main>
 );

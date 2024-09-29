@@ -1,6 +1,8 @@
 import { Avocado } from "./Avocado";
+import { Banana } from "./Banana";
 import { Koi } from "./Koi";
 import { Ladybug } from "./Ladybug";
+import { Mask } from "./Mask";
 import { Orca } from "./Orca";
 import { FC } from "react";
 import { Helmet } from "react-helmet";
@@ -42,7 +44,37 @@ export const Gallery: FC = () => (
         &nbsp;and animals that I painted with acrylics. You can click on any of
         the images below to see them in maximum resolution.
       </Paragraph>
-      <ul className="mt-4 columns-2 gap-4 space-y-4 md:columns-4">
+      <ul className="mt-4 columns-2 gap-4 space-y-4 md:columns-3">
+        <li>
+          <ExternalLink className={link} to={Mask._3000x4000}>
+            <picture>
+              <source media="(max-width: 300px)" srcSet={Mask._300x400} />
+              <source media="(max-width: 600px)" srcSet={Mask._600x800} />
+              <source media="(max-width: 1200px)" srcSet={Mask._1200x1600} />
+              <img
+                alt="A mask Kevin painted"
+                className={image}
+                loading="lazy"
+                src={Mask._3000x4000}
+              />
+            </picture>
+          </ExternalLink>
+        </li>
+        <li>
+          <ExternalLink className={link} to={Banana._4000x3000}>
+            <picture>
+              <source media="(max-width: 300px)" srcSet={Banana._400x300} />
+              <source media="(max-width: 600px)" srcSet={Banana._800x600} />
+              <source media="(max-width: 1200px)" srcSet={Banana._1600x1200} />
+              <img
+                alt="A banana Kevin painted"
+                className={image}
+                loading="lazy"
+                src={Banana._4000x3000}
+              />
+            </picture>
+          </ExternalLink>
+        </li>
         <li>
           <ExternalLink className={link} to={Koi._3000x4000}>
             <picture>
@@ -74,21 +106,6 @@ export const Gallery: FC = () => (
           </ExternalLink>
         </li>
         <li>
-          <ExternalLink className={link} to={Avocado._2400x3200}>
-            <picture>
-              <source media="(max-width: 300px)" srcSet={Avocado._300x400} />
-              <source media="(max-width: 600px)" srcSet={Avocado._600x800} />
-              <source media="(max-width: 1200px)" srcSet={Avocado._1200x1600} />
-              <img
-                alt="An avocado Kevin painted"
-                className={image}
-                loading="lazy"
-                src={Avocado._2400x3200}
-              />
-            </picture>
-          </ExternalLink>
-        </li>
-        <li>
           <ExternalLink className={link} to={Ladybug._3000x4000}>
             <picture>
               <source media="(max-width: 300px)" srcSet={Ladybug._300x400} />
@@ -99,6 +116,21 @@ export const Gallery: FC = () => (
                 className={image}
                 loading="lazy"
                 src={Ladybug._3000x4000}
+              />
+            </picture>
+          </ExternalLink>
+        </li>
+        <li>
+          <ExternalLink className={link} to={Avocado._2400x3200}>
+            <picture>
+              <source media="(max-width: 300px)" srcSet={Avocado._300x400} />
+              <source media="(max-width: 600px)" srcSet={Avocado._600x800} />
+              <source media="(max-width: 1200px)" srcSet={Avocado._1200x1600} />
+              <img
+                alt="An avocado Kevin painted"
+                className={image}
+                loading="lazy"
+                src={Avocado._2400x3200}
               />
             </picture>
           </ExternalLink>
