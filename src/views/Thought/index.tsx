@@ -56,7 +56,7 @@ export const Thought: FC = () => {
       <Nav />
       <Main>
         <Header>{thought.metadata.title}</Header>
-        <Paragraph className="text-sm text-gray-500 mb-6">
+        <Paragraph className="mb-6 text-sm text-gray-500">
           {formatDate(thought.metadata.timestamp)}
         </Paragraph>
         <thought.Content />

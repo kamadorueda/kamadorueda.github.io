@@ -2,6 +2,7 @@ import { FC } from "react";
 // @ts-expect-error - React Router v7 type resolution issue
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import * as ArtificialIntelligence from "~/thoughts/ArtificialIntelligence";
 import * as FinancialLiteracy from "~/thoughts/FinancialLiteracy";
 import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
@@ -13,8 +14,9 @@ import { ListItem } from "~/components/Typography/ListItem";
 import { Paragraph } from "~/components/Typography/Paragraph";
 import { UnorderedList } from "~/components/Typography/UnorderedList";
 import { routes } from "~/routes";
+import { formatDate } from "~/utils/formatDate";
 
-const allThoughts = [FinancialLiteracy];
+const allThoughts = [ArtificialIntelligence, FinancialLiteracy];
 
 export const Thoughts: FC = () => {
   const navigate = useNavigate();
@@ -47,6 +49,8 @@ export const Thoughts: FC = () => {
                 {thought.metadata.title}.
               </ButtonLink>
               <span className="text-ctext ml-2 text-xs">
+                {formatDate(thought.metadata.timestamp)}
+                {" • "}
                 {thought.metadata.minutes} minutes read.
               </span>
             </ListItem>

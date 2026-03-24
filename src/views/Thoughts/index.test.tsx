@@ -37,7 +37,8 @@ describe("Thoughts", () => {
       </BrowserRouter>,
     );
 
-    expect(screen.getByText(/minutes read/i)).toBeInTheDocument();
+    const minutesReadElements = screen.getAllByText(/minutes read/i);
+    expect(minutesReadElements.length).toBeGreaterThan(0);
   });
 
   it("renders thought titles as clickable elements", () => {
@@ -47,7 +48,9 @@ describe("Thoughts", () => {
       </BrowserRouter>,
     );
 
-    const thoughtLink = screen.getByText("Financial Literacy.");
-    expect(thoughtLink).toBeInTheDocument();
+    const aiLink = screen.getByText("Artificial Intelligence.");
+    const flLink = screen.getByText("Financial Literacy.");
+    expect(aiLink).toBeInTheDocument();
+    expect(flLink).toBeInTheDocument();
   });
 });
