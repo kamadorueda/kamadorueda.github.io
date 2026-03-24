@@ -18,10 +18,11 @@ export const metadata = {
 export const Content: FC = () => (
   <>
     <Paragraph>
-      Many people want to accumulate wealth throughout their lives. Some succeed,
-      some fail. Luck plays a role, but many factors are within your control.
-      The financial education you pursue will help you avoid mistakes and achieve
-      an adequate investment return for the risk you can and want to take.
+      Many people want to accumulate wealth throughout their lives. Some
+      succeed, some fail. Luck plays a role, but many factors are within your
+      control. The financial education you pursue will help you avoid mistakes
+      and achieve an adequate investment return for the risk you can and want to
+      take.
     </Paragraph>
 
     <Paragraph>
@@ -33,11 +34,11 @@ export const Content: FC = () => (
     </Paragraph>
 
     <Paragraph>
-      As your cash flow allows you to set money aside, financial planning becomes
-      increasingly important to ensure you reach your goals. There's a point where
-      losses from inflation and missed investment opportunities exceed any new
-      savings you add, creating an illusion of progress while your wealth
-      stagnates in real terms.
+      As your cash flow allows you to set money aside, financial planning
+      becomes increasingly important to ensure you reach your goals. There's a
+      point where losses from inflation and missed investment opportunities
+      exceed any new savings you add, creating an illusion of progress while
+      your wealth stagnates in real terms.
     </Paragraph>
 
     <Paragraph>
@@ -111,15 +112,16 @@ export const Content: FC = () => (
     <Paragraph>
       If you leave your money in a checking account, inflation erodes your
       purchasing power. In Canada, the Consumer Price Index rose from 125.8 to
-      160.6 over 10 years, a 27.6% loss. While future inflation may vary, central
-      banks aim to maintain 2-3% annually, meaning you'll steadily lose
+      160.6 over 10 years, a 27.6% loss. While future inflation may vary,
+      central banks aim to maintain 2-3% annually, meaning you'll steadily lose
       purchasing power. Keep only the cash you'll spend within a month in your
       checking account.
     </Paragraph>
     <Paragraph>
       A mediocre savings account, one paying significantly below the risk-free
       rate, costs you through inflation plus the gap between what you earn and
-      what you could earn. In Canada, the risk-free return is approximated by the&nbsp;
+      what you could earn. In Canada, the risk-free return is approximated by
+      the&nbsp;
       <ExternalLink to="https://www.bankofcanada.ca/rates/interest-rates/corra/">
         Canadian Overnight Repo Rate
       </ExternalLink>
@@ -136,8 +138,8 @@ export const Content: FC = () => (
       With a longer time horizon or higher risk tolerance, a diversified fund
       investing in stocks and bonds can compound significantly. A 3% annualized
       return after inflation, costs, and taxes is realistic. Eventually, you can
-      withdraw returns without depleting the principal, which is how pension funds
-      and university endowments work. In Canada, an&nbsp;
+      withdraw returns without depleting the principal, which is how pension
+      funds and university endowments work. In Canada, an&nbsp;
       <ExternalLink to="https://www.blackrock.com/ca/investors/en/learning-centre/etf-education/asset-allocation-etfs">
         Asset Allocation Fund
       </ExternalLink>
