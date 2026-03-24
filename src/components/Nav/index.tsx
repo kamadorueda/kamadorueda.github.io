@@ -11,7 +11,8 @@ import { useLocation } from "react-router-dom";
 import { match } from "ts-pattern";
 import { ChevronDownIcon } from "~/components/icons/ChevronDown";
 import { CloseIcon } from "~/components/icons/Close";
-import { ExternalLink, InternalLink } from "~/components/Typography";
+import { ExternalLink } from "~/components/Typography/ExternalLink";
+import { InternalLink } from "~/components/Typography/InternalLink";
 import { routes } from "~/routes";
 import { ClassNameProp, tw } from "~/tw";
 

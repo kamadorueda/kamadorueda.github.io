@@ -11,14 +11,12 @@ import { PythonIcon } from "~/components/icons/Python";
 import { RustIcon } from "~/components/icons/Rust";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
-import {
-  ExternalLink,
-  Header,
-  Header2,
-  ListItem,
-  Paragraph,
-  UnorderedList,
-} from "~/components/Typography";
+import { ExternalLink } from "~/components/Typography/ExternalLink";
+import { Header } from "~/components/Typography/Header";
+import { Header2 } from "~/components/Typography/Header2";
+import { ListItem } from "~/components/Typography/ListItem";
+import { Paragraph } from "~/components/Typography/Paragraph";
+import { UnorderedList } from "~/components/Typography/UnorderedList";
 
 type ProjectType = {
   name: string;

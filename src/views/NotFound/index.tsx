@@ -3,7 +3,9 @@ import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
-import { Header, InternalLink, Paragraph } from "~/components/Typography";
+import { Header } from "~/components/Typography/Header";
+import { InternalLink } from "~/components/Typography/InternalLink";
+import { Paragraph } from "~/components/Typography/Paragraph";
 import { routes } from "~/routes";
 
 export const NotFound: FC = () => (

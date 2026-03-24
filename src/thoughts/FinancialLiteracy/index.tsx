@@ -1,11 +1,9 @@
 import { FC } from "react";
-import {
-  ExternalLink,
-  Paragraph,
-  UnorderedList,
-  ListItem,
-  InternalLink,
-} from "~/components/Typography";
+import { ExternalLink } from "~/components/Typography/ExternalLink";
+import { InternalLink } from "~/components/Typography/InternalLink";
+import { ListItem } from "~/components/Typography/ListItem";
+import { Paragraph } from "~/components/Typography/Paragraph";
+import { UnorderedList } from "~/components/Typography/UnorderedList";
 import { routes } from "~/routes";
 
 export const metadata = {

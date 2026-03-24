@@ -2,18 +2,16 @@ import { FC } from "react";
 // @ts-expect-error - React Router v7 type resolution issue
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import * as FinancialLiteracy from "./FinancialLiteracy";
+import * as FinancialLiteracy from "~/thoughts/FinancialLiteracy";
 import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
-import {
-  ButtonLink,
-  Header,
-  ListItem,
-  Paragraph,
-  UnorderedList,
-} from "~/components/Typography";
+import { ButtonLink } from "~/components/Typography/ButtonLink";
+import { Header } from "~/components/Typography/Header";
+import { ListItem } from "~/components/Typography/ListItem";
+import { Paragraph } from "~/components/Typography/Paragraph";
+import { UnorderedList } from "~/components/Typography/UnorderedList";
 import { routes } from "~/routes";
 
 const allThoughts = [FinancialLiteracy];

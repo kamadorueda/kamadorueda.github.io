@@ -6,7 +6,9 @@ import { GmailIcon } from "~/components/icons/Gmail";
 import { LinkedinIcon } from "~/components/icons/Linkedin";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
-import { ExternalLink, Header, Paragraph } from "~/components/Typography";
+import { ExternalLink } from "~/components/Typography/ExternalLink";
+import { Header } from "~/components/Typography/Header";
+import { Paragraph } from "~/components/Typography/Paragraph";
 import { tw } from "~/tw";
 
 const a = tw("group inline-block transition");

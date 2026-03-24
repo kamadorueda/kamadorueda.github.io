@@ -3,12 +3,12 @@ import { FC } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { match } from "ts-pattern";
-import * as FinancialLiteracy from "./Thoughts/FinancialLiteracy";
+import * as FinancialLiteracy from "~/thoughts/FinancialLiteracy";
 import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
-import { Header } from "~/components/Typography";
+import { Header } from "~/components/Typography/Header";
 
 export const Thought: FC = () => {
   const { id } = useParams<{ id: string }>();

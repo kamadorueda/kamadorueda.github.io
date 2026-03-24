@@ -4,7 +4,8 @@ import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
-import { Header, Paragraph } from "~/components/Typography";
+import { Header } from "~/components/Typography/Header";
+import { Paragraph } from "~/components/Typography/Paragraph";
 
 export const Disclaimers: FunctionComponent = () => (
   <Body>
