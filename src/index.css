@@ -1,10 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-cbgdefault: #ffffff;
+  --color-cbg: #f8fafc;
+  --color-coutline: #cbd5e1;
+  --color-ctext: #475569;
+  --color-ctextdark: #0f172a;
+  --color-cfocus: #3b82f6;
+
+  /* Fonts */
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  /* Breakpoints */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}
 
 @layer base {
   .coutline {
-    @apply outline outline-1 outline-coutline;
+    @apply outline-coutline outline outline-1;
   }
 
   .cunderline {
@@ -16,6 +34,6 @@
   }
 
   .cfocus-visible {
-    @apply focus-visible:text-cfocus focus-visible:outline focus-visible:outline-1 focus-visible:outline-cfocus;
+    @apply focus-visible:text-cfocus focus-visible:outline-cfocus focus-visible:outline focus-visible:outline-1;
   }
 }

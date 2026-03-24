@@ -13,10 +13,10 @@ import { Nav } from "~/components/Nav";
 import { ExternalLink, Header, Paragraph } from "~/components/Typography";
 import { tw } from "~/tw";
 
-const link = tw("coutline group block rounded");
+const link = tw("coutline group block rounded-sm");
 
 const image = tw(
-  "object-scale-up w-full rounded transition lg:grayscale",
+  "object-scale-up w-full rounded-sm transition lg:grayscale",
   // Focus
   "group-focus-visible:grayscale-0",
   // Hover

@@ -6,7 +6,7 @@ import { ClassNameProp, tw } from "~/tw";
 export const Header: FC<PropsWithChildren & ClassNameProp> = (props) => (
   <h1
     className={tw(
-      "text-center text-xl font-bold text-ctextdark",
+      "text-ctextdark text-center text-xl font-bold",
       props.className,
     )}
   >
@@ -15,13 +15,13 @@ export const Header: FC<PropsWithChildren & ClassNameProp> = (props) => (
 );
 
 export const Header2: FC<PropsWithChildren & ClassNameProp> = (props) => (
-  <h2 className={tw("mt-16 text-lg font-bold text-ctextdark", props.className)}>
+  <h2 className={tw("text-ctextdark mt-16 text-lg font-bold", props.className)}>
     {props.children}
   </h2>
 );
 
 export const Paragraph: FC<PropsWithChildren & ClassNameProp> = (props) => (
-  <p className={tw("mt-4 text-ctext", props.className)}>{props.children}</p>
+  <p className={tw("text-ctext mt-4", props.className)}>{props.children}</p>
 );
 
 const link = tw(
@@ -60,13 +60,13 @@ export const ExternalLink: FC<
 );
 
 export const UnorderedList: FC<PropsWithChildren> = (props) => (
-  <ul className="ml-8 mt-4 list-outside list-disc space-y-1 marker:text-ctext">
+  <ul className="marker:text-ctext mt-4 ml-8 list-outside list-disc space-y-1">
     {props.children}
   </ul>
 );
 
 export const OrderedList: FC<PropsWithChildren> = (props) => (
-  <ol className="ml-8 mt-4 list-outside list-disc space-y-1 marker:text-ctext">
+  <ol className="marker:text-ctext mt-4 ml-8 list-outside list-disc space-y-1">
     {props.children}
   </ol>
 );
