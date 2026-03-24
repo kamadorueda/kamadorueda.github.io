@@ -33,29 +33,26 @@ export const Thoughts: FC = () => {
       <Main>
         <Header>Thoughts</Header>
         <Paragraph>
-          This is a collection of writings on topics I've found interesting
-          over time. You can click on any of them to read more.
+          This is a collection of writings on topics I've found interesting over
+          time. You can click on any of them to read more.
         </Paragraph>
         <UnorderedList>
           {allThoughts.map((thought) => (
-              <ListItem key={thought.metadata.id}>
-                <ButtonLink
-                  onClick={() => {
-                    navigate(
-                      routes.Thought.path.replace(
-                        ":id",
-                        thought.metadata.id,
-                      ),
-                    );
-                  }}
-                >
-                  {thought.metadata.title}.
-                </ButtonLink>
-                <span className="text-ctext ml-2 text-xs">
-                  {thought.metadata.minutes} minutes read.
-                </span>
-              </ListItem>
-            ))}
+            <ListItem key={thought.metadata.id}>
+              <ButtonLink
+                onClick={() => {
+                  navigate(
+                    routes.Thought.path.replace(":id", thought.metadata.id),
+                  );
+                }}
+              >
+                {thought.metadata.title}.
+              </ButtonLink>
+              <span className="text-ctext ml-2 text-xs">
+                {thought.metadata.minutes} minutes read.
+              </span>
+            </ListItem>
+          ))}
         </UnorderedList>
       </Main>
       <Footer />

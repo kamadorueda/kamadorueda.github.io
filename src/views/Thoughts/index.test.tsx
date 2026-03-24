@@ -39,5 +39,15 @@ describe("Thoughts", () => {
 
     expect(screen.getByText(/minutes read/i)).toBeInTheDocument();
   });
-});
 
+  it("renders thought titles as clickable elements", () => {
+    render(
+      <BrowserRouter>
+        <Thoughts />
+      </BrowserRouter>,
+    );
+
+    const thoughtLink = screen.getByText("Financial Literacy.");
+    expect(thoughtLink).toBeInTheDocument();
+  });
+});
