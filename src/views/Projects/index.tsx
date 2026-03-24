@@ -13,14 +13,14 @@ import {
   UnorderedList,
 } from "~/components/Typography";
 
-type Project = {
+type ProjectType = {
   name: string;
   url: string;
   description: string;
   icon?: string;
 };
 
-const PERSONAL_PROJECTS: readonly Project[] = [
+const PERSONAL_PROJECTS: readonly ProjectType[] = [
   {
     name: "Alejandra",
     url: "https://github.com/kamadorueda/alejandra",
@@ -53,7 +53,7 @@ const PERSONAL_PROJECTS: readonly Project[] = [
   },
 ] as const;
 
-const PROFESSIONAL_CONTRIBUTIONS: readonly Project[] = [
+const PROFESSIONAL_CONTRIBUTIONS: readonly ProjectType[] = [
   {
     name: "Fluid Attacks",
     url: "https://gitlab.com/fluidattacks/universe/-/merge_requests?scope=all&state=all&author_username=kamadoatfluid",
@@ -61,7 +61,7 @@ const PROFESSIONAL_CONTRIBUTIONS: readonly Project[] = [
   },
 ] as const;
 
-const OPEN_SOURCE_CONTRIBUTIONS: readonly Project[] = [
+const OPEN_SOURCE_CONTRIBUTIONS: readonly ProjectType[] = [
   {
     name: "Nix",
     url: "https://github.com/NixOS/nix",
@@ -94,7 +94,7 @@ const OPEN_SOURCE_CONTRIBUTIONS: readonly Project[] = [
   },
 ] as const;
 
-const OTHER_PERSONAL_PROJECTS: readonly Project[] = [
+const OTHER_PERSONAL_PROJECTS: readonly ProjectType[] = [
   {
     name: "Mailmap Linter",
     url: "https://github.com/kamadorueda/mailmap-linter",
@@ -279,7 +279,7 @@ export const Projects: FC = () => (
   </Body>
 );
 
-const Project: FC<Project> = (props) => (
+const Project: FC<ProjectType> = (props) => (
   <ExternalLink to={props.url}>
     {props.icon && (
       <svg aria-hidden className="mr-2 inline h-4 w-4" role="img">
