@@ -18,6 +18,7 @@
     "@typescript-eslint/eslint-plugin": "^8.57.2",
     "@typescript-eslint/parser": "^8.57.2",
     "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-v8": "^4.1.1",
     "eslint": "^10.1.0",
     "eslint-config-react": "^1.1.7",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -44,7 +45,8 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css}\" \"*.{cjs,ts}\"",
     "lint": "eslint --max-warnings=0 \"src/**/*.{js,jsx,ts,tsx}\"",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "type": "module",
   "version": "0.0.0"
