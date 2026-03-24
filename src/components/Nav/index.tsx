@@ -6,7 +6,7 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import { FC } from "react";
-import { useMatches } from "react-router-dom";
+import { useMatches } from "react-router-dom/dist/index.js";
 import { match } from "ts-pattern";
 import { ExternalLink, InternalLink } from "~/components/Typography";
 import { routes } from "~/routes";

@@ -1,7 +1,7 @@
 import * as FinancialLiteracy from "./FinancialLiteracy";
 import { FC } from "react";
 import { Helmet } from "react-helmet";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom/dist/index.js";
 import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
