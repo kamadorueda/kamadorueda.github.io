@@ -40,7 +40,7 @@ describe("Main component", () => {
           <h1>Title</h1>
           <p>Paragraph</p>
         </div>
-      </Main>
+      </Main>,
     );
     expect(screen.getByRole("heading")).toBeInTheDocument();
     expect(screen.getByText("Paragraph")).toBeInTheDocument();

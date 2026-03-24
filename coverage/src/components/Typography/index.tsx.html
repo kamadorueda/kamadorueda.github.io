@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.94% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.55% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.94% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -174,7 +174,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -182,7 +182,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -190,7 +190,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,19 +201,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC, PropsWithChildren } from "react";
 // @ts-expect-error - React Router v7 type resolution issue
@@ -249,8 +249,8 @@ const link = tw(
 &nbsp;
 export const ButtonLink: FC&lt;
   PropsWithChildren &amp; ClassNameProp &amp; { onClick(): void }
-&gt; = <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; (
-<span class="cstat-no" title="statement not covered" >  &lt;button className={tw(link, props.className)} onClick={props.onClick}&gt;</span>
+&gt; = (props) =&gt; (
+  &lt;button className={tw(link, props.className)} onClick={props.onClick}&gt;
     {props.children}
   &lt;/button&gt;
 );
@@ -276,20 +276,20 @@ export const ExternalLink: FC&lt;
   &lt;/a&gt;
 );
 &nbsp;
-export const UnorderedList: FC&lt;PropsWithChildren&gt; = <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; (
-<span class="cstat-no" title="statement not covered" >  &lt;ul className="marker:text-ctext mt-4 ml-8 list-outside list-disc space-y-1"&gt;</span>
+export const UnorderedList: FC&lt;PropsWithChildren&gt; = (props) =&gt; (
+  &lt;ul className="marker:text-ctext mt-4 ml-8 list-outside list-disc space-y-1"&gt;
     {props.children}
   &lt;/ul&gt;
 );
 &nbsp;
-export const OrderedList: FC&lt;PropsWithChildren&gt; = <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; (
-<span class="cstat-no" title="statement not covered" >  &lt;ol className="marker:text-ctext mt-4 ml-8 list-outside list-disc space-y-1"&gt;</span>
+export const OrderedList: FC&lt;PropsWithChildren&gt; = (props) =&gt; (
+  &lt;ol className="marker:text-ctext mt-4 ml-8 list-outside list-disc space-y-1"&gt;
     {props.children}
   &lt;/ol&gt;
 );
 &nbsp;
-export const ListItem: FC&lt;PropsWithChildren&gt; = <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; (
-<span class="cstat-no" title="statement not covered" >  &lt;li&gt;{props.children}&lt;/li&gt;</span>
+export const ListItem: FC&lt;PropsWithChildren&gt; = (props) =&gt; (
+  &lt;li&gt;{props.children}&lt;/li&gt;
 );
 &nbsp;</pre></td></tr></table></pre>
 
@@ -298,7 +298,7 @@ export const ListItem: FC&lt;PropsWithChildren&gt; = <span class="fstat-no" titl
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-24T15:18:14.424Z
+                at 2026-03-24T15:19:23.291Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

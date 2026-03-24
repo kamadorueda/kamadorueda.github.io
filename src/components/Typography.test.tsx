@@ -1,6 +1,26 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { Header, Header2, Paragraph } from "./Typography";
+import userEvent from "@testing-library/user-event";
+import {
+  Header,
+  Header2,
+  Paragraph,
+  ButtonLink,
+  UnorderedList,
+  OrderedList,
+  ListItem,
+  InternalLink,
+  ExternalLink,
+} from "./Typography";
+
+// Mock react-router-dom
+vi.mock("react-router-dom", () => ({
+  Link: ({ children, to, ...props }: any) => (
+    <a href={to} {...props}>
+      {children}
+    </a>
+  ),
+}));
 
 describe("Typography components", () => {
   describe("Header", () => {
@@ -55,6 +75,133 @@ describe("Typography components", () => {
       );
       expect(screen.getByText("bold")).toBeInTheDocument();
       expect(screen.getByText("bold").tagName).toBe("STRONG");
+    });
+  });
+
+  describe("ButtonLink", () => {
+    it("renders button element", () => {
+      render(<ButtonLink onClick={vi.fn()}>Click me</ButtonLink>);
+      const button = screen.getByRole("button");
+      expect(button).toBeInTheDocument();
+    });
+
+    it("displays button text", () => {
+      render(<ButtonLink onClick={vi.fn()}>Click me</ButtonLink>);
+      expect(screen.getByText("Click me")).toBeInTheDocument();
+    });
+
+    it("handles click events", async () => {
+      const onClick = vi.fn();
+      render(<ButtonLink onClick={onClick}>Click me</ButtonLink>);
+      await userEvent.click(screen.getByRole("button"));
+      expect(onClick).toHaveBeenCalled();
+    });
+  });
+
+  describe("InternalLink", () => {
+    it("renders link element", () => {
+      render(<InternalLink to="/about">Home</InternalLink>);
+      const link = screen.getByRole("link");
+      expect(link).toBeInTheDocument();
+    });
+
+    it("has correct href", () => {
+      render(<InternalLink to="/about">About</InternalLink>);
+      const link = screen.getByRole("link");
+      expect(link).toHaveAttribute("href", "/about");
+    });
+  });
+
+  describe("ExternalLink", () => {
+    it("renders anchor element", () => {
+      render(<ExternalLink to="https://example.com">External</ExternalLink>);
+      const link = screen.getByRole("link");
+      expect(link).toBeInTheDocument();
+    });
+
+    it("has correct href", () => {
+      render(<ExternalLink to="https://example.com">External</ExternalLink>);
+      const link = screen.getByRole("link");
+      expect(link).toHaveAttribute("href", "https://example.com");
+    });
+
+    it("opens in new tab", () => {
+      render(<ExternalLink to="https://example.com">External</ExternalLink>);
+      const link = screen.getByRole("link");
+      expect(link).toHaveAttribute("target", "_blank");
+    });
+
+    it("has security attributes", () => {
+      render(<ExternalLink to="https://example.com">External</ExternalLink>);
+      const link = screen.getByRole("link");
+      expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    });
+  });
+
+  describe("UnorderedList", () => {
+    it("renders ul element", () => {
+      render(
+        <UnorderedList>
+          <li>Item 1</li>
+        </UnorderedList>,
+      );
+      const ul = screen.getByRole("list");
+      expect(ul.tagName).toBe("UL");
+    });
+
+    it("renders list items", () => {
+      render(
+        <UnorderedList>
+          <li>Item 1</li>
+          <li>Item 2</li>
+        </UnorderedList>,
+      );
+      const items = screen.getAllByRole("listitem");
+      expect(items).toHaveLength(2);
+    });
+  });
+
+  describe("OrderedList", () => {
+    it("renders ol element", () => {
+      render(
+        <OrderedList>
+          <li>Item 1</li>
+        </OrderedList>,
+      );
+      const ol = screen.getByRole("list");
+      expect(ol.tagName).toBe("OL");
+    });
+
+    it("renders list items", () => {
+      render(
+        <OrderedList>
+          <li>First</li>
+          <li>Second</li>
+        </OrderedList>,
+      );
+      const items = screen.getAllByRole("listitem");
+      expect(items).toHaveLength(2);
+    });
+  });
+
+  describe("ListItem", () => {
+    it("renders li element", () => {
+      render(
+        <ul>
+          <ListItem>Item</ListItem>
+        </ul>,
+      );
+      const item = screen.getByRole("listitem");
+      expect(item).toBeInTheDocument();
+    });
+
+    it("displays item content", () => {
+      render(
+        <ul>
+          <ListItem>Item content</ListItem>
+        </ul>,
+      );
+      expect(screen.getByText("Item content")).toBeInTheDocument();
     });
   });
 });

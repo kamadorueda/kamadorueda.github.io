@@ -2,11 +2,13 @@ import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Nav } from "./Nav";
 
-// Mock react-router-dom
+// Mock react-router-dom with pathname option
+const mockUseLocation = vi.fn(() => ({
+  pathname: "/",
+}));
+
 vi.mock("react-router-dom", () => ({
-  useLocation: () => ({
-    pathname: "/",
-  }),
+  useLocation: () => mockUseLocation(),
   Link: ({ children, ...props }: any) => <a {...props}>{children}</a>,
 }));
 
@@ -46,5 +48,31 @@ describe("Nav component", () => {
     // PopoverButton contains "Menu" text
     const menuButtons = screen.queryAllByText("Menu");
     expect(menuButtons.length).toBeGreaterThan(0);
+  });
+});
+
+describe("Nav component - routing", () => {
+  it("handles gallery route", () => {
+    mockUseLocation.mockReturnValue({ pathname: "/gallery" });
+    render(<Nav />);
+    expect(screen.getByRole("navigation")).toBeInTheDocument();
+  });
+
+  it("handles projects route", () => {
+    mockUseLocation.mockReturnValue({ pathname: "/projects" });
+    render(<Nav />);
+    expect(screen.getByRole("navigation")).toBeInTheDocument();
+  });
+
+  it("handles thoughts route", () => {
+    mockUseLocation.mockReturnValue({ pathname: "/thoughts" });
+    render(<Nav />);
+    expect(screen.getByRole("navigation")).toBeInTheDocument();
+  });
+
+  it("handles unknown route", () => {
+    mockUseLocation.mockReturnValue({ pathname: "/unknown" });
+    render(<Nav />);
+    expect(screen.getByRole("navigation")).toBeInTheDocument();
   });
 });

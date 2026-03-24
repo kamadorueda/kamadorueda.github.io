@@ -17,7 +17,9 @@ describe("Footer component", () => {
   it("displays current year", () => {
     render(<Footer />);
     const currentYear = new Date().getFullYear();
-    expect(screen.getByText(new RegExp(currentYear.toString()))).toBeInTheDocument();
+    expect(
+      screen.getByText(new RegExp(currentYear.toString())),
+    ).toBeInTheDocument();
   });
 
   it("contains paragraph element", () => {
