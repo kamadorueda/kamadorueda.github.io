@@ -18,6 +18,7 @@
             pnpm run format
             pnpm run lint --fix
             pnpm run lint
+            pnpm test
           '';
         };
 

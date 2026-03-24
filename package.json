@@ -10,6 +10,8 @@
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@tailwindcss/vite": "^4.2.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/react-helmet": "^6.1.11",
@@ -26,20 +28,23 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "gh-pages": "^6.3.0",
+    "jsdom": "^29.0.1",
     "postcss": "^8.5.8",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.2.2",
     "terser": "^5.46.1",
     "typescript": "^6.0.2",
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
+    "vitest": "^4.1.1"
   },
   "main": "src/index.tsx",
   "name": "kamadorueda",
   "private": true,
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css}\" \"*.{cjs,ts}\"",
-    "lint": "eslint --max-warnings=0 \"src/**/*.{js,jsx,ts,tsx}\""
+    "lint": "eslint --max-warnings=0 \"src/**/*.{js,jsx,ts,tsx}\"",
+    "test": "vitest run"
   },
   "type": "module",
   "version": "0.0.0"

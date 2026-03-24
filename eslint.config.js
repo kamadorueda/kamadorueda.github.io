@@ -14,6 +14,8 @@ export default [
       ".eslintignore",
       "**/*.jpeg",
       "**/*.md",
+      "**/*.test.ts",
+      "**/*.test.tsx",
     ],
   },
   js.configs.recommended,
