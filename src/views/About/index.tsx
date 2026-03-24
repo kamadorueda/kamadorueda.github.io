@@ -9,11 +9,11 @@ import { tw } from "~/tw";
 const a = tw("group inline-block transition");
 
 const svg = tw(
-  "fill-ctext h-8 w-8 p-1 transition",
+  "h-8 w-8 fill-ctext p-1 transition",
   // Focus
   "group-focus-visible:fill-cfocus",
   // Hover
-  "group-hover:fill-ctextdark group-hover:scale-110",
+  "group-hover:scale-110 group-hover:fill-ctextdark",
 );
 
 export const About = () => (

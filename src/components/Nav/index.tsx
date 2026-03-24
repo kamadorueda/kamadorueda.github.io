@@ -14,7 +14,7 @@ import { ClassNameProp, tw } from "~/tw";
 
 const linkInactive = "no-underline";
 
-const smallLink = tw("py-4 pr-4 pl-4", linkInactive);
+const smallLink = tw("py-4 pl-4 pr-4", linkInactive);
 const largeLink = "px-2 py-2";
 
 type CurrentLocation = "About" | "Gallery" | "Projects" | "Thoughts" | "Other";
@@ -110,7 +110,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
     <Popover className="">
       <PopoverButton
         className={tw(
-          "coutline group text-ctext flex items-center gap-x-2 rounded-full px-8 py-3 transition",
+          "coutline group flex items-center gap-x-2 rounded-full px-8 py-3 text-ctext transition",
           "cfocus-visible",
           "chover-bg",
         )}
@@ -118,7 +118,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
         <span>Menu</span>
         <svg
           className={tw(
-            "stroke-ctext h-4 w-4",
+            "h-4 w-4 stroke-ctext",
             // Focus
             "group-focus-visible:stroke-cfocus",
             // Hover
@@ -129,10 +129,10 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
           <use xlinkHref="#chevron-down" />
         </svg>
       </PopoverButton>
-      <PopoverBackdrop className="bg-ctextdark/60 fixed inset-0 z-10 backdrop-blur-sm" />
-      <PopoverPanel className="coutline bg-cbgdefault fixed inset-x-0 z-10 m-auto grid w-64 items-center rounded">
+      <PopoverBackdrop className="fixed inset-0 z-10 bg-ctextdark/60 backdrop-blur-sm" />
+      <PopoverPanel className="coutline fixed inset-x-0 z-10 m-auto grid w-64 items-center rounded bg-cbgdefault">
         <div className="flex items-center justify-between">
-          <span className="text-ctext pl-4">Menu</span>
+          <span className="pl-4 text-ctext">Menu</span>
           <CloseButton
             className={tw(
               "group z-10 m-1 rounded-full p-3",
@@ -142,7 +142,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
           >
             <svg
               className={tw(
-                "stroke-ctext h-6 w-6 transition",
+                "h-6 w-6 stroke-ctext transition",
                 // Focus
                 "group-focus-visible:stroke-cfocus",
                 // Hover

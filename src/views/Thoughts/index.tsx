@@ -57,7 +57,7 @@ export const Thoughts: FC = () => {
                     >
                       {thought.metadata.title}.
                     </ButtonLink>
-                    <span className="text-ctext ml-2 text-xs">
+                    <span className="ml-2 text-xs text-ctext">
                       {thought.metadata.minutes} minutes read.
                     </span>
                   </ListItem>
