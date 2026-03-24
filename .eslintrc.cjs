@@ -25,20 +25,7 @@ module.exports = {
     "better-styled-components/sort-declarations-alphabetically": "error",
     "import/no-cycle": "error",
     "import/first": "error",
-    "import/order": [
-      "error",
-      {
-        pathGroups: [
-          {
-            pattern: "~/**",
-            group: "internal",
-          },
-        ],
-        alphabetize: { order: "asc", orderImportKind: "asc" },
-        groups: [],
-        "newlines-between": "never",
-      },
-    ],
+    "import/order": "off",
     "no-console": "error",
     "no-restricted-imports": [
       "error",

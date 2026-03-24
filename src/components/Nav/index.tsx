@@ -9,6 +9,8 @@ import { FC } from "react";
 // @ts-expect-error - React Router v7 type resolution issue
 import { useLocation } from "react-router-dom";
 import { match } from "ts-pattern";
+import { ChevronDownIcon } from "~/components/icons/ChevronDown";
+import { CloseIcon } from "~/components/icons/Close";
 import { ExternalLink, InternalLink } from "~/components/Typography";
 import { routes } from "~/routes";
 import { ClassNameProp, tw } from "~/tw";
@@ -39,34 +41,6 @@ export const Nav: FC = () => {
       <div className="sm:hidden">
         <MobileNav current={current} />
       </div>
-
-      {/* SVG Icons */}
-      <svg className="hidden" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <symbol id="close-button" viewBox="0 0 24 24">
-            <path
-              d="M6 18L18 6M6 6l12 12"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </symbol>
-          <symbol id="menu" viewBox="0 0 24 24">
-            <path
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </symbol>
-          <symbol id="chevron-down" viewBox="0 0 8 6">
-            <path
-              d="M1.75 1.75 4 4.25l2.25-2.5"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </symbol>
-        </defs>
-      </svg>
     </nav>
   );
 };
@@ -117,7 +91,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
         )}
       >
         <span>Menu</span>
-        <svg
+        <ChevronDownIcon
           className={tw(
             "stroke-ctext h-4 w-4",
             // Focus
@@ -125,10 +99,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
             // Hover
             "group-hover:stroke-ctextdark",
           )}
-          role="img"
-        >
-          <use xlinkHref="#chevron-down" />
-        </svg>
+        />
       </PopoverButton>
       <PopoverBackdrop className="bg-ctextdark/60 fixed inset-0 z-10 backdrop-blur-xs" />
       <PopoverPanel className="coutline bg-cbgdefault fixed inset-x-0 z-10 m-auto grid w-64 items-center rounded-sm">
@@ -141,7 +112,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
               "chover-bg",
             )}
           >
-            <svg
+            <CloseIcon
               className={tw(
                 "stroke-ctext h-6 w-6 transition",
                 // Focus
@@ -149,10 +120,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
                 // Hover
                 "group-hover:stroke-ctextdark",
               )}
-              role="img"
-            >
-              <use xlinkHref="#close-button" />
-            </svg>
+            />
             <span className="sr-only">Close Menu</span>
           </CloseButton>
         </div>

@@ -24,13 +24,11 @@ describe("Nav component", () => {
     expect(mobileNav).toBeInTheDocument();
   });
 
-  it("includes SVG icons and symbol definitions", () => {
+  it("includes SVG icons", () => {
     const { container } = render(<Nav />);
-    const svg = container.querySelector("svg");
-    const symbols = container.querySelectorAll("symbol");
+    const svgs = container.querySelectorAll("svg");
 
-    expect(svg).toBeInTheDocument();
-    expect(symbols.length).toBeGreaterThan(0);
+    expect(svgs.length).toBeGreaterThan(0);
   });
 
   it("renders menu button on mobile", () => {

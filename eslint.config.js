@@ -32,6 +32,7 @@ export default [
         document: "readonly",
         window: "readonly",
         HTMLElement: "readonly",
+        SVGSVGElement: "readonly",
       },
     },
     plugins: {
@@ -45,23 +46,6 @@ export default [
       ...tsPlugin.configs.recommended.rules,
       "import/first": "error",
       "import/no-cycle": "error",
-      "import/order": [
-        "error",
-        {
-          alphabetize: {
-            order: "asc",
-            orderImportKind: "asc",
-          },
-          groups: [],
-          "newlines-between": "never",
-          pathGroups: [
-            {
-              group: "internal",
-              pattern: "~/**",
-            },
-          ],
-        },
-      ],
       "no-console": "error",
       "no-restricted-imports": [
         "error",

@@ -91,54 +91,20 @@ exports[`Nav component - snapshots > matches snapshot on gallery route 1`] = `
           </span>
           <svg
             class="stroke-ctext h-4 w-4 group-focus-visible:stroke-cfocus group-hover:stroke-ctextdark"
-            role="img"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 8 6"
           >
-            <use
-              xlink:href="#chevron-down"
+            <path
+              d="M1.75 1.75 4 4.25l2.25-2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </svg>
         </button>
       </div>
     </div>
   </div>
-  <svg
-    class="hidden"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-      <symbol
-        id="close-button"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M6 18L18 6M6 6l12 12"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-      <symbol
-        id="menu"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-      <symbol
-        id="chevron-down"
-        viewBox="0 0 8 6"
-      >
-        <path
-          d="M1.75 1.75 4 4.25l2.25-2.5"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-    </defs>
-  </svg>
 </nav>
 `;
 
@@ -233,54 +199,20 @@ exports[`Nav component - snapshots > matches snapshot on home route 1`] = `
           </span>
           <svg
             class="stroke-ctext h-4 w-4 group-focus-visible:stroke-cfocus group-hover:stroke-ctextdark"
-            role="img"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 8 6"
           >
-            <use
-              xlink:href="#chevron-down"
+            <path
+              d="M1.75 1.75 4 4.25l2.25-2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </svg>
         </button>
       </div>
     </div>
   </div>
-  <svg
-    class="hidden"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-      <symbol
-        id="close-button"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M6 18L18 6M6 6l12 12"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-      <symbol
-        id="menu"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-      <symbol
-        id="chevron-down"
-        viewBox="0 0 8 6"
-      >
-        <path
-          d="M1.75 1.75 4 4.25l2.25-2.5"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-    </defs>
-  </svg>
 </nav>
 `;
 
@@ -375,54 +307,20 @@ exports[`Nav component - snapshots > matches snapshot on projects route 1`] = `
           </span>
           <svg
             class="stroke-ctext h-4 w-4 group-focus-visible:stroke-cfocus group-hover:stroke-ctextdark"
-            role="img"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 8 6"
           >
-            <use
-              xlink:href="#chevron-down"
+            <path
+              d="M1.75 1.75 4 4.25l2.25-2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </svg>
         </button>
       </div>
     </div>
   </div>
-  <svg
-    class="hidden"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-      <symbol
-        id="close-button"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M6 18L18 6M6 6l12 12"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-      <symbol
-        id="menu"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-      <symbol
-        id="chevron-down"
-        viewBox="0 0 8 6"
-      >
-        <path
-          d="M1.75 1.75 4 4.25l2.25-2.5"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-    </defs>
-  </svg>
 </nav>
 `;
 
@@ -517,53 +415,19 @@ exports[`Nav component - snapshots > matches snapshot on unknown route 1`] = `
           </span>
           <svg
             class="stroke-ctext h-4 w-4 group-focus-visible:stroke-cfocus group-hover:stroke-ctextdark"
-            role="img"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 8 6"
           >
-            <use
-              xlink:href="#chevron-down"
+            <path
+              d="M1.75 1.75 4 4.25l2.25-2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </svg>
         </button>
       </div>
     </div>
   </div>
-  <svg
-    class="hidden"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-      <symbol
-        id="close-button"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M6 18L18 6M6 6l12 12"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-      <symbol
-        id="menu"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-      <symbol
-        id="chevron-down"
-        viewBox="0 0 8 6"
-      >
-        <path
-          d="M1.75 1.75 4 4.25l2.25-2.5"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-    </defs>
-  </svg>
 </nav>
 `;

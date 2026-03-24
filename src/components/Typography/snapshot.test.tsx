@@ -33,26 +33,28 @@ describe("Typography components - snapshots", () => {
 
   it("Paragraph matches snapshot", () => {
     const { container } = render(
-      <Paragraph>This is a paragraph with some text content.</Paragraph>
+      <Paragraph>This is a paragraph with some text content.</Paragraph>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it("ButtonLink matches snapshot", () => {
     const { container } = render(
-      <ButtonLink onClick={() => {}}>Click Me</ButtonLink>
+      <ButtonLink onClick={() => {}}>Click Me</ButtonLink>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it("InternalLink matches snapshot", () => {
-    const { container } = render(<InternalLink to="/about">About</InternalLink>);
+    const { container } = render(
+      <InternalLink to="/about">About</InternalLink>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it("ExternalLink matches snapshot", () => {
     const { container } = render(
-      <ExternalLink to="https://example.com">External Site</ExternalLink>
+      <ExternalLink to="https://example.com">External Site</ExternalLink>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -63,7 +65,7 @@ describe("Typography components - snapshots", () => {
         <li>First item</li>
         <li>Second item</li>
         <li>Third item</li>
-      </UnorderedList>
+      </UnorderedList>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -74,7 +76,7 @@ describe("Typography components - snapshots", () => {
         <li>First step</li>
         <li>Second step</li>
         <li>Third step</li>
-      </OrderedList>
+      </OrderedList>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });

@@ -43,7 +43,10 @@ describe("Thoughts view", () => {
     mockUseSearchParams.mockReturnValue([searchParams, mockSetSearchParams]);
     render(<Thoughts />);
     const main = screen.getByRole("main");
-    const heading = screen.getByRole("heading", { level: 1, name: "Financial Literacy" });
+    const heading = screen.getByRole("heading", {
+      level: 1,
+      name: "Financial Literacy",
+    });
 
     expect(main).toBeInTheDocument();
     expect(heading).toBeInTheDocument();

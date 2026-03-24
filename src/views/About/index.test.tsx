@@ -22,7 +22,7 @@ describe("About view", () => {
     expect(main).toBeInTheDocument();
     expect(screen.getByText("Kevin Amado")).toBeInTheDocument();
     expect(
-      screen.getByText(/I'm a Software Engineer based in Calgary/i)
+      screen.getByText(/I'm a Software Engineer based in Calgary/i),
     ).toBeInTheDocument();
     expect(links.length).toBeGreaterThan(0);
     expect(nav).toBeInTheDocument();
