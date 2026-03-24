@@ -3,7 +3,7 @@ import { Paragraph } from "~/components/Typography/Paragraph";
 
 export const metadata = {
   id: "artificial-intelligence",
-  minutes: 6,
+  minutes: 7,
   summary: "How AI agents are changing what it means to be a software engineer",
   tags: ["technology", "artificial-intelligence", "engineering"],
   title: "Artificial Intelligence",

@@ -28,7 +28,7 @@ describe("ArtificialIntelligence.Content", () => {
   it("exports metadata with required fields", () => {
     expect(metadata.id).toBe("artificial-intelligence");
     expect(metadata.title).toBe("Artificial Intelligence");
-    expect(metadata.minutes).toBe(6);
+    expect(metadata.minutes).toBe(7);
     expect(metadata.summary).toBe(
       "How AI agents are changing what it means to be a software engineer",
     );

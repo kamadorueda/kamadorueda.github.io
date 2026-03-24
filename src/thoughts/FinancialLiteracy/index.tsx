@@ -8,7 +8,7 @@ import { routes } from "~/routes";
 
 export const metadata = {
   id: "financial-literacy",
-  minutes: 5,
+  minutes: 4,
   summary: "Know your opportunity costs",
   tags: ["finances", "investing"],
   title: "Financial Literacy",

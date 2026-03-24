@@ -41,7 +41,7 @@ describe("FinancialLiteracy.Content", () => {
   it("exports metadata with required fields", () => {
     expect(metadata.id).toBe("financial-literacy");
     expect(metadata.title).toBe("Financial Literacy");
-    expect(metadata.minutes).toBe(5);
+    expect(metadata.minutes).toBe(4);
     expect(metadata.summary).toBe("Know your opportunity costs");
   });
 });
