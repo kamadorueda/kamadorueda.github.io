@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
-import { ClassNameProp, tw } from "~/tw";
-import { link } from "~/link";
+import { ClassNameProp, tw } from "~/utils/tw";
+import { link } from "~/utils/link";
 
 export const ButtonLink: FC<
   PropsWithChildren & ClassNameProp & { onClick(): void }

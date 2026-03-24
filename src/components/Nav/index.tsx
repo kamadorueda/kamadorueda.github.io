@@ -14,7 +14,7 @@ import { CloseIcon } from "~/components/icons/Close";
 import { ExternalLink } from "~/components/Typography/ExternalLink";
 import { InternalLink } from "~/components/Typography/InternalLink";
 import { routes } from "~/routes";
-import { ClassNameProp, tw } from "~/tw";
+import { ClassNameProp, tw } from "~/utils/tw";
 
 const linkInactive = "no-underline";
 

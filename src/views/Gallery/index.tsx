@@ -13,7 +13,7 @@ import { Nav } from "~/components/Nav";
 import { ExternalLink } from "~/components/Typography/ExternalLink";
 import { Header } from "~/components/Typography/Header";
 import { Paragraph } from "~/components/Typography/Paragraph";
-import { tw } from "~/tw";
+import { tw } from "~/utils/tw";
 
 const link = tw("coutline group block rounded-sm");
 

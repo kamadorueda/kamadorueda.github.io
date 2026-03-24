@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
-import { ClassNameProp, tw } from "~/tw";
-import { link } from "~/link";
+import { ClassNameProp, tw } from "~/utils/tw";
+import { link } from "~/utils/link";
 
 export const ExternalLink: FC<
   PropsWithChildren & ClassNameProp & { to: string }

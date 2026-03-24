@@ -3,12 +3,15 @@ import { FC } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { match } from "ts-pattern";
+import * as ArtificialIntelligence from "~/thoughts/ArtificialIntelligence";
 import * as FinancialLiteracy from "~/thoughts/FinancialLiteracy";
 import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
 import { Header } from "~/components/Typography/Header";
+import { Paragraph } from "~/components/Typography/Paragraph";
+import { formatDate } from "~/utils/formatDate";
 
 export const Thought: FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,6 +21,7 @@ export const Thought: FC = () => {
   }
 
   const thought = match(id)
+    .with("artificial-intelligence", () => ArtificialIntelligence)
     .with("financial-literacy", () => FinancialLiteracy)
     .otherwise(() => null);
 
@@ -52,6 +56,9 @@ export const Thought: FC = () => {
       <Nav />
       <Main>
         <Header>{thought.metadata.title}</Header>
+        <Paragraph className="text-sm text-gray-500 mb-6">
+          {formatDate(thought.metadata.timestamp)}
+        </Paragraph>
         <thought.Content />
       </Main>
       <Footer />
