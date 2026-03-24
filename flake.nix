@@ -15,9 +15,11 @@
           name = "ci";
           runtimeInputs = [nixpkgs.nodejs];
           text = ''
+            pnpm exec tsc
             pnpm run format
             pnpm run lint --fix
             pnpm run lint
+            pnpm exec vite build
             pnpm test
           '';
         };

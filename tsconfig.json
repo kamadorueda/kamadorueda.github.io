@@ -7,7 +7,7 @@
     "allowUnusedLabels": false,
     "alwaysStrict": true,
     "baseUrl": ".",
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -44,13 +44,16 @@
     "strictPropertyInitialization": true,
     "target": "ESNext",
     "types": [
-      "vite/client"
+      "vite/client",
+      "vitest/globals"
     ],
     "useDefineForClassFields": true,
     "useUnknownInCatchVariables": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.test.tsx"
   ],
   "include": [
     "src"
