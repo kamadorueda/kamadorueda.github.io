@@ -51,7 +51,7 @@ describe("Typography components", () => {
       render(
         <Paragraph>
           Text with <strong>bold</strong>
-        </Paragraph>
+        </Paragraph>,
       );
       expect(screen.getByText("bold")).toBeInTheDocument();
       expect(screen.getByText("bold").tagName).toBe("STRONG");

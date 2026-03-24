@@ -7,7 +7,7 @@ describe("Body component", () => {
     render(
       <Body>
         <div>Test content</div>
-      </Body>
+      </Body>,
     );
     expect(screen.getByText("Test content")).toBeInTheDocument();
   });
@@ -16,7 +16,7 @@ describe("Body component", () => {
     const { container } = render(
       <Body>
         <span>Inner</span>
-      </Body>
+      </Body>,
     );
     const divs = container.querySelectorAll("div");
     expect(divs.length).toBeGreaterThan(0);
@@ -26,7 +26,7 @@ describe("Body component", () => {
     const { container } = render(
       <Body>
         <p>Content</p>
-      </Body>
+      </Body>,
     );
     const outerDiv = container.firstChild as HTMLElement;
     expect(outerDiv.className).toContain("min-h-screen");
