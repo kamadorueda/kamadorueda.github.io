@@ -25,13 +25,13 @@ export const Content: FC = () => (
       and they execute while I move to the next problem. This is my daily
       reality now, and I think it's worth writing about. I see many engineers
       still stuck in the copilot experience where you write the code and the AI
-      provides inline suggestions after you type. But this workflow is
-      fundamentally different. The agent is faster at coding. No question there.
-      But the real benefit is that I can work on something else entirely while
-      it's executing. I can think about the next problem instead of being stuck
-      on the current one. And there's no physical stress anymore. It's pure
-      mental work. Often I just talk to the agent with my voice instead of
-      typing.
+      provides inline suggestions after you type. But I work with agents that
+      operate autonomously on separate tasks. This workflow is fundamentally
+      different. The agent is faster at coding. No question there. But the real
+      benefit is that I can work on something else entirely while it's executing.
+      I can think about the next problem instead of being stuck on the current
+      one. And there's no physical stress anymore. It's pure mental work. Often I
+      just talk to the agent with my voice instead of typing.
     </Paragraph>
 
     <Paragraph>
@@ -43,9 +43,9 @@ export const Content: FC = () => (
       can't just "fix it as I go" anymore. Every assumption needs to be stated.
       Every shortcut needs to be justified. The things I used to apply
       implicitly (conventions, patterns, what makes code "good" in this specific
-      codebase) now need to be explicit enough that an agent can apply them too.
-      Ideally, I codify them so that other people's agents will apply them in
-      the future, creating leverage for the team. I articulate the tacit
+      codebase) now need to be explicit enough that an agent can apply them, and
+      ideally, I codify them so that other people's agents will apply them in the
+      future, creating leverage for the team. I articulate the tacit
       knowledge I've built up over years: the little rules and patterns that
       make this codebase feel coherent instead of chaotic, as well as the
       crystal ball that allows me to make decisions that will compound
@@ -70,7 +70,7 @@ export const Content: FC = () => (
       follow. This review process prevents architectural drift. It's the
       opposite of letting parallel execution spiral into inconsistency. When I
       wrote code myself, I could rationalize shortcuts or inconsistencies. Now I
-      can't—each piece of work passes through my architectural gate. And the
+      can't. Each piece of work passes through my architectural gate. And the
       productivity gains free me up to focus on more planning, more testing,
       more thinking about how things will integrate and fail. The iteration
       speed is gigantic. I can refine a design quickly because agents can
@@ -82,8 +82,8 @@ export const Content: FC = () => (
     <Paragraph>
       Quality also stems from better data access. Agents can fetch logs, extract
       key data points, summarize them, run statistical analysis. Things that
-      would take me hours to do by hand—if I even had the patience to do them at
-      all— happen in seconds. I can make architectural decisions backed by
+      would take me hours to do by hand (if I even had the patience to do them at
+      all) happen in seconds. I can make architectural decisions backed by
       actual data instead of intuition. I can see patterns in system behavior
       that I would never have discovered manually. The agents give me visibility
       into the codebase in ways that were simply impractical before.
