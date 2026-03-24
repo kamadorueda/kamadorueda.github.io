@@ -3,37 +3,24 @@ import { render, screen } from "@testing-library/react";
 import { Main } from "./index";
 
 describe("Main component", () => {
-  it("renders main element", () => {
-    render(<Main>Content</Main>);
-    const main = screen.getByRole("main");
-    expect(main).toBeInTheDocument();
-  });
+  it("renders main element with children and supports className", () => {
+    const { container: container1 } = render(<Main>Test content</Main>);
+    const main1 = screen.getByRole("main");
 
-  it("renders children", () => {
-    render(<Main>Test content</Main>);
+    expect(main1).toBeInTheDocument();
     expect(screen.getByText("Test content")).toBeInTheDocument();
+    expect(main1).toHaveClass("mt-24");
   });
 
-  it("applies default mt-24 class", () => {
-    const { container } = render(<Main>Content</Main>);
-    const main = container.querySelector("main");
-    expect(main).toHaveClass("mt-24");
-  });
-
-  it("accepts and applies custom className", () => {
-    const { container } = render(<Main className="custom-class">Content</Main>);
-    const main = container.querySelector("main");
-    expect(main).toHaveClass("custom-class");
-  });
-
-  it("combines default and custom classes", () => {
+  it("accepts custom className and combines with default classes", () => {
     const { container } = render(<Main className="custom">Content</Main>);
     const main = container.querySelector("main");
+
+    expect(main).toHaveClass("custom");
     expect(main?.className).toContain("mt-24");
-    expect(main?.className).toContain("custom");
   });
 
-  it("renders complex children", () => {
+  it("renders complex children with nested elements", () => {
     render(
       <Main>
         <div>
@@ -42,6 +29,7 @@ describe("Main component", () => {
         </div>
       </Main>,
     );
+
     expect(screen.getByRole("heading")).toBeInTheDocument();
     expect(screen.getByText("Paragraph")).toBeInTheDocument();
   });

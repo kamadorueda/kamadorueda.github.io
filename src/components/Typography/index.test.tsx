@@ -24,184 +24,126 @@ vi.mock("react-router-dom", () => ({
 
 describe("Typography components", () => {
   describe("Header", () => {
-    it("renders h1 element", () => {
-      render(<Header>Test Heading</Header>);
+    it("renders h1 element with text and supports className", () => {
+      render(<Header className="custom-class">Test Heading</Header>);
       const heading = screen.getByRole("heading", { level: 1 });
+
       expect(heading).toBeInTheDocument();
-    });
-
-    it("displays heading text", () => {
-      render(<Header>Test Heading</Header>);
-      expect(screen.getByText("Test Heading")).toBeInTheDocument();
-    });
-
-    it("accepts className prop", () => {
-      render(<Header className="custom-class">Test</Header>);
-      const heading = screen.getByRole("heading", { level: 1 });
+      expect(heading).toHaveTextContent("Test Heading");
       expect(heading).toHaveClass("custom-class");
     });
   });
 
   describe("Header2", () => {
-    it("renders h2 element", () => {
+    it("renders h2 element with text", () => {
       render(<Header2>Subheading</Header2>);
       const heading = screen.getByRole("heading", { level: 2 });
-      expect(heading).toBeInTheDocument();
-    });
 
-    it("displays heading text", () => {
-      render(<Header2>Subheading</Header2>);
-      expect(screen.getByText("Subheading")).toBeInTheDocument();
+      expect(heading).toBeInTheDocument();
+      expect(heading).toHaveTextContent("Subheading");
     });
   });
 
   describe("Paragraph", () => {
-    it("renders paragraph element", () => {
+    it("renders paragraph element with text", () => {
       render(<Paragraph>Test paragraph</Paragraph>);
       const paragraph = screen.getByText("Test paragraph");
+
       expect(paragraph.tagName).toBe("P");
     });
 
-    it("displays paragraph text", () => {
-      render(<Paragraph>Test paragraph</Paragraph>);
-      expect(screen.getByText("Test paragraph")).toBeInTheDocument();
-    });
-
-    it("accepts children elements", () => {
+    it("accepts and renders children elements", () => {
       render(
         <Paragraph>
           Text with <strong>bold</strong>
         </Paragraph>,
       );
-      expect(screen.getByText("bold")).toBeInTheDocument();
-      expect(screen.getByText("bold").tagName).toBe("STRONG");
+      const bold = screen.getByText("bold");
+
+      expect(bold).toBeInTheDocument();
+      expect(bold.tagName).toBe("STRONG");
     });
   });
 
   describe("ButtonLink", () => {
-    it("renders button element", () => {
-      render(<ButtonLink onClick={vi.fn()}>Click me</ButtonLink>);
-      const button = screen.getByRole("button");
-      expect(button).toBeInTheDocument();
-    });
-
-    it("displays button text", () => {
-      render(<ButtonLink onClick={vi.fn()}>Click me</ButtonLink>);
-      expect(screen.getByText("Click me")).toBeInTheDocument();
-    });
-
-    it("handles click events", async () => {
+    it("renders button with text and handles click events", async () => {
       const onClick = vi.fn();
       render(<ButtonLink onClick={onClick}>Click me</ButtonLink>);
-      await userEvent.click(screen.getByRole("button"));
+      const button = screen.getByRole("button");
+
+      expect(button).toBeInTheDocument();
+      expect(button).toHaveTextContent("Click me");
+
+      await userEvent.click(button);
       expect(onClick).toHaveBeenCalled();
     });
   });
 
   describe("InternalLink", () => {
-    it("renders link element", () => {
-      render(<InternalLink to="/about">Home</InternalLink>);
-      const link = screen.getByRole("link");
-      expect(link).toBeInTheDocument();
-    });
-
-    it("has correct href", () => {
+    it("renders link with correct href", () => {
       render(<InternalLink to="/about">About</InternalLink>);
       const link = screen.getByRole("link");
+
+      expect(link).toBeInTheDocument();
       expect(link).toHaveAttribute("href", "/about");
     });
   });
 
   describe("ExternalLink", () => {
-    it("renders anchor element", () => {
+    it("renders anchor with correct href, target, and security attributes", () => {
       render(<ExternalLink to="https://example.com">External</ExternalLink>);
       const link = screen.getByRole("link");
+
       expect(link).toBeInTheDocument();
-    });
-
-    it("has correct href", () => {
-      render(<ExternalLink to="https://example.com">External</ExternalLink>);
-      const link = screen.getByRole("link");
       expect(link).toHaveAttribute("href", "https://example.com");
-    });
-
-    it("opens in new tab", () => {
-      render(<ExternalLink to="https://example.com">External</ExternalLink>);
-      const link = screen.getByRole("link");
       expect(link).toHaveAttribute("target", "_blank");
-    });
-
-    it("has security attributes", () => {
-      render(<ExternalLink to="https://example.com">External</ExternalLink>);
-      const link = screen.getByRole("link");
       expect(link).toHaveAttribute("rel", "noopener noreferrer");
     });
   });
 
   describe("UnorderedList", () => {
-    it("renders ul element", () => {
-      render(
-        <UnorderedList>
-          <li>Item 1</li>
-        </UnorderedList>,
-      );
-      const ul = screen.getByRole("list");
-      expect(ul.tagName).toBe("UL");
-    });
-
-    it("renders list items", () => {
+    it("renders ul element with list items", () => {
       render(
         <UnorderedList>
           <li>Item 1</li>
           <li>Item 2</li>
         </UnorderedList>,
       );
+      const ul = screen.getByRole("list");
       const items = screen.getAllByRole("listitem");
+
+      expect(ul.tagName).toBe("UL");
       expect(items).toHaveLength(2);
     });
   });
 
   describe("OrderedList", () => {
-    it("renders ol element", () => {
-      render(
-        <OrderedList>
-          <li>Item 1</li>
-        </OrderedList>,
-      );
-      const ol = screen.getByRole("list");
-      expect(ol.tagName).toBe("OL");
-    });
-
-    it("renders list items", () => {
+    it("renders ol element with list items", () => {
       render(
         <OrderedList>
           <li>First</li>
           <li>Second</li>
         </OrderedList>,
       );
+      const ol = screen.getByRole("list");
       const items = screen.getAllByRole("listitem");
+
+      expect(ol.tagName).toBe("OL");
       expect(items).toHaveLength(2);
     });
   });
 
   describe("ListItem", () => {
-    it("renders li element", () => {
-      render(
-        <ul>
-          <ListItem>Item</ListItem>
-        </ul>,
-      );
-      const item = screen.getByRole("listitem");
-      expect(item).toBeInTheDocument();
-    });
-
-    it("displays item content", () => {
+    it("renders li element with content", () => {
       render(
         <ul>
           <ListItem>Item content</ListItem>
         </ul>,
       );
-      expect(screen.getByText("Item content")).toBeInTheDocument();
+      const item = screen.getByRole("listitem");
+
+      expect(item).toBeInTheDocument();
+      expect(item).toHaveTextContent("Item content");
     });
   });
 });

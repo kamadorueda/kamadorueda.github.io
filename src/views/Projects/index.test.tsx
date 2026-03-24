@@ -18,45 +18,22 @@ vi.mock("react-helmet", () => ({
 }));
 
 describe("Projects view", () => {
-  it("renders the page", () => {
-    render(<Projects />);
-    expect(screen.getByRole("main")).toBeInTheDocument();
-  });
+  it("renders page with heading, intro, project sections, links, and navigation", () => {
+    const { container } = render(<Projects />);
+    const main = screen.getByRole("main");
+    const nav = container.querySelector("nav");
+    const heading = screen.getByRole("heading", { level: 1, name: "Projects" });
+    const links = screen.getAllByRole("link");
+    const listItems = screen.getAllByRole("listitem");
 
-  it("displays Projects heading", () => {
-    render(<Projects />);
-    expect(screen.getByRole("heading", { level: 1, name: "Projects" })).toBeInTheDocument();
-  });
-
-  it("displays introduction paragraph", () => {
-    render(<Projects />);
-    expect(
-      screen.getByText(/worked on tons of projects/i)
-    ).toBeInTheDocument();
-  });
-
-  it("displays project sections", () => {
-    render(<Projects />);
+    expect(main).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
+    expect(screen.getByText(/worked on tons of projects/i)).toBeInTheDocument();
     expect(screen.getByText("Personal Projects")).toBeInTheDocument();
     expect(screen.getByText("Open Source Contributions")).toBeInTheDocument();
     expect(screen.getByText("Professional Contributions")).toBeInTheDocument();
-  });
-
-  it("includes navigation", () => {
-    const { container } = render(<Projects />);
-    const nav = container.querySelector("nav");
     expect(nav).toBeInTheDocument();
-  });
-
-  it("includes external links to projects", () => {
-    render(<Projects />);
-    const links = screen.getAllByRole("link");
     expect(links.length).toBeGreaterThan(5);
-  });
-
-  it("displays list items for projects", () => {
-    render(<Projects />);
-    const listItems = screen.getAllByRole("listitem");
     expect(listItems.length).toBeGreaterThan(0);
   });
 });

@@ -18,35 +18,17 @@ vi.mock("react-helmet", () => ({
 }));
 
 describe("Disclaimers view", () => {
-  it("renders the page", () => {
-    render(<Disclaimers />);
-    expect(screen.getByRole("main")).toBeInTheDocument();
-  });
-
-  it("displays Disclaimers heading", () => {
-    render(<Disclaimers />);
-    expect(screen.getByText("Disclaimers")).toBeInTheDocument();
-  });
-
-  it("displays disclaimer paragraphs", () => {
-    render(<Disclaimers />);
-    expect(
-      screen.getByText(/general in nature/i)
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/financial advice/i)
-    ).toBeInTheDocument();
-  });
-
-  it("includes navigation", () => {
+  it("renders page with heading, disclaimer text, navigation, and footer", () => {
     const { container } = render(<Disclaimers />);
+    const main = screen.getByRole("main");
     const nav = container.querySelector("nav");
-    expect(nav).toBeInTheDocument();
-  });
-
-  it("has footer", () => {
-    const { container } = render(<Disclaimers />);
     const footer = container.querySelector("footer");
+
+    expect(main).toBeInTheDocument();
+    expect(screen.getByText("Disclaimers")).toBeInTheDocument();
+    expect(screen.getByText(/general in nature/i)).toBeInTheDocument();
+    expect(screen.getByText(/financial advice/i)).toBeInTheDocument();
+    expect(nav).toBeInTheDocument();
     expect(footer).toBeInTheDocument();
   });
 });

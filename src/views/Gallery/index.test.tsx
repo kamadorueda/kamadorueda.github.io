@@ -18,38 +18,19 @@ vi.mock("react-helmet", () => ({
 }));
 
 describe("Gallery view", () => {
-  it("renders the page", () => {
-    render(<Gallery />);
-    expect(screen.getByRole("main")).toBeInTheDocument();
-  });
-
-  it("displays Gallery heading", () => {
-    render(<Gallery />);
-    expect(screen.getByRole("heading", { level: 1, name: "Gallery" })).toBeInTheDocument();
-  });
-
-  it("displays introduction paragraph", () => {
-    render(<Gallery />);
-    expect(
-      screen.getByText(/Still Life/i)
-    ).toBeInTheDocument();
-  });
-
-  it("includes navigation", () => {
+  it("renders page with heading, intro, images, links, and navigation", () => {
     const { container } = render(<Gallery />);
+    const main = screen.getByRole("main");
     const nav = container.querySelector("nav");
-    expect(nav).toBeInTheDocument();
-  });
-
-  it("includes external links", () => {
-    render(<Gallery />);
+    const heading = screen.getByRole("heading", { level: 1, name: "Gallery" });
     const links = screen.getAllByRole("link");
-    expect(links.length).toBeGreaterThan(0);
-  });
-
-  it("renders image elements", () => {
-    render(<Gallery />);
     const images = screen.getAllByRole("img");
+
+    expect(main).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
+    expect(screen.getByText(/Still Life/i)).toBeInTheDocument();
+    expect(nav).toBeInTheDocument();
+    expect(links.length).toBeGreaterThan(0);
     expect(images.length).toBeGreaterThan(0);
   });
 });

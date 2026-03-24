@@ -13,45 +13,41 @@ vi.mock("react-router-dom", () => ({
 }));
 
 describe("Nav component", () => {
-  it("renders nav element", () => {
-    render(<Nav />);
+  it("renders nav element with desktop and mobile variants", () => {
+    const { container } = render(<Nav />);
     const nav = screen.getByRole("navigation");
-    expect(nav).toBeInTheDocument();
-  });
-
-  it("renders desktop nav", () => {
-    const { container } = render(<Nav />);
     const desktopNav = container.querySelector(".hidden.sm\\:block");
-    expect(desktopNav).toBeInTheDocument();
-  });
-
-  it("renders mobile nav", () => {
-    const { container } = render(<Nav />);
     const mobileNav = container.querySelector(".sm\\:hidden");
+
+    expect(nav).toBeInTheDocument();
+    expect(desktopNav).toBeInTheDocument();
     expect(mobileNav).toBeInTheDocument();
   });
 
-  it("includes SVG icons", () => {
+  it("includes SVG icons and symbol definitions", () => {
     const { container } = render(<Nav />);
     const svg = container.querySelector("svg");
-    expect(svg).toBeInTheDocument();
-  });
-
-  it("contains symbol definitions", () => {
-    const { container } = render(<Nav />);
     const symbols = container.querySelectorAll("symbol");
+
+    expect(svg).toBeInTheDocument();
     expect(symbols.length).toBeGreaterThan(0);
   });
 
   it("renders menu button on mobile", () => {
     render(<Nav />);
-    // PopoverButton contains "Menu" text
     const menuButtons = screen.queryAllByText("Menu");
+
     expect(menuButtons.length).toBeGreaterThan(0);
   });
 });
 
 describe("Nav component - routing", () => {
+  it("handles about route", () => {
+    mockUseLocation.mockReturnValue({ pathname: "/about" });
+    render(<Nav />);
+    expect(screen.getByRole("navigation")).toBeInTheDocument();
+  });
+
   it("handles gallery route", () => {
     mockUseLocation.mockReturnValue({ pathname: "/gallery" });
     render(<Nav />);

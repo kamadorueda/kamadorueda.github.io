@@ -13,32 +13,18 @@ vi.mock("react-router-dom", () => ({
 }));
 
 describe("About view", () => {
-  it("renders the page", () => {
-    render(<About />);
-    expect(screen.getByRole("main")).toBeInTheDocument();
-  });
+  it("renders page with heading, intro, links, and navigation", () => {
+    const { container } = render(<About />);
+    const main = screen.getByRole("main");
+    const nav = container.querySelector("nav");
+    const links = screen.getAllByRole("link");
 
-  it("displays Kevin Amado heading", () => {
-    render(<About />);
+    expect(main).toBeInTheDocument();
     expect(screen.getByText("Kevin Amado")).toBeInTheDocument();
-  });
-
-  it("displays introduction paragraph", () => {
-    render(<About />);
     expect(
       screen.getByText(/I'm a Software Engineer based in Calgary/i)
     ).toBeInTheDocument();
-  });
-
-  it("includes external links", () => {
-    render(<About />);
-    const links = screen.getAllByRole("link");
     expect(links.length).toBeGreaterThan(0);
-  });
-
-  it("includes navigation", () => {
-    const { container } = render(<About />);
-    const nav = container.querySelector("nav");
     expect(nav).toBeInTheDocument();
   });
 });

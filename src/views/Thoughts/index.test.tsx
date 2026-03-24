@@ -4,12 +4,13 @@ import { Thoughts } from "./index";
 
 // Mock react-router-dom
 const mockSetSearchParams = vi.fn();
+const mockUseSearchParams = vi.fn(() => [
+  new URLSearchParams(),
+  mockSetSearchParams,
+]);
 vi.mock("react-router-dom", () => ({
   useLocation: () => ({ pathname: "/thoughts" }),
-  useSearchParams: () => [
-    new URLSearchParams(),
-    mockSetSearchParams,
-  ],
+  useSearchParams: () => mockUseSearchParams(),
   Link: ({ children, to, ...props }: any) => (
     <a href={to} {...props}>
       {children}
@@ -23,32 +24,28 @@ vi.mock("react-helmet", () => ({
 }));
 
 describe("Thoughts view", () => {
-  it("renders the page", () => {
-    render(<Thoughts />);
-    expect(screen.getByRole("main")).toBeInTheDocument();
-  });
-
-  it("displays Thoughts heading", () => {
-    render(<Thoughts />);
-    expect(screen.getByRole("heading", { level: 1, name: "Thoughts" })).toBeInTheDocument();
-  });
-
-  it("displays introduction paragraph", () => {
-    render(<Thoughts />);
-    expect(
-      screen.getByText(/collection of writings/i)
-    ).toBeInTheDocument();
-  });
-
-  it("includes navigation", () => {
+  it("displays thought list with heading, intro, and navigation", () => {
     const { container } = render(<Thoughts />);
+    const main = screen.getByRole("main");
     const nav = container.querySelector("nav");
+    const heading = screen.getByRole("heading", { level: 1, name: "Thoughts" });
+    const listItems = screen.getAllByRole("listitem");
+
+    expect(main).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
+    expect(screen.getByText(/collection of writings/i)).toBeInTheDocument();
     expect(nav).toBeInTheDocument();
+    expect(listItems.length).toBeGreaterThan(0);
   });
 
-  it("displays thought list items", () => {
+  it("displays thought content when id parameter is provided", () => {
+    const searchParams = new URLSearchParams("id=financial-literacy");
+    mockUseSearchParams.mockReturnValue([searchParams, mockSetSearchParams]);
     render(<Thoughts />);
-    const listItems = screen.getAllByRole("listitem");
-    expect(listItems.length).toBeGreaterThan(0);
+    const main = screen.getByRole("main");
+    const heading = screen.getByRole("heading", { level: 1, name: "Financial Literacy" });
+
+    expect(main).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
   });
 });

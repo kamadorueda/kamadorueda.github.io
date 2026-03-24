@@ -3,28 +3,17 @@ import { render, screen } from "@testing-library/react";
 import { Footer } from "./index";
 
 describe("Footer component", () => {
-  it("renders footer element", () => {
-    render(<Footer />);
+  it("renders footer with copyright text, current year, and paragraph structure", () => {
+    const { container } = render(<Footer />);
     const footer = screen.getByRole("contentinfo");
-    expect(footer).toBeInTheDocument();
-  });
-
-  it("displays copyright text", () => {
-    render(<Footer />);
-    expect(screen.getByText(/©.*Kevin Amado/)).toBeInTheDocument();
-  });
-
-  it("displays current year", () => {
-    render(<Footer />);
+    const paragraph = container.querySelector("footer p");
     const currentYear = new Date().getFullYear();
+
+    expect(footer).toBeInTheDocument();
+    expect(screen.getByText(/©.*Kevin Amado/)).toBeInTheDocument();
     expect(
       screen.getByText(new RegExp(currentYear.toString())),
     ).toBeInTheDocument();
-  });
-
-  it("contains paragraph element", () => {
-    const { container } = render(<Footer />);
-    const paragraph = container.querySelector("footer p");
     expect(paragraph).toBeInTheDocument();
   });
 });

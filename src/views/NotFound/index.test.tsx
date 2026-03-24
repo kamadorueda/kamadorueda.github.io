@@ -13,32 +13,16 @@ vi.mock("react-router-dom", () => ({
 }));
 
 describe("NotFound view", () => {
-  it("renders the page", () => {
-    render(<NotFound />);
-    expect(screen.getByRole("main")).toBeInTheDocument();
-  });
-
-  it("displays 404 heading", () => {
-    render(<NotFound />);
-    expect(screen.getByText("Page not found")).toBeInTheDocument();
-  });
-
-  it("displays helpful message", () => {
-    render(<NotFound />);
-    expect(
-      screen.getByText(/landing page/i)
-    ).toBeInTheDocument();
-  });
-
-  it("includes link back to home", () => {
-    render(<NotFound />);
-    const links = screen.getAllByRole("link");
-    expect(links.length).toBeGreaterThan(0);
-  });
-
-  it("includes navigation", () => {
+  it("renders 404 page with heading, message, link, and navigation", () => {
     const { container } = render(<NotFound />);
+    const main = screen.getByRole("main");
     const nav = container.querySelector("nav");
+    const links = screen.getAllByRole("link");
+
+    expect(main).toBeInTheDocument();
+    expect(screen.getByText("Page not found")).toBeInTheDocument();
+    expect(screen.getByText(/landing page/i)).toBeInTheDocument();
+    expect(links.length).toBeGreaterThan(0);
     expect(nav).toBeInTheDocument();
   });
 });
