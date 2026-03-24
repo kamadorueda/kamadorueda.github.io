@@ -3,7 +3,7 @@ import {
   Route,
   createHashRouter,
   createRoutesFromElements,
-} from "react-router-dom/dist/index.js";
+} from "react-router-dom";
 import { routes } from "~/routes";
 import { About } from "~/views/About";
 import { Disclaimers } from "~/views/Disclaimers";
