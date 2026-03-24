@@ -46,8 +46,7 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css}\" \"*.{cjs,ts}\"",
     "lint": "eslint --max-warnings=0 \"src/**/*.{js,jsx,ts,tsx}\"",
-    "test": "vitest run --coverage",
-    "test:watch": "vitest"
+    "test": "vitest run --coverage"
   },
   "type": "module",
   "version": "0.0.0"
