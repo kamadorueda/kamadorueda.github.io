@@ -18,37 +18,34 @@ export const metadata = {
 export const Content: FC = () => (
   <>
     <Paragraph>
-      Many people want to accumulate wealth throughout their life. Some succeed,
-      some fail. Luck plays a role for sure, but some factors are in our
-      control. The financial education you expose yourself to will help you
-      avoid mistakes and achieve an adequate investment return.
+      Many people want to accumulate wealth throughout their lives. Some succeed,
+      some fail. Luck plays a role, but many factors are within your control.
+      The financial education you pursue will help you avoid mistakes and achieve
+      an adequate investment return for the risk you can and want to take.
     </Paragraph>
 
     <Paragraph>
-      Everybody starts somewhere. Until you have enough positive cash flow to
-      start accumulating assets your priority should be growing your income
-      and/or reducing your expenses. Most people increase their income by
-      getting a better-paying job, starting a side hustle, and so on. Most
-      people reduce their expenses by controlling their discretionary spending
-      and being conscious and responsible with debt.
+      Everyone starts somewhere. Until you have enough positive cash flow to
+      accumulate assets, your priority should be growing your income and/or
+      reducing your expenses. Most people increase their income by getting a
+      better-paying job or starting a side hustle. Most reduce their expenses by
+      controlling discretionary spending and managing debt responsibly.
     </Paragraph>
 
     <Paragraph>
-      As your cash flows allow you to set some money aside, it becomes
-      increasingly important to engage in Financial Planning to ensure you can
-      accomplish your goals. There is always a point where the money you lose
-      due to inflation, plus the money you forego by not investing your money in
-      the right place relative to your objectives will exceed any new savings
-      you add, thus giving the illusion of saving but not getting you richer in
-      practice.
+      As your cash flow allows you to set money aside, financial planning becomes
+      increasingly important to ensure you reach your goals. There's a point where
+      losses from inflation and missed investment opportunities exceed any new
+      savings you add, creating an illusion of progress while your wealth
+      stagnates in real terms.
     </Paragraph>
 
     <Paragraph>
       As you approach this stage, I highly recommend you educate yourself
-      financially. Make a plan. Is it retirement? Is it a trip a couple of years
-      from now? Is it your kids' education? Maybe you are saving for a rainy
-      day? You can optimize your investments for that and get there faster, with
-      less effort, and more certainty.
+      financially and make a plan. Is it retirement? A trip a couple of years
+      from now? Your kids' education? An emergency fund? Defining your goal lets
+      you optimize your investments and reach it faster, with less effort and
+      more certainty.
     </Paragraph>
 
     <Paragraph>
@@ -80,10 +77,9 @@ export const Content: FC = () => (
     </UnorderedList>
 
     <Paragraph>
-      Alternatively, most banks have a division of advisors that can help you.
-      Simply make sure there is an alignment of incentives, otherwise, they may
-      just try to sell you (for a commission) a more expensive and not
-      necessarily better version of an&nbsp;
+      Alternatively, most banks offer financial advisors who can help you.
+      However, ensure their incentives align with yours; otherwise, they may
+      recommend a higher-cost version of simpler options like an&nbsp;
       <ExternalLink to="https://www.blackrock.com/ca/investors/en/learning-centre/etf-education/asset-allocation-etfs">
         Asset Allocation Fund
       </ExternalLink>
@@ -91,11 +87,20 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.ishares.com/us/strategies/what-is-a-target-date-fund">
         Target Date Fund
       </ExternalLink>
-      , or some type of fixed-income security like a&nbsp;
+      , or a fixed-income security like a&nbsp;
       <ExternalLink to="https://www.blackrock.com/ca/investors/en/products/239414/ishares-premium-money-market-etf">
         Money Market Fund
       </ExternalLink>
       .
+    </Paragraph>
+
+    <Paragraph>
+      One factor many overlook is the impact of taxes on your returns. A small
+      difference in annual taxes compounds significantly over decades. Being
+      conscious of the tax efficiency of your investments, including which
+      accounts to use and what types of investments fit where, can add up to
+      substantial gains. This is especially true in low-tax-bracket accounts or
+      jurisdictions with favorable treatment for long-term investments.
     </Paragraph>
 
     <Paragraph>
@@ -104,56 +109,46 @@ export const Content: FC = () => (
     </Paragraph>
 
     <Paragraph>
-      If you leave your money in a checking account, your loss equals inflation.
-      In Canada, one way to measure it is through the Consumer Price Index,
-      which increased from 125.8 to 160.6 in 10 years. That's a 27.6% loss. It
-      may be lower or higher in the future, but it's the goal of the current
-      monetary policy to keep it between 2% and 3% per year, thus guaranteeing
-      you'll lose purchasing power in the same proportion. Ideally, you only
-      keep cash in a checking account that you'll spend the following month.
+      If you leave your money in a checking account, inflation erodes your
+      purchasing power. In Canada, the Consumer Price Index rose from 125.8 to
+      160.6 over 10 years, a 27.6% loss. While future inflation may vary, central
+      banks aim to maintain 2-3% annually, meaning you'll steadily lose
+      purchasing power. Keep only the cash you'll spend within a month in your
+      checking account.
     </Paragraph>
     <Paragraph>
-      If you leave your money in a mediocre savings account, namely one that
-      pays significantly less than the current return on the lowest possible
-      risk. Then you lose Inflation plus the difference between what your
-      savings account pays and what an optimal savings account would pay, plus
-      costs and taxes, if any. For Canada, the return on the least possible risk
-      can be measured through the&nbsp;
+      A mediocre savings account, one paying significantly below the risk-free
+      rate, costs you through inflation plus the gap between what you earn and
+      what you could earn. In Canada, the risk-free return is approximated by the&nbsp;
       <ExternalLink to="https://www.bankofcanada.ca/rates/interest-rates/corra/">
         Canadian Overnight Repo Rate
       </ExternalLink>
-      , which in the last three years alone represents a loss of around 9.5%
-      (not including Inflation, costs, or taxes). Ideally, you put in a savings
-      account money that you'll need in less than a couple of months. Often, a
-      savings account will pay less than the risk-free rate, and here an
-      investment vehicle like a&nbsp;
+      . Over the last three years alone, using a mediocre account instead costs
+      around 9.5% (before accounting for inflation, costs, and taxes). Use a
+      savings account only for money you'll need within a couple of months. For
+      better returns closer to the risk-free rate, consider a&nbsp;
       <ExternalLink to="https://www.blackrock.com/ca/investors/en/products/239414/ishares-premium-money-market-etf">
         Money Market Fund
       </ExternalLink>
-      &nbsp;will get you closer to the optimal return, although they have some
-      differences compared to a traditional savings account.
+      , though it differs slightly from a traditional savings account.
     </Paragraph>
     <Paragraph>
-      If you are willing to take on more risk, or you are investing your money
-      for a longer time horizon, a fund that invests in stocks and bonds, and
-      compounds over a couple of years may make a huge difference. A 3%
-      annualized return or more after inflation, costs, and taxes is not
-      uncommon. You may even start withdrawing the surplus after a while without
-      depleting it. This is how many pension funds and university endowments
-      work. In Canada, a low cost and simple way to achieve this is through
-      an&nbsp;
+      With a longer time horizon or higher risk tolerance, a diversified fund
+      investing in stocks and bonds can compound significantly. A 3% annualized
+      return after inflation, costs, and taxes is realistic. Eventually, you can
+      withdraw returns without depleting the principal, which is how pension funds
+      and university endowments work. In Canada, an&nbsp;
       <ExternalLink to="https://www.blackrock.com/ca/investors/en/learning-centre/etf-education/asset-allocation-etfs">
         Asset Allocation Fund
       </ExternalLink>
-      .
+      &nbsp;offers a low-cost, straightforward approach.
     </Paragraph>
 
     <Paragraph>
-      Hopefully, through this article, I've shown you some of the options
-      available. The best advice I can give you is to treat your finances with
-      the same importance you treat other aspects of your life. Know your
-      objectives and eliminate opportunity costs accordingly. This, of course,
-      is only if you want to accumulate wealth rather than lose it.
+      I've outlined some of your options above. The best advice I can offer is
+      to treat your finances with the same care as other important areas of your
+      life. Define your objectives and eliminate opportunity costs accordingly.
+      Do this if you want to accumulate wealth rather than watch it erode.
     </Paragraph>
 
     <aside className="mt-8">
