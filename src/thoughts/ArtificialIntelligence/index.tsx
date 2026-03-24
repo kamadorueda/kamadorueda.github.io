@@ -112,5 +112,11 @@ export const Content: FC = () => (
       I don't know if this is the future for everyone. But for me, right now,
       this is what my job has become. And I wouldn't go back.
     </Paragraph>
+
+    <Paragraph className="mt-8 text-sm text-gray-600 italic">
+      Note: The thoughts, substance, and structure of this article are mine. AI
+      worked on the prose, word choice, and connectors to improve clarity and
+      articulation.
+    </Paragraph>
   </>
 );
