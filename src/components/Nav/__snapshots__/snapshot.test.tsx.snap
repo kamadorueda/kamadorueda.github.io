@@ -1,0 +1,569 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Nav component - snapshots > matches snapshot on gallery route 1`] = `
+<nav>
+  <div
+    class="hidden sm:block"
+  >
+    <div
+      class="align-center flex"
+    >
+      <div
+        class="flex flex-1"
+      >
+        <img
+          alt="Kevin's profile"
+          aria-hidden="true"
+          class="h-12 w-12 rounded-full transition hover:scale-125 "
+          src="https://avatars.githubusercontent.com/u/47480384?v=4"
+        />
+      </div>
+      <div
+        class="coutline m-auto grid w-fit grid-flow-col items-center rounded-full"
+      >
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline rounded-l-full pl-4"
+          href="/about"
+        >
+          About
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline"
+          href="/projects"
+        >
+          Projects
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2"
+          href="/gallery"
+        >
+          Gallery
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline"
+          href="https://linkedin.com/in/kamadorueda"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Resume
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline rounded-r-full pr-4"
+          href="/thoughts"
+        >
+          Thoughts
+        </a>
+      </div>
+      <div
+        class="flex flex-1"
+      />
+    </div>
+  </div>
+  <div
+    class="sm:hidden"
+  >
+    <div
+      class="flex"
+    >
+      <div
+        class="flex flex-1"
+      >
+        <img
+          alt="Kevin's profile"
+          aria-hidden="true"
+          class="h-12 w-12 rounded-full transition hover:scale-125 h-10 w-10"
+          src="https://avatars.githubusercontent.com/u/47480384?v=4"
+        />
+      </div>
+      <div
+        class=""
+        data-headlessui-state=""
+      >
+        <button
+          aria-expanded="false"
+          class="coutline group text-ctext flex items-center gap-x-2 rounded-full px-8 py-3 transition cfocus-visible chover-bg"
+          data-headlessui-state=""
+          id="headlessui-popover-button-_r_9_"
+          type="button"
+        >
+          <span>
+            Menu
+          </span>
+          <svg
+            class="stroke-ctext h-4 w-4 group-focus-visible:stroke-cfocus group-hover:stroke-ctextdark"
+            role="img"
+          >
+            <use
+              xlink:href="#chevron-down"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <svg
+    class="hidden"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <symbol
+        id="close-button"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M6 18L18 6M6 6l12 12"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="menu"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="chevron-down"
+        viewBox="0 0 8 6"
+      >
+        <path
+          d="M1.75 1.75 4 4.25l2.25-2.5"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </defs>
+  </svg>
+</nav>
+`;
+
+exports[`Nav component - snapshots > matches snapshot on home route 1`] = `
+<nav>
+  <div
+    class="hidden sm:block"
+  >
+    <div
+      class="align-center flex"
+    >
+      <div
+        class="flex flex-1"
+      >
+        <img
+          alt="Kevin's profile"
+          aria-hidden="true"
+          class="h-12 w-12 rounded-full transition hover:scale-125 "
+          src="https://avatars.githubusercontent.com/u/47480384?v=4"
+        />
+      </div>
+      <div
+        class="coutline m-auto grid w-fit grid-flow-col items-center rounded-full"
+      >
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 rounded-l-full pl-4"
+          href="/about"
+        >
+          About
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline"
+          href="/projects"
+        >
+          Projects
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline"
+          href="/gallery"
+        >
+          Gallery
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline"
+          href="https://linkedin.com/in/kamadorueda"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Resume
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline rounded-r-full pr-4"
+          href="/thoughts"
+        >
+          Thoughts
+        </a>
+      </div>
+      <div
+        class="flex flex-1"
+      />
+    </div>
+  </div>
+  <div
+    class="sm:hidden"
+  >
+    <div
+      class="flex"
+    >
+      <div
+        class="flex flex-1"
+      >
+        <img
+          alt="Kevin's profile"
+          aria-hidden="true"
+          class="h-12 w-12 rounded-full transition hover:scale-125 h-10 w-10"
+          src="https://avatars.githubusercontent.com/u/47480384?v=4"
+        />
+      </div>
+      <div
+        class=""
+        data-headlessui-state=""
+      >
+        <button
+          aria-expanded="false"
+          class="coutline group text-ctext flex items-center gap-x-2 rounded-full px-8 py-3 transition cfocus-visible chover-bg"
+          data-headlessui-state=""
+          id="headlessui-popover-button-_r_2_"
+          type="button"
+        >
+          <span>
+            Menu
+          </span>
+          <svg
+            class="stroke-ctext h-4 w-4 group-focus-visible:stroke-cfocus group-hover:stroke-ctextdark"
+            role="img"
+          >
+            <use
+              xlink:href="#chevron-down"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <svg
+    class="hidden"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <symbol
+        id="close-button"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M6 18L18 6M6 6l12 12"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="menu"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="chevron-down"
+        viewBox="0 0 8 6"
+      >
+        <path
+          d="M1.75 1.75 4 4.25l2.25-2.5"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </defs>
+  </svg>
+</nav>
+`;
+
+exports[`Nav component - snapshots > matches snapshot on projects route 1`] = `
+<nav>
+  <div
+    class="hidden sm:block"
+  >
+    <div
+      class="align-center flex"
+    >
+      <div
+        class="flex flex-1"
+      >
+        <img
+          alt="Kevin's profile"
+          aria-hidden="true"
+          class="h-12 w-12 rounded-full transition hover:scale-125 "
+          src="https://avatars.githubusercontent.com/u/47480384?v=4"
+        />
+      </div>
+      <div
+        class="coutline m-auto grid w-fit grid-flow-col items-center rounded-full"
+      >
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline rounded-l-full pl-4"
+          href="/about"
+        >
+          About
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2"
+          href="/projects"
+        >
+          Projects
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline"
+          href="/gallery"
+        >
+          Gallery
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline"
+          href="https://linkedin.com/in/kamadorueda"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Resume
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline rounded-r-full pr-4"
+          href="/thoughts"
+        >
+          Thoughts
+        </a>
+      </div>
+      <div
+        class="flex flex-1"
+      />
+    </div>
+  </div>
+  <div
+    class="sm:hidden"
+  >
+    <div
+      class="flex"
+    >
+      <div
+        class="flex flex-1"
+      >
+        <img
+          alt="Kevin's profile"
+          aria-hidden="true"
+          class="h-12 w-12 rounded-full transition hover:scale-125 h-10 w-10"
+          src="https://avatars.githubusercontent.com/u/47480384?v=4"
+        />
+      </div>
+      <div
+        class=""
+        data-headlessui-state=""
+      >
+        <button
+          aria-expanded="false"
+          class="coutline group text-ctext flex items-center gap-x-2 rounded-full px-8 py-3 transition cfocus-visible chover-bg"
+          data-headlessui-state=""
+          id="headlessui-popover-button-_r_g_"
+          type="button"
+        >
+          <span>
+            Menu
+          </span>
+          <svg
+            class="stroke-ctext h-4 w-4 group-focus-visible:stroke-cfocus group-hover:stroke-ctextdark"
+            role="img"
+          >
+            <use
+              xlink:href="#chevron-down"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <svg
+    class="hidden"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <symbol
+        id="close-button"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M6 18L18 6M6 6l12 12"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="menu"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="chevron-down"
+        viewBox="0 0 8 6"
+      >
+        <path
+          d="M1.75 1.75 4 4.25l2.25-2.5"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </defs>
+  </svg>
+</nav>
+`;
+
+exports[`Nav component - snapshots > matches snapshot on unknown route 1`] = `
+<nav>
+  <div
+    class="hidden sm:block"
+  >
+    <div
+      class="align-center flex"
+    >
+      <div
+        class="flex flex-1"
+      >
+        <img
+          alt="Kevin's profile"
+          aria-hidden="true"
+          class="h-12 w-12 rounded-full transition hover:scale-125 "
+          src="https://avatars.githubusercontent.com/u/47480384?v=4"
+        />
+      </div>
+      <div
+        class="coutline m-auto grid w-fit grid-flow-col items-center rounded-full"
+      >
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline rounded-l-full pl-4"
+          href="/about"
+        >
+          About
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline"
+          href="/projects"
+        >
+          Projects
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline"
+          href="/gallery"
+        >
+          Gallery
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline"
+          href="https://linkedin.com/in/kamadorueda"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Resume
+        </a>
+        <a
+          class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline rounded-r-full pr-4"
+          href="/thoughts"
+        >
+          Thoughts
+        </a>
+      </div>
+      <div
+        class="flex flex-1"
+      />
+    </div>
+  </div>
+  <div
+    class="sm:hidden"
+  >
+    <div
+      class="flex"
+    >
+      <div
+        class="flex flex-1"
+      >
+        <img
+          alt="Kevin's profile"
+          aria-hidden="true"
+          class="h-12 w-12 rounded-full transition hover:scale-125 h-10 w-10"
+          src="https://avatars.githubusercontent.com/u/47480384?v=4"
+        />
+      </div>
+      <div
+        class=""
+        data-headlessui-state=""
+      >
+        <button
+          aria-expanded="false"
+          class="coutline group text-ctext flex items-center gap-x-2 rounded-full px-8 py-3 transition cfocus-visible chover-bg"
+          data-headlessui-state=""
+          id="headlessui-popover-button-_r_n_"
+          type="button"
+        >
+          <span>
+            Menu
+          </span>
+          <svg
+            class="stroke-ctext h-4 w-4 group-focus-visible:stroke-cfocus group-hover:stroke-ctextdark"
+            role="img"
+          >
+            <use
+              xlink:href="#chevron-down"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <svg
+    class="hidden"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <symbol
+        id="close-button"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M6 18L18 6M6 6l12 12"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="menu"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="chevron-down"
+        viewBox="0 0 8 6"
+      >
+        <path
+          d="M1.75 1.75 4 4.25l2.25-2.5"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </defs>
+  </svg>
+</nav>
+`;

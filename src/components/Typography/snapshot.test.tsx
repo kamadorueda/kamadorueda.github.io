@@ -9,7 +9,7 @@ import {
   ExternalLink,
   UnorderedList,
   OrderedList,
-} from "./Typography";
+} from "./index";
 
 // Mock react-router-dom
 vi.mock("react-router-dom", () => ({

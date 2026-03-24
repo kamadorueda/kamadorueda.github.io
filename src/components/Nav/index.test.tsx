@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { Nav } from "./Nav";
+import { Nav } from "./index";
 
 // Mock react-router-dom with pathname option
 const mockUseLocation = vi.fn(() => ({

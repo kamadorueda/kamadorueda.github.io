@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { Body } from "./Body";
+import { Body } from "./index";
 
 describe("Body component", () => {
   it("renders children", () => {

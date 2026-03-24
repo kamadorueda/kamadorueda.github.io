@@ -11,7 +11,7 @@ import {
   ListItem,
   InternalLink,
   ExternalLink,
-} from "./Typography";
+} from "./index";
 
 // Mock react-router-dom
 vi.mock("react-router-dom", () => ({

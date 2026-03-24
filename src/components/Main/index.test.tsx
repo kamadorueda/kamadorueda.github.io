@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { Main } from "./Main";
+import { Main } from "./index";
 
 describe("Main component", () => {
   it("renders main element", () => {
