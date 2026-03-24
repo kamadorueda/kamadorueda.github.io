@@ -31,6 +31,10 @@ export const Nav: FC = () => {
     .with(routes.Gallery.path, () => "Gallery" as const)
     .with(routes.Projects.path, () => "Projects" as const)
     .with(routes.Thoughts.path, () => "Thoughts" as const)
+    .when(
+      (p) => p.startsWith(`${routes.Thoughts.path}/`),
+      () => "Thoughts" as const,
+    )
     .otherwise(() => "Other" as const);
 
   return (

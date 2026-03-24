@@ -1,8 +1,8 @@
-import * as FinancialLiteracy from "./FinancialLiteracy";
 import { FC } from "react";
-import { Helmet } from "react-helmet";
 // @ts-expect-error - React Router v7 type resolution issue
-import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import * as FinancialLiteracy from "./FinancialLiteracy";
 import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
@@ -14,16 +14,12 @@ import {
   Paragraph,
   UnorderedList,
 } from "~/components/Typography";
+import { routes } from "~/routes";
 
-const thoughts = {
-  [FinancialLiteracy.metadata.id]: FinancialLiteracy,
-} as const;
+const allThoughts = [FinancialLiteracy];
 
 export const Thoughts: FC = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const thoughtId = searchParams.get("id");
-  const thought = thoughtId === null ? undefined : thoughts[thoughtId];
+  const navigate = useNavigate();
 
   return (
     <Body>
@@ -33,58 +29,34 @@ export const Thoughts: FC = () => {
         <meta content="Posts, Opinions, and more." name="og:description" />
         <meta content="website" name="og:type" />
       </Helmet>
-
       <Nav />
-
       <Main>
-        {thought === undefined ? (
-          <>
-            <Header>Thoughts</Header>
-            <Paragraph>
-              This is a collection of writings on topics I've found interesting
-              over time. You can click on any of them to read more.
-            </Paragraph>
-            <UnorderedList>
-              {Object.values(thoughts)
-                .toSorted((a, b) =>
-                  a.metadata.timestamp.localeCompare(b.metadata.timestamp),
-                )
-                .map((thought) => (
-                  <ListItem key={thought.metadata.id}>
-                    <ButtonLink
-                      onClick={() => {
-                        setSearchParams({ id: thought.metadata.id });
-                      }}
-                    >
-                      {thought.metadata.title}.
-                    </ButtonLink>
-                    <span className="text-ctext ml-2 text-xs">
-                      {thought.metadata.minutes} minutes read.
-                    </span>
-                  </ListItem>
-                ))}
-            </UnorderedList>
-          </>
-        ) : (
-          <>
-            <Helmet>
-              <title>{thought.metadata.title}</title>
-              <meta content={thought.metadata.title} name="og:title" />
-              <meta content={thought.metadata.summary} name="og:description" />
-              <meta content="article" name="og:type" />
-              <meta content="Kevin Amado" name="article:author" />
-              <meta
-                content={thought.metadata.timestamp}
-                name="article:published_time"
-              />
-              {thought.metadata.tags.map((tag) => (
-                <meta content={tag} key={tag} name="article:tag" />
-              ))}
-            </Helmet>
-            <Header>{thought.metadata.title}</Header>
-            <thought.Content />
-          </>
-        )}
+        <Header>Thoughts</Header>
+        <Paragraph>
+          This is a collection of writings on topics I've found interesting
+          over time. You can click on any of them to read more.
+        </Paragraph>
+        <UnorderedList>
+          {allThoughts.map((thought) => (
+              <ListItem key={thought.metadata.id}>
+                <ButtonLink
+                  onClick={() => {
+                    navigate(
+                      routes.Thought.path.replace(
+                        ":id",
+                        thought.metadata.id,
+                      ),
+                    );
+                  }}
+                >
+                  {thought.metadata.title}.
+                </ButtonLink>
+                <span className="text-ctext ml-2 text-xs">
+                  {thought.metadata.minutes} minutes read.
+                </span>
+              </ListItem>
+            ))}
+        </UnorderedList>
       </Main>
       <Footer />
     </Body>

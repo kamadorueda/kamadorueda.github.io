@@ -17,4 +17,7 @@ export const routes = {
   Thoughts: {
     path: "/thoughts",
   },
+  Thought: {
+    path: "/thoughts/:id",
+  },
 } as const;
