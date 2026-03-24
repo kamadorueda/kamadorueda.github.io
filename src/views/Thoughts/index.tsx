@@ -1,6 +1,7 @@
 import * as FinancialLiteracy from "./FinancialLiteracy";
 import { FC } from "react";
 import { Helmet } from "react-helmet";
+// @ts-expect-error - React Router v7 type resolution issue
 import { useSearchParams } from "react-router-dom";
 import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";

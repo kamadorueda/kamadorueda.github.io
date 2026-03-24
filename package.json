@@ -4,7 +4,7 @@
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^6.27.0",
+    "react-router-dom": "^7.13.2",
     "ts-pattern": "^5.9.0"
   },
   "devDependencies": {

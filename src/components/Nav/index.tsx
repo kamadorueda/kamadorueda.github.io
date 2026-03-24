@@ -6,7 +6,8 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import { FC } from "react";
-import { useMatches } from "react-router-dom";
+// @ts-expect-error - React Router v7 type resolution issue
+import { useLocation } from "react-router-dom";
 import { match } from "ts-pattern";
 import { ExternalLink, InternalLink } from "~/components/Typography";
 import { routes } from "~/routes";
@@ -20,14 +21,14 @@ const largeLink = "px-2 py-2";
 type CurrentLocation = "About" | "Gallery" | "Projects" | "Thoughts" | "Other";
 
 export const Nav: FC = () => {
-  const [matches] = useMatches();
+  const { pathname } = useLocation();
 
-  const current: CurrentLocation = match(matches)
-    .with({ pathname: "/" }, () => "About" as const)
-    .with({ pathname: routes.About.path }, () => "About" as const)
-    .with({ pathname: routes.Gallery.path }, () => "Gallery" as const)
-    .with({ pathname: routes.Projects.path }, () => "Projects" as const)
-    .with({ pathname: routes.Thoughts.path }, () => "Thoughts" as const)
+  const current: CurrentLocation = match(pathname)
+    .with("/", () => "About" as const)
+    .with(routes.About.path, () => "About" as const)
+    .with(routes.Gallery.path, () => "Gallery" as const)
+    .with(routes.Projects.path, () => "Projects" as const)
+    .with(routes.Thoughts.path, () => "Thoughts" as const)
     .otherwise(() => "Other" as const);
 
   return (
