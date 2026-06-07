@@ -15,47 +15,52 @@ export const metadata = {
 export const Content: FC = () => (
   <>
     <Paragraph>
-      This reframes things usefully. You're not just collecting moves, you're
-      building a <strong>diagnostic teaching ladder</strong>: walk any follow
-      down it, and the first rung she struggles on tells you exactly what to
-      drill. That means the order should be driven by <em>what new skill the
-      follow has to demonstrate</em> at each step, and it should start from true
-      basics so it works on a total beginner too.
+      I've been dancing salsa for a month and a half, and it's become one of my
+      favorite social activities. I've made new friends and stay fit. On a night
+      I go dancing, I easily do twenty thousand steps. What I want to share here
+      is how to learn salsa progressively, from absolute beginner to advanced
+      moves. The moves are organized as a teaching ladder: each one builds on the
+      last, so you know exactly what to drill next. Start from the basics, and
+      the progression works for total beginners too.
     </Paragraph>
 
     <Paragraph>
-      One lens before the list: with a follow, almost every stall traces back to
-      one of four fundamentals — <strong>timing, weight transfer, frame/connection,
-      or spotting</strong>. The figure where she struggles is the symptom; your job
-      is to spot which of those four is actually missing and drill <em>that</em>.
-      A true beginner may spend the whole first session in Stages 1–2, and that's
-      the system working correctly.
+      Before you start, here's a helpful frame: when someone is stalling on a
+      move, it's usually not the move itself. It's one of four fundamentals:
+      timing, weight transfer, frame/connection, or spotting. When you notice
+      someone stalling, check which of these four is actually missing, then drill
+      that instead of re-learning the whole figure. If someone spends their first
+      session just on the early moves, that's exactly right.
     </Paragraph>
 
     <Header2>Can she move to the music at all?</Header2>
 
     <Paragraph>
-      <strong>Basic step / timing</strong> — quick-quick-slow, the back-rock;
-      tests keeping time + clean weight transfer.
+      <ExternalLink to="https://www.youtube.com/watch?v=7XgmAPCX85A">
+        Basic step
+      </ExternalLink>
+      &nbsp;
+      (quick-quick-slow, the back-rock) is where you start. This teaches you to
+      keep time and transfer weight cleanly.
     </Paragraph>
 
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=Qv5BKoV72nA">
-          Closed-position basic
-        </ExternalLink>
-      {" "}
-      (Pal Medio / Son Montuno / Llevala Pa'bajo) — tests staying in frame and
-      moving <em>with</em> the lead, not steering herself.
+        Closed-position basic
+      </ExternalLink>
+      &nbsp;
+      (also called Pal Medio, Son Montuno, or Llevala Pa'bajo). Learn to stay in
+      frame and move with the lead instead of steering yourself.
     </Paragraph>
 
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=YwxB1MSytYA">
-          Guapea
-        </ExternalLink>
-      {" "}
-      (open break) — the signature Cuban basic; tests holding the open break and
-      connection at arm's length. Both partners step back and forward at the same
-      time, as opposed to stepping together like in other salsa styles.
+        Guapea
+      </ExternalLink>
+      &nbsp;
+      (open break), the signature Cuban basic. Both partners step back and
+      forward together, creating space and connection at arm's length. This
+      differs from other salsa styles where partners step in unison.
     </Paragraph>
 
     <Header2>Can she follow a guided turn and travel?</Header2>
@@ -64,7 +69,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=Jexcy9LGKjo">
           Dile Que No
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests walking across on the lead (cross-body), trusting redirection over
       memory. The single most important follow skill.
     </Paragraph>
@@ -73,7 +78,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=3tUcawE0Bhs">
           Enchufla
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests a basic powered turn under the arm plus the DQN exit.
     </Paragraph>
 
@@ -81,7 +86,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=51lJ_32VRwc">
           Exhibe
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests a softer turn signal and the arm "untrap." It comes from the basic
       step Llevala Pa'bajo and is essentially a right turn for the follower that
       the leader initiates on 3.
@@ -91,7 +96,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=cpOxtBZ7Dq8">
           Sencillo
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests a redirect turn with light spotting.
     </Paragraph>
 
@@ -101,7 +106,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=pT1AmRJVtRY">
           Vacilala
         </ExternalLink>
-      {" "}
+      &nbsp;
       — her first <em>free</em> turn: sent out and must complete it solo. Huge
       milestone; many plateaus live here. It's the foundation for many
       intermediate patterns.
@@ -111,7 +116,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=6OxXNbCZmpA">
           Enchufla Doble
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests chaining turns through a shoulder-tap without stopping between
       them.
     </Paragraph>
@@ -120,7 +125,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=SjUYUGv4f9o">
           Enchufla con Vuelta
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests turning while <em>you</em> also turn, so she can't just mirror you.
     </Paragraph>
 
@@ -136,7 +141,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=pY_sGnB_sTc">
           Sombrero
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests comfort with hands sweeping over the head and ducking. It starts
       with a Dile Que No followed by a vacila variation where the hands come up
       and over the leader's and follower's head.
@@ -152,7 +157,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=sK1SlAIE0LA">
           Kentucky
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests a rhythm/texture change and playfulness.
     </Paragraph>
 
@@ -167,7 +172,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=_B55w-0o0qw">
           Setenta (70)
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests following a hammerlock and unwind across several eights without
       anticipating. Its basic structure is built upon to create more complex
       patterns.
@@ -177,7 +182,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=TKcxJ8v_nh4">
           Setenta Miami
         </ExternalLink>
-      {" "}
+      &nbsp;
       — the same, strung continuously.
     </Paragraph>
 
@@ -191,7 +196,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=ufaUC31X8M0">
           Setenta y Uno (71)
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests the enganche (arm hook) inside the 70.
     </Paragraph>
 
@@ -233,7 +238,7 @@ export const Content: FC = () => (
       <ExternalLink to="https://www.youtube.com/watch?v=UffIzThsDYE">
           Flamenco
         </ExternalLink>
-      {" "}
+      &nbsp;
       — tests a longer flow with the arm-untrap; it incorporates Dile Que No,
       Evelyn, and the Exhibe turn, with the follower learning to untrap her left
       arm.
