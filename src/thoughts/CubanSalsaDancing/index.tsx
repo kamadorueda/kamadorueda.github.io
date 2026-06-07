@@ -4,11 +4,11 @@ import { Header2 } from "~/components/Typography/Header2";
 import { Paragraph } from "~/components/Typography/Paragraph";
 
 export const metadata = {
-  id: "salsa-dancing-tutorial",
+  id: "cuban-salsa-dancing",
   minutes: 12,
-  summary: "A diagnostic teaching ladder for salsa dancing—from absolute beginner to advanced",
-  tags: ["dance", "salsa", "teaching", "progression"],
-  title: "Salsa Dancing Tutorial",
+  summary: "A practical guide to learning Cuban salsa dancing, from absolute beginner to advanced",
+  tags: ["dance", "salsa", "cuban", "teaching", "progression"],
+  title: "Cuban Salsa Dancing",
   timestamp: "2026-06-07",
 };
 
@@ -33,7 +33,7 @@ export const Content: FC = () => (
       session just on the early moves, that's exactly right.
     </Paragraph>
 
-    <Header2>Can she move to the music at all?</Header2>
+    <Header2>Move with the music</Header2>
 
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=7XgmAPCX85A">
@@ -79,7 +79,7 @@ export const Content: FC = () => (
           Enchufla
         </ExternalLink>
       &nbsp;
-      — tests a basic powered turn under the arm plus the DQN exit.
+      — tests a basic powered turn under the arm plus the Dile Que No exit.
     </Paragraph>
 
     <Paragraph>
@@ -100,7 +100,7 @@ export const Content: FC = () => (
       — tests a redirect turn with light spotting.
     </Paragraph>
 
-    <Header2>Can she turn independently? (the spotting milestone)</Header2>
+    <Header2>Turn and travel</Header2>
 
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=pT1AmRJVtRY">
@@ -135,7 +135,7 @@ export const Content: FC = () => (
       in a vuelta, then finishes with a cross-handed Dile Que No. (Dance Papi)
     </Paragraph>
 
-    <Header2>Hands over the head + curved travel</Header2>
+    <Header2>Hands over the head</Header2>
 
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=pY_sGnB_sTc">
@@ -232,7 +232,7 @@ export const Content: FC = () => (
       introducing new hand and arm movements. (Dance Papi)
     </Paragraph>
 
-    <Header2>Combos & flair (only if she's flying)</Header2>
+    <Header2>Combos and flair</Header2>
 
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=UffIzThsDYE">

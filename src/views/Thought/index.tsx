@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import { match } from "ts-pattern";
 import * as ArtificialIntelligence from "~/thoughts/ArtificialIntelligence";
 import * as FinancialLiteracy from "~/thoughts/FinancialLiteracy";
-import * as SalsaDancingTutorial from "~/thoughts/SalsaDancingTutorial";
+import * as CubanSalsaDancing from "~/thoughts/CubanSalsaDancing";
 import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
@@ -24,7 +24,7 @@ export const Thought: FC = () => {
   const thought = match(id)
     .with("artificial-intelligence", () => ArtificialIntelligence)
     .with("financial-literacy", () => FinancialLiteracy)
-    .with("salsa-dancing-tutorial", () => SalsaDancingTutorial)
+    .with("cuban-salsa-dancing", () => CubanSalsaDancing)
     .otherwise(() => null);
 
   if (!thought) {
