@@ -1,4 +1,6 @@
 import { FC } from "react";
+import { ExternalLink } from "~/components/Typography/ExternalLink";
+import { Header2 } from "~/components/Typography/Header2";
 import { Paragraph } from "~/components/Typography/Paragraph";
 
 export const metadata = {
@@ -30,9 +32,7 @@ export const Content: FC = () => (
       the system working correctly.
     </Paragraph>
 
-    <Paragraph>
-      <strong>Stage 1 — Can she move to the music at all?</strong>
-    </Paragraph>
+    <Header2>Can she move to the music at all?</Header2>
 
     <Paragraph>
       <strong>Basic step / timing</strong> — quick-quick-slow, the back-rock;
@@ -40,88 +40,88 @@ export const Content: FC = () => (
     </Paragraph>
 
     <Paragraph>
-      <strong>Closed-position basic</strong> (Pal Medio / Son Montuno / Llevala
-      Pa'bajo) — tests staying in frame and moving <em>with</em> the lead, not
-      steering herself.{" "}
-      <a href="https://www.youtube.com/watch?v=Qv5BKoV72nA" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=Qv5BKoV72nA">
+          Closed-position basic
+        </ExternalLink>
+      {" "}
+      (Pal Medio / Son Montuno / Llevala Pa'bajo) — tests staying in frame and
+      moving <em>with</em> the lead, not steering herself.
     </Paragraph>
 
     <Paragraph>
-      <strong>Guapea</strong> (open break) — the signature Cuban basic; tests
-      holding the open break and connection at arm's length. Both partners step
-      back and forward at the same time, as opposed to stepping together like in
-      other salsa styles.{" "}
-      <a href="https://www.youtube.com/watch?v=YwxB1MSytYA" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=YwxB1MSytYA">
+          Guapea
+        </ExternalLink>
+      {" "}
+      (open break) — the signature Cuban basic; tests holding the open break and
+      connection at arm's length. Both partners step back and forward at the same
+      time, as opposed to stepping together like in other salsa styles.
+    </Paragraph>
+
+    <Header2>Can she follow a guided turn and travel?</Header2>
+
+    <Paragraph>
+      <ExternalLink to="https://www.youtube.com/watch?v=Jexcy9LGKjo">
+          Dile Que No
+        </ExternalLink>
+      {" "}
+      — tests walking across on the lead (cross-body), trusting redirection over
+      memory. The single most important follow skill.
     </Paragraph>
 
     <Paragraph>
-      <strong>Stage 2 — Can she follow a guided turn and travel?</strong>
+      <ExternalLink to="https://www.youtube.com/watch?v=3tUcawE0Bhs">
+          Enchufla
+        </ExternalLink>
+      {" "}
+      — tests a basic powered turn under the arm plus the DQN exit.
     </Paragraph>
 
     <Paragraph>
-      <strong>Dile Que No</strong> — tests walking across on the lead
-      (cross-body), trusting redirection over memory. The single most important
-      follow skill.{" "}
-      <a href="https://www.youtube.com/watch?v=Jexcy9LGKjo" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=51lJ_32VRwc">
+          Exhibe
+        </ExternalLink>
+      {" "}
+      — tests a softer turn signal and the arm "untrap." It comes from the basic
+      step Llevala Pa'bajo and is essentially a right turn for the follower that
+      the leader initiates on 3.
     </Paragraph>
 
     <Paragraph>
-      <strong>Enchufla</strong> — tests a basic powered turn under the arm plus
-      the DQN exit.{" "}
-      <a href="https://www.youtube.com/watch?v=3tUcawE0Bhs" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=cpOxtBZ7Dq8">
+          Sencillo
+        </ExternalLink>
+      {" "}
+      — tests a redirect turn with light spotting.
+    </Paragraph>
+
+    <Header2>Can she turn independently? (the spotting milestone)</Header2>
+
+    <Paragraph>
+      <ExternalLink to="https://www.youtube.com/watch?v=pT1AmRJVtRY">
+          Vacilala
+        </ExternalLink>
+      {" "}
+      — her first <em>free</em> turn: sent out and must complete it solo. Huge
+      milestone; many plateaus live here. It's the foundation for many
+      intermediate patterns.
     </Paragraph>
 
     <Paragraph>
-      <strong>Exhibe</strong> — tests a softer turn signal and the arm "untrap."
-      It comes from the basic step Llevala Pa'bajo and is essentially a right
-      turn for the follower that the leader initiates on 3.{" "}
-      <a href="https://www.youtube.com/watch?v=51lJ_32VRwc" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=6OxXNbCZmpA">
+          Enchufla Doble
+        </ExternalLink>
+      {" "}
+      — tests chaining turns through a shoulder-tap without stopping between
+      them.
     </Paragraph>
 
     <Paragraph>
-      <strong>Sencillo</strong> — tests a redirect turn with light spotting.{" "}
-      <a href="https://www.youtube.com/watch?v=cpOxtBZ7Dq8" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
-    </Paragraph>
-
-    <Paragraph>
-      <strong>Stage 3 — Can she turn independently? (the spotting milestone)</strong>
-    </Paragraph>
-
-    <Paragraph>
-      <strong>Vacilala</strong> — her first <em>free</em> turn: sent out and must
-      complete it solo. Huge milestone; many plateaus live here. It's the
-      foundation for many intermediate patterns.{" "}
-      <a href="https://www.youtube.com/watch?v=pT1AmRJVtRY" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
-    </Paragraph>
-
-    <Paragraph>
-      <strong>Enchufla Doble</strong> — tests chaining turns through a
-      shoulder-tap without stopping between them.{" "}
-      <a href="https://www.youtube.com/watch?v=6OxXNbCZmpA" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
-    </Paragraph>
-
-    <Paragraph>
-      <strong>Enchufla con Vuelta</strong> — tests turning while <em>you</em>{" "}
-      also turn, so she can't just mirror you.{" "}
-      <a href="https://www.youtube.com/watch?v=SjUYUGv4f9o" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=SjUYUGv4f9o">
+          Enchufla con Vuelta
+        </ExternalLink>
+      {" "}
+      — tests turning while <em>you</em> also turn, so she can't just mirror you.
     </Paragraph>
 
     <Paragraph>
@@ -130,17 +130,16 @@ export const Content: FC = () => (
       in a vuelta, then finishes with a cross-handed Dile Que No. (Dance Papi)
     </Paragraph>
 
-    <Paragraph>
-      <strong>Stage 4 — Hands over the head + curved travel</strong>
-    </Paragraph>
+    <Header2>Hands over the head + curved travel</Header2>
 
     <Paragraph>
-      <strong>Sombrero</strong> — tests comfort with hands sweeping over the head
-      and ducking. It starts with a Dile Que No followed by a vacila variation
-      where the hands come up and over the leader's and follower's head.{" "}
-      <a href="https://www.youtube.com/watch?v=pY_sGnB_sTc" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=pY_sGnB_sTc">
+          Sombrero
+        </ExternalLink>
+      {" "}
+      — tests comfort with hands sweeping over the head and ducking. It starts
+      with a Dile Que No followed by a vacila variation where the hands come up
+      and over the leader's and follower's head.
     </Paragraph>
 
     <Paragraph>
@@ -150,10 +149,11 @@ export const Content: FC = () => (
     </Paragraph>
 
     <Paragraph>
-      <strong>Kentucky</strong> — tests a rhythm/texture change and playfulness.{" "}
-      <a href="https://www.youtube.com/watch?v=sK1SlAIE0LA" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=sK1SlAIE0LA">
+          Kentucky
+        </ExternalLink>
+      {" "}
+      — tests a rhythm/texture change and playfulness.
     </Paragraph>
 
     <Paragraph>
@@ -161,24 +161,24 @@ export const Content: FC = () => (
       (Dance Papi)
     </Paragraph>
 
+    <Header2>Multi-count knots (the Setenta family)</Header2>
+
     <Paragraph>
-      <strong>Stage 5 — Multi-count knots (the Setenta family)</strong>
+      <ExternalLink to="https://www.youtube.com/watch?v=_B55w-0o0qw">
+          Setenta (70)
+        </ExternalLink>
+      {" "}
+      — tests following a hammerlock and unwind across several eights without
+      anticipating. Its basic structure is built upon to create more complex
+      patterns.
     </Paragraph>
 
     <Paragraph>
-      <strong>Setenta (70)</strong> — tests following a hammerlock and unwind
-      across several eights without anticipating. Its basic structure is built
-      upon to create more complex patterns.{" "}
-      <a href="https://www.youtube.com/watch?v=_B55w-0o0qw" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
-    </Paragraph>
-
-    <Paragraph>
-      <strong>Setenta Miami</strong> — the same, strung continuously.{" "}
-      <a href="https://www.youtube.com/watch?v=TKcxJ8v_nh4" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=TKcxJ8v_nh4">
+          Setenta Miami
+        </ExternalLink>
+      {" "}
+      — the same, strung continuously.
     </Paragraph>
 
     <Paragraph>
@@ -188,11 +188,11 @@ export const Content: FC = () => (
     </Paragraph>
 
     <Paragraph>
-      <strong>Setenta y Uno (71)</strong> — tests the enganche (arm hook) inside
-      the 70.{" "}
-      <a href="https://www.youtube.com/watch?v=ufaUC31X8M0" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=ufaUC31X8M0">
+          Setenta y Uno (71)
+        </ExternalLink>
+      {" "}
+      — tests the enganche (arm hook) inside the 70.
     </Paragraph>
 
     <Paragraph>
@@ -206,9 +206,7 @@ export const Content: FC = () => (
       right-hand turn the leader lets go of the follower. (Dance Papi)
     </Paragraph>
 
-    <Paragraph>
-      <strong>Stage 6 — Shadow position + very light leads</strong>
-    </Paragraph>
+    <Header2>Shadow position + very light leads</Header2>
 
     <Paragraph>
       <strong>El Uno / El Dos</strong> — tests dancing in shadow position and
@@ -229,17 +227,16 @@ export const Content: FC = () => (
       introducing new hand and arm movements. (Dance Papi)
     </Paragraph>
 
-    <Paragraph>
-      <strong>Stage 7 — Combos & flair (only if she's flying)</strong>
-    </Paragraph>
+    <Header2>Combos & flair (only if she's flying)</Header2>
 
     <Paragraph>
-      <strong>Flamenco</strong> — tests a longer flow with the arm-untrap; it
-      incorporates Dile Que No, Evelyn, and the Exhibe turn, with the follower
-      learning to untrap her left arm.{" "}
-      <a href="https://www.youtube.com/watch?v=UffIzThsDYE" rel="noopener noreferrer" target="_blank">
-        Video
-      </a>
+      <ExternalLink to="https://www.youtube.com/watch?v=UffIzThsDYE">
+          Flamenco
+        </ExternalLink>
+      {" "}
+      — tests a longer flow with the arm-untrap; it incorporates Dile Que No,
+      Evelyn, and the Exhibe turn, with the follower learning to untrap her left
+      arm.
     </Paragraph>
 
     <Paragraph>
