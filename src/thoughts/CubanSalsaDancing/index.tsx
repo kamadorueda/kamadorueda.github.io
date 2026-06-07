@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { YoutubeVideo } from "~/components/YoutubeVideo";
 import { ExternalLink } from "~/components/Typography/ExternalLink";
 import { Header2 } from "~/components/Typography/Header2";
 import { Paragraph } from "~/components/Typography/Paragraph";
@@ -85,6 +86,8 @@ export const Content: FC = () => (
       </ExternalLink>
       &nbsp; — tests a redirect turn with light spotting.
     </Paragraph>
+
+    <YoutubeVideo endTime={[2, 36]} startTime={[2, 19]} videoId="cpOxtBZ7Dq8" />
 
     <Header2>Turn and travel</Header2>
 
