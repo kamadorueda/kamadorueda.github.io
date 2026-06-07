@@ -7,7 +7,7 @@ export const metadata = {
   summary: "How AI agents are changing what it means to be a software engineer",
   tags: ["technology", "artificial-intelligence", "engineering"],
   title: "Artificial Intelligence",
-  timestamp: "2026-03-24",
+  timestamp: new Date(2026, 2, 24),
 };
 
 export const Content: FC = () => (

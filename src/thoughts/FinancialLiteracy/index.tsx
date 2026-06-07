@@ -12,7 +12,7 @@ export const metadata = {
   summary: "Know your opportunity costs",
   tags: ["finances", "investing"],
   title: "Financial Literacy",
-  timestamp: "2024-05-27",
+  timestamp: new Date(2024, 4, 27),
 };
 
 export const Content: FC = () => (
