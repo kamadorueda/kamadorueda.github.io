@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import * as ArtificialIntelligence from "~/thoughts/ArtificialIntelligence";
 import * as FinancialLiteracy from "~/thoughts/FinancialLiteracy";
+import * as SalsaDancingTutorial from "~/thoughts/SalsaDancingTutorial";
 import { Body } from "~/components/Body";
 import { Footer } from "~/components/Footer";
 import { Main } from "~/components/Main";
@@ -16,7 +17,7 @@ import { UnorderedList } from "~/components/Typography/UnorderedList";
 import { routes } from "~/routes";
 import { formatDate } from "~/utils/formatDate";
 
-const allThoughts = [ArtificialIntelligence, FinancialLiteracy];
+const allThoughts = [SalsaDancingTutorial, ArtificialIntelligence, FinancialLiteracy];
 
 export const Thoughts: FC = () => {
   const navigate = useNavigate();
