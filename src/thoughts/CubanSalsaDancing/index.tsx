@@ -354,7 +354,7 @@ export const Content: FC = () => (
         phrase.
       </Move.Description>
       <Move.Video
-        highlight={{ from: [0, 0], to: [60, 0] }}
+        highlight={{ from: [1, 51], to: [2, 3] }}
         videoId="UffIzThsDYE"
       />
     </Move>
