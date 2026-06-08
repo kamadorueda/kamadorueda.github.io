@@ -391,6 +391,10 @@ export const Content: FC = () => (
         concluding with a full or half Sombrero, designed to showcase stamina
         and partnership trust through an extended sequence.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [0, 10], to: [0, 42] }}
+        videoId="OxVPDgXNJ2E"
+      />
     </Move>
   </>
 );
