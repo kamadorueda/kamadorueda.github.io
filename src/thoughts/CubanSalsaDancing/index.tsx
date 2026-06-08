@@ -306,10 +306,6 @@ export const Content: FC = () => (
         executing side-to-side steps and a double Sombrero turn before ending
         with a Dile Que No.
       </Move.Description>
-      <Move.Video
-        highlight={{ from: [0, 0], to: [60, 0] }}
-        videoId="ktbGFCWQyYQ"
-      />
     </Move>
 
     <Move name="El Dedo">
@@ -318,10 +314,6 @@ export const Content: FC = () => (
         lead sensitivity, chaining Enchufla and Evelyn patterns through multiple
         eight-count phrases while maintaining minimal hand pressure connection.
       </Move.Description>
-      <Move.Video
-        highlight={{ from: [0, 0], to: [60, 0] }}
-        videoId="3HaP8l4FzDo"
-      />
     </Move>
 
     <Move name="Corona">
@@ -330,10 +322,6 @@ export const Content: FC = () => (
         shape alongside Enchufla and Exhibe transitions, teaching new decorative
         arm and hand positioning on a familiar footwork base.
       </Move.Description>
-      <Move.Video
-        highlight={{ from: [0, 0], to: [60, 0] }}
-        videoId="ZCvPzQ3R-Tw"
-      />
     </Move>
 
     <Header2>Combos and flair</Header2>
@@ -358,10 +346,6 @@ export const Content: FC = () => (
         arm sweeps and testing coordination of repeated head-and-arm
         positioning.
       </Move.Description>
-      <Move.Video
-        highlight={{ from: [0, 0], to: [60, 0] }}
-        videoId="xXgqNp2m7Zs"
-      />
     </Move>
 
     <Move name="Setenta (70) Complicado">
@@ -370,10 +354,6 @@ export const Content: FC = () => (
         within an Enchufla structure while maintaining 180-degree directional
         shifts, requiring sophisticated lead timing and follower responsiveness.
       </Move.Description>
-      <Move.Video
-        highlight={{ from: [0, 0], to: [60, 0] }}
-        videoId="BvlBvQ1R5d4"
-      />
     </Move>
 
     <Move name='Montaña Rusa ("roller coaster")'>
