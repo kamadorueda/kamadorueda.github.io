@@ -338,6 +338,10 @@ export const Content: FC = () => (
         shape alongside Enchufla and Exhibe transitions, teaching new decorative
         arm and hand positioning on a familiar footwork base.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [1, 15], to: [1, 30] }}
+        videoId="NpMtwjWGDfo"
+      />
     </Move>
 
     <Header2>Combos and flair</Header2>
