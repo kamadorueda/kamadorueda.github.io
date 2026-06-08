@@ -378,6 +378,10 @@ export const Content: FC = () => (
         within an Enchufla structure while maintaining 180-degree directional
         shifts, requiring sophisticated lead timing and follower responsiveness.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [3, 55], to: [4, 15] }}
+        videoId="YOYk3Wbcf_M"
+      />
     </Move>
 
     <Move name='Montaña Rusa ("roller coaster")'>
