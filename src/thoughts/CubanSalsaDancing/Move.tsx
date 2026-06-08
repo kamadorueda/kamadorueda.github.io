@@ -28,7 +28,7 @@ interface MoveProps extends PropsWithChildren {
 const MoveRoot: FC<MoveProps> = ({ name, videoId, children }) => (
   <MoveContext.Provider value={{ name, hasVideo: !!videoId }}>
     {React.Children.map(children, (child) =>
-      React.isValidElement(child)
+      React.isValidElement(child) && videoId
         ? React.cloneElement(child, { videoId } as Record<string, unknown>)
         : child,
     )}
