@@ -33,6 +33,10 @@ export const Content: FC = () => (
         establishes the rhythmic foundation underlying all other Cuban salsa
         patterns.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [0, 0], to: [60, 0] }}
+        videoId="7XgmAPCX85A"
+      />
     </Move>
 
     <Move name="Closed-position basic">
@@ -42,6 +46,10 @@ export const Content: FC = () => (
         respond to the leader's movement and lead rather than relying on memory
         or self-direction.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [0, 0], to: [60, 0] }}
+        videoId="Qv5BKoV72nA"
+      />
     </Move>
 
     <Move name="Guapea">
@@ -51,6 +59,10 @@ export const Content: FC = () => (
         back, then vice versa) rather than stepping together, creating
         characteristic space and connection at arm's length.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [0, 0], to: [60, 0] }}
+        videoId="YwxB1MSytYA"
+      />
     </Move>
 
     <Header2>Guided turn and travel</Header2>
@@ -321,6 +333,10 @@ export const Content: FC = () => (
         allowing extended practice of arm recovery within a longer flowing
         phrase.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [0, 0], to: [60, 0] }}
+        videoId="UffIzThsDYE"
+      />
     </Move>
 
     <Move name="Sombrero Doble">
