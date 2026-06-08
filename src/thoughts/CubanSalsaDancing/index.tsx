@@ -50,23 +50,23 @@ export const Content: FC = () => (
 
     <Header2>Guided turn and travel</Header2>
 
-    <Move name="Dile Que No">
-      <Move.Description videoId="Jexcy9LGKjo">
+    <Move name="Dile Que No" videoId="Jexcy9LGKjo">
+      <Move.Description>
         tests walking across on the lead (cross-body), trusting redirection over
         memory. The single most important follow skill.
       </Move.Description>
       <Move.Video highlight={{ from: [3, 51], to: [3, 56] }} id="Jexcy9LGKjo" />
     </Move>
 
-    <Move name="Enchufla">
-      <Move.Description videoId="3tUcawE0Bhs">
+    <Move name="Enchufla" videoId="3tUcawE0Bhs">
+      <Move.Description>
         tests a basic powered turn under the arm plus the Dile Que No exit.
       </Move.Description>
       <Move.Video highlight={{ from: [1, 53], to: [2, 0] }} id="3tUcawE0Bhs" />
     </Move>
 
-    <Move name="Exhibe">
-      <Move.Description videoId="51lJ_32VRwc">
+    <Move name="Exhibe" videoId="51lJ_32VRwc">
+      <Move.Description>
         tests a softer turn signal and the arm untrap. It comes from the basic
         step Llevala Pa'bajo and is essentially a right turn for the follower
         that the leader initiates on 3.
@@ -74,8 +74,8 @@ export const Content: FC = () => (
       <Move.Video highlight={{ from: [1, 25], to: [1, 30] }} id="51lJ_32VRwc" />
     </Move>
 
-    <Move name="Sencillo">
-      <Move.Description videoId="cpOxtBZ7Dq8">
+    <Move name="Sencillo" videoId="cpOxtBZ7Dq8">
+      <Move.Description>
         tests a redirect turn with light spotting.
       </Move.Description>
       <Move.Video highlight={{ from: [2, 19], to: [2, 36] }} id="cpOxtBZ7Dq8" />
@@ -83,8 +83,8 @@ export const Content: FC = () => (
 
     <Header2>Turn and travel</Header2>
 
-    <Move name="Vacilala">
-      <Move.Description videoId="pT1AmRJVtRY">
+    <Move name="Vacilala" videoId="pT1AmRJVtRY">
+      <Move.Description>
         her first <em>free</em> turn: sent out and must complete it solo. Huge
         milestone; many plateaus live here. It's the foundation for many
         intermediate patterns.
@@ -92,24 +92,24 @@ export const Content: FC = () => (
       <Move.Video highlight={{ from: [2, 44], to: [3, 5] }} id="pT1AmRJVtRY" />
     </Move>
 
-    <Move name="Enchufla Doble">
-      <Move.Description videoId="6OxXNbCZmpA">
+    <Move name="Enchufla Doble" videoId="6OxXNbCZmpA">
+      <Move.Description>
         tests chaining turns through a shoulder-tap without stopping between
         them.
       </Move.Description>
       <Move.Video highlight={{ from: [1, 53], to: [2, 4] }} id="6OxXNbCZmpA" />
     </Move>
 
-    <Move name="Enchufla con Vuelta">
-      <Move.Description videoId="SjUYUGv4f9o">
+    <Move name="Enchufla con Vuelta" videoId="SjUYUGv4f9o">
+      <Move.Description>
         tests turning while <em>you</em> also turn, so she can't just mirror
         you.
       </Move.Description>
       <Move.Video highlight={{ from: [0, 8], to: [0, 16] }} id="SjUYUGv4f9o" />
     </Move>
 
-    <Move name="Evelyn">
-      <Move.Description videoId="cbkno_4beCQ">
+    <Move name="Evelyn" videoId="cbkno_4beCQ">
+      <Move.Description>
         tests holding a frame you build mid-move. It begins like an Enchufla but
         the leader creates a frame, turns to the right in a vuelta, then
         finishes with a cross-handed Dile Que No.
@@ -119,8 +119,8 @@ export const Content: FC = () => (
 
     <Header2>Hands over the head</Header2>
 
-    <Move name="Sombrero">
-      <Move.Description videoId="pY_sGnB_sTc">
+    <Move name="Sombrero" videoId="pY_sGnB_sTc">
+      <Move.Description>
         tests comfort with hands sweeping over the head and ducking. It starts
         with a Dile Que No followed by a vacila variation where the hands come
         up and over the leader's and follower's head.
@@ -128,8 +128,8 @@ export const Content: FC = () => (
       <Move.Video highlight={{ from: [3, 12], to: [3, 27] }} id="pY_sGnB_sTc" />
     </Move>
 
-    <Move name="Coca-Cola">
-      <Move.Description videoId="UffIzThsDYE">
+    <Move name="Coca-Cola" videoId="UffIzThsDYE">
+      <Move.Description>
         tests a traveling left turn <em>around</em> you on a curved line, which
         needs more than a 360° to get all the way around (harder than a straight
         turn).
@@ -137,15 +137,15 @@ export const Content: FC = () => (
       <Move.Video highlight={{ from: [0, 38], to: [0, 53] }} id="UffIzThsDYE" />
     </Move>
 
-    <Move name="Kentucky">
-      <Move.Description videoId="sK1SlAIE0LA">
+    <Move name="Kentucky" videoId="sK1SlAIE0LA">
+      <Move.Description>
         tests a rhythm/texture change and playfulness.
       </Move.Description>
       <Move.Video highlight={{ from: [1, 28], to: [1, 40] }} id="sK1SlAIE0LA" />
     </Move>
 
-    <Move name="Adios">
-      <Move.Description videoId="N5Yrm_ksDX0">
+    <Move name="Adios" videoId="N5Yrm_ksDX0">
+      <Move.Description>
         tests reading a direction-change/peek redirect.
       </Move.Description>
       <Move.Video highlight={{ from: [1, 17], to: [1, 45] }} id="N5Yrm_ksDX0" />
@@ -153,8 +153,8 @@ export const Content: FC = () => (
 
     <Header2>Multi-count knots (the Setenta family)</Header2>
 
-    <Move name="Setenta (70)">
-      <Move.Description videoId="_B55w-0o0qw">
+    <Move name="Setenta (70)" videoId="_B55w-0o0qw">
+      <Move.Description>
         tests following a hammerlock and unwind across several eights without
         anticipating. Its basic structure is built upon to create more complex
         patterns.
@@ -162,18 +162,17 @@ export const Content: FC = () => (
       <Move.Video highlight={{ from: [2, 12], to: [2, 25] }} id="_B55w-0o0qw" />
     </Move>
 
-    <Move name="Setenta (70) Miami">
-      <Move.Description videoId="TKcxJ8v_nh4">
-        the same, strung continuously.
-      </Move.Description>
+    <Move name="Setenta (70) Miami" videoId="TKcxJ8v_nh4">
+      <Move.Description>the same, strung continuously.</Move.Description>
       <Move.Video highlight={{ from: [3, 52], to: [4, 15] }} id="TKcxJ8v_nh4" />
     </Move>
 
-    <Move name="Siete (7)">
+    <Move name="Siete (7)" videoId="H8-wYPlmHVU">
       <Move.Description>
         tests a new redirect; a fundamental intermediate move where the leader
         redirects the follower similar to a vacila.
       </Move.Description>
+      <Move.Video highlight={{ from: [2, 50], to: [3, 10] }} id="H8-wYPlmHVU" />
     </Move>
 
     <Move name="Setenta y Uno (71)">
