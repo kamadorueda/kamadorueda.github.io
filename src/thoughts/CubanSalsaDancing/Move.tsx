@@ -1,13 +1,11 @@
 import React, { FC, PropsWithChildren } from "react";
 import { YoutubeVideo } from "~/components/YoutubeVideo";
-import { ExternalLink } from "~/components/Typography/ExternalLink";
-import { Paragraph } from "~/components/Typography/Paragraph";
+import { Definition } from "~/components/Typography/Definition";
 
 type TimeRange = [minutes: number, seconds: number];
 
 interface MoveContextType {
   name: string;
-  hasVideo?: boolean;
 }
 
 const MoveContext = React.createContext<MoveContextType | undefined>(undefined);
@@ -22,53 +20,25 @@ const useMoveContext = () => {
 
 interface MoveProps extends PropsWithChildren {
   name: string;
-  videoId?: string;
 }
 
-const MoveRoot: FC<MoveProps> = ({ name, videoId, children }) => (
-  <MoveContext.Provider value={{ name, hasVideo: !!videoId }}>
-    {React.Children.map(children, (child) =>
-      React.isValidElement(child) && videoId
-        ? React.cloneElement(child, { videoId } as Record<string, unknown>)
-        : child,
-    )}
-  </MoveContext.Provider>
+const MoveRoot: FC<MoveProps> = ({ name, children }) => (
+  <MoveContext.Provider value={{ name }}>{children}</MoveContext.Provider>
 );
 
-interface MoveDescriptionProps extends PropsWithChildren {
-  videoId?: string;
-}
+const MoveDescription: FC<PropsWithChildren> = ({ children }) => {
+  const { name } = useMoveContext();
 
-const MoveDescription: FC<MoveDescriptionProps> = ({ children, videoId }) => {
-  const { name, hasVideo } = useMoveContext();
-  const youtubeUrl =
-    videoId && !hasVideo
-      ? `https://www.youtube.com/watch?v=${videoId}`
-      : undefined;
-
-  return (
-    <Paragraph>
-      {youtubeUrl ? (
-        <ExternalLink to={youtubeUrl}>{name}</ExternalLink>
-      ) : (
-        <span>{name}</span>
-      )}
-      : {children}
-    </Paragraph>
-  );
+  return <Definition term={name}>{children}</Definition>;
 };
 
 interface MoveVideoProps {
-  highlight?: { from: TimeRange; to: TimeRange };
-  videoId?: string;
+  highlight: { from: TimeRange; to: TimeRange };
+  videoId: string;
 }
 
 const MoveVideoComponent: FC<MoveVideoProps> = ({ highlight, videoId }) => {
   const { name } = useMoveContext();
-
-  if (!highlight || !videoId) {
-    return null;
-  }
 
   return (
     <YoutubeVideo

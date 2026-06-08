@@ -100,7 +100,12 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
       className={tw("mt-4 flex w-full flex-col items-center", className)}
     >
       <div className="flex w-full max-w-3xl flex-col overflow-hidden rounded-lg">
-        <div aria-live="polite" role="region">
+        <div
+          aria-live="polite"
+          role="region"
+          className="bg-black"
+          style={{ aspectRatio: "16 / 9" }}
+        >
           <YouTube
             className="w-full overflow-hidden"
             onStateChange={handleStateChange}

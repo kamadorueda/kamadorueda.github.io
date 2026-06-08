@@ -27,24 +27,29 @@ export const Content: FC = () => (
     <Header2>Move with the music</Header2>
 
     <Move name="Basic step">
-      <Move.Description videoId="7XgmAPCX85A">
-        (quick-quick-slow, the back-rock) is where you start. This teaches you
-        to keep time and transfer weight cleanly.
+      <Move.Description>
+        The foundational step pattern combining three quick-quick-slow counts
+        with weight transfer through Cuban motion. This back-rock pattern
+        establishes the rhythmic foundation underlying all other Cuban salsa
+        patterns.
       </Move.Description>
     </Move>
 
     <Move name="Closed-position basic">
-      <Move.Description videoId="Qv5BKoV72nA">
-        (also called Pal Medio, Son Montuno, or Llevala Pa'bajo). Learn to stay
-        in frame and move with the lead instead of steering yourself.
+      <Move.Description>
+        The Cuban basic step danced in closed partnership position where both
+        dancers move together with consistent frame, allowing the follower to
+        respond to the leader's movement and lead rather than relying on memory
+        or self-direction.
       </Move.Description>
     </Move>
 
     <Move name="Guapea">
-      <Move.Description videoId="YwxB1MSytYA">
-        (open break), the signature Cuban basic. Both partners step back and
-        forward together, creating space and connection at arm's length. This
-        differs from other salsa styles where partners step in unison.
+      <Move.Description>
+        The signature Cuban basic performed in open position where partners step
+        in opposing directions simultaneously (leader forward as follower steps
+        back, then vice versa) rather than stepping together, creating
+        characteristic space and connection at arm's length.
       </Move.Description>
     </Move>
 
@@ -52,8 +57,10 @@ export const Content: FC = () => (
 
     <Move name="Dile Que No">
       <Move.Description>
-        tests walking across on the lead (cross-body), trusting redirection over
-        memory. The single most important follow skill.
+        A cross-body movement where the follower walks across in front of the
+        leader while rotating on a curved path, changing direction through
+        responsive redirects rather than predetermined steps, establishing the
+        fundamental connection between leader signal and follower trust.
       </Move.Description>
       <Move.Video
         highlight={{ from: [3, 51], to: [3, 56] }}
@@ -63,7 +70,9 @@ export const Content: FC = () => (
 
     <Move name="Enchufla">
       <Move.Description>
-        tests a basic powered turn under the arm plus the Dile Que No exit.
+        An opposite-directional turning pattern where the follower turns left
+        while the leader turns right, with the arm passing overhead and
+        transitioning into a Dile Que No exit that reorients both dancers.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 53], to: [2, 0] }}
@@ -73,9 +82,10 @@ export const Content: FC = () => (
 
     <Move name="Exhibe">
       <Move.Description>
-        tests a softer turn signal and the arm untrap. It comes from the basic
-        step Llevala Pa'bajo and is essentially a right turn for the follower
-        that the leader initiates on 3.
+        A right turn for the follower initiated with a softer lead signal,
+        teaching arm untrap technique where the follower learns to free and
+        reposition her arm after the turn while maintaining the oval walking
+        pattern.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 25], to: [1, 30] }}
@@ -85,7 +95,9 @@ export const Content: FC = () => (
 
     <Move name="Sencillo">
       <Move.Description>
-        tests a redirect turn with light spotting.
+        A turn executed with minimal lead pressure and a redirect mechanism,
+        where the follower maintains visual spotting to manage rotation while
+        responding to subtle directional changes from the leader.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 19], to: [2, 36] }}
@@ -97,9 +109,10 @@ export const Content: FC = () => (
 
     <Move name="Vacilala">
       <Move.Description>
-        her first <em>free</em> turn: sent out and must complete it solo. Huge
-        milestone; many plateaus live here. It's the foundation for many
-        intermediate patterns.
+        Two successive walking right turns within an 8-count cycle where the
+        follower completes the first full rotation and most of the second
+        rotation independently, establishing the foundational intermediate skill
+        of executing turns without continuous lead support.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 44], to: [3, 5] }}
@@ -109,8 +122,9 @@ export const Content: FC = () => (
 
     <Move name="Enchufla Doble">
       <Move.Description>
-        tests chaining turns through a shoulder-tap without stopping between
-        them.
+        Two consecutive Enchufla turns executed with a shoulder-tap connection
+        that allows seamless transition between rotations, testing the
+        follower's ability to chain powered turns without stopping.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 53], to: [2, 4] }}
@@ -120,8 +134,10 @@ export const Content: FC = () => (
 
     <Move name="Enchufla con Vuelta">
       <Move.Description>
-        tests turning while <em>you</em> also turn, so she can't just mirror
-        you.
+        An Enchufla where the leader executes his own simultaneous turn,
+        preventing the follower from mirroring the leader's movement and
+        requiring her to execute the turn independently based on hand lead
+        connection.
       </Move.Description>
       <Move.Video
         highlight={{ from: [0, 8], to: [0, 16] }}
@@ -131,9 +147,10 @@ export const Content: FC = () => (
 
     <Move name="Evelyn">
       <Move.Description>
-        tests holding a frame you build mid-move. It begins like an Enchufla but
-        the leader creates a frame, turns to the right in a vuelta, then
-        finishes with a cross-handed Dile Que No.
+        A move that begins like an Enchufla but transitions into a frame the
+        leader creates mid-movement, allowing the leader to execute his own
+        right turn while maintaining connection before finishing with a
+        cross-handed Dile Que No.
       </Move.Description>
       <Move.Video
         highlight={{ from: [0, 21], to: [0, 31] }}
@@ -145,9 +162,9 @@ export const Content: FC = () => (
 
     <Move name="Sombrero">
       <Move.Description>
-        tests comfort with hands sweeping over the head and ducking. It starts
-        with a Dile Que No followed by a vacila variation where the hands come
-        up and over the leader's and follower's head.
+        A figure beginning with Dile Que No that transitions into a crossed-hand
+        overhead arm sweep resembling a hat, testing comfort with hand proximity
+        to the head and synchronized arm positioning.
       </Move.Description>
       <Move.Video
         highlight={{ from: [3, 12], to: [3, 27] }}
@@ -157,9 +174,9 @@ export const Content: FC = () => (
 
     <Move name="Coca-Cola">
       <Move.Description>
-        tests a traveling left turn <em>around</em> you on a curved line, which
-        needs more than a 360° to get all the way around (harder than a straight
-        turn).
+        A left turn executed while traveling around the leader on a curved path,
+        requiring more than a full rotation to complete the circumnavigation and
+        presenting greater spatial complexity than straight-axis turns.
       </Move.Description>
       <Move.Video
         highlight={{ from: [0, 38], to: [0, 53] }}
@@ -169,7 +186,9 @@ export const Content: FC = () => (
 
     <Move name="Kentucky">
       <Move.Description>
-        tests a rhythm/texture change and playfulness.
+        An Enchufla-based figure with neck and shoulder-level leading that
+        creates decorative hand patterns around the follower's shoulders while
+        maintaining playful two-handed connection.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 28], to: [1, 40] }}
@@ -179,7 +198,9 @@ export const Content: FC = () => (
 
     <Move name="Adios">
       <Move.Description>
-        tests reading a direction-change/peek redirect.
+        A tight carousel-like turn where the leader positions himself centrally
+        and both dancers rotate around a common axis, with the follower reading
+        directional changes from the leader's subtle frame signals.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 17], to: [1, 45] }}
@@ -191,9 +212,10 @@ export const Content: FC = () => (
 
     <Move name="Setenta (70)">
       <Move.Description>
-        tests following a hammerlock and unwind across several eights without
-        anticipating. Its basic structure is built upon to create more complex
-        patterns.
+        A foundational three-count-of-eight figure combining a Hammerlock
+        opening, a behind-the-back repositioning phrase, and an Enchufla exit
+        that serves as the base structure for numerous intermediate
+        combinations.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 12], to: [2, 25] }}
@@ -202,7 +224,11 @@ export const Content: FC = () => (
     </Move>
 
     <Move name="Setenta (70) Miami">
-      <Move.Description>the same, strung continuously.</Move.Description>
+      <Move.Description>
+        Multiple consecutive Setenta patterns strung together in continuous
+        sequence, allowing the base three-count-of-eight structure to repeat
+        indefinitely through musical phrases.
+      </Move.Description>
       <Move.Video
         highlight={{ from: [3, 52], to: [4, 15] }}
         videoId="TKcxJ8v_nh4"
@@ -211,8 +237,9 @@ export const Content: FC = () => (
 
     <Move name="Siete (7)">
       <Move.Description>
-        tests a new redirect; a fundamental intermediate move where the leader
-        redirects the follower similar to a vacila.
+        A redirect pattern where the leader uses a low, wrapped hand connection
+        to redirect the follower similar to a Vacilala, requiring precise lead
+        calibration to achieve smooth execution.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 50], to: [3, 10] }}
@@ -222,7 +249,9 @@ export const Content: FC = () => (
 
     <Move name="Setenta y Uno (71)">
       <Move.Description>
-        tests the enganche (arm hook) inside the 70.
+        A short two-count-of-eight combination extending Setenta with an
+        Enchufla executed while maintaining an arm hook (Gancho) connection
+        between both partners' arms, finishing with a Dile Que No.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 47], to: [2, 14] }}
@@ -232,69 +261,91 @@ export const Content: FC = () => (
 
     <Move name="Setenta y Dos (72)">
       <Move.Description>
-        tests further sequencing within the family.
+        A variant of Setenta y Uno that replaces the final Dile Que No with dual
+        arm hooks (Gancho), often executed with a simultaneous spinning turn for
+        extended movement within the hook connection.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [0, 3], to: [0, 21] }}
+        videoId="UlN_TqranNs"
+      />
     </Move>
 
     <Move name="Doble Cero (00)">
       <Move.Description>
-        tests turning out of the pattern with hands released; it has the same
-        footwork as Setenta and Sencillo, but after the right-hand turn the
-        leader lets go of the follower.
+        A variation using Setenta/Sencillo footwork that releases hand
+        connection after the right-hand turn, allowing both dancers to complete
+        the pattern independently before rejoining in a Dile Que No.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [2, 50], to: [3, 10] }}
+        videoId="WV2Blkwk1eo"
+      />
     </Move>
 
     <Header2>Shadow position + very light leads</Header2>
 
     <Move name="El Uno (1) / El Dos (2)">
       <Move.Description>
-        tests dancing in shadow position and following with no face-to-face
-        frame; el dos is a variation of el uno that also incorporates sombrero.
+        El Uno: a shadow-position pattern where the leader remains behind the
+        follower's back while executing repeated Enchufla Doubles at varying
+        hand heights. El Dos: a reverse-shadow variation where the leader stands
+        in front with his back to the follower, followed by the follower
+        executing side-to-side steps and a double Sombrero turn before ending
+        with a Dile Que No.
       </Move.Description>
     </Move>
 
     <Move name="El Dedo">
       <Move.Description>
-        tests sensitivity to an extremely light lead (led almost on one finger).
-        A classic Casino Miami move that starts in a Dile Que No and
-        incorporates vacila and enchufla, so those basics matter first.
+        A right-to-right Vacilala-based combination requiring extremely light
+        lead sensitivity, chaining Enchufla and Evelyn patterns through multiple
+        eight-count phrases while maintaining minimal hand pressure connection.
       </Move.Description>
     </Move>
 
     <Move name="Corona">
       <Move.Description>
-        tests new arm shapes on a familiar base; it starts exactly like Setenta
-        and incorporates Enchufla and Exhibe, introducing new hand and arm
-        movements.
+        A Setenta-based figure introducing the distinctive Alarde Crown arm
+        shape alongside Enchufla and Exhibe transitions, teaching new decorative
+        arm and hand positioning on a familiar footwork base.
       </Move.Description>
     </Move>
 
     <Header2>Combos and flair</Header2>
 
     <Move name="Flamenco">
-      <Move.Description videoId="UffIzThsDYE">
-        tests a longer flow with the arm-untrap; it incorporates Dile Que No,
-        Evelyn, and the Exhibe turn, with the follower learning to untrap her
-        left arm.
+      <Move.Description>
+        A multi-pattern combination sequencing Dile Que No, Evelyn, and Exhibe
+        while emphasizing continuous arm flow and the arm-untrap technique,
+        allowing extended practice of arm recovery within a longer flowing
+        phrase.
       </Move.Description>
     </Move>
 
     <Move name="Sombrero Doble">
       <Move.Description>
-        tests sequencing repeated head-arm moves.
+        Sombrero executed three times in succession (right-left-right) with
+        two-handed connection maintained throughout, creating repeated overhead
+        arm sweeps and testing coordination of repeated head-and-arm
+        positioning.
       </Move.Description>
     </Move>
 
     <Move name="Setenta (70) Complicado">
       <Move.Description>
-        tests the dressed-up 70 with hook turns and advanced multi-eight
-        tracking.
+        An advanced three-count-of-eight combination integrating hook turns
+        within an Enchufla structure while maintaining 180-degree directional
+        shifts, requiring sophisticated lead timing and follower responsiveness.
       </Move.Description>
     </Move>
 
     <Move name='Montaña Rusa ("roller coaster")'>
       <Move.Description>
-        tests stamina, memory, and trust through a long showy sequence.
+        A long extended figure featuring switched-hand positioning, back breaks,
+        position switches, and hook turns beneath the follower's arms, typically
+        concluding with a full or half Sombrero, designed to showcase stamina
+        and partnership trust through an extended sequence.
       </Move.Description>
     </Move>
   </>
