@@ -366,6 +366,10 @@ export const Content: FC = () => (
         arm sweeps and testing coordination of repeated head-and-arm
         positioning.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [4, 5], to: [4, 20] }}
+        videoId="vX7zMTs8eJA"
+      />
     </Move>
 
     <Move name="Setenta (70) Complicado">
