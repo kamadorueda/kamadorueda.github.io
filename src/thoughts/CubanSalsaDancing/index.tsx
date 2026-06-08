@@ -297,14 +297,22 @@ export const Content: FC = () => (
 
     <Header2>Shadow position + very light leads</Header2>
 
-    <Move name="El Uno (1) / El Dos (2)">
+    <Move name="El Uno (1)">
       <Move.Description>
-        El Uno: a shadow-position pattern where the leader remains behind the
-        follower's back while executing repeated Enchufla Doubles at varying
-        hand heights. El Dos: a reverse-shadow variation where the leader stands
-        in front with his back to the follower, followed by the follower
-        executing side-to-side steps and a double Sombrero turn before ending
-        with a Dile Que No.
+        A shadow-position pattern where the leader remains behind the follower's
+        back while executing repeated Enchufla Doubles at varying hand heights.
+      </Move.Description>
+      <Move.Video
+        highlight={{ from: [1, 50], to: [2, 0] }}
+        videoId="FZAvKSU2I7E"
+      />
+    </Move>
+
+    <Move name="El Dos (2)">
+      <Move.Description>
+        A reverse-shadow variation where the leader stands in front with his
+        back to the follower, followed by the follower executing side-to-side
+        steps and a double Sombrero turn before ending with a Dile Que No.
       </Move.Description>
     </Move>
 
