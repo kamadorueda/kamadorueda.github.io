@@ -27,320 +27,303 @@ export const Content: FC = () => (
 
     <Header2>Move with the music</Header2>
 
-    <Move
-      description={
-        <>
-          (quick-quick-slow, the back-rock) is where you start. This teaches you
-          to keep time and transfer weight cleanly.
-        </>
-      }
-      name="Basic step"
-      videoId="7XgmAPCX85A"
-    />
+    <Move name="Basic step" video={{ id: "7XgmAPCX85A" }}>
+      <Move.Description>
+        (quick-quick-slow, the back-rock) is where you start. This teaches you
+        to keep time and transfer weight cleanly.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={
-        <>
-          (also called Pal Medio, Son Montuno, or Llevala Pa'bajo). Learn to
-          stay in frame and move with the lead instead of steering yourself.
-        </>
-      }
-      name="Closed-position basic"
-      videoId="Qv5BKoV72nA"
-    />
+    <Move name="Closed-position basic" video={{ id: "Qv5BKoV72nA" }}>
+      <Move.Description>
+        (also called Pal Medio, Son Montuno, or Llevala Pa'bajo). Learn to stay
+        in frame and move with the lead instead of steering yourself.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={
-        <>
-          (open break), the signature Cuban basic. Both partners step back and
-          forward together, creating space and connection at arm's length. This
-          differs from other salsa styles where partners step in unison.
-        </>
-      }
-      name="Guapea"
-      videoId="YwxB1MSytYA"
-    />
+    <Move name="Guapea" video={{ id: "YwxB1MSytYA" }}>
+      <Move.Description>
+        (open break), the signature Cuban basic. Both partners step back and
+        forward together, creating space and connection at arm's length. This
+        differs from other salsa styles where partners step in unison.
+      </Move.Description>
+    </Move>
 
     <Header2>Guided turn and travel</Header2>
 
     <Move
-      description={
-        <>
-          tests walking across on the lead (cross-body), trusting redirection
-          over memory. The single most important follow skill.
-        </>
-      }
       name="Dile Que No"
       video={{
+        id: "Jexcy9LGKjo",
         endTime: [3, 56],
         startTime: [3, 51],
       }}
-      videoId="Jexcy9LGKjo"
-    />
+    >
+      <Move.Description>
+        tests walking across on the lead (cross-body), trusting redirection over
+        memory. The single most important follow skill.
+      </Move.Description>
+    </Move>
 
     <Move
-      description={
-        <>tests a basic powered turn under the arm plus the Dile Que No exit.</>
-      }
       name="Enchufla"
       video={{
+        id: "3tUcawE0Bhs",
         endTime: [2, 0],
         startTime: [1, 53],
       }}
-      videoId="3tUcawE0Bhs"
-    />
+    >
+      <Move.Description>
+        tests a basic powered turn under the arm plus the Dile Que No exit.
+      </Move.Description>
+    </Move>
 
     <Move
-      description={
-        <>
-          tests a softer turn signal and the arm untrap. It comes from the basic
-          step Llevala Pa'bajo and is essentially a right turn for the follower
-          that the leader initiates on 3.
-        </>
-      }
       name="Exhibe"
       video={{
+        id: "51lJ_32VRwc",
         endTime: [1, 30],
         startTime: [1, 25],
       }}
-      videoId="51lJ_32VRwc"
-    />
+    >
+      <Move.Description>
+        tests a softer turn signal and the arm untrap. It comes from the basic
+        step Llevala Pa'bajo and is essentially a right turn for the follower
+        that the leader initiates on 3.
+      </Move.Description>
+    </Move>
 
     <Move
-      description={<>tests a redirect turn with light spotting.</>}
       name="Sencillo"
       video={{
+        id: "cpOxtBZ7Dq8",
         endTime: [2, 36],
         startTime: [2, 19],
       }}
-      videoId="cpOxtBZ7Dq8"
-    />
+    >
+      <Move.Description>
+        tests a redirect turn with light spotting.
+      </Move.Description>
+    </Move>
 
     <Header2>Turn and travel</Header2>
 
     <Move
-      description={
-        <>
-          her first <em>free</em> turn: sent out and must complete it solo. Huge
-          milestone; many plateaus live here. It's the foundation for many
-          intermediate patterns.
-        </>
-      }
       name="Vacilala"
       video={{
+        id: "pT1AmRJVtRY",
         endTime: [3, 5],
         startTime: [2, 44],
       }}
-      videoId="pT1AmRJVtRY"
-    />
+    >
+      <Move.Description>
+        her first <em>free</em> turn: sent out and must complete it solo. Huge
+        milestone; many plateaus live here. It's the foundation for many
+        intermediate patterns.
+      </Move.Description>
+    </Move>
 
     <Move
-      description={
-        <>
-          tests chaining turns through a shoulder-tap without stopping between
-          them.
-        </>
-      }
       name="Enchufla Doble"
       video={{
+        id: "6OxXNbCZmpA",
         endTime: [2, 4],
         startTime: [1, 53],
       }}
-      videoId="6OxXNbCZmpA"
-    />
+    >
+      <Move.Description>
+        tests chaining turns through a shoulder-tap without stopping between
+        them.
+      </Move.Description>
+    </Move>
 
     <Move
-      description={
-        <>
-          tests turning while <em>you</em> also turn, so she can't just mirror
-          you.
-        </>
-      }
       name="Enchufla con Vuelta"
       video={{
+        id: "SjUYUGv4f9o",
         endTime: [0, 16],
         startTime: [0, 8],
       }}
-      videoId="SjUYUGv4f9o"
-    />
+    >
+      <Move.Description>
+        tests turning while <em>you</em> also turn, so she can't just mirror
+        you.
+      </Move.Description>
+    </Move>
 
     <Move
-      description={
-        <>
-          tests holding a frame you build mid-move. It begins like an Enchufla
-          but the leader creates a frame, turns to the right in a vuelta, then
-          finishes with a cross-handed Dile Que No.
-        </>
-      }
       name="Evelyn"
       video={{
+        id: "cbkno_4beCQ",
         endTime: [0, 31],
         startTime: [0, 21],
       }}
-      videoId="cbkno_4beCQ"
-    />
+    >
+      <Move.Description>
+        tests holding a frame you build mid-move. It begins like an Enchufla but
+        the leader creates a frame, turns to the right in a vuelta, then
+        finishes with a cross-handed Dile Que No.
+      </Move.Description>
+    </Move>
 
     <Header2>Hands over the head</Header2>
 
     <Move
-      description={
-        <>
-          tests comfort with hands sweeping over the head and ducking. It starts
-          with a Dile Que No followed by a vacila variation where the hands come
-          up and over the leader's and follower's head.
-        </>
-      }
       name="Sombrero"
       video={{
+        id: "pY_sGnB_sTc",
         endTime: [3, 27],
         startTime: [3, 12],
       }}
-      videoId="pY_sGnB_sTc"
-    />
+    >
+      <Move.Description>
+        tests comfort with hands sweeping over the head and ducking. It starts
+        with a Dile Que No followed by a vacila variation where the hands come
+        up and over the leader's and follower's head.
+      </Move.Description>
+    </Move>
 
     <Move
-      description={
-        <>
-          tests a traveling left turn <em>around</em> you on a curved line,
-          which needs more than a 360° to get all the way around (harder than a
-          straight turn).
-        </>
-      }
       name="Coca-Cola"
-    />
+      video={{
+        id: "UffIzThsDYE",
+        endTime: [0, 53],
+        startTime: [0, 38],
+      }}
+    >
+      <Move.Description>
+        tests a traveling left turn <em>around</em> you on a curved line, which
+        needs more than a 360° to get all the way around (harder than a straight
+        turn).
+      </Move.Description>
+    </Move>
 
     <Move
-      description={<>tests a rhythm/texture change and playfulness.</>}
       name="Kentucky"
-      videoId="sK1SlAIE0LA"
-    />
+      video={{
+        id: "sK1SlAIE0LA",
+        startTime: [1, 28],
+        endTime: [1, 40],
+      }}
+    >
+      <Move.Description>
+        tests a rhythm/texture change and playfulness.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={<>tests reading a direction-change/peek redirect.</>}
-      name="Adios"
-    />
+    <Move name="Adios">
+      <Move.Description>
+        tests reading a direction-change/peek redirect.
+      </Move.Description>
+    </Move>
 
     <Header2>Multi-count knots (the Setenta family)</Header2>
 
     <Move
-      description={
-        <>
-          tests following a hammerlock and unwind across several eights without
-          anticipating. Its basic structure is built upon to create more complex
-          patterns.
-        </>
-      }
       name="Setenta (70)"
-      videoId="_B55w-0o0qw"
-    />
+      video={{
+        id: "_B55w-0o0qw",
+        startTime: [2, 12],
+        endTime: [2, 25],
+      }}
+    >
+      <Move.Description>
+        tests following a hammerlock and unwind across several eights without
+        anticipating. Its basic structure is built upon to create more complex
+        patterns.
+      </Move.Description>
+    </Move>
 
     <Move
-      description={<>the same, strung continuously.</>}
       name="Setenta Miami"
-      videoId="TKcxJ8v_nh4"
-    />
+      video={{
+        id: "TKcxJ8v_nh4",
+        startTime: [3, 52],
+        endTime: [4, 15],
+      }}
+    >
+      <Move.Description>the same, strung continuously.</Move.Description>
+    </Move>
 
-    <Move
-      description={
-        <>
-          tests a new redirect; a fundamental intermediate move where the leader
-          redirects the follower similar to a vacila.
-        </>
-      }
-      name="Siete"
-    />
+    <Move name="Siete">
+      <Move.Description>
+        tests a new redirect; a fundamental intermediate move where the leader
+        redirects the follower similar to a vacila.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={<>tests the enganche (arm hook) inside the 70.</>}
-      name="Setenta y Uno (71)"
-      videoId="ufaUC31X8M0"
-    />
+    <Move name="Setenta y Uno (71)" video={{ id: "ufaUC31X8M0" }}>
+      <Move.Description>
+        tests the enganche (arm hook) inside the 70.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={<>tests further sequencing within the family.</>}
-      name="Setenta y Dos (72)"
-    />
+    <Move name="Setenta y Dos (72)">
+      <Move.Description>
+        tests further sequencing within the family.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={
-        <>
-          tests turning out of the pattern with hands released; it has the same
-          footwork as Setenta and Sencillo, but after the right-hand turn the
-          leader lets go of the follower.
-        </>
-      }
-      name="Doble Cero"
-    />
+    <Move name="Doble Cero">
+      <Move.Description>
+        tests turning out of the pattern with hands released; it has the same
+        footwork as Setenta and Sencillo, but after the right-hand turn the
+        leader lets go of the follower.
+      </Move.Description>
+    </Move>
 
     <Header2>Shadow position + very light leads</Header2>
 
-    <Move
-      description={
-        <>
-          tests dancing in shadow position and following with no face-to-face
-          frame; el dos is a variation of el uno that also incorporates
-          sombrero.
-        </>
-      }
-      name="El Uno / El Dos"
-    />
+    <Move name="El Uno / El Dos">
+      <Move.Description>
+        tests dancing in shadow position and following with no face-to-face
+        frame; el dos is a variation of el uno that also incorporates sombrero.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={
-        <>
-          tests sensitivity to an extremely light lead (led almost on one
-          finger). A classic Casino Miami move that starts in a Dile Que No and
-          incorporates vacila and enchufla, so those basics matter first.
-        </>
-      }
-      name="El Dedo"
-    />
+    <Move name="El Dedo">
+      <Move.Description>
+        tests sensitivity to an extremely light lead (led almost on one finger).
+        A classic Casino Miami move that starts in a Dile Que No and
+        incorporates vacila and enchufla, so those basics matter first.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={
-        <>
-          tests new arm shapes on a familiar base; it starts exactly like
-          Setenta and incorporates Enchufla and Exhibe, introducing new hand and
-          arm movements.
-        </>
-      }
-      name="Corona"
-    />
+    <Move name="Corona">
+      <Move.Description>
+        tests new arm shapes on a familiar base; it starts exactly like Setenta
+        and incorporates Enchufla and Exhibe, introducing new hand and arm
+        movements.
+      </Move.Description>
+    </Move>
 
     <Header2>Combos and flair</Header2>
 
-    <Move
-      description={
-        <>
-          tests a longer flow with the arm-untrap; it incorporates Dile Que No,
-          Evelyn, and the Exhibe turn, with the follower learning to untrap her
-          left arm.
-        </>
-      }
-      name="Flamenco"
-      videoId="UffIzThsDYE"
-    />
+    <Move name="Flamenco" video={{ id: "UffIzThsDYE" }}>
+      <Move.Description>
+        tests a longer flow with the arm-untrap; it incorporates Dile Que No,
+        Evelyn, and the Exhibe turn, with the follower learning to untrap her
+        left arm.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={<>tests sequencing repeated head-arm moves.</>}
-      name="Sombrero Doble"
-    />
+    <Move name="Sombrero Doble">
+      <Move.Description>
+        tests sequencing repeated head-arm moves.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={
-        <>
-          tests the dressed-up 70 with hook turns and advanced multi-eight
-          tracking.
-        </>
-      }
-      name="Setenta Complicado"
-    />
+    <Move name="Setenta Complicado">
+      <Move.Description>
+        tests the dressed-up 70 with hook turns and advanced multi-eight
+        tracking.
+      </Move.Description>
+    </Move>
 
-    <Move
-      description={
-        <>tests stamina, memory, and trust through a long showy sequence.</>
-      }
-      name='Montaña Rusa ("roller coaster")'
-    />
+    <Move name='Montaña Rusa ("roller coaster")'>
+      <Move.Description>
+        tests stamina, memory, and trust through a long showy sequence.
+      </Move.Description>
+    </Move>
   </>
 );
