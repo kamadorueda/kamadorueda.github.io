@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from "react";
+import React, { FC, PropsWithChildren, useMemo } from "react";
 import { YoutubeVideo } from "~/components/YoutubeVideo";
 import { Definition } from "~/components/Typography/Definition";
 
@@ -22,9 +22,13 @@ interface MoveProps extends PropsWithChildren {
   name: string;
 }
 
-const MoveRoot: FC<MoveProps> = ({ name, children }) => (
-  <MoveContext.Provider value={{ name }}>{children}</MoveContext.Provider>
-);
+const MoveRoot: FC<MoveProps> = ({ name, children }) => {
+  const contextValue = useMemo(() => ({ name }), [name]);
+
+  return (
+    <MoveContext.Provider value={contextValue}>{children}</MoveContext.Provider>
+  );
+};
 
 const MoveDescription: FC<PropsWithChildren> = ({ children }) => {
   const { name } = useMoveContext();
