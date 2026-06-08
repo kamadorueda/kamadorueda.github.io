@@ -7,7 +7,7 @@ type TimeRange = [minutes: number, seconds: number];
 
 interface MoveContextType {
   name: string;
-  videoId?: string;
+  hasVideo?: boolean;
 }
 
 const MoveContext = React.createContext<MoveContextType | undefined>(undefined);
@@ -26,8 +26,12 @@ interface MoveProps extends PropsWithChildren {
 }
 
 const MoveRoot: FC<MoveProps> = ({ name, videoId, children }) => (
-  <MoveContext.Provider value={{ name, videoId }}>
-    <>{children}</>
+  <MoveContext.Provider value={{ name, hasVideo: !!videoId }}>
+    {React.Children.map(children, (child) =>
+      React.isValidElement(child)
+        ? React.cloneElement(child, { videoId } as Record<string, unknown>)
+        : child,
+    )}
   </MoveContext.Provider>
 );
 
@@ -35,13 +39,12 @@ interface MoveDescriptionProps extends PropsWithChildren {
   videoId?: string;
 }
 
-const MoveDescription: FC<MoveDescriptionProps> = ({
-  children,
-  videoId: propVideoId,
-}) => {
-  const { name, videoId: contextVideoId } = useMoveContext();
-  const id = propVideoId || contextVideoId;
-  const youtubeUrl = id ? `https://www.youtube.com/watch?v=${id}` : undefined;
+const MoveDescription: FC<MoveDescriptionProps> = ({ children, videoId }) => {
+  const { name, hasVideo } = useMoveContext();
+  const youtubeUrl =
+    videoId && !hasVideo
+      ? `https://www.youtube.com/watch?v=${videoId}`
+      : undefined;
 
   return (
     <Paragraph>
@@ -57,10 +60,11 @@ const MoveDescription: FC<MoveDescriptionProps> = ({
 
 interface MoveVideoProps {
   highlight?: { from: TimeRange; to: TimeRange };
+  videoId?: string;
 }
 
-const MoveVideoComponent: FC<MoveVideoProps> = ({ highlight }) => {
-  const { name, videoId } = useMoveContext();
+const MoveVideoComponent: FC<MoveVideoProps> = ({ highlight, videoId }) => {
+  const { name } = useMoveContext();
 
   if (!highlight || !videoId) {
     return null;
