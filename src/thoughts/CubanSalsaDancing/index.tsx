@@ -55,14 +55,14 @@ export const Content: FC = () => (
         tests walking across on the lead (cross-body), trusting redirection over
         memory. The single most important follow skill.
       </Move.Description>
-      <Move.Video highlight={{ from: [3, 51], to: [3, 56] }} id="Jexcy9LGKjo" />
+      <Move.Video highlight={{ from: [3, 51], to: [3, 56] }} />
     </Move>
 
     <Move name="Enchufla" videoId="3tUcawE0Bhs">
       <Move.Description>
         tests a basic powered turn under the arm plus the Dile Que No exit.
       </Move.Description>
-      <Move.Video highlight={{ from: [1, 53], to: [2, 0] }} id="3tUcawE0Bhs" />
+      <Move.Video highlight={{ from: [1, 53], to: [2, 0] }} />
     </Move>
 
     <Move name="Exhibe" videoId="51lJ_32VRwc">
@@ -71,14 +71,14 @@ export const Content: FC = () => (
         step Llevala Pa'bajo and is essentially a right turn for the follower
         that the leader initiates on 3.
       </Move.Description>
-      <Move.Video highlight={{ from: [1, 25], to: [1, 30] }} id="51lJ_32VRwc" />
+      <Move.Video highlight={{ from: [1, 25], to: [1, 30] }} />
     </Move>
 
     <Move name="Sencillo" videoId="cpOxtBZ7Dq8">
       <Move.Description>
         tests a redirect turn with light spotting.
       </Move.Description>
-      <Move.Video highlight={{ from: [2, 19], to: [2, 36] }} id="cpOxtBZ7Dq8" />
+      <Move.Video highlight={{ from: [2, 19], to: [2, 36] }} />
     </Move>
 
     <Header2>Turn and travel</Header2>
@@ -89,7 +89,7 @@ export const Content: FC = () => (
         milestone; many plateaus live here. It's the foundation for many
         intermediate patterns.
       </Move.Description>
-      <Move.Video highlight={{ from: [2, 44], to: [3, 5] }} id="pT1AmRJVtRY" />
+      <Move.Video highlight={{ from: [2, 44], to: [3, 5] }} />
     </Move>
 
     <Move name="Enchufla Doble" videoId="6OxXNbCZmpA">
@@ -97,7 +97,7 @@ export const Content: FC = () => (
         tests chaining turns through a shoulder-tap without stopping between
         them.
       </Move.Description>
-      <Move.Video highlight={{ from: [1, 53], to: [2, 4] }} id="6OxXNbCZmpA" />
+      <Move.Video highlight={{ from: [1, 53], to: [2, 4] }} />
     </Move>
 
     <Move name="Enchufla con Vuelta" videoId="SjUYUGv4f9o">
@@ -105,7 +105,7 @@ export const Content: FC = () => (
         tests turning while <em>you</em> also turn, so she can't just mirror
         you.
       </Move.Description>
-      <Move.Video highlight={{ from: [0, 8], to: [0, 16] }} id="SjUYUGv4f9o" />
+      <Move.Video highlight={{ from: [0, 8], to: [0, 16] }} />
     </Move>
 
     <Move name="Evelyn" videoId="cbkno_4beCQ">
@@ -114,7 +114,7 @@ export const Content: FC = () => (
         the leader creates a frame, turns to the right in a vuelta, then
         finishes with a cross-handed Dile Que No.
       </Move.Description>
-      <Move.Video highlight={{ from: [0, 21], to: [0, 31] }} id="cbkno_4beCQ" />
+      <Move.Video highlight={{ from: [0, 21], to: [0, 31] }} />
     </Move>
 
     <Header2>Hands over the head</Header2>
@@ -125,7 +125,7 @@ export const Content: FC = () => (
         with a Dile Que No followed by a vacila variation where the hands come
         up and over the leader's and follower's head.
       </Move.Description>
-      <Move.Video highlight={{ from: [3, 12], to: [3, 27] }} id="pY_sGnB_sTc" />
+      <Move.Video highlight={{ from: [3, 12], to: [3, 27] }} />
     </Move>
 
     <Move name="Coca-Cola" videoId="UffIzThsDYE">
@@ -134,21 +134,21 @@ export const Content: FC = () => (
         needs more than a 360° to get all the way around (harder than a straight
         turn).
       </Move.Description>
-      <Move.Video highlight={{ from: [0, 38], to: [0, 53] }} id="UffIzThsDYE" />
+      <Move.Video highlight={{ from: [0, 38], to: [0, 53] }} />
     </Move>
 
     <Move name="Kentucky" videoId="sK1SlAIE0LA">
       <Move.Description>
         tests a rhythm/texture change and playfulness.
       </Move.Description>
-      <Move.Video highlight={{ from: [1, 28], to: [1, 40] }} id="sK1SlAIE0LA" />
+      <Move.Video highlight={{ from: [1, 28], to: [1, 40] }} />
     </Move>
 
     <Move name="Adios" videoId="N5Yrm_ksDX0">
       <Move.Description>
         tests reading a direction-change/peek redirect.
       </Move.Description>
-      <Move.Video highlight={{ from: [1, 17], to: [1, 45] }} id="N5Yrm_ksDX0" />
+      <Move.Video highlight={{ from: [1, 17], to: [1, 45] }} />
     </Move>
 
     <Header2>Multi-count knots (the Setenta family)</Header2>
@@ -159,12 +159,12 @@ export const Content: FC = () => (
         anticipating. Its basic structure is built upon to create more complex
         patterns.
       </Move.Description>
-      <Move.Video highlight={{ from: [2, 12], to: [2, 25] }} id="_B55w-0o0qw" />
+      <Move.Video highlight={{ from: [2, 12], to: [2, 25] }} />
     </Move>
 
     <Move name="Setenta (70) Miami" videoId="TKcxJ8v_nh4">
       <Move.Description>the same, strung continuously.</Move.Description>
-      <Move.Video highlight={{ from: [3, 52], to: [4, 15] }} id="TKcxJ8v_nh4" />
+      <Move.Video highlight={{ from: [3, 52], to: [4, 15] }} />
     </Move>
 
     <Move name="Siete (7)" videoId="H8-wYPlmHVU">
@@ -172,7 +172,7 @@ export const Content: FC = () => (
         tests a new redirect; a fundamental intermediate move where the leader
         redirects the follower similar to a vacila.
       </Move.Description>
-      <Move.Video highlight={{ from: [2, 50], to: [3, 10] }} id="H8-wYPlmHVU" />
+      <Move.Video highlight={{ from: [2, 50], to: [3, 10] }} />
     </Move>
 
     <Move name="Setenta y Uno (71)">

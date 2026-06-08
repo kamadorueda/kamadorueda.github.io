@@ -56,14 +56,13 @@ const MoveDescription: FC<MoveDescriptionProps> = ({
 };
 
 interface MoveVideoProps {
-  id: string;
   highlight?: { from: TimeRange; to: TimeRange };
 }
 
-const MoveVideoComponent: FC<MoveVideoProps> = ({ id, highlight }) => {
-  const { name } = useMoveContext();
+const MoveVideoComponent: FC<MoveVideoProps> = ({ highlight }) => {
+  const { name, videoId } = useMoveContext();
 
-  if (!highlight) {
+  if (!highlight || !videoId) {
     return null;
   }
 
@@ -71,7 +70,7 @@ const MoveVideoComponent: FC<MoveVideoProps> = ({ id, highlight }) => {
     <YoutubeVideo
       highlight={highlight}
       sectionLabel={`${name} video demonstration`}
-      videoId={id}
+      videoId={videoId}
     />
   );
 };
