@@ -44,26 +44,33 @@ const MoveDescription: FC<PropsWithChildren> = ({ children }) => {
   const hasInlineVideo = video && video.highlight;
 
   return (
-    <>
-      <Paragraph>
-        {hasInlineVideo ? (
-          <span>{name}</span>
-        ) : (
-          <ExternalLink to={youtubeUrl!}>{name}</ExternalLink>
-        )}
-        : {children}
-      </Paragraph>
-      {hasInlineVideo && (
-        <YoutubeVideo
-          highlight={video!.highlight}
-          sectionLabel={`${name} video demonstration`}
-          videoId={video!.id}
-        />
+    <Paragraph>
+      {hasInlineVideo ? (
+        <span>{name}</span>
+      ) : (
+        <ExternalLink to={youtubeUrl!}>{name}</ExternalLink>
       )}
-    </>
+      : {children}
+    </Paragraph>
+  );
+};
+
+const MoveVideoComponent: FC = () => {
+  const { name, video } = useMoveContext();
+  if (!video || !video.highlight) {
+    return null;
+  }
+
+  return (
+    <YoutubeVideo
+      highlight={video.highlight}
+      sectionLabel={`${name} video demonstration`}
+      videoId={video.id}
+    />
   );
 };
 
 export const Move = Object.assign(MoveRoot, {
   Description: MoveDescription,
+  Video: MoveVideoComponent,
 });

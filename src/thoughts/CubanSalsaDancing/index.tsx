@@ -61,6 +61,7 @@ export const Content: FC = () => (
         tests walking across on the lead (cross-body), trusting redirection over
         memory. The single most important follow skill.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Move
@@ -73,6 +74,7 @@ export const Content: FC = () => (
       <Move.Description>
         tests a basic powered turn under the arm plus the Dile Que No exit.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Move
@@ -87,6 +89,7 @@ export const Content: FC = () => (
         step Llevala Pa'bajo and is essentially a right turn for the follower
         that the leader initiates on 3.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Move
@@ -99,6 +102,7 @@ export const Content: FC = () => (
       <Move.Description>
         tests a redirect turn with light spotting.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Header2>Turn and travel</Header2>
@@ -115,6 +119,7 @@ export const Content: FC = () => (
         milestone; many plateaus live here. It's the foundation for many
         intermediate patterns.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Move
@@ -128,6 +133,7 @@ export const Content: FC = () => (
         tests chaining turns through a shoulder-tap without stopping between
         them.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Move
@@ -141,6 +147,7 @@ export const Content: FC = () => (
         tests turning while <em>you</em> also turn, so she can't just mirror
         you.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Move
@@ -155,6 +162,7 @@ export const Content: FC = () => (
         the leader creates a frame, turns to the right in a vuelta, then
         finishes with a cross-handed Dile Que No.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Header2>Hands over the head</Header2>
@@ -171,6 +179,7 @@ export const Content: FC = () => (
         with a Dile Que No followed by a vacila variation where the hands come
         up and over the leader's and follower's head.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Move
@@ -185,6 +194,7 @@ export const Content: FC = () => (
         needs more than a 360° to get all the way around (harder than a straight
         turn).
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Move
@@ -197,12 +207,20 @@ export const Content: FC = () => (
       <Move.Description>
         tests a rhythm/texture change and playfulness.
       </Move.Description>
+      <Move.Video />
     </Move>
 
-    <Move name="Adios">
+    <Move
+      name="Adios"
+      video={{
+        id: "N5Yrm_ksDX0",
+        highlight: { from: [1, 17], to: [1, 45] },
+      }}
+    >
       <Move.Description>
         tests reading a direction-change/peek redirect.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Header2>Multi-count knots (the Setenta family)</Header2>
@@ -219,19 +237,21 @@ export const Content: FC = () => (
         anticipating. Its basic structure is built upon to create more complex
         patterns.
       </Move.Description>
+      <Move.Video />
     </Move>
 
     <Move
-      name="Setenta Miami"
+      name="Setenta (70) Miami"
       video={{
         id: "TKcxJ8v_nh4",
         highlight: { from: [3, 52], to: [4, 15] },
       }}
     >
       <Move.Description>the same, strung continuously.</Move.Description>
+      <Move.Video />
     </Move>
 
-    <Move name="Siete">
+    <Move name="Siete (7)">
       <Move.Description>
         tests a new redirect; a fundamental intermediate move where the leader
         redirects the follower similar to a vacila.
@@ -250,7 +270,7 @@ export const Content: FC = () => (
       </Move.Description>
     </Move>
 
-    <Move name="Doble Cero">
+    <Move name="Doble Cero (00)">
       <Move.Description>
         tests turning out of the pattern with hands released; it has the same
         footwork as Setenta and Sencillo, but after the right-hand turn the
@@ -260,7 +280,7 @@ export const Content: FC = () => (
 
     <Header2>Shadow position + very light leads</Header2>
 
-    <Move name="El Uno / El Dos">
+    <Move name="El Uno (1) / El Dos (2)">
       <Move.Description>
         tests dancing in shadow position and following with no face-to-face
         frame; el dos is a variation of el uno that also incorporates sombrero.
@@ -299,7 +319,7 @@ export const Content: FC = () => (
       </Move.Description>
     </Move>
 
-    <Move name="Setenta Complicado">
+    <Move name="Setenta (70) Complicado">
       <Move.Description>
         tests the dressed-up 70 with hook turns and advanced multi-eight
         tracking.
