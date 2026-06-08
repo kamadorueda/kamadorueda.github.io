@@ -15,7 +15,7 @@ enum YouTubePlayerState {
 }
 
 export interface YoutubeVideoProps extends ClassNameProp {
-  highlight?: { from: TimeRange; to: TimeRange };
+  highlight: { from: TimeRange; to: TimeRange };
   sectionLabel: string;
   videoId: string;
 }
@@ -47,7 +47,7 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
   };
 
   const handleHighlight = () => {
-    if (playerRef.current?.internalPlayer && highlight) {
+    if (playerRef.current?.internalPlayer) {
       playerRef.current.internalPlayer.seekTo(timeToSeconds(highlight.from));
       playerRef.current.internalPlayer.playVideo();
       setIsPlaying(true);
@@ -89,8 +89,8 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
       quality: "default",
       rel: 0,
       iv_load_policy: 3,
-      start: highlight ? timeToSeconds(highlight.from) : undefined,
-      end: highlight ? timeToSeconds(highlight.to) : undefined,
+      start: timeToSeconds(highlight.from),
+      end: timeToSeconds(highlight.to),
     },
   };
 
@@ -102,8 +102,8 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
       <div className="flex w-full max-w-3xl flex-col overflow-hidden rounded-lg">
         <div
           aria-live="polite"
-          role="region"
           className="bg-black"
+          role="region"
           style={{ aspectRatio: "16 / 9" }}
         >
           <YouTube
@@ -123,15 +123,13 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
           >
             {isPlaying ? "Pause" : "Play"}
           </ButtonLink>
-          {highlight && (
-            <ButtonLink
-              ariaLabel="Play the highlighted section"
-              className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer py-2 text-center no-underline focus-visible:outline focus-visible:outline-1"
-              onClick={handleHighlight}
-            >
-              Highlight
-            </ButtonLink>
-          )}
+          <ButtonLink
+            ariaLabel="Play the highlighted section"
+            className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer py-2 text-center no-underline focus-visible:outline focus-visible:outline-1"
+            onClick={handleHighlight}
+          >
+            Highlight
+          </ButtonLink>
           <ButtonLink
             ariaLabel={isSlowed ? "Play at normal speed" : "Play at 0.5x speed"}
             className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer rounded-br-3xl py-2 text-center no-underline focus-visible:rounded-br-3xl focus-visible:outline focus-visible:outline-1"
