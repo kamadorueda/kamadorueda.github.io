@@ -221,9 +221,13 @@ export const Content: FC = () => (
     </Move>
 
     <Move name="Setenta y Uno (71)">
-      <Move.Description videoId="ufaUC31X8M0">
+      <Move.Description>
         tests the enganche (arm hook) inside the 70.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [1, 47], to: [2, 14] }}
+        videoId="ufaUC31X8M0"
+      />
     </Move>
 
     <Move name="Setenta y Dos (72)">
