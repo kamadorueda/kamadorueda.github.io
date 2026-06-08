@@ -5,14 +5,8 @@ import { Paragraph } from "~/components/Typography/Paragraph";
 
 type TimeRange = [minutes: number, seconds: number];
 
-interface MoveVideo {
-  id: string;
-  highlight?: { from: TimeRange; to: TimeRange };
-}
-
 interface MoveContextType {
   name: string;
-  video?: MoveVideo;
 }
 
 const MoveContext = React.createContext<MoveContextType | undefined>(undefined);
@@ -27,45 +21,53 @@ const useMoveContext = () => {
 
 interface MoveProps extends PropsWithChildren {
   name: string;
-  video?: MoveVideo;
 }
 
-const MoveRoot: FC<MoveProps> = ({ name, video, children }) => (
-  <MoveContext.Provider value={{ name, video }}>
+const MoveRoot: FC<MoveProps> = ({ name, children }) => (
+  <MoveContext.Provider value={{ name }}>
     <>{children}</>
   </MoveContext.Provider>
 );
 
-const MoveDescription: FC<PropsWithChildren> = ({ children }) => {
-  const { name, video } = useMoveContext();
-  const youtubeUrl = video
-    ? `https://www.youtube.com/watch?v=${video.id}`
+interface MoveDescriptionProps extends PropsWithChildren {
+  videoId?: string;
+}
+
+const MoveDescription: FC<MoveDescriptionProps> = ({ children, videoId }) => {
+  const { name } = useMoveContext();
+  const youtubeUrl = videoId
+    ? `https://www.youtube.com/watch?v=${videoId}`
     : undefined;
-  const hasInlineVideo = video && video.highlight;
 
   return (
     <Paragraph>
-      {hasInlineVideo ? (
-        <span>{name}</span>
-      ) : (
+      {videoId ? (
         <ExternalLink to={youtubeUrl!}>{name}</ExternalLink>
+      ) : (
+        <span>{name}</span>
       )}
       : {children}
     </Paragraph>
   );
 };
 
-const MoveVideoComponent: FC = () => {
-  const { name, video } = useMoveContext();
-  if (!video || !video.highlight) {
+interface MoveVideoProps {
+  id: string;
+  highlight?: { from: TimeRange; to: TimeRange };
+}
+
+const MoveVideoComponent: FC<MoveVideoProps> = ({ id, highlight }) => {
+  const { name } = useMoveContext();
+
+  if (!highlight) {
     return null;
   }
 
   return (
     <YoutubeVideo
-      highlight={video.highlight}
+      highlight={highlight}
       sectionLabel={`${name} video demonstration`}
-      videoId={video.id}
+      videoId={id}
     />
   );
 };
