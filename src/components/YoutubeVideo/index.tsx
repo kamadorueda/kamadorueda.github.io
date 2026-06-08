@@ -6,10 +6,17 @@ import { ButtonLink } from "~/components/Typography/ButtonLink";
 type TimeRange = [minutes: number, seconds: number];
 type YouTubePlayer = InstanceType<typeof YouTube>;
 
+enum YouTubePlayerState {
+  UNSTARTED = 0,
+  PLAYING = 1,
+  PAUSED = 2,
+  BUFFERING = 3,
+  CUED = 5,
+}
+
 export interface YoutubeVideoProps extends ClassNameProp {
-  endTime?: TimeRange;
-  sectionLabel?: string;
-  startTime?: TimeRange;
+  highlight?: { from: TimeRange; to: TimeRange };
+  sectionLabel: string;
   videoId: string;
 }
 
@@ -19,9 +26,8 @@ const timeToSeconds = ([minutes, seconds]: TimeRange): number => {
 
 export const YoutubeVideo: FC<YoutubeVideoProps> = ({
   className,
-  endTime,
-  sectionLabel = "Dance move video",
-  startTime,
+  highlight,
+  sectionLabel,
   videoId,
 }) => {
   const playerRef = useRef<YouTubePlayer>(null);
@@ -40,11 +46,9 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
     }
   };
 
-  const handleReplay = () => {
-    if (playerRef.current?.internalPlayer) {
-      playerRef.current.internalPlayer.seekTo(
-        startTime ? timeToSeconds(startTime) : 0,
-      );
+  const handleHighlight = () => {
+    if (playerRef.current?.internalPlayer && highlight) {
+      playerRef.current.internalPlayer.seekTo(timeToSeconds(highlight.from));
       playerRef.current.internalPlayer.playVideo();
       setIsPlaying(true);
     }
@@ -63,11 +67,13 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
   };
 
   const handleStateChange = (event: { data: number }) => {
-    // 0 = UNSTARTED, 1 = PLAYING, 2 = PAUSED, 3 = BUFFERING, 5 = CUED
-    const state = event.data;
-    if (state === 0 || state === 2) {
+    const state = event.data as YouTubePlayerState;
+    if (
+      state === YouTubePlayerState.UNSTARTED ||
+      state === YouTubePlayerState.PAUSED
+    ) {
       setIsPlaying(false);
-    } else if (state === 1) {
+    } else if (state === YouTubePlayerState.PLAYING) {
       setIsPlaying(true);
     }
   };
@@ -83,8 +89,8 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
       quality: "default",
       rel: 0,
       iv_load_policy: 3,
-      start: startTime ? timeToSeconds(startTime) : undefined,
-      end: endTime ? timeToSeconds(endTime) : undefined,
+      start: highlight ? timeToSeconds(highlight.from) : undefined,
+      end: highlight ? timeToSeconds(highlight.to) : undefined,
     },
   };
 
@@ -112,13 +118,15 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
           >
             {isPlaying ? "Pause" : "Play"}
           </ButtonLink>
-          <ButtonLink
-            ariaLabel="Replay from the start time"
-            className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer py-2 text-center no-underline focus-visible:outline focus-visible:outline-1"
-            onClick={handleReplay}
-          >
-            Replay
-          </ButtonLink>
+          {highlight && (
+            <ButtonLink
+              ariaLabel="Play the highlighted section"
+              className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer py-2 text-center no-underline focus-visible:outline focus-visible:outline-1"
+              onClick={handleHighlight}
+            >
+              Highlight
+            </ButtonLink>
+          )}
           <ButtonLink
             ariaLabel={isSlowed ? "Play at normal speed" : "Play at 0.5x speed"}
             className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer rounded-br-3xl py-2 text-center no-underline focus-visible:rounded-br-3xl focus-visible:outline focus-visible:outline-1"

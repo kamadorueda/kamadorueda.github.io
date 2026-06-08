@@ -21,8 +21,7 @@ export const Content: FC = () => (
       I go dancing, I easily do twenty thousand steps. What I want to share here
       is how to learn salsa progressively, from absolute beginner to advanced
       moves. The moves are organized as a teaching ladder: each one builds on
-      the last, so you know exactly what to drill next. Start from the basics,
-      and the progression works for total beginners too.
+      the last, so you know exactly what to drill next.
     </Paragraph>
 
     <Header2>Move with the music</Header2>
@@ -55,8 +54,7 @@ export const Content: FC = () => (
       name="Dile Que No"
       video={{
         id: "Jexcy9LGKjo",
-        endTime: [3, 56],
-        startTime: [3, 51],
+        highlight: { from: [3, 51], to: [3, 56] },
       }}
     >
       <Move.Description>
@@ -69,8 +67,7 @@ export const Content: FC = () => (
       name="Enchufla"
       video={{
         id: "3tUcawE0Bhs",
-        endTime: [2, 0],
-        startTime: [1, 53],
+        highlight: { from: [1, 53], to: [2, 0] },
       }}
     >
       <Move.Description>
@@ -82,8 +79,7 @@ export const Content: FC = () => (
       name="Exhibe"
       video={{
         id: "51lJ_32VRwc",
-        endTime: [1, 30],
-        startTime: [1, 25],
+        highlight: { from: [1, 25], to: [1, 30] },
       }}
     >
       <Move.Description>
@@ -97,8 +93,7 @@ export const Content: FC = () => (
       name="Sencillo"
       video={{
         id: "cpOxtBZ7Dq8",
-        endTime: [2, 36],
-        startTime: [2, 19],
+        highlight: { from: [2, 19], to: [2, 36] },
       }}
     >
       <Move.Description>
@@ -112,8 +107,7 @@ export const Content: FC = () => (
       name="Vacilala"
       video={{
         id: "pT1AmRJVtRY",
-        endTime: [3, 5],
-        startTime: [2, 44],
+        highlight: { from: [2, 44], to: [3, 5] },
       }}
     >
       <Move.Description>
@@ -127,8 +121,7 @@ export const Content: FC = () => (
       name="Enchufla Doble"
       video={{
         id: "6OxXNbCZmpA",
-        endTime: [2, 4],
-        startTime: [1, 53],
+        highlight: { from: [1, 53], to: [2, 4] },
       }}
     >
       <Move.Description>
@@ -141,8 +134,7 @@ export const Content: FC = () => (
       name="Enchufla con Vuelta"
       video={{
         id: "SjUYUGv4f9o",
-        endTime: [0, 16],
-        startTime: [0, 8],
+        highlight: { from: [0, 8], to: [0, 16] },
       }}
     >
       <Move.Description>
@@ -155,8 +147,7 @@ export const Content: FC = () => (
       name="Evelyn"
       video={{
         id: "cbkno_4beCQ",
-        endTime: [0, 31],
-        startTime: [0, 21],
+        highlight: { from: [0, 21], to: [0, 31] },
       }}
     >
       <Move.Description>
@@ -172,8 +163,7 @@ export const Content: FC = () => (
       name="Sombrero"
       video={{
         id: "pY_sGnB_sTc",
-        endTime: [3, 27],
-        startTime: [3, 12],
+        highlight: { from: [3, 12], to: [3, 27] },
       }}
     >
       <Move.Description>
@@ -187,8 +177,7 @@ export const Content: FC = () => (
       name="Coca-Cola"
       video={{
         id: "UffIzThsDYE",
-        endTime: [0, 53],
-        startTime: [0, 38],
+        highlight: { from: [0, 38], to: [0, 53] },
       }}
     >
       <Move.Description>
@@ -202,8 +191,7 @@ export const Content: FC = () => (
       name="Kentucky"
       video={{
         id: "sK1SlAIE0LA",
-        startTime: [1, 28],
-        endTime: [1, 40],
+        highlight: { from: [1, 28], to: [1, 40] },
       }}
     >
       <Move.Description>
@@ -223,8 +211,7 @@ export const Content: FC = () => (
       name="Setenta (70)"
       video={{
         id: "_B55w-0o0qw",
-        startTime: [2, 12],
-        endTime: [2, 25],
+        highlight: { from: [2, 12], to: [2, 25] },
       }}
     >
       <Move.Description>
@@ -238,8 +225,7 @@ export const Content: FC = () => (
       name="Setenta Miami"
       video={{
         id: "TKcxJ8v_nh4",
-        startTime: [3, 52],
-        endTime: [4, 15],
+        highlight: { from: [3, 52], to: [4, 15] },
       }}
     >
       <Move.Description>the same, strung continuously.</Move.Description>

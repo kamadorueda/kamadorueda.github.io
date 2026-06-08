@@ -7,8 +7,7 @@ type TimeRange = [minutes: number, seconds: number];
 
 interface MoveVideo {
   id: string;
-  startTime?: TimeRange;
-  endTime?: TimeRange;
+  highlight?: { from: TimeRange; to: TimeRange };
 }
 
 interface MoveContextType {
@@ -42,7 +41,7 @@ const MoveDescription: FC<PropsWithChildren> = ({ children }) => {
   const youtubeUrl = video
     ? `https://www.youtube.com/watch?v=${video.id}`
     : undefined;
-  const hasInlineVideo = video && video.startTime && video.endTime;
+  const hasInlineVideo = video && video.highlight;
 
   return (
     <>
@@ -56,9 +55,8 @@ const MoveDescription: FC<PropsWithChildren> = ({ children }) => {
       </Paragraph>
       {hasInlineVideo && (
         <YoutubeVideo
-          endTime={video!.endTime}
+          highlight={video!.highlight}
           sectionLabel={`${name} video demonstration`}
-          startTime={video!.startTime}
           videoId={video!.id}
         />
       )}
