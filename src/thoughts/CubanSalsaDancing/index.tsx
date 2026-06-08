@@ -5,7 +5,7 @@ import { Move } from "./Move";
 
 export const metadata = {
   id: "cuban-salsa-dancing",
-  minutes: 12,
+  minutes: 9,
   summary:
     "A practical guide to learning Cuban salsa dancing, from absolute beginner to advanced",
   tags: ["dance", "salsa", "cuban", "teaching", "progression"],
@@ -34,7 +34,7 @@ export const Content: FC = () => (
         patterns.
       </Move.Description>
       <Move.Video
-        highlight={{ from: [0, 0], to: [60, 0] }}
+        highlight={{ from: [3, 8], to: [3, 23] }}
         videoId="7XgmAPCX85A"
       />
     </Move>
@@ -47,7 +47,7 @@ export const Content: FC = () => (
         or self-direction.
       </Move.Description>
       <Move.Video
-        highlight={{ from: [0, 0], to: [60, 0] }}
+        highlight={{ from: [3, 52], to: [4, 18] }}
         videoId="Qv5BKoV72nA"
       />
     </Move>
@@ -60,7 +60,7 @@ export const Content: FC = () => (
         characteristic space and connection at arm's length.
       </Move.Description>
       <Move.Video
-        highlight={{ from: [0, 0], to: [60, 0] }}
+        highlight={{ from: [2, 35], to: [3, 9] }}
         videoId="YwxB1MSytYA"
       />
     </Move>
