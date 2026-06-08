@@ -70,6 +70,7 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
       controls: 1,
       disablekb: 1,
       playsinline: 1,
+      quality: "default",
       rel: 0,
       iv_load_policy: 3,
       start: startTime ? timeToSeconds(startTime) : undefined,
@@ -115,7 +116,6 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
             {isSlowed ? "Faster" : "Slower"}
           </ButtonLink>
         </div>
-        <div className="h-2" />
       </div>
     </section>
   );

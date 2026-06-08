@@ -36,6 +36,11 @@ export const Content: FC = () => (
       you to keep time and transfer weight cleanly.
     </Paragraph>
 
+    <YoutubeVideo
+      sectionLabel="Basic step video demonstration"
+      videoId="7XgmAPCX85A"
+    />
+
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=Qv5BKoV72nA">
         Closed-position basic
@@ -43,6 +48,11 @@ export const Content: FC = () => (
       &nbsp; (also called Pal Medio, Son Montuno, or Llevala Pa'bajo). Learn to
       stay in frame and move with the lead instead of steering yourself.
     </Paragraph>
+
+    <YoutubeVideo
+      sectionLabel="Closed-position basic video demonstration"
+      videoId="Qv5BKoV72nA"
+    />
 
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=YwxB1MSytYA">
@@ -52,6 +62,11 @@ export const Content: FC = () => (
       and forward together, creating space and connection at arm's length. This
       differs from other salsa styles where partners step in unison.
     </Paragraph>
+
+    <YoutubeVideo
+      sectionLabel="Guapea video demonstration"
+      videoId="YwxB1MSytYA"
+    />
 
     <Header2>Guided turn and travel</Header2>
 
@@ -63,6 +78,13 @@ export const Content: FC = () => (
       redirection over memory. The single most important follow skill.
     </Paragraph>
 
+    <YoutubeVideo
+      endTime={[3, 55]}
+      sectionLabel="Dile Que No video demonstration"
+      startTime={[3, 51]}
+      videoId="Jexcy9LGKjo"
+    />
+
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=3tUcawE0Bhs">
         Enchufla
@@ -70,6 +92,13 @@ export const Content: FC = () => (
       &nbsp; — tests a basic powered turn under the arm plus the Dile Que No
       exit.
     </Paragraph>
+
+    <YoutubeVideo
+      endTime={[2, 0]}
+      sectionLabel="Enchufla video demonstration"
+      startTime={[1, 53]}
+      videoId="3tUcawE0Bhs"
+    />
 
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=51lJ_32VRwc">
@@ -79,6 +108,13 @@ export const Content: FC = () => (
       the basic step Llevala Pa'bajo and is essentially a right turn for the
       follower that the leader initiates on 3.
     </Paragraph>
+
+    <YoutubeVideo
+      endTime={[1, 30]}
+      sectionLabel="Exhibe video demonstration"
+      startTime={[1, 25]}
+      videoId="51lJ_32VRwc"
+    />
 
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=cpOxtBZ7Dq8">
@@ -105,6 +141,11 @@ export const Content: FC = () => (
       intermediate patterns.
     </Paragraph>
 
+    <YoutubeVideo
+      sectionLabel="Vacilala video demonstration"
+      videoId="pT1AmRJVtRY"
+    />
+
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=6OxXNbCZmpA">
         Enchufla Doble
@@ -113,6 +154,11 @@ export const Content: FC = () => (
       between them.
     </Paragraph>
 
+    <YoutubeVideo
+      sectionLabel="Enchufla Doble video demonstration"
+      videoId="6OxXNbCZmpA"
+    />
+
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=SjUYUGv4f9o">
         Enchufla con Vuelta
@@ -120,6 +166,11 @@ export const Content: FC = () => (
       &nbsp; — tests turning while <em>you</em> also turn, so she can't just
       mirror you.
     </Paragraph>
+
+    <YoutubeVideo
+      sectionLabel="Enchufla con Vuelta video demonstration"
+      videoId="SjUYUGv4f9o"
+    />
 
     <Paragraph>
       <strong>Evelyn</strong> — tests holding a frame you build mid-move. It
@@ -138,6 +189,11 @@ export const Content: FC = () => (
       come up and over the leader's and follower's head.
     </Paragraph>
 
+    <YoutubeVideo
+      sectionLabel="Sombrero video demonstration"
+      videoId="pY_sGnB_sTc"
+    />
+
     <Paragraph>
       <strong>Coca-Cola</strong> — tests a traveling left turn <em>around</em>{" "}
       you on a curved line, which needs more than a 360° to get all the way
@@ -150,6 +206,11 @@ export const Content: FC = () => (
       </ExternalLink>
       &nbsp; — tests a rhythm/texture change and playfulness.
     </Paragraph>
+
+    <YoutubeVideo
+      sectionLabel="Kentucky video demonstration"
+      videoId="sK1SlAIE0LA"
+    />
 
     <Paragraph>
       <strong>Adios</strong> — tests reading a direction-change/peek redirect.
@@ -167,12 +228,22 @@ export const Content: FC = () => (
       complex patterns.
     </Paragraph>
 
+    <YoutubeVideo
+      sectionLabel="Setenta (70) video demonstration"
+      videoId="_B55w-0o0qw"
+    />
+
     <Paragraph>
       <ExternalLink to="https://www.youtube.com/watch?v=TKcxJ8v_nh4">
         Setenta Miami
       </ExternalLink>
       &nbsp; — the same, strung continuously.
     </Paragraph>
+
+    <YoutubeVideo
+      sectionLabel="Setenta Miami video demonstration"
+      videoId="TKcxJ8v_nh4"
+    />
 
     <Paragraph>
       <strong>Siete</strong> — tests a new redirect; a fundamental intermediate
@@ -186,6 +257,11 @@ export const Content: FC = () => (
       </ExternalLink>
       &nbsp; — tests the enganche (arm hook) inside the 70.
     </Paragraph>
+
+    <YoutubeVideo
+      sectionLabel="Setenta y Uno (71) video demonstration"
+      videoId="ufaUC31X8M0"
+    />
 
     <Paragraph>
       <strong>Setenta y Dos (72)</strong> — tests further sequencing within the
@@ -229,6 +305,11 @@ export const Content: FC = () => (
       No, Evelyn, and the Exhibe turn, with the follower learning to untrap her
       left arm.
     </Paragraph>
+
+    <YoutubeVideo
+      sectionLabel="Flamenco video demonstration"
+      videoId="UffIzThsDYE"
+    />
 
     <Paragraph>
       <strong>Sombrero Doble</strong> — tests sequencing repeated head-arm
