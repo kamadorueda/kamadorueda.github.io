@@ -66,6 +66,11 @@
             kamadorueda.nodePackages.nodejs
             kamadorueda.nodePackages.pnpm
             nixpkgs.mprocs
+
+            (nixpkgs.writeShellApplication {
+              name = "npm";
+              text = "echo use pnpm && exit 1";
+            };)
           ];
         };
       };
