@@ -48,7 +48,7 @@ export const Thought: FC = () => {
         <meta content="article" name="og:type" />
         <meta content="Kevin Amado" name="article:author" />
         <meta
-          content={thought.metadata.timestamp}
+          content={`${thought.metadata.timestamp.toISOString()}`}
           name="article:published_time"
         />
         {thought.metadata.tags.map((tag) => (
