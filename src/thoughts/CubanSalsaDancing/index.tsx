@@ -314,6 +314,10 @@ export const Content: FC = () => (
         back to the follower, followed by the follower executing side-to-side
         steps and a double Sombrero turn before ending with a Dile Que No.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [4, 45], to: [5, 2] }}
+        videoId="Lm0gQ6qGK5U"
+      />
     </Move>
 
     <Move name="El Dedo">
