@@ -17,7 +17,11 @@ import { UnorderedList } from "~/components/Typography/UnorderedList";
 import { routes } from "~/routes";
 import { formatDate } from "~/utils/formatDate";
 
-const allThoughts = [CubanSalsaDancing, ArtificialIntelligence, FinancialLiteracy];
+const allThoughts = [
+  CubanSalsaDancing,
+  ArtificialIntelligence,
+  FinancialLiteracy,
+];
 
 export const Thoughts: FC = () => {
   const navigate = useNavigate();

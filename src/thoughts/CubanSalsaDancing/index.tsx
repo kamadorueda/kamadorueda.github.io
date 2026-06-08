@@ -1,8 +1,7 @@
 import { FC } from "react";
-import { YoutubeVideo } from "~/components/YoutubeVideo";
-import { ExternalLink } from "~/components/Typography/ExternalLink";
 import { Header2 } from "~/components/Typography/Header2";
 import { Paragraph } from "~/components/Typography/Paragraph";
+import { Move } from "./Move";
 
 export const metadata = {
   id: "cuban-salsa-dancing",
@@ -28,318 +27,320 @@ export const Content: FC = () => (
 
     <Header2>Move with the music</Header2>
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=7XgmAPCX85A">
-        Basic step
-      </ExternalLink>
-      &nbsp; (quick-quick-slow, the back-rock) is where you start. This teaches
-      you to keep time and transfer weight cleanly.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Basic step video demonstration"
+    <Move
+      description={
+        <>
+          (quick-quick-slow, the back-rock) is where you start. This teaches you
+          to keep time and transfer weight cleanly.
+        </>
+      }
+      name="Basic step"
       videoId="7XgmAPCX85A"
     />
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=Qv5BKoV72nA">
-        Closed-position basic
-      </ExternalLink>
-      &nbsp; (also called Pal Medio, Son Montuno, or Llevala Pa'bajo). Learn to
-      stay in frame and move with the lead instead of steering yourself.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Closed-position basic video demonstration"
+    <Move
+      description={
+        <>
+          (also called Pal Medio, Son Montuno, or Llevala Pa'bajo). Learn to
+          stay in frame and move with the lead instead of steering yourself.
+        </>
+      }
+      name="Closed-position basic"
       videoId="Qv5BKoV72nA"
     />
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=YwxB1MSytYA">
-        Guapea
-      </ExternalLink>
-      &nbsp; (open break), the signature Cuban basic. Both partners step back
-      and forward together, creating space and connection at arm's length. This
-      differs from other salsa styles where partners step in unison.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Guapea video demonstration"
+    <Move
+      description={
+        <>
+          (open break), the signature Cuban basic. Both partners step back and
+          forward together, creating space and connection at arm's length. This
+          differs from other salsa styles where partners step in unison.
+        </>
+      }
+      name="Guapea"
       videoId="YwxB1MSytYA"
     />
 
     <Header2>Guided turn and travel</Header2>
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=Jexcy9LGKjo">
-        Dile Que No
-      </ExternalLink>
-      &nbsp; — tests walking across on the lead (cross-body), trusting
-      redirection over memory. The single most important follow skill.
-    </Paragraph>
-
-    <YoutubeVideo
-      endTime={[3, 55]}
-      sectionLabel="Dile Que No video demonstration"
-      startTime={[3, 51]}
+    <Move
+      description={
+        <>
+          tests walking across on the lead (cross-body), trusting redirection
+          over memory. The single most important follow skill.
+        </>
+      }
+      name="Dile Que No"
+      video={{
+        endTime: [3, 56],
+        startTime: [3, 51],
+      }}
       videoId="Jexcy9LGKjo"
     />
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=3tUcawE0Bhs">
-        Enchufla
-      </ExternalLink>
-      &nbsp; — tests a basic powered turn under the arm plus the Dile Que No
-      exit.
-    </Paragraph>
-
-    <YoutubeVideo
-      endTime={[2, 0]}
-      sectionLabel="Enchufla video demonstration"
-      startTime={[1, 53]}
+    <Move
+      description={
+        <>tests a basic powered turn under the arm plus the Dile Que No exit.</>
+      }
+      name="Enchufla"
+      video={{
+        endTime: [2, 0],
+        startTime: [1, 53],
+      }}
       videoId="3tUcawE0Bhs"
     />
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=51lJ_32VRwc">
-        Exhibe
-      </ExternalLink>
-      &nbsp; — tests a softer turn signal and the arm "untrap." It comes from
-      the basic step Llevala Pa'bajo and is essentially a right turn for the
-      follower that the leader initiates on 3.
-    </Paragraph>
-
-    <YoutubeVideo
-      endTime={[1, 30]}
-      sectionLabel="Exhibe video demonstration"
-      startTime={[1, 25]}
+    <Move
+      description={
+        <>
+          tests a softer turn signal and the arm untrap. It comes from the basic
+          step Llevala Pa'bajo and is essentially a right turn for the follower
+          that the leader initiates on 3.
+        </>
+      }
+      name="Exhibe"
+      video={{
+        endTime: [1, 30],
+        startTime: [1, 25],
+      }}
       videoId="51lJ_32VRwc"
     />
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=cpOxtBZ7Dq8">
-        Sencillo
-      </ExternalLink>
-      &nbsp; — tests a redirect turn with light spotting.
-    </Paragraph>
-
-    <YoutubeVideo
-      endTime={[2, 36]}
-      sectionLabel="Sencillo video demonstration"
-      startTime={[2, 19]}
+    <Move
+      description={<>tests a redirect turn with light spotting.</>}
+      name="Sencillo"
+      video={{
+        endTime: [2, 36],
+        startTime: [2, 19],
+      }}
       videoId="cpOxtBZ7Dq8"
     />
 
     <Header2>Turn and travel</Header2>
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=pT1AmRJVtRY">
-        Vacilala
-      </ExternalLink>
-      &nbsp; — her first <em>free</em> turn: sent out and must complete it solo.
-      Huge milestone; many plateaus live here. It's the foundation for many
-      intermediate patterns.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Vacilala video demonstration"
+    <Move
+      description={
+        <>
+          her first <em>free</em> turn: sent out and must complete it solo. Huge
+          milestone; many plateaus live here. It's the foundation for many
+          intermediate patterns.
+        </>
+      }
+      name="Vacilala"
+      video={{
+        endTime: [3, 5],
+        startTime: [2, 44],
+      }}
       videoId="pT1AmRJVtRY"
     />
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=6OxXNbCZmpA">
-        Enchufla Doble
-      </ExternalLink>
-      &nbsp; — tests chaining turns through a shoulder-tap without stopping
-      between them.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Enchufla Doble video demonstration"
+    <Move
+      description={
+        <>
+          tests chaining turns through a shoulder-tap without stopping between
+          them.
+        </>
+      }
+      name="Enchufla Doble"
+      video={{
+        endTime: [2, 4],
+        startTime: [1, 53],
+      }}
       videoId="6OxXNbCZmpA"
     />
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=SjUYUGv4f9o">
-        Enchufla con Vuelta
-      </ExternalLink>
-      &nbsp; — tests turning while <em>you</em> also turn, so she can't just
-      mirror you.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Enchufla con Vuelta video demonstration"
+    <Move
+      description={
+        <>
+          tests turning while <em>you</em> also turn, so she can't just mirror
+          you.
+        </>
+      }
+      name="Enchufla con Vuelta"
+      video={{
+        endTime: [0, 16],
+        startTime: [0, 8],
+      }}
       videoId="SjUYUGv4f9o"
     />
 
-    <Paragraph>
-      <strong>Evelyn</strong> — tests holding a frame you build mid-move. It
-      begins like an Enchufla but the leader creates a frame, turns to the right
-      in a vuelta, then finishes with a cross-handed Dile Que No. (Dance Papi)
-    </Paragraph>
+    <Move
+      description={
+        <>
+          tests holding a frame you build mid-move. It begins like an Enchufla
+          but the leader creates a frame, turns to the right in a vuelta, then
+          finishes with a cross-handed Dile Que No.
+        </>
+      }
+      name="Evelyn"
+      video={{
+        endTime: [0, 31],
+        startTime: [0, 21],
+      }}
+      videoId="cbkno_4beCQ"
+    />
 
     <Header2>Hands over the head</Header2>
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=pY_sGnB_sTc">
-        Sombrero
-      </ExternalLink>
-      &nbsp; — tests comfort with hands sweeping over the head and ducking. It
-      starts with a Dile Que No followed by a vacila variation where the hands
-      come up and over the leader's and follower's head.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Sombrero video demonstration"
+    <Move
+      description={
+        <>
+          tests comfort with hands sweeping over the head and ducking. It starts
+          with a Dile Que No followed by a vacila variation where the hands come
+          up and over the leader's and follower's head.
+        </>
+      }
+      name="Sombrero"
+      video={{
+        endTime: [3, 27],
+        startTime: [3, 12],
+      }}
       videoId="pY_sGnB_sTc"
     />
 
-    <Paragraph>
-      <strong>Coca-Cola</strong> — tests a traveling left turn <em>around</em>{" "}
-      you on a curved line, which needs more than a 360° to get all the way
-      around (harder than a straight turn). (Dance Papi)
-    </Paragraph>
+    <Move
+      description={
+        <>
+          tests a traveling left turn <em>around</em> you on a curved line,
+          which needs more than a 360° to get all the way around (harder than a
+          straight turn).
+        </>
+      }
+      name="Coca-Cola"
+    />
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=sK1SlAIE0LA">
-        Kentucky
-      </ExternalLink>
-      &nbsp; — tests a rhythm/texture change and playfulness.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Kentucky video demonstration"
+    <Move
+      description={<>tests a rhythm/texture change and playfulness.</>}
+      name="Kentucky"
       videoId="sK1SlAIE0LA"
     />
 
-    <Paragraph>
-      <strong>Adios</strong> — tests reading a direction-change/peek redirect.
-      (Dance Papi)
-    </Paragraph>
+    <Move
+      description={<>tests reading a direction-change/peek redirect.</>}
+      name="Adios"
+    />
 
     <Header2>Multi-count knots (the Setenta family)</Header2>
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=_B55w-0o0qw">
-        Setenta (70)
-      </ExternalLink>
-      &nbsp; — tests following a hammerlock and unwind across several eights
-      without anticipating. Its basic structure is built upon to create more
-      complex patterns.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Setenta (70) video demonstration"
+    <Move
+      description={
+        <>
+          tests following a hammerlock and unwind across several eights without
+          anticipating. Its basic structure is built upon to create more complex
+          patterns.
+        </>
+      }
+      name="Setenta (70)"
       videoId="_B55w-0o0qw"
     />
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=TKcxJ8v_nh4">
-        Setenta Miami
-      </ExternalLink>
-      &nbsp; — the same, strung continuously.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Setenta Miami video demonstration"
+    <Move
+      description={<>the same, strung continuously.</>}
+      name="Setenta Miami"
       videoId="TKcxJ8v_nh4"
     />
 
-    <Paragraph>
-      <strong>Siete</strong> — tests a new redirect; a fundamental intermediate
-      move where the leader redirects the follower similar to a vacila. (Dance
-      Papi)
-    </Paragraph>
+    <Move
+      description={
+        <>
+          tests a new redirect; a fundamental intermediate move where the leader
+          redirects the follower similar to a vacila.
+        </>
+      }
+      name="Siete"
+    />
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=ufaUC31X8M0">
-        Setenta y Uno (71)
-      </ExternalLink>
-      &nbsp; — tests the enganche (arm hook) inside the 70.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Setenta y Uno (71) video demonstration"
+    <Move
+      description={<>tests the enganche (arm hook) inside the 70.</>}
+      name="Setenta y Uno (71)"
       videoId="ufaUC31X8M0"
     />
 
-    <Paragraph>
-      <strong>Setenta y Dos (72)</strong> — tests further sequencing within the
-      family. (Dance Papi)
-    </Paragraph>
+    <Move
+      description={<>tests further sequencing within the family.</>}
+      name="Setenta y Dos (72)"
+    />
 
-    <Paragraph>
-      <strong>Doble Cero</strong> — tests turning out of the pattern with hands
-      released; it has the same footwork as Setenta and Sencillo, but after the
-      right-hand turn the leader lets go of the follower. (Dance Papi)
-    </Paragraph>
+    <Move
+      description={
+        <>
+          tests turning out of the pattern with hands released; it has the same
+          footwork as Setenta and Sencillo, but after the right-hand turn the
+          leader lets go of the follower.
+        </>
+      }
+      name="Doble Cero"
+    />
 
     <Header2>Shadow position + very light leads</Header2>
 
-    <Paragraph>
-      <strong>El Uno / El Dos</strong> — tests dancing in shadow position and
-      following with no face-to-face frame; el dos is a variation of el uno that
-      also incorporates sombrero. (Dance Papi)
-    </Paragraph>
+    <Move
+      description={
+        <>
+          tests dancing in shadow position and following with no face-to-face
+          frame; el dos is a variation of el uno that also incorporates
+          sombrero.
+        </>
+      }
+      name="El Uno / El Dos"
+    />
 
-    <Paragraph>
-      <strong>El Dedo</strong> — tests sensitivity to an extremely light lead
-      (led almost on one finger). A classic Casino Miami move that starts in a
-      Dile Que No and incorporates vacila and enchufla, so those basics matter
-      first. (Dance Papi)
-    </Paragraph>
+    <Move
+      description={
+        <>
+          tests sensitivity to an extremely light lead (led almost on one
+          finger). A classic Casino Miami move that starts in a Dile Que No and
+          incorporates vacila and enchufla, so those basics matter first.
+        </>
+      }
+      name="El Dedo"
+    />
 
-    <Paragraph>
-      <strong>Corona</strong> — tests new arm shapes on a familiar base; it
-      starts exactly like Setenta and incorporates Enchufla and Exhibe,
-      introducing new hand and arm movements. (Dance Papi)
-    </Paragraph>
+    <Move
+      description={
+        <>
+          tests new arm shapes on a familiar base; it starts exactly like
+          Setenta and incorporates Enchufla and Exhibe, introducing new hand and
+          arm movements.
+        </>
+      }
+      name="Corona"
+    />
 
     <Header2>Combos and flair</Header2>
 
-    <Paragraph>
-      <ExternalLink to="https://www.youtube.com/watch?v=UffIzThsDYE">
-        Flamenco
-      </ExternalLink>
-      &nbsp; — tests a longer flow with the arm-untrap; it incorporates Dile Que
-      No, Evelyn, and the Exhibe turn, with the follower learning to untrap her
-      left arm.
-    </Paragraph>
-
-    <YoutubeVideo
-      sectionLabel="Flamenco video demonstration"
+    <Move
+      description={
+        <>
+          tests a longer flow with the arm-untrap; it incorporates Dile Que No,
+          Evelyn, and the Exhibe turn, with the follower learning to untrap her
+          left arm.
+        </>
+      }
+      name="Flamenco"
       videoId="UffIzThsDYE"
     />
 
-    <Paragraph>
-      <strong>Sombrero Doble</strong> — tests sequencing repeated head-arm
-      moves. (Dance Papi)
-    </Paragraph>
+    <Move
+      description={<>tests sequencing repeated head-arm moves.</>}
+      name="Sombrero Doble"
+    />
 
-    <Paragraph>
-      <strong>Setenta Complicado</strong> — tests the dressed-up 70 with hook
-      turns and advanced multi-eight tracking. (Dance Papi)
-    </Paragraph>
+    <Move
+      description={
+        <>
+          tests the dressed-up 70 with hook turns and advanced multi-eight
+          tracking.
+        </>
+      }
+      name="Setenta Complicado"
+    />
 
-    <Paragraph>
-      <strong>Montaña Rusa</strong> ("roller coaster") — tests stamina, memory,
-      and trust through a long showy sequence. (Dance Papi)
-    </Paragraph>
-
-    <Paragraph>
-      The moves marked <strong>(Dance Papi)</strong> are all on the same free
-      channel — dancepapi.com hosts the full set with consistent instructors, so
-      the teaching style stays uniform as you climb.
-    </Paragraph>
-
-    <Paragraph>
-      <strong>Teaching craft notes:</strong> First, when she stalls, resist
-      re-teaching the <em>figure</em> — back up and check
-      timing/connection/spotting, since fixing the fundamental usually unlocks
-      the figure for free. Second, the close-frame and hands-near-the-head moves
-      (Sombrero, El Uno/Dos) land much better with a quick read of her comfort
-      first; a light "this one comes close, okay?" keeps a beginner relaxed and
-      trusting, which is exactly the state she learns fastest in.
-    </Paragraph>
+    <Move
+      description={
+        <>tests stamina, memory, and trust through a long showy sequence.</>
+      }
+      name='Montaña Rusa ("roller coaster")'
+    />
   </>
 );

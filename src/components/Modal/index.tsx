@@ -27,26 +27,31 @@ export const Modal: FC<ModalProps> = ({
       open={isOpen}
       role="dialog"
     >
-      <div aria-hidden="true" className="fixed inset-0 bg-ctextdark/20 transition-opacity duration-300" />
+      <div
+        aria-hidden="true"
+        className="bg-ctextdark/20 fixed inset-0 transition-opacity duration-300"
+      />
 
       <div className="fixed inset-0 flex items-center justify-center p-2">
-          <Dialog.Panel
-            className={tw(
-              "w-[calc(100%-1rem)] h-[calc(100%-1rem)] max-w-4xl transform overflow-hidden rounded-lg bg-cbgdefault text-left align-middle shadow-xl transition-all duration-300 flex flex-col",
-              className,
-            )}
-          >
-            {title && (
-              <div className="border-b p-6 flex-shrink-0">
-                <Dialog.Title as="h3" className="text-lg font-medium" id="modal-title">
-                  {title}
-                </Dialog.Title>
-              </div>
-            )}
-            <div className="flex-1 overflow-y-auto">
-              {children}
+        <Dialog.Panel
+          className={tw(
+            "bg-cbgdefault flex h-[calc(100%-1rem)] w-[calc(100%-1rem)] max-w-4xl transform flex-col overflow-hidden rounded-lg text-left align-middle shadow-xl transition-all duration-300",
+            className,
+          )}
+        >
+          {title && (
+            <div className="flex-shrink-0 border-b p-6">
+              <Dialog.Title
+                as="h3"
+                className="text-lg font-medium"
+                id="modal-title"
+              >
+                {title}
+              </Dialog.Title>
             </div>
-          </Dialog.Panel>
+          )}
+          <div className="flex-1 overflow-y-auto">{children}</div>
+        </Dialog.Panel>
       </div>
     </Dialog>
   );
