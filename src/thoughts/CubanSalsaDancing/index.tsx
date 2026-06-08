@@ -326,6 +326,10 @@ export const Content: FC = () => (
         lead sensitivity, chaining Enchufla and Evelyn patterns through multiple
         eight-count phrases while maintaining minimal hand pressure connection.
       </Move.Description>
+      <Move.Video
+        highlight={{ from: [2, 48], to: [3, 5] }}
+        videoId="FOGCD0XPTFc"
+      />
     </Move>
 
     <Move name="Corona">
