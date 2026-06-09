@@ -45,9 +45,6 @@ export const Content: FC = () => (
         The foundation — three steps, quick-quick-slow, the weight rocking back
         then forward and the hips carrying Cuban motion. Everything builds on
         it.
-        <br />
-        The follow feels: There's no partner yet, so the music is the only thing
-        to follow. She lets that pulse settle into her own feet.
       </Move.Description>
       <Move.Video
         highlight={{ from: [3, 8], to: [3, 23] }}
@@ -58,10 +55,9 @@ export const Content: FC = () => (
     <Move name="Closed-position basic">
       <Move.Description>
         The same basic in a closed hold, where the two move as one and the
-        follow rides the lead's frame instead of steering herself.
-        <br />
-        The follow feels: His chest and right hand carry the direction, and she
-        matches it rather than starting anything herself.
+        follow rides the lead's frame instead of steering herself — his chest
+        and right hand carry the direction, and she matches it rather than
+        starting anything herself.
       </Move.Description>
       <Move.Video
         highlight={{ from: [3, 52], to: [4, 18] }}
@@ -73,10 +69,8 @@ export const Content: FC = () => (
       <Move.Description>
         The signature Cuban basic in open hold, where partners step apart and
         together in opposition rather than in unison — the source of the dance's
-        space and arm's-length connection.
-        <br />
-        The follow feels: A soft push and pull through the hand. His pull sends
-        her back, his push brings her forward.
+        space and arm's-length connection. A soft push and pull through the hand
+        guides her: his pull sends her back, his push brings her forward.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 35], to: [3, 9] }}
@@ -108,10 +102,9 @@ export const Content: FC = () => (
       <Move.Description>
         The cross-body that resets the dance: the follow walks past the lead on
         a curved path, steered by his redirect rather than by counting. It's the
-        first real test of signal and trust.
-        <br />
-        The follow feels: His left hand draws her diagonally across and opens to
-        the side, and she follows the curve it traces, not a step she remembers.
+        first real test of signal and trust — his left hand draws her diagonally
+        across and opens to the side, and she follows the curve it traces, not a
+        step she remembers.
       </Move.Description>
       <Move.Video
         highlight={{ from: [3, 51], to: [3, 56] }}
@@ -122,10 +115,9 @@ export const Content: FC = () => (
     <Move name="Enchufla">
       <Move.Description>
         A turn where the follow goes left and the lead goes right, the arm
-        passing overhead, exiting through a Dile Que No that resets them both.
-        <br />
-        The follow feels: A raised hand and a small circle overhead start her
-        turning as he steps away. The arm tells her when to go and when to stop.
+        passing overhead, exiting through a Dile Que No that resets them both. A
+        raised hand and a small circle overhead start her turning as he steps
+        away; the arm tells her when to go and when to stop.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 53], to: [2, 0] }}
@@ -136,10 +128,8 @@ export const Content: FC = () => (
     <Move name="Exhibe">
       <Move.Description>
         A right turn led more softly than the Enchufla, and her first lesson in
-        freeing her own arm cleanly afterward.
-        <br />
-        The follow feels: A gentle, low lead opens her to the right, then a
-        downward release she follows to unwrap her arm.
+        freeing her own arm cleanly afterward. A gentle, low lead opens her to
+        the right, then a downward release she follows to unwrap her arm.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 25], to: [1, 30] }}
@@ -150,10 +140,8 @@ export const Content: FC = () => (
     <Move name="Sencillo">
       <Move.Description>
         A turn on the lightest possible lead, where a tiny redirect does the
-        work and she carries the rest.
-        <br />
-        The follow feels: Barely any pressure at the hand. She keeps spotting
-        and lets the small change of direction turn her.
+        work and she carries the rest. Barely any pressure at the hand guides
+        her; she keeps spotting and lets the small change of direction turn her.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 19], to: [2, 36] }}
@@ -167,11 +155,9 @@ export const Content: FC = () => (
       <Move.Description>
         Her first fully independent turn, and the gateway to every free-turning
         figure that follows. The lead sends her into a right turn and releases
-        partway — one rotation to start, two once it feels easy.
-        <br />
-        The follow feels: One clear send-off, then nothing. No hand carries her
-        around, so she spots, holds her own balance, and finishes the turn
-        herself.
+        partway — one rotation to start, two once it feels easy. One clear
+        send-off, then nothing; no hand carries her around, so she spots, holds
+        her own balance, and finishes the turn herself.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 44], to: [3, 5] }}
@@ -182,10 +168,8 @@ export const Content: FC = () => (
     <Move name="Enchufla Doble">
       <Move.Description>
         Two Enchuflas back to back, joined by a tap at the shoulder so the turns
-        run together with no pause.
-        <br />
-        The follow feels: A light tap right after the first turn launches the
-        next. Another one's coming, so she never settles.
+        run together with no pause. A light tap right after the first turn
+        launches the next; another one's coming, so she never settles.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 53], to: [2, 4] }}
@@ -196,10 +180,8 @@ export const Content: FC = () => (
     <Move name="Enchufla con Vuelta">
       <Move.Description>
         An Enchufla where the lead spins too, so the follow can't copy his body
-        and has to find the turn from the hand alone.
-        <br />
-        The follow feels: He turns away at the same moment, leaving only the
-        hand to read, and she turns on that alone.
+        and has to find the turn from the hand alone. He turns away at the same
+        moment, leaving only the hand to read, and she turns on that alone.
       </Move.Description>
       <Move.Video
         highlight={{ from: [0, 8], to: [0, 16] }}
@@ -210,11 +192,9 @@ export const Content: FC = () => (
     <Move name="Siete (7)">
       <Move.Description>
         A redirect close to a Vacilala but led low, through a wrapped hand, so
-        it takes a finer touch to keep smooth.
-        <br />
-        The follow feels: A low, wrapped hand draws her into the turn. The
-        signal sits low rather than overhead, so she waits for it to set the
-        direction.
+        it takes a finer touch to keep smooth. A low, wrapped hand draws her
+        into the turn; the signal sits low rather than overhead, so she waits
+        for it to set the direction.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 50], to: [3, 10] }}
@@ -225,10 +205,9 @@ export const Content: FC = () => (
     <Move name="Evelyn">
       <Move.Description>
         It opens like an Enchufla, then the lead builds a frame mid-move to turn
-        himself, and closes with a cross-handed Dile Que No.
-        <br />
-        The follow feels: She starts as if turning, then feels a frame form. She
-        holds it steady while he turns, then follows the cross-handed finish.
+        himself, and closes with a cross-handed Dile Que No. She starts as if
+        turning, then feels a frame form; she holds it steady while he turns,
+        then follows the cross-handed finish.
       </Move.Description>
       <Move.Video
         highlight={{ from: [0, 21], to: [0, 31] }}
@@ -260,10 +239,9 @@ export const Content: FC = () => (
     <Move name="Kentucky">
       <Move.Description>
         An Enchufla dressed up with playful two-handed patterns drawn around the
-        shoulders and neck.
-        <br />
-        The follow feels: Two hands work lightly around her shoulders and neck.
-        She keeps a soft frame and lets the patterns happen without helping.
+        shoulders and neck. Two hands work lightly around her shoulders and
+        neck; she keeps a soft frame and lets the patterns happen without
+        helping.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 28], to: [1, 40] }}
@@ -274,10 +252,8 @@ export const Content: FC = () => (
     <Move name="Sombrero">
       <Move.Description>
         From a Dile Que No, the figure draws both hands up over the heads like a
-        hat — her introduction to trusting hands close to her face.
-        <br />
-        The follow feels: She tilts a little, trusts the hands as they pass, and
-        follows the arc.
+        hat — her introduction to trusting hands close to her face. She tilts a
+        little, trusts the hands as they pass, and follows the arc.
       </Move.Description>
       <Move.Video
         highlight={{ from: [3, 12], to: [3, 27] }}
@@ -290,10 +266,9 @@ export const Content: FC = () => (
     <Move name="Coca-Cola">
       <Move.Description>
         A left turn that travels all the way around the lead — more than a full
-        rotation, which makes it trickier than turning on the spot.
-        <br />
-        The follow feels: He keeps moving the whole way, so she keeps walking
-        and turning instead of parking on one spot.
+        rotation, which makes it trickier than turning on the spot. He keeps
+        moving the whole way, so she keeps walking and turning instead of
+        parking on one spot.
       </Move.Description>
       <Move.Video
         highlight={{ from: [0, 38], to: [0, 53] }}
@@ -304,10 +279,9 @@ export const Content: FC = () => (
     <Move name="Adios">
       <Move.Description>
         A tight carousel with the lead at the center and both dancers circling a
-        shared axis, the follow reading his frame for each change.
-        <br />
-        The follow feels: They rotate around one center, and small shifts in his
-        frame tell her when the direction or axis changes.
+        shared axis, the follow reading his frame for each change. They rotate
+        around one center, and small shifts in his frame tell her when the
+        direction or axis changes.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 17], to: [1, 45] }}
@@ -339,10 +313,9 @@ export const Content: FC = () => (
     <Move name="Hammerlock">
       <Move.Description>
         Not a figure but a shape to meet first — the one unfamiliar position the
-        whole family depends on, with the right arm wrapped behind the back.
-        <br />
-        The follow feels: She lets the lead place that arm and keep it there,
-        soft, never pulling against it.
+        whole family depends on, with the right arm wrapped behind the back. She
+        lets the lead place that arm and keep it there, soft, never pulling
+        against it.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 32], to: [2, 38] }}
@@ -354,10 +327,8 @@ export const Content: FC = () => (
       <Move.Description>
         The cornerstone of the family — a hammerlock, a wrap behind the back,
         and an Enchufla to close, over three eight-counts. Most later figures
-        grow out of it.
-        <br />
-        The follow feels: The hands lead her along one long, continuous path.
-        She lets them do the unwinding and never jumps ahead.
+        grow out of it. The hands lead her along one long, continuous path; she
+        lets them do the unwinding and never jumps ahead.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 12], to: [2, 25] }}
@@ -368,10 +339,9 @@ export const Content: FC = () => (
     <Move name="Setenta encadenado">
       <Move.Description>
         Several Setentas linked into one continuous run, repeating the pattern
-        across phrases instead of exiting between them.
-        <br />
-        The follow feels: The same 70, but instead of an exit she's sent
-        straight into another. No release yet, so she stays in and keeps going.
+        across phrases instead of exiting between them. The same 70, but instead
+        of an exit she's sent straight into another; no release yet, so she
+        stays in and keeps going.
       </Move.Description>
       <Move.Video
         highlight={{ from: [3, 52], to: [4, 15] }}
@@ -382,11 +352,9 @@ export const Content: FC = () => (
     <Move name="Setenta y Uno (71)">
       <Move.Description>
         A short extension of the 70 — an Enchufla led while an arm hook keeps
-        the partners connected, then a Dile Que No.
-        <br />
-        The follow feels: After the opening, a hook links their arms and she's
-        turned through an Enchufla still hooked. She keeps that arm engaged but
-        loose.
+        the partners connected, then a Dile Que No. After the opening, a hook
+        links their arms and she's turned through an Enchufla still hooked; she
+        keeps that arm engaged but loose.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 47], to: [2, 14] }}
@@ -397,10 +365,9 @@ export const Content: FC = () => (
     <Move name="Setenta y Dos (72)">
       <Move.Description>
         Like the 71, but it ends in a double arm hook instead of a Dile Que No,
-        often with a turn spun inside the hook.
-        <br />
-        The follow feels: The close swaps the exit for a double hook, sometimes
-        with a turn inside it, and she follows the hooks and the extra rotation.
+        often with a turn spun inside the hook. The close swaps the exit for a
+        double hook, sometimes with a turn inside it, and she follows the hooks
+        and the extra rotation.
       </Move.Description>
       <Move.Video
         highlight={{ from: [0, 3], to: [0, 21] }}
@@ -411,11 +378,9 @@ export const Content: FC = () => (
     <Move name="Doble Cero (00)">
       <Move.Description>
         Built on Setenta footwork, but the hands release after the right-hand
-        turn so both dancers finish on their own before rejoining.
-        <br />
-        The follow feels: The hand lets go after the right-hand turn. That
-        absence is her signal to finish the turn herself, then come back to the
-        hold.
+        turn so both dancers finish on their own before rejoining. The hand lets
+        go after the right-hand turn; that absence is her signal to finish the
+        turn herself, then come back to the hold.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 50], to: [3, 10] }}
@@ -426,10 +391,9 @@ export const Content: FC = () => (
     <Move name="Corona">
       <Move.Description>
         A 70 base decorated with the crown-shaped Alarde arms, plus Enchufla and
-        Exhibe — new arm shapes on familiar footwork.
-        <br />
-        The follow feels: The footwork is the 70 she knows, so she follows the
-        same feel and lets the new crown shape form overhead.
+        Exhibe — new arm shapes on familiar footwork. The footwork is the 70 she
+        knows, so she follows the same feel and lets the new crown shape form
+        overhead.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 15], to: [1, 30] }}
@@ -442,10 +406,8 @@ export const Content: FC = () => (
     <Move name="El Uno (1)">
       <Move.Description>
         A shadow-position figure with the lead behind her back, running repeated
-        Enchufla Dobles at different heights.
-        <br />
-        The follow feels: The turns start from behind her at varying heights,
-        and she answers the hand without turning to find him.
+        Enchufla Dobles at different heights. The turns start from behind her at
+        varying heights, and she answers the hand without turning to find him.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 50], to: [2, 0] }}
@@ -456,10 +418,9 @@ export const Content: FC = () => (
     <Move name="El Dos (2)">
       <Move.Description>
         The reverse shadow, with the lead in front and his back to her, into
-        side steps and a double Sombrero before a Dile Que No.
-        <br />
-        The follow feels: He's in front and facing away, so she can't read his
-        body. She takes the side steps and double Sombrero from the hand alone.
+        side steps and a double Sombrero before a Dile Que No. He's in front and
+        facing away, so she can't read his body; she takes the side steps and
+        double Sombrero from the hand alone.
       </Move.Description>
       <Move.Video
         highlight={{ from: [4, 45], to: [5, 2] }}
@@ -470,11 +431,9 @@ export const Content: FC = () => (
     <Move name="El Dedo">
       <Move.Description>
         A right-to-right combination on the faintest possible contact, chaining
-        Enchufla and Evelyn across several phrases.
-        <br />
-        The follow feels: Almost nothing to hold — a single finger's worth of
-        contact. She stays light enough to read it and lets that faint signal
-        carry the chain.
+        Enchufla and Evelyn across several phrases. Almost nothing to hold — a
+        single finger's worth of contact; she stays light enough to read it and
+        lets that faint signal carry the chain.
       </Move.Description>
       <Move.Video
         highlight={{ from: [2, 48], to: [3, 5] }}
@@ -487,10 +446,9 @@ export const Content: FC = () => (
     <Move name="Flamenco">
       <Move.Description>
         A flowing string of Dile Que No, Evelyn, and Exhibe that keeps the arms
-        moving and drills clean arm recovery inside a longer phrase.
-        <br />
-        The follow feels: One continuous flow with no stops, where she frees and
-        recovers her arm smoothly through each handoff.
+        moving and drills clean arm recovery inside a longer phrase. One
+        continuous flow with no stops, where she frees and recovers her arm
+        smoothly through each handoff.
       </Move.Description>
       <Move.Video
         highlight={{ from: [1, 51], to: [2, 3] }}
@@ -501,10 +459,8 @@ export const Content: FC = () => (
     <Move name="Sombrero Doble">
       <Move.Description>
         Three Sombreros in a row, right-left-right, two hands held throughout,
-        testing repeated overhead coordination.
-        <br />
-        The follow feels: The sweeps come one after another. She settles into
-        the rhythm and keeps following each one.
+        testing repeated overhead coordination. The sweeps come one after
+        another; she settles into the rhythm and keeps following each one.
       </Move.Description>
       <Move.Video
         highlight={{ from: [4, 5], to: [4, 20] }}
@@ -515,10 +471,9 @@ export const Content: FC = () => (
     <Move name="Setenta (70) Complicado">
       <Move.Description>
         A 70 with hook turns folded in and a 180-degree switch on every count,
-        asking for tighter lead timing and quicker responses.
-        <br />
-        The follow feels: Sharper, faster hands than the plain 70. She stays
-        responsive and lets each hook turn her to the next position.
+        asking for tighter lead timing and quicker responses. Sharper, faster
+        hands than the plain 70; she stays responsive and lets each hook turn
+        her to the next position.
       </Move.Description>
       <Move.Video
         highlight={{ from: [3, 55], to: [4, 15] }}
@@ -530,11 +485,9 @@ export const Content: FC = () => (
       <Move.Description>
         A long showpiece of switched hands, back breaks, position changes, and
         hooks under the arm, usually finishing on a Sombrero — built for stamina
-        and trust.
-        <br />
-        The follow feels: A long ride of switches, breaks, and hooks under her
-        arm into a final sweep. She trusts it and follows each change without
-        guessing the end.
+        and trust. A long ride of switches, breaks, and hooks under her arm into
+        a final sweep; she trusts it and follows each change without guessing
+        the end.
       </Move.Description>
       <Move.Video
         highlight={{ from: [0, 10], to: [0, 42] }}
