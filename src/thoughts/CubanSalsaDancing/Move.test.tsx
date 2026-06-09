@@ -25,14 +25,14 @@ describe("Move", () => {
   it("renders description with move name as term", () => {
     render(
       <Move name="Basic Step">
-        <Move.Description>
-          This is the basic step pattern
-        </Move.Description>
-      </Move>
+        <Move.Description>This is the basic step pattern</Move.Description>
+      </Move>,
     );
 
     expect(screen.getByText("Basic Step")).toBeInTheDocument();
-    expect(screen.getByText("This is the basic step pattern")).toBeInTheDocument();
+    expect(
+      screen.getByText("This is the basic step pattern"),
+    ).toBeInTheDocument();
   });
 
   it("throws error when Description is used outside Move", () => {
@@ -54,7 +54,7 @@ describe("Move", () => {
         <Move.Video
           highlight={{ from: [0, 10], to: [0, 20] }}
           videoId="test123"
-        />
+        />,
       );
     }).toThrow("Move child components must be used within <Move>");
 
@@ -68,12 +68,12 @@ describe("Move", () => {
           highlight={{ from: [2, 35], to: [3, 9] }}
           videoId="YwxB1MSytYA"
         />
-      </Move>
+      </Move>,
     );
 
     expect(screen.getByTestId("youtube-video")).toHaveAttribute(
       "data-video-id",
-      "YwxB1MSytYA"
+      "YwxB1MSytYA",
     );
   });
 
@@ -84,30 +84,32 @@ describe("Move", () => {
           highlight={{ from: [1, 53], to: [2, 0] }}
           videoId="3tUcawE0Bhs"
         />
-      </Move>
+      </Move>,
     );
 
-    expect(screen.getByText("Enchufla video demonstration")).toBeInTheDocument();
+    expect(
+      screen.getByText("Enchufla video demonstration"),
+    ).toBeInTheDocument();
   });
 
   it("renders both description and video together", () => {
     render(
       <Move name="Sencillo">
-        <Move.Description>
-          A turn with minimal lead pressure
-        </Move.Description>
+        <Move.Description>A turn with minimal lead pressure</Move.Description>
         <Move.Video
           highlight={{ from: [2, 19], to: [2, 36] }}
           videoId="cpOxtBZ7Dq8"
         />
-      </Move>
+      </Move>,
     );
 
     expect(screen.getByText("Sencillo")).toBeInTheDocument();
-    expect(screen.getByText("A turn with minimal lead pressure")).toBeInTheDocument();
+    expect(
+      screen.getByText("A turn with minimal lead pressure"),
+    ).toBeInTheDocument();
     expect(screen.getByTestId("youtube-video")).toHaveAttribute(
       "data-video-id",
-      "cpOxtBZ7Dq8"
+      "cpOxtBZ7Dq8",
     );
   });
 
@@ -118,10 +120,8 @@ describe("Move", () => {
           highlight={{ from: [3, 51], to: [3, 56] }}
           videoId="Jexcy9LGKjo"
         />
-        <Move.Description>
-          A cross-body movement
-        </Move.Description>
-      </Move>
+        <Move.Description>A cross-body movement</Move.Description>
+      </Move>,
     );
 
     expect(screen.getByText("Dile Que No")).toBeInTheDocument();
@@ -132,7 +132,7 @@ describe("Move", () => {
     const { rerender } = render(
       <Move name="Vacilala">
         <Move.Description>First definition</Move.Description>
-      </Move>
+      </Move>,
     );
 
     const firstDefinition = screen.getByTestId("definition");
@@ -142,7 +142,7 @@ describe("Move", () => {
     rerender(
       <Move name="Vacilala">
         <Move.Description>First definition</Move.Description>
-      </Move>
+      </Move>,
     );
 
     const secondDefinition = screen.getByTestId("definition");
@@ -153,7 +153,7 @@ describe("Move", () => {
     const { rerender } = render(
       <Move name="Exhibe">
         <Move.Description>Right turn definition</Move.Description>
-      </Move>
+      </Move>,
     );
 
     expect(screen.getByText("Exhibe")).toBeInTheDocument();
@@ -161,7 +161,7 @@ describe("Move", () => {
     rerender(
       <Move name="Sombrero">
         <Move.Description>Overhead arm sweep</Move.Description>
-      </Move>
+      </Move>,
     );
 
     expect(screen.getByText("Sombrero")).toBeInTheDocument();
@@ -179,10 +179,8 @@ describe("Move", () => {
   it("handles moves with only description", () => {
     render(
       <Move name="Corona">
-        <Move.Description>
-          A Setenta-based figure
-        </Move.Description>
-      </Move>
+        <Move.Description>A Setenta-based figure</Move.Description>
+      </Move>,
     );
 
     expect(screen.getByText("Corona")).toBeInTheDocument();
@@ -196,7 +194,7 @@ describe("Move", () => {
           highlight={{ from: [1, 0], to: [1, 30] }}
           videoId="testId123"
         />
-      </Move>
+      </Move>,
     );
 
     expect(screen.getByTestId("youtube-video")).toBeInTheDocument();

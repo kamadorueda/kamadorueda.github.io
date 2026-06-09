@@ -13,7 +13,6 @@ import { Main } from "~/components/Main";
 import { Nav } from "~/components/Nav";
 import { ExternalLink } from "~/components/Typography/ExternalLink";
 import { Header } from "~/components/Typography/Header";
-import { Header2 } from "~/components/Typography/Header2";
 import { ListItem } from "~/components/Typography/ListItem";
 import { Paragraph } from "~/components/Typography/Paragraph";
 import { UnorderedList } from "~/components/Typography/UnorderedList";
@@ -185,7 +184,7 @@ export const Projects: FC = () => (
       </Paragraph>
 
       <section>
-        <Header2>Professional Contributions</Header2>
+        <Header.Secondary>Professional Contributions</Header.Secondary>
         <Paragraph>
           Some of my previous employers' code is public. Here are over 2500 pull
           requests I made during my time there:
@@ -200,7 +199,7 @@ export const Projects: FC = () => (
       </section>
 
       <section>
-        <Header2>Personal Projects</Header2>
+        <Header.Secondary>Personal Projects</Header.Secondary>
         <Paragraph>
           These are some of my personal projects that I’m most proud of. All of
           them are open-source, so if you see something that piques your
@@ -217,7 +216,7 @@ export const Projects: FC = () => (
       </section>
 
       <section>
-        <Header2>Open Source Contributions</Header2>
+        <Header.Secondary>Open Source Contributions</Header.Secondary>
         <Paragraph>
           Other people's code offers a great opportunity to learn new paradigms
           and expose yourself to other domains. These are some projects I didn't
@@ -236,7 +235,7 @@ export const Projects: FC = () => (
       </section>
 
       <section>
-        <Header2>Other Open Source Contributions</Header2>
+        <Header.Secondary>Other Open Source Contributions</Header.Secondary>
         <Paragraph>
           Some of my projects didn't stick, but they definitely have an
           interesting use-case, and who knows, maybe one day I'll figure out a

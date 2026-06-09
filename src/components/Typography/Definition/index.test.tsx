@@ -4,18 +4,18 @@ import { Definition } from "./index";
 describe("Definition", () => {
   it("renders term and children correctly", () => {
     render(
-      <Definition term="Test Term">
-        This is the definition content
-      </Definition>
+      <Definition term="Test Term">This is the definition content</Definition>,
     );
 
     expect(screen.getByText("Test Term")).toBeInTheDocument();
-    expect(screen.getByText("This is the definition content")).toBeInTheDocument();
+    expect(
+      screen.getByText("This is the definition content"),
+    ).toBeInTheDocument();
   });
 
   it("uses semantic dl/dt/dd structure", () => {
     const { container } = render(
-      <Definition term="Example">Content here</Definition>
+      <Definition term="Example">Content here</Definition>,
     );
 
     const dl = container.querySelector("dl");
@@ -31,7 +31,7 @@ describe("Definition", () => {
     const { container } = render(
       <Definition term="Term" className="custom-class">
         Content
-      </Definition>
+      </Definition>,
     );
 
     const dl = container.querySelector("dl");
@@ -40,7 +40,7 @@ describe("Definition", () => {
 
   it("applies font-semibold to dt element", () => {
     const { container } = render(
-      <Definition term="Bold Term">Definition</Definition>
+      <Definition term="Bold Term">Definition</Definition>,
     );
 
     const dt = container.querySelector("dt");
@@ -49,7 +49,7 @@ describe("Definition", () => {
 
   it("applies ml-4 margin to dd element", () => {
     const { container } = render(
-      <Definition term="Term">Indented definition</Definition>
+      <Definition term="Term">Indented definition</Definition>,
     );
 
     const dd = container.querySelector("dd");
@@ -60,7 +60,7 @@ describe("Definition", () => {
     render(
       <Definition term={<span className="term-span">JSX Term</span>}>
         Content with JSX term
-      </Definition>
+      </Definition>,
     );
 
     expect(screen.getByText("JSX Term")).toBeInTheDocument();
@@ -69,7 +69,7 @@ describe("Definition", () => {
 
   it("renders children with text-ctext class", () => {
     const { container } = render(
-      <Definition term="Term">Definition text</Definition>
+      <Definition term="Term">Definition text</Definition>,
     );
 
     const dl = container.querySelector("dl");
@@ -78,7 +78,7 @@ describe("Definition", () => {
 
   it("renders children with mt-4 class", () => {
     const { container } = render(
-      <Definition term="Term">Definition</Definition>
+      <Definition term="Term">Definition</Definition>,
     );
 
     const dl = container.querySelector("dl");

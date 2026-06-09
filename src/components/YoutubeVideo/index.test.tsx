@@ -33,7 +33,7 @@ describe("YoutubeVideo", () => {
     render(<YoutubeVideo {...defaultProps} />);
     expect(screen.getByTestId("youtube-iframe")).toHaveAttribute(
       "data-video-id",
-      "test123"
+      "test123",
     );
   });
 
@@ -55,7 +55,9 @@ describe("YoutubeVideo", () => {
   it("has correct aria labels for buttons", () => {
     render(<YoutubeVideo {...defaultProps} />);
     expect(screen.getByLabelText("Play the video")).toBeInTheDocument();
-    expect(screen.getByLabelText("Play the highlighted section")).toBeInTheDocument();
+    expect(
+      screen.getByLabelText("Play the highlighted section"),
+    ).toBeInTheDocument();
     expect(screen.getByLabelText("Play at 0.5x speed")).toBeInTheDocument();
   });
 
@@ -92,7 +94,9 @@ describe("YoutubeVideo", () => {
 
   it("renders buttons with rounded corners (bl-3xl, br-3xl)", () => {
     const { container } = render(<YoutubeVideo {...defaultProps} />);
-    const buttons = container.querySelectorAll(".grid-cols-3 button, .grid-cols-3 a");
+    const buttons = container.querySelectorAll(
+      ".grid-cols-3 button, .grid-cols-3 a",
+    );
 
     expect(buttons[0]).toHaveClass("rounded-bl-3xl");
     expect(buttons[2]).toHaveClass("rounded-br-3xl");
@@ -106,7 +110,7 @@ describe("YoutubeVideo", () => {
 
   it("applies custom className when provided", () => {
     const { container } = render(
-      <YoutubeVideo {...defaultProps} className="custom-class" />
+      <YoutubeVideo {...defaultProps} className="custom-class" />,
     );
     const section = container.querySelector("section");
     expect(section).toHaveClass("custom-class");
@@ -114,7 +118,9 @@ describe("YoutubeVideo", () => {
 
   it("has text-center styling on buttons", () => {
     const { container } = render(<YoutubeVideo {...defaultProps} />);
-    const buttons = container.querySelectorAll(".grid-cols-3 button, .grid-cols-3 a");
+    const buttons = container.querySelectorAll(
+      ".grid-cols-3 button, .grid-cols-3 a",
+    );
     buttons.forEach((button) => {
       expect(button).toHaveClass("text-center");
     });
@@ -122,7 +128,9 @@ describe("YoutubeVideo", () => {
 
   it("has no-underline styling on button links", () => {
     const { container } = render(<YoutubeVideo {...defaultProps} />);
-    const buttons = container.querySelectorAll(".grid-cols-3 button, .grid-cols-3 a");
+    const buttons = container.querySelectorAll(
+      ".grid-cols-3 button, .grid-cols-3 a",
+    );
     buttons.forEach((button) => {
       expect(button).toHaveClass("no-underline");
     });
