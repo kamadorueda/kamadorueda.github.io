@@ -16,14 +16,26 @@ export const metadata = {
 export const Content: FC = () => (
   <>
     <Paragraph>
-      I started dancing Cuban salsa a month and a half ago and it's become a
-      favorite evening. This page documents a progression I'm building,
-      organized as a ladder of skills, where each rung adds one thing the lead
-      and follow need to do. Two ideas run underneath: the follow never learns
-      by name or sequence. She dances by feeling the lead, which lets her dance
-      with anyone. And the real goal isn't fancy figures. It's improvising
-      happily with a stranger to unfamiliar music. The flashy combos at the end
-      are bonus. The fundamentals and the feel are the point.
+      I started dancing salsa a month and a half ago and it has become one of my
+      favourite activities. It has allowed me to meet new people, stay fit, and
+      I've fallen in love with dancing itself.
+    </Paragraph>
+
+    <Paragraph>
+      This page is a progression built for one-on-one social dancing. It's
+      organized as a ladder where each rung teaches the next skill the lead and
+      follow both need, scaffolding together toward the same goal: improvising
+      happily with a stranger to unfamiliar music.
+    </Paragraph>
+
+    <Paragraph>
+      As a follow, don't learn steps by name or sequence. Respond only to what
+      you feel through the lead's hands and frame. As a lead, the moves here are
+      chosen for clean leadability by feel, for the skills they teach, and for
+      how they link into the music. Fundamentals come first and stay central:
+      frame, weight, signal, timing. Connection, musicality, and floorcraft are
+      built explicitly from the start, not hoped for later. The flashy combos at
+      the end are bonus. The fundamentals and the feel are the point.
     </Paragraph>
 
     <Header.Secondary>Move with the music</Header.Secondary>
