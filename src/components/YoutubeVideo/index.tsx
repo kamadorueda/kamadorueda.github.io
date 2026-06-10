@@ -33,6 +33,7 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
   const playerRef = useRef<YouTubePlayer>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSlowed, setIsSlowed] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   const handlePlayToggle = () => {
     if (playerRef.current?.internalPlayer) {
@@ -78,6 +79,10 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
     }
   };
 
+  const handleReady = () => {
+    setIsReady(true);
+  };
+
   const opts: YouTubeProps["opts"] = {
     height: "100%",
     width: "100%",
@@ -108,6 +113,7 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
         >
           <YouTube
             className="w-full overflow-hidden"
+            onReady={handleReady}
             onStateChange={handleStateChange}
             opts={opts}
             ref={playerRef}
@@ -116,27 +122,37 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
           />
         </div>
         <div className="border-coutline grid w-full grid-cols-3 items-center rounded-b-3xl border">
-          <ButtonLink
-            ariaLabel={isPlaying ? "Pause the video" : "Play the video"}
-            className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer rounded-bl-3xl py-2 text-center no-underline focus-visible:rounded-bl-3xl focus-visible:outline focus-visible:outline-1"
-            onClick={handlePlayToggle}
-          >
-            {isPlaying ? "Pause" : "Play"}
-          </ButtonLink>
-          <ButtonLink
-            ariaLabel="Play the highlighted section"
-            className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer py-2 text-center no-underline focus-visible:outline focus-visible:outline-1"
-            onClick={handleHighlight}
-          >
-            Highlight
-          </ButtonLink>
-          <ButtonLink
-            ariaLabel={isSlowed ? "Play at normal speed" : "Play at 0.5x speed"}
-            className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer rounded-br-3xl py-2 text-center no-underline focus-visible:rounded-br-3xl focus-visible:outline focus-visible:outline-1"
-            onClick={handleSpeed}
-          >
-            {isSlowed ? "Faster" : "Slower"}
-          </ButtonLink>
+          {!isReady ? (
+            <span className="text-ctext-muted col-span-3 py-2 text-center">
+              Loading
+            </span>
+          ) : (
+            <>
+              <ButtonLink
+                ariaLabel={isPlaying ? "Pause the video" : "Play the video"}
+                className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer rounded-bl-3xl py-2 text-center no-underline focus-visible:rounded-bl-3xl focus-visible:outline focus-visible:outline-1"
+                onClick={handlePlayToggle}
+              >
+                {isPlaying ? "Pause" : "Play"}
+              </ButtonLink>
+              <ButtonLink
+                ariaLabel="Play the highlighted section"
+                className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer py-2 text-center no-underline focus-visible:outline focus-visible:outline-1"
+                onClick={handleHighlight}
+              >
+                Highlight
+              </ButtonLink>
+              <ButtonLink
+                ariaLabel={
+                  isSlowed ? "Play at normal speed" : "Play at 0.5x speed"
+                }
+                className="hover:bg-cbg hover:text-ctextdark focus-visible:outline-cfocus cursor-pointer rounded-br-3xl py-2 text-center no-underline focus-visible:rounded-br-3xl focus-visible:outline focus-visible:outline-1"
+                onClick={handleSpeed}
+              >
+                {isSlowed ? "Faster" : "Slower"}
+              </ButtonLink>
+            </>
+          )}
         </div>
       </div>
     </section>
