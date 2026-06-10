@@ -16,26 +16,14 @@ export const metadata = {
 export const Content: FC = () => (
   <>
     <Paragraph>
-      I started dancing Cuban salsa a month and a half ago, and it has quickly
-      become one of my favorite ways to spend an evening. I've made friends,
-      stayed fit (an easy twenty thousand steps on a dancing night), and fallen
-      for the dance itself. This page documents how I'm learning it, both in
-      classes and practicing on my own. It's not teaching from authority; a
-      progression I'm building and refining as I go, aimed at one-on-one social
-      dancing in the partner form of Casino.
-    </Paragraph>
-
-    <Paragraph>
-      It's organized as a ladder of skills, not a list of tricks. Each rung adds
-      one new thing the lead and the follow have to be able to do, so the
-      difficulty climbs gently and you always know what to work on next. Two
-      ideas run underneath everything here. First, the follow never learns a
-      move by name or by sequence; she dances by responding to what she{" "}
-      <em>feels</em> in the lead, which is exactly what lets her dance with
-      anyone. Second, the real goal isn't the fanciest figure on this page; it's
-      being able to improvise happily with a stranger to a song you've never
-      heard. The flashy combos at the end are a bonus. The fundamentals and the
-      feel are the point.
+      I started dancing Cuban salsa a month and a half ago and it's become a
+      favorite evening. This page documents a progression I'm building,
+      organized as a ladder of skills, where each rung adds one thing the lead
+      and follow need to do. Two ideas run underneath: the follow never learns
+      by name or sequence. She dances by feeling the lead, which lets her dance
+      with anyone. And the real goal isn't fancy figures. It's improvising
+      happily with a stranger to unfamiliar music. The flashy combos at the end
+      are bonus. The fundamentals and the feel are the point.
     </Paragraph>
 
     <Header.Secondary>Move with the music</Header.Secondary>
