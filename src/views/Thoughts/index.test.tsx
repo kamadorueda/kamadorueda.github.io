@@ -1,7 +1,11 @@
-import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { describe, expect, it, vi } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { BrowserRouter, MemoryRouter, Route, Routes } from "react-router-dom";
 import { Thoughts } from "./index";
+
+vi.mock("react-helmet", () => ({
+  Helmet: ({ children }: any) => <>{children}</>,
+}));
 
 describe("Thoughts", () => {
   it("displays thought list with heading and intro", () => {
@@ -52,5 +56,24 @@ describe("Thoughts", () => {
     const flLink = screen.getByText("Financial Literacy.");
     expect(aiLink).toBeInTheDocument();
     expect(flLink).toBeInTheDocument();
+  });
+
+  it("navigates to thought detail when clicking on a thought", () => {
+    render(
+      <MemoryRouter initialEntries={["/thoughts"]}>
+        <Routes>
+          <Route path="/thoughts" element={<Thoughts />} />
+          <Route
+            path="/thoughts/:id"
+            element={<div data-testid="thought-detail">Thought Detail</div>}
+          />
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    const financialLiteracyLink = screen.getByText("Financial Literacy.");
+    fireEvent.click(financialLiteracyLink);
+
+    expect(screen.getByTestId("thought-detail")).toBeInTheDocument();
   });
 });

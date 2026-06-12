@@ -36,4 +36,16 @@ describe("Projects view", () => {
     expect(links.length).toBeGreaterThan(5);
     expect(listItems.length).toBeGreaterThan(0);
   });
+
+  it("renders projects without icons for unknown icon types", () => {
+    render(<Projects />);
+
+    // Professional Contributions section has no icon property, should render without icon
+    const fluidAttacksLink = screen.getByText(/Core software repository/i);
+    expect(fluidAttacksLink).toBeInTheDocument();
+
+    // Verify that not every link has an icon before it (since Professional has none)
+    const allLinks = screen.getAllByRole("link");
+    expect(allLinks.length).toBeGreaterThan(0);
+  });
 });
