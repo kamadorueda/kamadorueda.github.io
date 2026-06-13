@@ -277,4 +277,35 @@ describe("YoutubeVideo", () => {
     const buttonGrid = container.querySelector(".grid-cols-3");
     expect(buttonGrid?.querySelector("button")).not.toBeInTheDocument();
   });
+
+  it("matches snapshot with all buttons visible", async () => {
+    const { container } = render(<YoutubeVideo {...defaultProps} />);
+    await waitFor(() => {
+      expect(screen.getByText("Play")).toBeInTheDocument();
+    });
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it("matches snapshot in loading state", () => {
+    const { container } = render(<YoutubeVideo {...defaultProps} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it("matches snapshot when playing", async () => {
+    const { container } = render(<YoutubeVideo {...defaultProps} />);
+    await waitFor(() => {
+      expect(screen.getByText("Play")).toBeInTheDocument();
+    });
+
+    // Simulate playing state
+    if (capturedOnStateChange) {
+      capturedOnStateChange({ data: 1 });
+    }
+    await waitFor(() => {
+      expect(screen.getByText("Pause")).toBeInTheDocument();
+    });
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

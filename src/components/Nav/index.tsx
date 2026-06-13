@@ -11,6 +11,7 @@ import { useLocation } from "react-router-dom";
 import { match } from "ts-pattern";
 import { ChevronDownIcon } from "~/components/icons/ChevronDown";
 import { CloseIcon } from "~/components/icons/Close";
+import { ButtonGroup } from "~/components/Typography/ButtonGroup";
 import { ExternalLink } from "~/components/Typography/ExternalLink";
 import { InternalLink } from "~/components/Typography/InternalLink";
 import { routes } from "~/routes";
@@ -55,7 +56,7 @@ const DesktopNav: FC<{ current: CurrentLocation }> = ({ current }) => (
     <div className="flex flex-1">
       <Image className="" />
     </div>
-    <div className="coutline m-auto grid w-fit grid-flow-col items-center rounded-full">
+    <ButtonGroup variant="fullRounded">
       <AboutLink
         className={tw(
           largeLink,
@@ -77,7 +78,7 @@ const DesktopNav: FC<{ current: CurrentLocation }> = ({ current }) => (
           "rounded-r-full pr-4",
         )}
       />
-    </div>
+    </ButtonGroup>
     <div className="flex flex-1" />
   </div>
 );

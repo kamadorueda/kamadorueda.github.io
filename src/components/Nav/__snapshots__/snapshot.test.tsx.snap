@@ -19,7 +19,7 @@ exports[`Nav component - snapshots > matches snapshot on gallery route 1`] = `
         />
       </div>
       <div
-        class="coutline m-auto grid w-fit grid-flow-col items-center rounded-full"
+        class="grid items-center coutline m-auto w-fit grid-flow-col rounded-full"
       >
         <a
           class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline rounded-l-full pl-4"
@@ -127,7 +127,7 @@ exports[`Nav component - snapshots > matches snapshot on home route 1`] = `
         />
       </div>
       <div
-        class="coutline m-auto grid w-fit grid-flow-col items-center rounded-full"
+        class="grid items-center coutline m-auto w-fit grid-flow-col rounded-full"
       >
         <a
           class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 rounded-l-full pl-4"
@@ -235,7 +235,7 @@ exports[`Nav component - snapshots > matches snapshot on projects route 1`] = `
         />
       </div>
       <div
-        class="coutline m-auto grid w-fit grid-flow-col items-center rounded-full"
+        class="grid items-center coutline m-auto w-fit grid-flow-col rounded-full"
       >
         <a
           class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline rounded-l-full pl-4"
@@ -343,7 +343,7 @@ exports[`Nav component - snapshots > matches snapshot on unknown route 1`] = `
         />
       </div>
       <div
-        class="coutline m-auto grid w-fit grid-flow-col items-center rounded-full"
+        class="grid items-center coutline m-auto w-fit grid-flow-col rounded-full"
       >
         <a
           class="cunderline text-ctext transition cfocus-visible chover-bg px-2 py-2 no-underline rounded-l-full pl-4"

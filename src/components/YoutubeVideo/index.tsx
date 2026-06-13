@@ -1,6 +1,7 @@
 import { FC, useRef, useState } from "react";
 import YouTube, { YouTubeProps } from "react-youtube";
 import { ClassNameProp, tw } from "~/utils/tw";
+import { ButtonGroup } from "~/components/Typography/ButtonGroup";
 import { ButtonLink } from "~/components/Typography/ButtonLink";
 
 type TimeRange = [minutes: number, seconds: number];
@@ -121,7 +122,7 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
             videoId={videoId}
           />
         </div>
-        <div className="border-coutline grid w-full grid-cols-3 items-center rounded-b-3xl border">
+        <ButtonGroup variant="bottomRounded" className="grid-cols-3">
           {!isReady ? (
             <span className="text-ctext-muted col-span-3 py-2 text-center">
               Loading
@@ -153,7 +154,7 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
               </ButtonLink>
             </>
           )}
-        </div>
+        </ButtonGroup>
       </div>
     </section>
   );
