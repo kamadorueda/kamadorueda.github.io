@@ -21,7 +21,5 @@ export const ButtonGroup: FC<PropsWithChildren & ButtonGroupProps> = ({
   className,
   children,
 }) => (
-  <div className={tw(getVariantStyles(variant), className)}>
-    {children}
-  </div>
+  <div className={tw(getVariantStyles(variant), className)}>{children}</div>
 );

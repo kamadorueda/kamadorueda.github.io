@@ -122,7 +122,7 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
             videoId={videoId}
           />
         </div>
-        <ButtonGroup variant="bottomRounded" className="grid-cols-3">
+        <ButtonGroup className="grid-cols-3" variant="bottomRounded">
           {!isReady ? (
             <span className="text-ctext-muted col-span-3 py-2 text-center">
               Loading
