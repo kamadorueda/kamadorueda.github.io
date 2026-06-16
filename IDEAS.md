@@ -63,7 +63,17 @@ Analysis of the personal website (kamadorueda.github.io) to identify improvement
    - Reading time indicators are present but could be expanded
    - Tags/topics could drive discovery
 
-## Recommended Improvements
+## Completed Improvements
+
+✅ **Open Graph Metadata System** (DONE)
+- Comprehensive OG meta tags with auto-derived URLs
+- Discriminated union types (WebsiteOG | ArticleOG) for type safety
+- Article-specific semantics: og:type, article:published_time, article:tag
+- Twitter Card support for better social sharing
+- Trimmed descriptions and enhanced page titles for SEO
+- Type-safe rendering with ts-pattern and exhaustive matching
+
+## Recommended Improvements (Still TODO)
 
 ### High-Impact, Quick Wins (1-2 hours each)
 
@@ -81,15 +91,23 @@ Analysis of the personal website (kamadorueda.github.io) to identify improvement
    - Quick navigation back to the list from individual articles
    - Small UX improvement that aids discovery
 
+### OG Image Generation (1-2 hours each)
+
+4. **Generate OG Images for Social Sharing**
+   - Option A: Static 1200×630 image for all pages (simplest, 30 min)
+   - Option B: Dynamic generation via external service like og-image.vercel.app (1 hour)
+   - Option C: Self-hosted dynamic generation with @vercel/og library (2-3 hours)
+   - **Recommendation**: Start with Option B (external service) for quick win, upgrade later if needed
+
 ### Medium Priority (2-3 hours each)
 
-4. **Implement Tag-Based Filtering**
+5. **Implement Tag-Based Filtering**
    - Use the existing `tags` field in metadata
    - Add filter buttons/dropdown on Thoughts page
    - Allow filtering by topic (technology, finance, dance, etc.)
    - Helps readers explore related content
 
-5. **Add Future Content Signal** (Optional)
+6. **Add Future Content Signal** (Optional)
    - Small teaser section on Thoughts page
    - "What I'm working on next: [topic]"
    - Keeps readers engaged and informed
@@ -100,7 +118,6 @@ Analysis of the personal website (kamadorueda.github.io) to identify improvement
 - **Search**: Simple client-side search across article titles and summaries
 - **Newsletter Signup**: Integration for email notification (if desired)
 - **Visual Polish**: Ensure mobile responsiveness, typography scaling
-- **Open Graph**: Improve social sharing previews for each article
 
 ## Strategic Considerations
 
