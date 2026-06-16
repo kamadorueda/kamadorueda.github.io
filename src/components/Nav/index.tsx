@@ -128,7 +128,7 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
 );
 
 const AboutLink: FC<ClassNameProp> = (props) => (
-  <InternalLink className={props.className} to="/about">
+  <InternalLink className={props.className} to="/">
     About
   </InternalLink>
 );
