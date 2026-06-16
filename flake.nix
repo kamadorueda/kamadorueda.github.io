@@ -38,7 +38,7 @@
           text = ''
             pnpm exec tsc
             pnpm run build
-            pnpm exec gh-pages -d dist
+            pnpm exec gh-pages --dist dist --nojekyll
           '';
         };
 
