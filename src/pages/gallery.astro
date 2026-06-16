@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Html from "~/components/Html/index.astro";
 import { Nav } from "~/components/Nav";
 import { Body } from "~/components/Body";
@@ -8,11 +9,17 @@ import { Header } from "~/components/Typography/Header";
 import { Paragraph } from "~/components/Typography/Paragraph";
 import { ExternalLink } from "~/components/Typography/ExternalLink";
 import { tw } from "~/utils/tw";
+import maskImage from "~/assets/paintings/Mask.jpg";
+import bananaImage from "~/assets/paintings/Banana.jpg";
+import koiImage from "~/assets/paintings/Koi.jpg";
+import orcaImage from "~/assets/paintings/Orca.jpg";
+import ladybugImage from "~/assets/paintings/Ladybug.jpg";
+import avocadoImage from "~/assets/paintings/Avocado.jpg";
 import "~/index.css";
 
 const link = tw("coutline group block rounded-sm");
 
-const image = tw(
+const imgClass = tw(
   "object-scale-up w-full rounded-sm transition lg:grayscale",
   // Focus
   "group-focus-visible:grayscale-0",
@@ -24,92 +31,32 @@ const paintings = [
   {
     name: "Mask",
     alt: "A mask Kevin painted",
-    sizes: {
-      small: "/paintings/Mask/300x400.jpg",
-      medium: "/paintings/Mask/600x800.jpg",
-      large: "/paintings/Mask/1200x1600.jpg",
-      full: "/paintings/Mask/3000x4000.jpg",
-    },
-    breakpoints: [
-      { media: "(max-width: 300px)", src: "/paintings/Mask/300x400.jpg" },
-      { media: "(max-width: 600px)", src: "/paintings/Mask/600x800.jpg" },
-      { media: "(max-width: 1200px)", src: "/paintings/Mask/1200x1600.jpg" },
-    ],
+    image: maskImage,
   },
   {
     name: "Banana",
     alt: "A banana Kevin painted",
-    sizes: {
-      small: "/paintings/Banana/400x300.jpg",
-      medium: "/paintings/Banana/800x600.jpg",
-      large: "/paintings/Banana/1600x1200.jpg",
-      full: "/paintings/Banana/4000x3000.jpg",
-    },
-    breakpoints: [
-      { media: "(max-width: 400px)", src: "/paintings/Banana/400x300.jpg" },
-      { media: "(max-width: 800px)", src: "/paintings/Banana/800x600.jpg" },
-      { media: "(max-width: 1600px)", src: "/paintings/Banana/1600x1200.jpg" },
-    ],
+    image: bananaImage,
   },
   {
     name: "Koi",
     alt: "A koi fish Kevin painted",
-    sizes: {
-      small: "/paintings/Koi/300x400.jpg",
-      medium: "/paintings/Koi/600x800.jpg",
-      large: "/paintings/Koi/1200x1600.jpg",
-      full: "/paintings/Koi/3000x4000.jpg",
-    },
-    breakpoints: [
-      { media: "(max-width: 300px)", src: "/paintings/Koi/300x400.jpg" },
-      { media: "(max-width: 600px)", src: "/paintings/Koi/600x800.jpg" },
-      { media: "(max-width: 1200px)", src: "/paintings/Koi/1200x1600.jpg" },
-    ],
+    image: koiImage,
   },
   {
     name: "Orca",
     alt: "An Orca Kevin painted",
-    sizes: {
-      small: "/paintings/Orca/300x400.jpg",
-      medium: "/paintings/Orca/600x800.jpg",
-      large: "/paintings/Orca/1200x1600.jpg",
-      full: "/paintings/Orca/3000x4000.jpg",
-    },
-    breakpoints: [
-      { media: "(max-width: 300px)", src: "/paintings/Orca/300x400.jpg" },
-      { media: "(max-width: 600px)", src: "/paintings/Orca/600x800.jpg" },
-      { media: "(max-width: 1200px)", src: "/paintings/Orca/1200x1600.jpg" },
-    ],
+    image: orcaImage,
   },
   {
     name: "Ladybug",
     alt: "A ladybug Kevin painted",
-    sizes: {
-      small: "/paintings/Ladybug/300x400.jpg",
-      medium: "/paintings/Ladybug/600x800.jpg",
-      large: "/paintings/Ladybug/1200x1600.jpg",
-      full: "/paintings/Ladybug/3000x4000.jpg",
-    },
-    breakpoints: [
-      { media: "(max-width: 300px)", src: "/paintings/Ladybug/300x400.jpg" },
-      { media: "(max-width: 600px)", src: "/paintings/Ladybug/600x800.jpg" },
-      { media: "(max-width: 1200px)", src: "/paintings/Ladybug/1200x1600.jpg" },
-    ],
+    image: ladybugImage,
   },
   {
     name: "Avocado",
     alt: "An avocado Kevin painted",
-    sizes: {
-      small: "/paintings/Avocado/300x400.jpg",
-      medium: "/paintings/Avocado/600x800.jpg",
-      large: "/paintings/Avocado/1200x1600.jpg",
-      full: "/paintings/Avocado/2400x3200.jpg",
-    },
-    breakpoints: [
-      { media: "(max-width: 300px)", src: "/paintings/Avocado/300x400.jpg" },
-      { media: "(max-width: 600px)", src: "/paintings/Avocado/600x800.jpg" },
-      { media: "(max-width: 1200px)", src: "/paintings/Avocado/1200x1600.jpg" },
-    ],
+    image: avocadoImage,
   },
 ];
 ---
@@ -138,18 +85,14 @@ const paintings = [
         {
           paintings.map((painting) => (
             <li>
-              <ExternalLink className={link} to={painting.sizes.full}>
-                <picture>
-                  {painting.breakpoints.map((bp) => (
-                    <source media={bp.media} srcSet={bp.src} />
-                  ))}
-                  <img
-                    alt={painting.alt}
-                    class={image}
-                    loading="lazy"
-                    src={painting.sizes.full}
-                  />
-                </picture>
+              <ExternalLink className={link} to={painting.image.src}>
+                <Image
+                  src={painting.image}
+                  alt={painting.alt}
+                  class={imgClass}
+                  loading="lazy"
+                  densities={[1, 1.5, 2]}
+                />
               </ExternalLink>
             </li>
           ))
