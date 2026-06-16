@@ -4,7 +4,6 @@ import { InternalLink } from "~/components/Typography/InternalLink";
 import { ListItem } from "~/components/Typography/ListItem";
 import { Paragraph } from "~/components/Typography/Paragraph";
 import { UnorderedList } from "~/components/Typography/UnorderedList";
-import { routes } from "~/routes";
 
 export const metadata = {
   id: "financial-literacy",
@@ -155,7 +154,7 @@ export const Content: FC = () => (
 
     <aside className="mt-8">
       <Paragraph>
-        <InternalLink to={routes.Disclaimers.path}>Disclaimers</InternalLink>
+        <InternalLink to="/disclaimers">Disclaimers</InternalLink>
       </Paragraph>
     </aside>
   </>

@@ -32,7 +32,6 @@ const MoveRoot: FC<MoveProps> = ({ name, children }) => {
 
 const MoveDescription: FC<PropsWithChildren> = ({ children }) => {
   const { name } = useMoveContext();
-
   return <Definition term={name}>{children}</Definition>;
 };
 
@@ -41,9 +40,8 @@ interface MoveVideoProps {
   videoId: string;
 }
 
-const MoveVideoComponent: FC<MoveVideoProps> = ({ highlight, videoId }) => {
+const MoveVideo: FC<MoveVideoProps> = ({ highlight, videoId }) => {
   const { name } = useMoveContext();
-
   return (
     <YoutubeVideo
       highlight={highlight}
@@ -53,7 +51,13 @@ const MoveVideoComponent: FC<MoveVideoProps> = ({ highlight, videoId }) => {
   );
 };
 
-export const Move = Object.assign(MoveRoot, {
-  Description: MoveDescription,
-  Video: MoveVideoComponent,
-});
+interface MoveComponent extends FC<MoveProps> {
+  Description: FC<PropsWithChildren>;
+  Video: FC<MoveVideoProps>;
+}
+
+const Move = MoveRoot as MoveComponent;
+Move.Description = MoveDescription;
+Move.Video = MoveVideo;
+
+export { Move };

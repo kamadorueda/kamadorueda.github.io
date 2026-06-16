@@ -1,15 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
 import { Content, metadata } from "./index";
 
 describe("FinancialLiteracy.Content", () => {
   it("renders content without crashing", () => {
-    render(
-      <BrowserRouter>
-        <Content />
-      </BrowserRouter>,
-    );
+    render(<Content />);
 
     expect(
       screen.getByText(/Many people want to accumulate wealth/i),
@@ -17,22 +12,14 @@ describe("FinancialLiteracy.Content", () => {
   });
 
   it("contains multiple paragraphs", () => {
-    const { container } = render(
-      <BrowserRouter>
-        <Content />
-      </BrowserRouter>,
-    );
+    const { container } = render(<Content />);
 
     const paragraphs = container.querySelectorAll("p");
     expect(paragraphs.length).toBeGreaterThan(1);
   });
 
   it("contains links", () => {
-    render(
-      <BrowserRouter>
-        <Content />
-      </BrowserRouter>,
-    );
+    render(<Content />);
 
     const links = screen.getAllByRole("link");
     expect(links.length).toBeGreaterThan(0);

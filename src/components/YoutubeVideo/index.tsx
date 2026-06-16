@@ -1,19 +1,18 @@
-import { FC, useRef, useState } from "react";
-import YouTube, { YouTubeProps } from "react-youtube";
+/* eslint-disable @typescript-eslint/no-explicit-any, no-undef */
+import { FC, useEffect, useId, useRef, useState } from "react";
 import { ClassNameProp, tw } from "~/utils/tw";
 import { ButtonGroup } from "~/components/Typography/ButtonGroup";
 import { ButtonLink } from "~/components/Typography/ButtonLink";
 
-type TimeRange = [minutes: number, seconds: number];
-type YouTubePlayer = InstanceType<typeof YouTube>;
-
-enum YouTubePlayerState {
-  UNSTARTED = 0,
-  PLAYING = 1,
-  PAUSED = 2,
-  BUFFERING = 3,
-  CUED = 5,
+declare global {
+  interface Window {
+    YT: any;
+    onYouTubeIframeAPIReady: (() => void) | undefined;
+    youtubeReadyCallbacks?: (() => void)[];
+  }
 }
+
+type TimeRange = [minutes: number, seconds: number];
 
 export interface YoutubeVideoProps extends ClassNameProp {
   highlight: { from: TimeRange; to: TimeRange };
@@ -31,73 +30,78 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
   sectionLabel,
   videoId,
 }) => {
-  const playerRef = useRef<YouTubePlayer>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSlowed, setIsSlowed] = useState(false);
-  const [isReady, setIsReady] = useState(false);
+  const containerId = useId();
+
+  useEffect(() => {
+    const initPlayer = () => {
+      if (window.YT?.Player && containerRef.current && !playerRef.current) {
+        playerRef.current = new window.YT.Player(containerId, {
+          videoId,
+          events: {
+            onReady: () => {
+              setIsLoading(false);
+            },
+            onStateChange: (event: any) => {
+              if (event.data === 1) setIsPlaying(true);
+              else if (event.data === 2) setIsPlaying(false);
+            },
+          },
+        });
+      }
+    };
+
+    if (window.YT?.Player) {
+      initPlayer();
+    } else {
+      if (!window.youtubeReadyCallbacks) {
+        window.youtubeReadyCallbacks = [];
+        window.onYouTubeIframeAPIReady = () => {
+          window.youtubeReadyCallbacks?.forEach((cb) => cb());
+        };
+      }
+      window.youtubeReadyCallbacks.push(initPlayer);
+    }
+
+    return () => {
+      if (playerRef.current) {
+        playerRef.current.destroy?.();
+        playerRef.current = null;
+      }
+    };
+  }, [containerId, videoId]);
 
   const handlePlayToggle = () => {
-    if (playerRef.current?.internalPlayer) {
-      if (isPlaying) {
-        playerRef.current.internalPlayer.pauseVideo();
-        setIsPlaying(false);
-      } else {
-        playerRef.current.internalPlayer.playVideo();
-        setIsPlaying(true);
-      }
+    if (!playerRef.current) return;
+    if (isPlaying) {
+      playerRef.current.pauseVideo();
+      setIsPlaying(false);
+    } else {
+      playerRef.current.playVideo();
+      setIsPlaying(true);
     }
   };
 
   const handleHighlight = () => {
-    if (playerRef.current?.internalPlayer) {
-      playerRef.current.internalPlayer.seekTo(timeToSeconds(highlight.from));
-      playerRef.current.internalPlayer.playVideo();
-      setIsPlaying(true);
-    }
+    if (!playerRef.current) return;
+    playerRef.current.seekTo(timeToSeconds(highlight.from));
+    playerRef.current.playVideo();
+    setIsPlaying(true);
   };
 
   const handleSpeed = () => {
-    if (playerRef.current?.internalPlayer) {
-      if (isSlowed) {
-        playerRef.current.internalPlayer.setPlaybackRate(1);
-        setIsSlowed(false);
-      } else {
-        playerRef.current.internalPlayer.setPlaybackRate(0.5);
-        setIsSlowed(true);
-      }
+    if (!playerRef.current) return;
+    if (isSlowed) {
+      playerRef.current.setPlaybackRate(1);
+      setIsSlowed(false);
+    } else {
+      playerRef.current.setPlaybackRate(0.5);
+      setIsSlowed(true);
     }
-  };
-
-  const handleStateChange = (event: { data: number }) => {
-    const state = event.data as YouTubePlayerState;
-    if (
-      state === YouTubePlayerState.UNSTARTED ||
-      state === YouTubePlayerState.PAUSED
-    ) {
-      setIsPlaying(false);
-    } else if (state === YouTubePlayerState.PLAYING) {
-      setIsPlaying(true);
-    }
-  };
-
-  const handleReady = () => {
-    setIsReady(true);
-  };
-
-  const opts: YouTubeProps["opts"] = {
-    height: "100%",
-    width: "100%",
-    playerVars: {
-      autoplay: 0,
-      controls: 1,
-      disablekb: 1,
-      playsinline: 1,
-      quality: "default",
-      rel: 0,
-      iv_load_policy: 3,
-      start: timeToSeconds(highlight.from),
-      end: timeToSeconds(highlight.to),
-    },
   };
 
   return (
@@ -108,23 +112,15 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
       <div className="flex w-full max-w-3xl flex-col overflow-hidden rounded-3xl">
         <div
           aria-live="polite"
-          className="bg-black"
+          className="w-full bg-black"
+          id={containerId}
+          ref={containerRef}
           role="region"
           style={{ aspectRatio: "16 / 9" }}
-        >
-          <YouTube
-            className="w-full overflow-hidden"
-            onReady={handleReady}
-            onStateChange={handleStateChange}
-            opts={opts}
-            ref={playerRef}
-            style={{ aspectRatio: "16 / 9" }}
-            videoId={videoId}
-          />
-        </div>
+        />
         <ButtonGroup className="grid-cols-3" variant="bottomRounded">
-          {!isReady ? (
-            <span className="text-ctext-muted col-span-3 py-2 text-center">
+          {isLoading ? (
+            <span className="text-ctext col-span-3 py-2 text-center">
               Loading
             </span>
           ) : (

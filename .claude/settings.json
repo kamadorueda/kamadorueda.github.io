@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "pnpm exec tsc && pnpm run format && pnpm run lint --fix || exit 2"
+            "command": "pnpm exec tsc 1>&2 && pnpm run format 1>&2 && pnpm run lint --fix 1>&2 && pnpm run test 1>&2 || exit 2"
           }
         ]
       }

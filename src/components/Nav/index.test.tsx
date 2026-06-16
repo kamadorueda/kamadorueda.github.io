@@ -1,20 +1,10 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Nav } from "./index";
 
-// Mock react-router-dom with pathname option
-const mockUseLocation = vi.fn(() => ({
-  pathname: "/",
-}));
-
-vi.mock("react-router-dom", () => ({
-  useLocation: () => mockUseLocation(),
-  Link: ({ children, ...props }: any) => <a {...props}>{children}</a>,
-}));
-
 describe("Nav component", () => {
   it("renders nav element with desktop and mobile variants", () => {
-    const { container } = render(<Nav />);
+    const { container } = render(<Nav current="Other" />);
     const nav = screen.getByRole("navigation");
     const desktopNav = container.querySelector(".hidden.sm\\:block");
     const mobileNav = container.querySelector(".sm\\:hidden");
@@ -25,48 +15,43 @@ describe("Nav component", () => {
   });
 
   it("includes SVG icons", () => {
-    const { container } = render(<Nav />);
+    const { container } = render(<Nav current="Other" />);
     const svgs = container.querySelectorAll("svg");
 
     expect(svgs.length).toBeGreaterThan(0);
   });
 
   it("renders menu button on mobile", () => {
-    render(<Nav />);
+    render(<Nav current="Other" />);
     const menuButtons = screen.queryAllByText("Menu");
 
     expect(menuButtons.length).toBeGreaterThan(0);
   });
 });
 
-describe("Nav component - routing", () => {
-  it("handles about route", () => {
-    mockUseLocation.mockReturnValue({ pathname: "/about" });
-    render(<Nav />);
+describe("Nav component - current location", () => {
+  it("handles About location", () => {
+    render(<Nav current="About" />);
     expect(screen.getByRole("navigation")).toBeInTheDocument();
   });
 
-  it("handles gallery route", () => {
-    mockUseLocation.mockReturnValue({ pathname: "/gallery" });
-    render(<Nav />);
+  it("handles Gallery location", () => {
+    render(<Nav current="Gallery" />);
     expect(screen.getByRole("navigation")).toBeInTheDocument();
   });
 
-  it("handles projects route", () => {
-    mockUseLocation.mockReturnValue({ pathname: "/projects" });
-    render(<Nav />);
+  it("handles Projects location", () => {
+    render(<Nav current="Projects" />);
     expect(screen.getByRole("navigation")).toBeInTheDocument();
   });
 
-  it("handles thoughts route", () => {
-    mockUseLocation.mockReturnValue({ pathname: "/thoughts" });
-    render(<Nav />);
+  it("handles Thoughts location", () => {
+    render(<Nav current="Thoughts" />);
     expect(screen.getByRole("navigation")).toBeInTheDocument();
   });
 
-  it("handles unknown route", () => {
-    mockUseLocation.mockReturnValue({ pathname: "/unknown" });
-    render(<Nav />);
+  it("handles Other location", () => {
+    render(<Nav current="Other" />);
     expect(screen.getByRole("navigation")).toBeInTheDocument();
   });
 });

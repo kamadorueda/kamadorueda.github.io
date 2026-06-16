@@ -6,15 +6,11 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import { FC } from "react";
-// @ts-expect-error - React Router v7 type resolution issue
-import { useLocation } from "react-router-dom";
-import { match } from "ts-pattern";
 import { ChevronDownIcon } from "~/components/icons/ChevronDown";
 import { CloseIcon } from "~/components/icons/Close";
 import { ButtonGroup } from "~/components/Typography/ButtonGroup";
 import { ExternalLink } from "~/components/Typography/ExternalLink";
 import { InternalLink } from "~/components/Typography/InternalLink";
-import { routes } from "~/routes";
 import { ClassNameProp, tw } from "~/utils/tw";
 
 const linkInactive = "no-underline";
@@ -24,21 +20,11 @@ const largeLink = "px-2 py-2";
 
 type CurrentLocation = "About" | "Gallery" | "Projects" | "Thoughts" | "Other";
 
-export const Nav: FC = () => {
-  const { pathname } = useLocation();
+interface NavProps {
+  current?: CurrentLocation;
+}
 
-  const current: CurrentLocation = match(pathname)
-    .with("/", () => "About" as const)
-    .with(routes.About.path, () => "About" as const)
-    .with(routes.Gallery.path, () => "Gallery" as const)
-    .with(routes.Projects.path, () => "Projects" as const)
-    .with(routes.Thoughts.path, () => "Thoughts" as const)
-    .when(
-      (p) => p.startsWith(`${routes.Thoughts.path}/`),
-      () => "Thoughts" as const,
-    )
-    .otherwise(() => "Other" as const);
-
+export const Nav: FC<NavProps> = ({ current = "Other" }) => {
   return (
     <nav>
       <div className="hidden sm:block">
@@ -142,19 +128,19 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
 );
 
 const AboutLink: FC<ClassNameProp> = (props) => (
-  <InternalLink className={props.className} to={routes.About.path}>
+  <InternalLink className={props.className} to="/about">
     About
   </InternalLink>
 );
 
 const GalleryLink: FC<ClassNameProp> = (props) => (
-  <InternalLink className={props.className} to={routes.Gallery.path}>
+  <InternalLink className={props.className} to="/gallery">
     Gallery
   </InternalLink>
 );
 
 const ProjectsLink: FC<ClassNameProp> = (props) => (
-  <InternalLink className={props.className} to={routes.Projects.path}>
+  <InternalLink className={props.className} to="/projects">
     Projects
   </InternalLink>
 );
@@ -169,7 +155,7 @@ const ResumeLink: FC<ClassNameProp> = (props) => (
 );
 
 const ThoughtsLink: FC<ClassNameProp> = (props) => (
-  <InternalLink className={props.className} to={routes.Thoughts.path}>
+  <InternalLink className={props.className} to="/thoughts">
     Thoughts
   </InternalLink>
 );

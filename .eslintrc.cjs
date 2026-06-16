@@ -9,6 +9,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:astro/recommended",
   ],
   settings: {
     "import/parsers": {
@@ -21,8 +22,20 @@ module.exports = {
       version: "detect",
     },
   },
+  overrides: [
+    {
+      files: ["*.astro"],
+      parser: "astro-eslint-parser",
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".astro"],
+      },
+      rules: {
+        "import/no-unresolved": "off",
+      },
+    },
+  ],
   rules: {
-    "better-styled-components/sort-declarations-alphabetically": "error",
     "import/no-cycle": "error",
     "import/first": "error",
     "import/order": "off",
@@ -56,9 +69,7 @@ module.exports = {
   },
   plugins: [
     "@typescript-eslint",
-    "better-styled-components",
     "import",
     "jsx-a11y",
-    "sort-keys-fix",
   ],
 };

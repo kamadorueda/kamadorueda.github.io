@@ -1,0 +1,26 @@
+---
+import Html from "~/components/Html/index.astro";
+import { Nav } from "~/components/Nav";
+import { Body } from "~/components/Body";
+import { Main } from "~/components/Main";
+import { Footer } from "~/components/Footer";
+import { Header } from "~/components/Typography/Header";
+import { Paragraph } from "~/components/Typography/Paragraph";
+import "~/index.css";
+---
+
+<Html title="Not Found">
+  <Body>
+    <Nav client:load current="Other" />
+    <Main>
+      <Header>404 - Not Found</Header>
+      <Paragraph>The page you're looking for doesn't exist.</Paragraph>
+      <div class="mt-8">
+        <a href="/" class="text-sm text-blue-600 hover:underline">
+          ← Back to home
+        </a>
+      </div>
+    </Main>
+    <Footer />
+  </Body>
+</Html>

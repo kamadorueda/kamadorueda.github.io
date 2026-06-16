@@ -11,6 +11,7 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "lib": [
       "DOM",
       "DOM.Iterable",
@@ -44,7 +45,7 @@
     "strictPropertyInitialization": true,
     "target": "ESNext",
     "types": [
-      "vite/client",
+      "astro/client",
       "vitest/globals"
     ],
     "useDefineForClassFields": true,

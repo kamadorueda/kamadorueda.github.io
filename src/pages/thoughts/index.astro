@@ -1,0 +1,57 @@
+---
+import Html from "~/components/Html/index.astro";
+import { Nav } from "~/components/Nav";
+import { Body } from "~/components/Body";
+import { Main } from "~/components/Main";
+import { Footer } from "~/components/Footer";
+import { Header } from "~/components/Typography/Header";
+import { Paragraph } from "~/components/Typography/Paragraph";
+import { ListItem } from "~/components/Typography/ListItem";
+import { UnorderedList } from "~/components/Typography/UnorderedList";
+import { InternalLink } from "~/components/Typography/InternalLink";
+import * as ArtificialIntelligence from "~/thoughts/ArtificialIntelligence";
+import * as FinancialLiteracy from "~/thoughts/FinancialLiteracy";
+import * as CubanSalsaDancing from "~/thoughts/CubanSalsaDancing";
+import { formatDate } from "~/utils/formatDate";
+import "~/index.css";
+
+const allThoughts = [
+  CubanSalsaDancing,
+  ArtificialIntelligence,
+  FinancialLiteracy,
+];
+---
+
+<Html
+  title="Thoughts - Kevin Amado"
+  ogTitle="Kevin Amado's Thoughts"
+  description="Posts, Opinions, and more."
+>
+  <Body>
+    <Nav client:load current="Thoughts" />
+    <Main>
+      <Header>Thoughts</Header>
+      <Paragraph>
+        This is a collection of writings on topics I've found interesting over
+        time. You can click on any of them to read more.
+      </Paragraph>
+      <UnorderedList>
+        {
+          allThoughts.map((thought) => (
+            <ListItem>
+              <InternalLink to={`/thoughts/${thought.metadata.id}`}>
+                {thought.metadata.title}.
+              </InternalLink>
+              <span class="text-ctext ml-2 text-xs">
+                {formatDate(thought.metadata.timestamp)}
+                {" • "}
+                {thought.metadata.minutes} minutes read.
+              </span>
+            </ListItem>
+          ))
+        }
+      </UnorderedList>
+    </Main>
+    <Footer />
+  </Body>
+</Html>

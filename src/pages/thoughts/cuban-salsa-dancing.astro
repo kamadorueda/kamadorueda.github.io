@@ -1,0 +1,32 @@
+---
+import Html from "~/components/Html/index.astro";
+import { Nav } from "~/components/Nav";
+import { Body } from "~/components/Body";
+import { Main } from "~/components/Main";
+import { Footer } from "~/components/Footer";
+import { Header } from "~/components/Typography/Header";
+import { Content } from "~/thoughts/CubanSalsaDancing";
+import { metadata } from "~/thoughts/CubanSalsaDancing";
+import { formatDate } from "~/utils/formatDate";
+import "~/index.css";
+
+const thought = { Content, metadata };
+---
+
+<Html title={thought.metadata.title}>
+  <Body>
+    <Nav client:load current="Thoughts" />
+    <Main>
+      <article>
+        <Header>{thought.metadata.title}</Header>
+        <p class="text-sm text-gray-600">
+          {thought.metadata.minutes} min read • {
+            formatDate(thought.metadata.timestamp)
+          }
+        </p>
+        <Content client:load />
+      </article>
+    </Main>
+    <Footer />
+  </Body>
+</Html>

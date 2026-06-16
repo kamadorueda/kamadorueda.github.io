@@ -1,0 +1,191 @@
+---
+import Html from "~/components/Html/index.astro";
+import { Nav } from "~/components/Nav";
+import { Body } from "~/components/Body";
+import { Main } from "~/components/Main";
+import { Footer } from "~/components/Footer";
+import { Header } from "~/components/Typography/Header";
+import { Paragraph } from "~/components/Typography/Paragraph";
+import { ExternalLink } from "~/components/Typography/ExternalLink";
+import { tw } from "~/utils/tw";
+import "~/index.css";
+
+const link = tw("coutline group block rounded-sm");
+
+const image = tw(
+  "object-scale-up w-full rounded-sm transition lg:grayscale",
+  // Focus
+  "group-focus-visible:grayscale-0",
+  // Hover
+  "group-hover:grayscale-0",
+);
+
+const paintings = [
+  {
+    name: "Mask",
+    alt: "A mask Kevin painted",
+    sizes: {
+      small: "/paintings/Mask/300x400.jpg",
+      medium: "/paintings/Mask/600x800.jpg",
+      large: "/paintings/Mask/1200x1600.jpg",
+      full: "/paintings/Mask/3000x4000.jpg",
+    },
+    breakpoints: [
+      { media: "(max-width: 300px)", src: "/paintings/Mask/300x400.jpg" },
+      { media: "(max-width: 600px)", src: "/paintings/Mask/600x800.jpg" },
+      { media: "(max-width: 1200px)", src: "/paintings/Mask/1200x1600.jpg" },
+    ],
+  },
+  {
+    name: "Banana",
+    alt: "A banana Kevin painted",
+    sizes: {
+      small: "/paintings/Banana/400x300.jpg",
+      medium: "/paintings/Banana/800x600.jpg",
+      large: "/paintings/Banana/1600x1200.jpg",
+      full: "/paintings/Banana/4000x3000.jpg",
+    },
+    breakpoints: [
+      { media: "(max-width: 400px)", src: "/paintings/Banana/400x300.jpg" },
+      { media: "(max-width: 800px)", src: "/paintings/Banana/800x600.jpg" },
+      { media: "(max-width: 1600px)", src: "/paintings/Banana/1600x1200.jpg" },
+    ],
+  },
+  {
+    name: "Koi",
+    alt: "A koi fish Kevin painted",
+    sizes: {
+      small: "/paintings/Koi/300x400.jpg",
+      medium: "/paintings/Koi/600x800.jpg",
+      large: "/paintings/Koi/1200x1600.jpg",
+      full: "/paintings/Koi/3000x4000.jpg",
+    },
+    breakpoints: [
+      { media: "(max-width: 300px)", src: "/paintings/Koi/300x400.jpg" },
+      { media: "(max-width: 600px)", src: "/paintings/Koi/600x800.jpg" },
+      { media: "(max-width: 1200px)", src: "/paintings/Koi/1200x1600.jpg" },
+    ],
+  },
+  {
+    name: "Orca",
+    alt: "An Orca Kevin painted",
+    sizes: {
+      small: "/paintings/Orca/300x400.jpg",
+      medium: "/paintings/Orca/600x800.jpg",
+      large: "/paintings/Orca/1200x1600.jpg",
+      full: "/paintings/Orca/3000x4000.jpg",
+    },
+    breakpoints: [
+      { media: "(max-width: 300px)", src: "/paintings/Orca/300x400.jpg" },
+      { media: "(max-width: 600px)", src: "/paintings/Orca/600x800.jpg" },
+      { media: "(max-width: 1200px)", src: "/paintings/Orca/1200x1600.jpg" },
+    ],
+  },
+  {
+    name: "Ladybug",
+    alt: "A ladybug Kevin painted",
+    sizes: {
+      small: "/paintings/Ladybug/300x400.jpg",
+      medium: "/paintings/Ladybug/600x800.jpg",
+      large: "/paintings/Ladybug/1200x1600.jpg",
+      full: "/paintings/Ladybug/3000x4000.jpg",
+    },
+    breakpoints: [
+      { media: "(max-width: 300px)", src: "/paintings/Ladybug/300x400.jpg" },
+      { media: "(max-width: 600px)", src: "/paintings/Ladybug/600x800.jpg" },
+      { media: "(max-width: 1200px)", src: "/paintings/Ladybug/1200x1600.jpg" },
+    ],
+  },
+  {
+    name: "Avocado",
+    alt: "An avocado Kevin painted",
+    sizes: {
+      small: "/paintings/Avocado/300x400.jpg",
+      medium: "/paintings/Avocado/600x800.jpg",
+      large: "/paintings/Avocado/1200x1600.jpg",
+      full: "/paintings/Avocado/2400x3200.jpg",
+    },
+    breakpoints: [
+      { media: "(max-width: 300px)", src: "/paintings/Avocado/300x400.jpg" },
+      { media: "(max-width: 600px)", src: "/paintings/Avocado/600x800.jpg" },
+      { media: "(max-width: 1200px)", src: "/paintings/Avocado/1200x1600.jpg" },
+    ],
+  },
+];
+---
+
+<Html
+  title="Gallery - Kevin Amado"
+  ogTitle="Kevin Amado's Paintings"
+  description="Acrylic paintings."
+>
+  <Body>
+    <Nav client:load current="Gallery" />
+    <Main>
+      <Header>Gallery</Header>
+      <Paragraph>
+        This is a small collection of&nbsp;
+        <ExternalLink to="https://en.wikipedia.org/wiki/Still_life">
+          Still Life
+        </ExternalLink>
+        &nbsp;and animals that I painted with acrylics. You can click on any of the
+        images below to see them in maximum resolution.
+      </Paragraph>
+      <ul class="mt-4 columns-2 gap-4 space-y-4 md:columns-3">
+        {
+          paintings.map((painting) => (
+            <li>
+              <ExternalLink className={link} to={painting.sizes.full}>
+                <picture>
+                  {painting.breakpoints.map((bp) => (
+                    <source media={bp.media} srcSet={bp.src} />
+                  ))}
+                  <img
+                    alt={painting.alt}
+                    class={image}
+                    loading="lazy"
+                    src={painting.sizes.full}
+                  />
+                </picture>
+              </ExternalLink>
+            </li>
+          ))
+        }
+      </ul>
+      <Paragraph>
+        All paintings were made with four colors:&nbsp;
+        <ExternalLink to="https://mgraham.com/artists-colors/acrylics/">
+          Cadmium Red
+        </ExternalLink>
+        ,&nbsp;
+        <ExternalLink
+          to="https://mgraham.com/acrylic-paints/cadmium-yellow-060/"
+        >
+          Cadmium Yellow
+        </ExternalLink>
+        ,&nbsp;
+        <ExternalLink
+          to="https://mgraham.com/acrylic-paints/ultramarine-blue-190/"
+        >
+          Ultramarine Blue
+        </ExternalLink>
+        , and&nbsp;
+        <ExternalLink
+          to="https://mgraham.com/acrylic-paints/titanium-white-180/"
+        >
+          Titanium White,
+        </ExternalLink>
+        &nbsp;which I mix by hand.
+      </Paragraph>
+      <Paragraph>
+        I'd like to add a&nbsp;
+        <ExternalLink to="https://en.wikipedia.org/wiki/Portrait">
+          portrait
+        </ExternalLink>
+        &nbsp;to the collection at some point. For now, some of the paintings I like
+        the most decorate the walls in my home.
+      </Paragraph>
+    </Main>
+    <Footer />
+  </Body>
+</Html>

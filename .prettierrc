@@ -1,6 +1,15 @@
 {
   "plugins": [
+    "prettier-plugin-astro",
     "prettier-plugin-tailwindcss"
   ],
-  "tailwindFunctions": ["tw"]
+  "tailwindFunctions": ["tw"],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
 }

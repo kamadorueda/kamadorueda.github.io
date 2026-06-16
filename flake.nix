@@ -19,7 +19,7 @@
             pnpm run format
             pnpm run lint --fix
             pnpm run lint
-            pnpm exec vite build
+            pnpm run build
             pnpm test
           '';
         };
@@ -28,7 +28,7 @@
           name = "frontend";
           runtimeInputs = [nixpkgs.nodejs];
           text = ''
-            npm exec vite
+            pnpm run dev
           '';
         };
 
@@ -37,7 +37,7 @@
           runtimeInputs = [nixpkgs.nodejs];
           text = ''
             pnpm exec tsc
-            pnpm exec vite build
+            pnpm run build
             pnpm exec gh-pages -d dist
           '';
         };
