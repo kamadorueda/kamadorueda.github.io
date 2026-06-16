@@ -23,9 +23,13 @@ const allThoughts = [
 ---
 
 <Html
-  title="Thoughts - Kevin Amado"
-  ogTitle="Kevin Amado's Thoughts"
-  description="Posts, Opinions, and more."
+  title="Thoughts — Kevin Amado's Writing"
+  og={{
+    type: "website",
+    title: "Kevin Amado's Thoughts",
+    description:
+      "Writings on software engineering, finance, and personal interests.",
+  }}
 >
   <Body>
     <Nav client:load current="Thoughts" />

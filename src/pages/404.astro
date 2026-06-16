@@ -9,7 +9,14 @@ import { Paragraph } from "~/components/Typography/Paragraph";
 import "~/index.css";
 ---
 
-<Html title="Not Found">
+<Html
+  title="Page Not Found"
+  og={{
+    type: "website",
+    title: "Page Not Found",
+    description: "The page you're looking for doesn't exist.",
+  }}
+>
   <Body>
     <Nav client:load current="Other" />
     <Main>

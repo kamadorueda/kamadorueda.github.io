@@ -14,11 +14,14 @@ const thought = { Content, metadata };
 ---
 
 <Html
-  title={thought.metadata.title}
+  title={`${thought.metadata.title} — Thoughts`}
   og={{
+    type: "article",
     title: thought.metadata.title,
     description:
-      "Master wealth accumulation through practical education on opportunity costs, investment strategies, and tax-efficient decision-making.",
+      "Master wealth accumulation through practical education on opportunity costs and investment strategies.",
+    publishedTime: thought.metadata.timestamp,
+    tags: thought.metadata.tags,
   }}
 >
   <Body>

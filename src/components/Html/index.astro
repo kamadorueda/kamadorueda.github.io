@@ -1,9 +1,23 @@
 ---
-type OGProps = {
+import { match } from "ts-pattern";
+
+type BaseOGProps = {
   title: string;
   description: string;
   image?: string;
 };
+
+type WebsiteOG = BaseOGProps & {
+  type: "website";
+};
+
+type ArticleOG = BaseOGProps & {
+  type: "article";
+  publishedTime: Date;
+  tags: string[];
+};
+
+type OGProps = WebsiteOG | ArticleOG;
 
 type Props = {
   title: string;
@@ -13,10 +27,14 @@ type Props = {
 const { title, og } = Astro.props;
 const profileImage = "https://avatars.githubusercontent.com/u/47480384?v=4";
 
-const ogTitle = og.title || title;
+const ogTitle = og.title;
 const ogDescription = og.description;
 const ogImage = og.image || profileImage;
 const ogUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const siteName = "Kevin Amado";
+const ogType = match(og)
+  .with({ type: "article" }, () => "article" as const)
+  .otherwise(() => "website" as const);
 ---
 
 <html lang="en">
@@ -26,11 +44,28 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).toString();
     <title>{title}</title>
     <meta name="description" content={ogDescription} />
     <link rel="canonical" href={ogUrl} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={ogUrl} />
+    {
+      match(og)
+        .with({ type: "article" }, (article) => (
+          <>
+            <meta
+              property="article:published_time"
+              content={article.publishedTime.toISOString()}
+            />
+            {article.tags.map((tag) => (
+              <meta key={tag} property="article:tag" content={tag} />
+            ))}
+          </>
+        ))
+        .with({ type: "website" }, () => null)
+        .exhaustive()
+    }
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={ogDescription} />

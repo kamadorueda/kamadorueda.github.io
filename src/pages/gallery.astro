@@ -115,9 +115,12 @@ const paintings = [
 ---
 
 <Html
-  title="Gallery - Kevin Amado"
-  ogTitle="Kevin Amado's Paintings"
-  description="Acrylic paintings."
+  title="Gallery — Acrylic Paintings"
+  og={{
+    type: "website",
+    title: "Kevin Amado's Paintings",
+    description: "Still life and animal acrylic paintings.",
+  }}
 >
   <Body>
     <Nav client:load current="Gallery" />

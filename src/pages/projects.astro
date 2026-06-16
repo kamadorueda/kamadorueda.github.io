@@ -178,9 +178,13 @@ const getIcon = (icon?: string) => {
 ---
 
 <Html
-  title="Projects - Kevin Amado"
-  ogTitle="Kevin Amado's Projects"
-  description="Software projects and open source contributions."
+  title="Projects — Software & Open Source"
+  og={{
+    type: "website",
+    title: "Kevin Amado's Projects",
+    description:
+      "Software projects and open source contributions across multiple languages.",
+  }}
 >
   <Body>
     <Nav client:load current="Projects" />
