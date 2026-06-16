@@ -50,17 +50,17 @@ const DesktopNav: FC<{ current: CurrentLocation }> = ({ current }) => (
           "rounded-l-full pl-4",
         )}
       />
-      <ProjectsLink
-        className={tw(largeLink, current !== "Projects" && linkInactive)}
+      <ThoughtsLink
+        className={tw(largeLink, current !== "Thoughts" && linkInactive)}
       />
       <GalleryLink
         className={tw(largeLink, current !== "Gallery" && linkInactive)}
       />
       <ResumeLink className={tw(largeLink, linkInactive)} />
-      <ThoughtsLink
+      <ProjectsLink
         className={tw(
           largeLink,
-          current !== "Thoughts" && linkInactive,
+          current !== "Projects" && linkInactive,
           "rounded-r-full pr-4",
         )}
       />
@@ -118,10 +118,10 @@ const MobileNav: FC<{ current: CurrentLocation }> = ({ current }) => (
         </div>
         <div className="coutline" />
         {current !== "About" && <AboutLink className={smallLink} />}
-        {current !== "Projects" && <ProjectsLink className={smallLink} />}
+        {current !== "Thoughts" && <ThoughtsLink className={smallLink} />}
         {current !== "Gallery" && <GalleryLink className={smallLink} />}
         <ResumeLink className={smallLink} />
-        {current !== "Thoughts" && <ThoughtsLink className={smallLink} />}
+        {current !== "Projects" && <ProjectsLink className={smallLink} />}
       </PopoverPanel>
     </Popover>
   </div>

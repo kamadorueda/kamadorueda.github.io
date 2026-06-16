@@ -9,16 +9,34 @@ import { Paragraph } from "~/components/Typography/Paragraph";
 import { ListItem } from "~/components/Typography/ListItem";
 import { UnorderedList } from "~/components/Typography/UnorderedList";
 import { InternalLink } from "~/components/Typography/InternalLink";
-import * as ArtificialIntelligence from "~/thoughts/ArtificialIntelligence";
-import * as FinancialLiteracy from "~/thoughts/FinancialLiteracy";
-import * as CubanSalsaDancing from "~/thoughts/CubanSalsaDancing";
 import { formatDate } from "~/utils/formatDate";
 import "~/index.css";
 
 const allThoughts = [
-  CubanSalsaDancing,
-  ArtificialIntelligence,
-  FinancialLiteracy,
+  {
+    metadata: {
+      id: "cuban-salsa-dancing",
+      title: "Cuban Salsa Dancing",
+      timestamp: new Date(2026, 5, 7),
+      minutes: 9,
+    },
+  },
+  {
+    metadata: {
+      id: "artificial-intelligence",
+      title: "Artificial Intelligence",
+      timestamp: new Date(2026, 2, 24),
+      minutes: 7,
+    },
+  },
+  {
+    metadata: {
+      id: "financial-literacy",
+      title: "Financial Literacy",
+      timestamp: new Date(2024, 4, 27),
+      minutes: 4,
+    },
+  },
 ];
 ---
 
