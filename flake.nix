@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "nixpkgs";
 
     systems.url = "github:nix-systems/default";
   };
@@ -63,8 +63,8 @@
             kamadorueda.deploy
             kamadorueda.frontend
             kamadorueda.resize
-            kamadorueda.nodePackages.nodejs
-            kamadorueda.nodePackages.pnpm
+            nixpkgs.nodejs
+            nixpkgs.pnpm
             nixpkgs.mprocs
 
             (nixpkgs.writeShellApplication {
