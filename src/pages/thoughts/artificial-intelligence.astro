@@ -13,7 +13,14 @@ import "~/index.css";
 const thought = { Content, metadata };
 ---
 
-<Html title={thought.metadata.title}>
+<Html
+  title={thought.metadata.title}
+  og={{
+    title: thought.metadata.title,
+    description:
+      "How AI agents transformed my work from coding to thinking and architectural leadership at the speed of my thoughts.",
+  }}
+>
   <Body>
     <Nav client:load current="Thoughts" />
     <Main>

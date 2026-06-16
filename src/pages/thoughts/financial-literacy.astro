@@ -13,7 +13,14 @@ import "~/index.css";
 const thought = { Content, metadata };
 ---
 
-<Html title={thought.metadata.title}>
+<Html
+  title={thought.metadata.title}
+  og={{
+    title: thought.metadata.title,
+    description:
+      "Master wealth accumulation through practical education on opportunity costs, investment strategies, and tax-efficient decision-making.",
+  }}
+>
   <Body>
     <Nav client:load current="Thoughts" />
     <Main>

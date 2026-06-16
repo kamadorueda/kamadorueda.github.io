@@ -13,7 +13,14 @@ import "~/index.css";
 const thought = { Content, metadata };
 ---
 
-<Html title={thought.metadata.title}>
+<Html
+  title={thought.metadata.title}
+  og={{
+    title: thought.metadata.title,
+    description:
+      "A complete progression guide from beginner to advanced—learn connection, musicality, and improvisation for social dancing joy.",
+  }}
+>
   <Body>
     <Nav client:load current="Thoughts" />
     <Main>

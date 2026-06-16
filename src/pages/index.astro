@@ -23,8 +23,11 @@ const svg = tw(
 
 <Html
   title="Kevin Amado"
-  ogTitle="Kevin Amado's Website"
-  description="Information about me, Posts, Opinions, and more."
+  og={{
+    title: "Kevin Amado",
+    description:
+      "Software engineer exploring ideas at the intersection of technology, finance & beyond. Thoughts & insights from Calgary.",
+  }}
 >
   <Body>
     <Nav client:load current="About" />
