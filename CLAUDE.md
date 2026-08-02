@@ -3,7 +3,7 @@
 ## Tech Stack
 
 - **Package Manager:** pnpm
-- **Build Tool:** Vite
+- **Build Tool:** Astro
 - **Styling:** Tailwind CSS
 - **UI Framework:** React with TypeScript
 
@@ -16,27 +16,36 @@ pnpm install
 
 Run tests:
 ```bash
-npm run test
+pnpm run test
 ```
 
 Run linter:
 ```bash
-npm run lint
+pnpm run lint
 ```
 
 Format code:
 ```bash
-npm run format
+pnpm run format
 ```
 
 ## Development
 
-The project uses Vite for development. To start the dev server:
+The project uses Astro for development. To start the dev server:
 ```bash
-npx vite --host 127.0.0.1
+pnpm run dev
 ```
 
 The app will be available at `http://127.0.0.1:5173/`
+
+## Deployment
+
+Deploying is done via the `deploy` app defined in `flake.nix`, which builds
+the site and publishes `dist` to the `gh-pages` branch:
+```bash
+nix run .#deploy
+```
+(or run `deploy` directly if already inside the Nix dev shell)
 
 ## Project Structure
 

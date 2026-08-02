@@ -44,25 +44,12 @@
 
         nodePackages = nixpkgs.nodePackages_latest;
 
-        resize = nixpkgs.writeShellApplication {
-          name = "resize";
-          runtimeInputs = [nixpkgs.imagemagick];
-          text = ''
-            name="''${1%.*}"
-            ext="''${1##*.}"
-            for size in "''${@:2}"; do
-              magick "$1" -resize "$size"  "$name$size.$ext"
-            done
-          '';
-        };
-
         shell = nixpkgs.mkShell {
           name = "default";
           packages = [
             kamadorueda.ci
             kamadorueda.deploy
             kamadorueda.frontend
-            kamadorueda.resize
             nixpkgs.nodejs
             nixpkgs.pnpm
             nixpkgs.mprocs
