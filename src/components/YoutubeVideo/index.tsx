@@ -14,6 +14,14 @@ declare global {
 
 type TimeRange = [minutes: number, seconds: number];
 
+const activePlayers = new Set<{ pauseVideo: () => void }>();
+
+const pauseOtherPlayers = (current: { pauseVideo: () => void }) => {
+  for (const player of activePlayers) {
+    if (player !== current) player.pauseVideo();
+  }
+};
+
 export interface YoutubeVideoProps extends ClassNameProp {
   highlight: { from: TimeRange; to: TimeRange };
   sectionLabel: string;
@@ -45,10 +53,15 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
           events: {
             onReady: () => {
               setIsLoading(false);
+              activePlayers.add(playerRef.current);
             },
             onStateChange: (event: any) => {
-              if (event.data === 1) setIsPlaying(true);
-              else if (event.data === 2) setIsPlaying(false);
+              if (event.data === 1) {
+                setIsPlaying(true);
+                pauseOtherPlayers(playerRef.current);
+              } else if (event.data === 2) {
+                setIsPlaying(false);
+              }
             },
           },
         });
@@ -69,6 +82,7 @@ export const YoutubeVideo: FC<YoutubeVideoProps> = ({
 
     return () => {
       if (playerRef.current) {
+        activePlayers.delete(playerRef.current);
         playerRef.current.destroy?.();
         playerRef.current = null;
       }
