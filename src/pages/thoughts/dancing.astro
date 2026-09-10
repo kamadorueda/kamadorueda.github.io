@@ -1,0 +1,44 @@
+---
+import Html from "~/components/Page/Html/index.astro";
+import { Nav } from "~/components/Page/Nav";
+import { Body } from "~/components/Page/Body";
+import { Main } from "~/components/Page/Main";
+import { Footer } from "~/components/Page/Footer";
+import { Header } from "~/components/Typography/Header";
+import { Paragraph } from "~/components/Typography/Paragraph";
+import { ExternalLink } from "~/components/Typography/ExternalLink";
+import "~/index.css";
+---
+
+<Html
+  title="Dancing — Thoughts"
+  og={{
+    type: "article",
+    title: "Dancing",
+    description:
+      "I started dancing salsa and bachata, and built Coro, an app for practicing both.",
+    publishedTime: new Date(2026, 5, 7),
+    tags: ["dance", "salsa", "bachata"],
+  }}
+>
+  <Body>
+    <Nav client:load current="Thoughts" />
+    <Main>
+      <article>
+        <Header>Dancing</Header>
+        <Paragraph>
+          I started dancing salsa and bachata in April 2026, and it's become one
+          of my favorite activities: I've met new people, gotten fit, and fallen
+          in love with dancing itself.
+        </Paragraph>
+
+        <Paragraph>
+          I also built{" "}
+          <ExternalLink to="https://coro.kamadorueda.com">Coro</ExternalLink>,
+          an app for learning and practicing both.
+        </Paragraph>
+      </article>
+    </Main>
+    <Footer />
+  </Body>
+</Html>
