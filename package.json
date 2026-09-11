@@ -39,7 +39,8 @@
     "sharp": "^0.35.1",
     "tailwindcss": "^4.3.1",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.9",
+    "wrangler": "^4.0.0"
   },
   "name": "kamadorueda",
   "private": true,

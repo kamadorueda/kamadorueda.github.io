@@ -42,6 +42,26 @@
           '';
         };
 
+        deployPreview = nixpkgs.writeShellApplication {
+          name = "deploy-preview";
+          runtimeInputs = [nixpkgs.nodejs];
+          text = ''
+            pnpm exec tsc
+            pnpm run build
+            pnpm exec wrangler versions upload --preview-alias dev
+          '';
+        };
+
+        deployCloudflare = nixpkgs.writeShellApplication {
+          name = "deploy-cloudflare";
+          runtimeInputs = [nixpkgs.nodejs];
+          text = ''
+            pnpm exec tsc
+            pnpm run build
+            pnpm exec wrangler deploy
+          '';
+        };
+
         nodePackages = nixpkgs.nodePackages_latest;
 
         shell = nixpkgs.mkShell {
@@ -49,6 +69,8 @@
           packages = [
             kamadorueda.ci
             kamadorueda.deploy
+            kamadorueda.deployPreview
+            kamadorueda.deployCloudflare
             kamadorueda.frontend
             nixpkgs.nodejs
             nixpkgs.pnpm

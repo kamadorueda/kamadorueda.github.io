@@ -3,3 +3,6 @@
 /coverage
 /.astro
 .claude/settings.local.json
+.env
+.direnv
+.wrangler
