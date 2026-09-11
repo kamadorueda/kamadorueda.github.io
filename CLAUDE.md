@@ -40,12 +40,16 @@ The app will be available at `http://127.0.0.1:5173/`
 
 ## Deployment
 
-Deploying is done via the `deploy` app defined in `flake.nix`, which builds
-the site and publishes `dist` to the `gh-pages` branch:
+The site is a Cloudflare Worker (static assets, same setup as `/data/coro`),
+serving `kamadorueda.com` via a Workers Custom Domain. Credentials
+(`CLOUDFLARE_ACCOUNT_ID` / `CLOUDFLARE_API_TOKEN`) are loaded automatically
+by direnv from the machine's sops-encrypted secrets — no manual setup needed.
+
 ```bash
-nix run .#deploy
+nix run .#deploy-preview        # build + upload a preview version (dev-kamadorueda-com.<subdomain>.workers.dev), no production traffic impact
+nix run .#deploy                # build + deploy to production (kamadorueda.com)
 ```
-(or run `deploy` directly if already inside the Nix dev shell)
+(or run `deploy-preview` / `deploy` directly if already inside the Nix dev shell)
 
 ## Project Structure
 

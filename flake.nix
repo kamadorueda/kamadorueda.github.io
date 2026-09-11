@@ -38,7 +38,7 @@
           text = ''
             pnpm exec tsc
             pnpm run build
-            pnpm exec gh-pages --dist dist --nojekyll
+            pnpm exec wrangler deploy
           '';
         };
 
@@ -52,16 +52,6 @@
           '';
         };
 
-        deployCloudflare = nixpkgs.writeShellApplication {
-          name = "deploy-cloudflare";
-          runtimeInputs = [nixpkgs.nodejs];
-          text = ''
-            pnpm exec tsc
-            pnpm run build
-            pnpm exec wrangler deploy
-          '';
-        };
-
         nodePackages = nixpkgs.nodePackages_latest;
 
         shell = nixpkgs.mkShell {
@@ -70,7 +60,6 @@
             kamadorueda.ci
             kamadorueda.deploy
             kamadorueda.deployPreview
-            kamadorueda.deployCloudflare
             kamadorueda.frontend
             nixpkgs.nodejs
             nixpkgs.pnpm
