@@ -1,0 +1,9 @@
+keys:
+  - &machine age16q23j5ywek78reu9nq94f65e6vl6dx20u56zltawk2jt3ylu4eeq9arlhk
+  - &cloud age1k2yp0v9w725stp85nyfvdksd8qa8zz5vcwapaa7xcdctux6daykslxqff5
+creation_rules:
+  - path_regex: secrets\.yaml$
+    key_groups:
+      - age:
+          - *machine
+          - *cloud
