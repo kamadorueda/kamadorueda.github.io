@@ -48,7 +48,7 @@ for this machine and Claude Cloud, see `.sops.yaml`) — no manual setup
 needed.
 
 ```bash
-nix run .#deploy-preview        # build + upload a preview version (dev-kamadorueda-com.<subdomain>.workers.dev), no production traffic impact
+nix run .#deploy-preview        # build + upload a preview version (dev-www.<subdomain>.workers.dev), no production traffic impact
 nix run .#deploy                # build + deploy to production (kamadorueda.com)
 ```
 (or run `deploy-preview` / `deploy` directly if already inside the Nix dev shell)
