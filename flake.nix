@@ -64,6 +64,7 @@
             nixpkgs.nodejs
             nixpkgs.pnpm
             nixpkgs.mprocs
+            nixpkgs.sops
 
             (nixpkgs.writeShellApplication {
               name = "npm";

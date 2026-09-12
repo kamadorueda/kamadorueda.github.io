@@ -43,7 +43,9 @@ The app will be available at `http://127.0.0.1:5173/`
 The site is a Cloudflare Worker (static assets, same setup as `/data/coro`),
 serving `kamadorueda.com` via a Workers Custom Domain. Credentials
 (`CLOUDFLARE_ACCOUNT_ID` / `CLOUDFLARE_API_TOKEN`) are loaded automatically
-by direnv from the machine's sops-encrypted secrets — no manual setup needed.
+by direnv from this repo's own sops-encrypted `secrets.yaml` (dual-encrypted
+for this machine and Claude Cloud, see `.sops.yaml`) — no manual setup
+needed.
 
 ```bash
 nix run .#deploy-preview        # build + upload a preview version (dev-kamadorueda-com.<subdomain>.workers.dev), no production traffic impact
