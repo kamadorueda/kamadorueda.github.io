@@ -24,6 +24,42 @@ type ProjectType = {
   icon?: string;
 };
 
+type AppType = {
+  name: string;
+  url: string;
+  devUrl: string;
+  description: string;
+  repoUrl?: string;
+};
+
+const APPS: readonly AppType[] = [
+  {
+    name: "kamadorueda.com",
+    url: "https://kamadorueda.com",
+    devUrl: "https://dev-kamadorueda-com.kamadorueda.workers.dev",
+    description: "This site",
+    repoUrl: "https://github.com/kamadorueda/kamadorueda.github.io",
+  },
+  {
+    name: "Picks",
+    url: "https://picks.kamadorueda.com",
+    devUrl: "https://dev-picks.kamadorueda.workers.dev",
+    description: "Investment research",
+  },
+  {
+    name: "Coro",
+    url: "https://coro.kamadorueda.com",
+    devUrl: "https://dev-coro.kamadorueda.workers.dev",
+    description: "Ear-training for salsa rhythms",
+  },
+  {
+    name: "Alejandra",
+    url: "https://alejandra.kamadorueda.com",
+    devUrl: "https://dev-alejandra.kamadorueda.workers.dev",
+    description: "The uncompromising Nix code formatter",
+  },
+] as const;
+
 const PERSONAL_PROJECTS: readonly ProjectType[] = [
   {
     name: "Alejandra",
@@ -194,6 +230,28 @@ const getIcon = (icon?: string) => {
         I've worked on tons of projects over the years but here are the ones
         that I can show you.
       </Paragraph>
+
+      <section>
+        <Header.Secondary>Apps</Header.Secondary>
+        <Paragraph>Live apps I've built and run myself:</Paragraph>
+        <UnorderedList>
+          {
+            APPS.map((app) => (
+              <ListItem key={app.name}>
+                <ExternalLink to={app.url}>{app.name}</ExternalLink>:{" "}
+                {app.description} (
+                <ExternalLink to={app.devUrl}>dev</ExternalLink>
+                {app.repoUrl && (
+                  <>
+                    , <ExternalLink to={app.repoUrl}>repo</ExternalLink>
+                  </>
+                )}
+                ).
+              </ListItem>
+            ))
+          }
+        </UnorderedList>
+      </section>
 
       <section>
         <Header.Secondary>Professional Contributions</Header.Secondary>
