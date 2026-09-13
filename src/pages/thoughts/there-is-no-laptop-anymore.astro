@@ -109,21 +109,26 @@ const flakeNix = `{
   };
 }`;
 
-const stopHookSketch = `# runs after every agent turn, before Claude is allowed to stop
-if ! git diff --quiet || ! git diff --cached --quiet; then
-  echo "Uncommitted changes. Commit and push first." >&2
-  exit 2  # non-zero blocks the turn from ending
-fi
+const stopHookSketch = `#!/bin/bash
+# runs after every agent turn, before Claude is allowed to stop
+set -euo pipefail
 
-if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-  echo "Untracked files. Commit and push first." >&2
-  exit 2
-fi
+check() {
+  if ! "$@" 1>&2; then
+    echo "Failed, and it must pass before continuing: $*" >&2
+    exit 1  # non-zero blocks the turn from ending
+  fi
+}
 
-unpushed=$(git rev-list "origin/$(git branch --show-current)..HEAD" --count)
-if [ "$unpushed" -gt 0 ]; then
-  echo "$unpushed unpushed commit(s). Push first." >&2
-  exit 2
+check pnpm run format
+check pnpm exec tsc
+check pnpm run lint
+check pnpm run test
+check pnpm run build
+
+if [ -n "$(git status --porcelain)" ]; then
+  echo "Uncommitted changes found. Commit and push before finishing." >&2
+  exit 1
 fi`;
 ---
 
@@ -254,24 +259,30 @@ fi`;
 
         <Paragraph>
           None of this skips a staging step, it just doesn't need a separate
-          environment for one. Every deploy first goes out as a Worker Version
-          aliased <code>dev</code>, reachable at its own{" "}
-          <code>dev-*.workers.dev</code> URL with zero effect on production traffic.
-          I look at that URL, and only then does a second, explicit command promote
-          it to production. Production is never the first place a change gets seen
-          running.
+          environment for one. It's a Wrangler CLI flag: build, then{" "}
+          <code>wrangler versions upload --preview-alias dev</code> instead of{
+            " "
+          }
+          <code>wrangler deploy</code>. That uploads a real Worker Version,
+          reachable at its own <code>dev-*.workers.dev</code> URL, with zero effect
+          on production traffic. I look at that URL, and only once it's right does
+          a second, explicit command promote it to production. Staging isn't a separate
+          account, a separate deploy target, or a separate anything, it's an argument.
         </Paragraph>
 
         <Paragraph>
           There's no separate CI service either. When Claude finishes a turn in
           one of my repos, a stop hook runs first, a script the harness runs
-          before it will let the agent consider the task done, and checks the
-          actual git state: uncommitted changes, untracked files, commits
-          sitting local that never got pushed. Find any of those, and it blocks
-          with the reason, and the agent has to fix it before it's allowed to
-          stop. It's a smaller surface than a real CI pipeline, but it means the
-          same rule that would normally live in a GitHub Actions file lives
-          right next to the agent doing the work. Roughly:
+          before it will let the agent consider the task done, and it runs the
+          actual quality gate: formatter, type checker, linter, unit tests,
+          build, sometimes even a preview deploy. Any of those fails, and it
+          blocks with the reason, and the agent has to fix it and try again.
+          Only once all of that is green does it check the git state itself:
+          uncommitted changes, untracked files, commits sitting local that never
+          got pushed. It's a smaller surface than a real CI pipeline, but it
+          means the same checks that would normally live in a GitHub Actions
+          file run right next to the agent doing the work, before it's even
+          allowed to say it's done. Roughly:
         </Paragraph>
 
         <details class="coutline mt-4 rounded-lg">
