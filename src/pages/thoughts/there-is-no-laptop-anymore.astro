@@ -237,6 +237,22 @@ fi`;
         </Paragraph>
 
         <Paragraph>
+          The frontend half has its own discipline, quieter but just as
+          deliberate. Colors are never a raw Tailwind palette class in component
+          code, only semantic tokens like{" "}
+          <code>--color-ctext</code> or <code>--color-cbg</code>, defined once
+          and retuned in one place if a palette ever changes. Every component's
+          tests run through Vitest and Testing Library with coverage enforced at
+          100%, not because untested code is forbidden on principle but because
+          it gives the agent, and me, a concrete signal that a change didn't
+          quietly break something three files away. And it's the same TypeScript
+          on both sides of the deploy: the components rendering a page and the
+          Worker serving it are the same language, the same repo, the same
+          type-checker run, so a shape change in one place shows up as a
+          compiler error in the other instead of a runtime surprise.
+        </Paragraph>
+
+        <Paragraph>
           Which gets to the part people usually ask about first: what this
           costs. CA$29.40 a month for the Claude subscription, plus about US$10
           a year per domain, registered through Cloudflare. The code itself
