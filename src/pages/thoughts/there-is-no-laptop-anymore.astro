@@ -167,14 +167,14 @@ fi`;
 
         <Paragraph>
           That last part is the one I care most about. Nix is what makes the
-          environment disposable. Each of my repos ships its own `flake.nix`
-          declaring the exact toolchain it needs: Node, pnpm, whatever CLI
-          scripts I've wrapped as first-class commands. Paired with direnv, the
-          moment the agent `cd`s into the project, that toolchain is just there.
-          No global installs, no "works on my machine," no drift between what I
-          had last week and what I have today. The environment is cattle, not a
-          pet. If the cloud session disappears, the next one reconstructs itself
-          from the repo in seconds.
+          environment disposable. Each of my repos ships its own{" "}
+          <code>flake.nix</code> declaring the exact toolchain it needs: Node, pnpm,
+          whatever CLI scripts I've wrapped as first-class commands. Paired with direnv,
+          the moment the agent <code>cd</code>s into the project, that toolchain
+          is just there. No global installs, no "works on my machine," no drift
+          between what I had last week and what I have today. The environment is
+          cattle, not a pet. If the cloud session disappears, the next one
+          reconstructs itself from the repo in seconds.
         </Paragraph>
 
         <Paragraph>
@@ -242,12 +242,12 @@ fi`;
         <Paragraph>
           I don't think this setup is unusual for what it uses. Nix, Cloudflare
           Workers, sops, direnv are not new. What's changed is that I no longer
-          need to be the one operating any of it. The agent reads the same
-          `flake.nix` and `CLAUDE.md` I would, and it just runs the commands. I
-          don't need a laptop's job to shrink down to anything, because I'm just
-          as often on my phone, saying what I want and reading back what
-          happened. The actual computer doing the work is one I don't own, don't
-          patch, and don't pay for beyond the subscription.
+          need to be the one operating any of it. The agent reads the same{" "}
+          <code>flake.nix</code> and <code>CLAUDE.md</code> I would, and it just runs
+          the commands. I don't need a laptop's job to shrink down to anything, because
+          I'm just as often on my phone, saying what I want and reading back what
+          happened. The actual computer doing the work is one I don't own, don't patch,
+          and don't pay for beyond the subscription.
         </Paragraph>
 
         <Header.Secondary>Under the Hood</Header.Secondary>
