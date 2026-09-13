@@ -53,6 +53,17 @@ nix run .#deploy                # build + deploy to production (kamadorueda.com)
 ```
 (or run `deploy-preview` / `deploy` directly if already inside the Nix dev shell)
 
+## PWA
+
+The site is installable (manifest + service worker via `@vite-pwa/astro`,
+same underlying `vite-plugin-pwa` engine as `/data/coro`). Its automatic
+`<head>` injection doesn't fire on this project's Astro 6 static build, so
+the manifest link, theme-color, and `registerSW.js` script are added by
+hand in `src/components/Page/Html/index.astro`; `navigateFallback` is
+disabled since this is a multi-page site, not an SPA. Icons are generated
+from a hand-authored SVG monogram via `pnpm exec node scripts/generate-icons.mjs`
+(re-run it if the palette in `src/index.css` changes).
+
 ## Project Structure
 
 - `src/components/` - Reusable React components

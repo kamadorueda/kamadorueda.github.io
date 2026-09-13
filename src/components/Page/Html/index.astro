@@ -75,7 +75,11 @@ const ogType = match(og)
       rel="stylesheet"
       crossorigin
     />
-    <link rel="icon" href={profileImage} type="image/x-icon" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0f172a" />
+    <script is:inline src="/registerSW.js"></script>
     <script is:inline src="https://www.youtube.com/iframe_api"></script>
   </head>
   <body>
