@@ -1,0 +1,135 @@
+---
+import Html from "~/components/Page/Html/index.astro";
+import { Nav } from "~/components/Page/Nav";
+import { Body } from "~/components/Page/Body";
+import { Main } from "~/components/Page/Main";
+import { Footer } from "~/components/Page/Footer";
+import { Header } from "~/components/Typography/Header";
+import { Paragraph } from "~/components/Typography/Paragraph";
+import "~/index.css";
+---
+
+<Html
+  title="there is no laptop anymore — Thoughts"
+  og={{
+    type: "article",
+    title: "there is no laptop anymore",
+    description:
+      "How I build and ship software entirely from a Claude Code cloud environment, on Nix and Cloudflare, for $30 a month.",
+    publishedTime: new Date(2026, 8, 13),
+    tags: ["technology", "infrastructure", "cloudflare", "nix"],
+  }}
+>
+  <Body>
+    <Nav client:load current="Thoughts" />
+    <Main>
+      <article>
+        <Header>there is no laptop anymore</Header>
+        <Paragraph>
+          There is no laptop anymore. Not one I develop on, at least. I haven't
+          opened a terminal on it in months, and I still ship code every day.
+          The machine doing the programming is a Claude Code environment running
+          in the cloud, one I've configured once: it installs Nix on startup,
+          carries my own git identity so commits land as mine and not some
+          anonymous bot, and drops into my repo with everything already wired
+          up.
+        </Paragraph>
+
+        <Paragraph>
+          The bootstrap itself is almost nothing. A short script runs once when
+          the cloud environment starts: it installs Nix (no init system needed,
+          since this is a container, not a full OS), adds direnv on top of it,
+          and flips one Claude Code setting so it stops appending a
+          "Co-Authored-By: Claude" trailer to my commits. My name and email are
+          already the author and committer; I don't need the tool announcing
+          itself in every commit message too. That's the entire setup.
+          Everything else, the toolchains, the secrets, the deploy scripts,
+          lives in the repos themselves, not in this script.
+        </Paragraph>
+
+        <Paragraph>
+          That last part is the one I care most about. Nix is what makes the
+          environment disposable. Each of my repos ships its own `flake.nix`
+          declaring the exact toolchain it needs: Node, pnpm, whatever CLI
+          scripts I've wrapped as first-class commands. Paired with direnv, the
+          moment the agent `cd`s into the project, that toolchain is just there.
+          No global installs, no "works on my machine," no drift between what I
+          had last week and what I have today. The environment is cattle, not a
+          pet. If the cloud session disappears, the next one reconstructs itself
+          from the repo in seconds.
+        </Paragraph>
+
+        <Paragraph>
+          Secrets travel the same way. Every project keeps a sops-encrypted{" "}
+          <code>secrets.yaml</code>, dual-encrypted for my own machine and for
+          Claude's cloud, checked into the repo like any other file. The cloud
+          environment itself carries the matching decryption key as one of its
+          own environment variables, set once when I configured it. So a fresh{
+            " "
+          }
+          <code>git clone</code> in that environment already has everything it needs:
+          no key file to fetch from somewhere else, no separate secrets manager to
+          authenticate against first. Credentials load automatically through direnv
+          the moment I'm in the directory. I never paste an API token into a chat,
+          never keep one in some untracked <code>.env</code> file I'll inevitably
+          lose. The repo is self-contained, secrets included.
+        </Paragraph>
+
+        <Paragraph>
+          The stack on top of that is deliberately boring. TypeScript, Vite or
+          Astro, React for whatever UI the project needs. Static output. The
+          "backend," when a project needs one, is a Cloudflare Worker: same
+          language, same repo, same deploy step. There's no server to patch, no
+          OS to update, no process to keep alive. I write a function, it runs on
+          the edge when someone requests it, and it costs nothing when nobody
+          does.
+        </Paragraph>
+
+        <Paragraph>
+          Which gets to the part people usually ask about first: what this
+          costs. Thirty dollars a month for the Claude subscription, plus
+          whatever a domain costs to register through Cloudflare. That's the
+          whole bill. The cloud environment itself, the container all of this
+          runs in, has real resources behind it and I'm not billed a cent for
+          the machine. I'm only metered on tokens, and that's the part that
+          still amazes me: actual engineering work, and the cost that scales is
+          model usage, not compute. No VMs to rent, no hosting plans, no
+          database I have to size or back up, no invoice that scales with
+          traffic I'm not getting yet. I used to think of infrastructure as a
+          fixed cost you accept before you've proven an idea is worth anything.
+          Now there isn't one to accept.
+        </Paragraph>
+
+        <Paragraph>
+          That changes what a side project actually is. It used to be an idea
+          plus a weekend spent provisioning a server, wiring up CI, deciding
+          where the database lives, remembering to renew a certificate six
+          months later. Now it's just the idea. I describe what I want, the
+          agent scaffolds it inside a Nix shell that's already correct, and it
+          deploys to a Worker that was never not going to scale. The distance
+          between "I thought of this" and "this is live at a real URL" has
+          gotten small enough that the infrastructure stopped being a decision I
+          make and became a default I inherit.
+        </Paragraph>
+
+        <Paragraph>
+          I don't think this setup is unusual for what it uses. Nix, Cloudflare
+          Workers, sops, direnv are not new. What's changed is that I no longer
+          need to be the one operating any of it. The agent reads the same
+          `flake.nix` and `CLAUDE.md` I would, and it just runs the commands. My
+          laptop's job shrank down to a terminal I open to check in on
+          something, not a machine I develop on. The actual computer doing the
+          work is one I don't own, don't patch, and don't pay for beyond the
+          subscription.
+        </Paragraph>
+
+        <Paragraph className="mt-8 text-sm text-gray-600 italic">
+          Note: The thoughts, substance, and structure of this article are mine.
+          AI worked on the prose, word choice, and connectors to improve clarity
+          and articulation.
+        </Paragraph>
+      </article>
+    </Main>
+    <Footer />
+  </Body>
+</Html>
