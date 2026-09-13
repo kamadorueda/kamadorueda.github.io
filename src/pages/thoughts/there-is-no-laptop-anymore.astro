@@ -216,6 +216,27 @@ fi`;
         </Paragraph>
 
         <Paragraph>
+          The runtime itself is the part I find genuinely interesting. A Worker
+          isn't a container spinning up on demand, it's a V8 isolate, the same
+          sandboxing technique Chrome uses to keep tabs apart, and it
+          cold-starts in low single-digit milliseconds instead of the seconds a
+          container takes to boot. Cloudflare runs that isolate in hundreds of
+          its own data centers, so a request gets handled by whichever one is
+          physically closest to whoever made it; there's no origin server
+          sitting in one region for everyone else to route back to. This site is
+          the plainest example: the static files themselves are served straight
+          out of the Worker, no separate CDN bolted on in front. And the same
+          account covers what used to mean stitching together several separate
+          services: Cron Triggers for anything that needs to run on a schedule,
+          Queues for background work I don't want blocking a response, Durable
+          Objects for the rare case something needs one consistent point of
+          coordination instead of stateless requests, Workers AI for inference
+          without picking a model host myself. I haven't needed most of that
+          yet, but it's sitting in the same account, one <code>wrangler</code> command
+          away, for whenever a project does.
+        </Paragraph>
+
+        <Paragraph>
           Which gets to the part people usually ask about first: what this
           costs. CA$29.40 a month for the Claude subscription, plus about US$10
           a year per domain, registered through Cloudflare. The code itself
