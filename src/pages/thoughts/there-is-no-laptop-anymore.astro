@@ -26,13 +26,13 @@ import "~/index.css";
       <article>
         <Header>There Is No Laptop Anymore</Header>
         <Paragraph>
-          There is no laptop anymore. Not one I develop on, at least. I haven't
-          opened a terminal on it in months, and I still ship code often. The
-          machine doing the programming is a Claude Code environment running in
-          the cloud, one I've configured once: it installs Nix on startup,
-          carries my own git identity so commits land as mine and not some
-          anonymous bot, and drops into my repo with everything already wired
-          up.
+          There is no laptop anymore. I say what I want to Claude from my phone,
+          and it does the rest. I haven't opened a terminal in months, and I
+          still ship code often. The machine doing the programming is a Claude
+          Code environment running in the cloud, one I've configured once: it
+          installs Nix on startup, carries my own git identity so commits land
+          as mine and not some anonymous bot, and drops into my repo with
+          everything already wired up.
         </Paragraph>
 
         <Paragraph>
@@ -82,7 +82,12 @@ import "~/index.css";
           language, same repo, same deploy step. There's no server to patch, no
           OS to update, no process to keep alive. I write a function, it runs on
           the edge when someone requests it, and it costs nothing when nobody
-          does.
+          does. Workers is just the compute half of it, too. The moment a
+          project needs to hold onto something instead of just responding, it's
+          the same Cloudflare account, no new vendor to sign up for: R2 for
+          object storage, D1 for an actual SQL database, KV for simple key-value
+          state, all with the same shape of pricing, generous free tiers,
+          nothing to provision ahead of time.
         </Paragraph>
 
         <Paragraph>
@@ -117,11 +122,11 @@ import "~/index.css";
           I don't think this setup is unusual for what it uses. Nix, Cloudflare
           Workers, sops, direnv are not new. What's changed is that I no longer
           need to be the one operating any of it. The agent reads the same
-          `flake.nix` and `CLAUDE.md` I would, and it just runs the commands. My
-          laptop's job shrank down to a terminal I open to check in on
-          something, not a machine I develop on. The actual computer doing the
-          work is one I don't own, don't patch, and don't pay for beyond the
-          subscription.
+          `flake.nix` and `CLAUDE.md` I would, and it just runs the commands. I
+          don't need a laptop's job to shrink down to anything, because I'm just
+          as often on my phone, saying what I want and reading back what
+          happened. The actual computer doing the work is one I don't own, don't
+          patch, and don't pay for beyond the subscription.
         </Paragraph>
 
         <Paragraph className="mt-8 text-sm text-gray-600 italic">
