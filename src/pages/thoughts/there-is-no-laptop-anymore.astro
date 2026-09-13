@@ -89,15 +89,16 @@ import "~/index.css";
           Which gets to the part people usually ask about first: what this
           costs. Thirty dollars a month for the Claude subscription, plus
           whatever a domain costs to register through Cloudflare. That's the
-          whole bill. The cloud environment itself, the container all of this
-          runs in, has real resources behind it and I'm not billed a cent for
-          the machine. I'm only metered on tokens, and that's the part that
-          still amazes me: actual engineering work, and the cost that scales is
-          model usage, not compute. No VMs to rent, no hosting plans, no
-          database I have to size or back up, no invoice that scales with
-          traffic I'm not getting yet. I used to think of infrastructure as a
-          fixed cost you accept before you've proven an idea is worth anything.
-          Now there isn't one to accept.
+          whole bill. The cloud environment itself is a real machine, a
+          Firecracker microVM running Ubuntu 24.04 with 4 vCPUs, 15 GB of RAM,
+          and tens of gigabytes of disk, and I'm not billed a cent for any of
+          it. I'm only metered on tokens, and that's the part that still amazes
+          me: actual engineering work, on a real machine, and the cost that
+          scales is model usage, not compute. No servers to rent, no hosting
+          plans, no database I have to size or back up, no invoice that scales
+          with traffic I'm not getting yet. I used to think of infrastructure as
+          a fixed cost you accept before you've proven an idea is worth
+          anything. Now there isn't one to accept.
         </Paragraph>
 
         <Paragraph>
