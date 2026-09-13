@@ -7,6 +7,124 @@ import { Footer } from "~/components/Page/Footer";
 import { Header } from "~/components/Typography/Header";
 import { Paragraph } from "~/components/Typography/Paragraph";
 import "~/index.css";
+
+const bootstrapScript = `set -euxo pipefail
+
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux --init none --no-confirm
+
+export PATH="/nix/var/nix/profiles/default/bin:\${PATH}"
+
+nix profile add nixpkgs#direnv
+
+nix --version
+direnv --version
+
+mkdir -p ~/.claude
+[ -f ~/.claude/settings.json ] || echo '{}' > ~/.claude/settings.json
+jq '.includeCoAuthoredBy = false' ~/.claude/settings.json > ~/.claude/settings.json.tmp \\
+  && mv ~/.claude/settings.json.tmp ~/.claude/settings.json`;
+
+const envrc = `#! /bin/sh
+
+watch_file flake.nix
+watch_file flake.lock
+source <(nix print-dev-env)
+
+export CLOUDFLARE_ACCOUNT_ID=$(sops --decrypt --extract '["cloudflare-account-id"]' secrets.yaml)
+export CLOUDFLARE_API_TOKEN=$(sops --decrypt --extract '["cloudflare-api-token"]' secrets.yaml)`;
+
+const flakeNix = `{
+  inputs = {
+    nixpkgs.url = "nixpkgs";
+    systems.url = "github:nix-systems/default";
+  };
+  outputs = inputs: let
+    supportedSystems = import inputs.systems;
+    forEachSystem = inputs.nixpkgs.lib.genAttrs supportedSystems;
+
+    overlayForSystem = system: (nixpkgs: _: rec {
+      mysite = {
+        ci = nixpkgs.writeShellApplication {
+          name = "ci";
+          runtimeInputs = [nixpkgs.nodejs];
+          text = ''
+            pnpm exec tsc
+            pnpm run format
+            pnpm run lint --fix
+            pnpm run lint
+            pnpm run build
+            pnpm test
+          '';
+        };
+
+        frontend = nixpkgs.writeShellApplication {
+          name = "frontend";
+          runtimeInputs = [nixpkgs.nodejs];
+          text = "pnpm run dev";
+        };
+
+        deploy = nixpkgs.writeShellApplication {
+          name = "deploy";
+          runtimeInputs = [nixpkgs.nodejs];
+          text = ''
+            pnpm exec tsc
+            pnpm run build
+            pnpm exec wrangler deploy
+          '';
+        };
+
+        deployPreview = nixpkgs.writeShellApplication {
+          name = "deploy-preview";
+          runtimeInputs = [nixpkgs.nodejs];
+          text = ''
+            pnpm exec tsc
+            pnpm run build
+            pnpm exec wrangler versions upload --preview-alias dev
+          '';
+        };
+
+        shell = nixpkgs.mkShell {
+          packages = [
+            mysite.ci
+            mysite.deploy
+            mysite.deployPreview
+            mysite.frontend
+            nixpkgs.nodejs
+            nixpkgs.pnpm
+            nixpkgs.sops
+          ];
+        };
+      };
+    });
+
+    nixpkgs = forEachSystem (system:
+      import inputs.nixpkgs {
+        inherit system;
+        overlays = [(overlayForSystem system)];
+      });
+  in {
+    devShells = forEachSystem (system: {
+      default = nixpkgs.\${system}.mysite.shell;
+    });
+  };
+}`;
+
+const stopHookSketch = `# runs after every agent turn, before Claude is allowed to stop
+if ! git diff --quiet || ! git diff --cached --quiet; then
+  echo "Uncommitted changes. Commit and push first." >&2
+  exit 2  # non-zero blocks the turn from ending
+fi
+
+if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+  echo "Untracked files. Commit and push first." >&2
+  exit 2
+fi
+
+unpushed=$(git rev-list "origin/$(git branch --show-current)..HEAD" --count)
+if [ "$unpushed" -gt 0 ]; then
+  echo "$unpushed unpushed commit(s). Push first." >&2
+  exit 2
+fi`;
 ---
 
 <Html
@@ -15,7 +133,7 @@ import "~/index.css";
     type: "article",
     title: "There Is No Laptop Anymore",
     description:
-      "How I build and ship software entirely from a Claude Code cloud environment, on Nix and Cloudflare, for $30 a month.",
+      "How I build and ship software entirely from a Claude Code cloud environment, on Nix and Cloudflare, for CA$29.40 a month.",
     publishedTime: new Date(2026, 8, 13),
     tags: ["technology", "infrastructure", "cloudflare", "nix"],
   }}
@@ -87,23 +205,24 @@ import "~/index.css";
           the same Cloudflare account, no new vendor to sign up for: R2 for
           object storage, D1 for an actual SQL database, KV for simple key-value
           state, all with the same shape of pricing, generous free tiers,
-          nothing to provision ahead of time.
+          nothing to provision ahead of time. Past the free tier it does scale
+          with usage like anything else, but the limits are generous enough that
+          a personal project doesn't get near them.
         </Paragraph>
 
         <Paragraph>
           Which gets to the part people usually ask about first: what this
-          costs. Thirty dollars a month for the Claude subscription, plus
-          whatever a domain costs to register through Cloudflare. That's the
-          whole bill. The cloud environment itself is a real machine, a
-          Firecracker microVM running Ubuntu 24.04 with 4 vCPUs, 15 GB of RAM,
-          and tens of gigabytes of disk, and I'm not billed a cent for any of
-          it. I'm only metered on tokens, and that's the part that still amazes
-          me: actual engineering work, on a real machine, and the cost that
-          scales is model usage, not compute. No servers to rent, no hosting
-          plans, no database I have to size or back up, no invoice that scales
-          with traffic I'm not getting yet. I used to think of infrastructure as
-          a fixed cost you accept before you've proven an idea is worth
-          anything. Now there isn't one to accept.
+          costs. CA$29.40 a month for the Claude subscription, plus whatever a
+          domain costs to register through Cloudflare. That's the whole bill.
+          The cloud environment itself is a real machine, a Firecracker microVM
+          running Ubuntu 24.04 with 4 vCPUs, 15 GB of RAM, and tens of gigabytes
+          of disk, and I'm not billed a cent for any of it. I'm only metered on
+          tokens, and that's the part that still amazes me: actual engineering
+          work, on a real machine, and the cost that scales is model usage, not
+          compute. No servers to rent, no hosting plans to size, no invoice that
+          scales with traffic I'm not getting yet. I used to think of
+          infrastructure as a fixed cost you accept before you've proven an idea
+          is worth anything. Now there isn't one to accept.
         </Paragraph>
 
         <Paragraph>
@@ -128,6 +247,91 @@ import "~/index.css";
           happened. The actual computer doing the work is one I don't own, don't
           patch, and don't pay for beyond the subscription.
         </Paragraph>
+
+        <Header.Secondary>Under the Hood</Header.Secondary>
+
+        <Paragraph>
+          None of this skips a staging step, it just doesn't need a separate
+          environment for one. Every deploy first goes out as a Worker Version
+          aliased <code>dev</code>, reachable at its own{" "}
+          <code>dev-*.workers.dev</code> URL with zero effect on production traffic.
+          I look at that URL, and only then does a second, explicit command promote
+          it to production. Production is never the first place a change gets seen
+          running.
+        </Paragraph>
+
+        <Paragraph>
+          There's no separate CI service either. When Claude finishes a turn in
+          one of my repos, a stop hook runs first, a script the harness runs
+          before it will let the agent consider the task done, and checks the
+          actual git state: uncommitted changes, untracked files, commits
+          sitting local that never got pushed. Find any of those, and it blocks
+          with the reason, and the agent has to fix it before it's allowed to
+          stop. It's a smaller surface than a real CI pipeline, but it means the
+          same rule that would normally live in a GitHub Actions file lives
+          right next to the agent doing the work. Roughly:
+        </Paragraph>
+
+        <details class="coutline mt-4 rounded-lg">
+          <summary
+            class="chover-bg cfocus-visible text-ctextdark cursor-pointer rounded-lg px-4 py-3 text-sm font-medium transition"
+          >
+            stop hook (sketch)
+          </summary>
+          <pre
+            class="text-ctext bg-cbg overflow-x-auto rounded-b-lg px-4 py-3 font-mono text-xs"><code>{stopHookSketch}</code></pre>
+        </details>
+
+        <Paragraph className="mt-8">
+          The cloud environment's own setup is just as small. This runs once,
+          when the environment starts:
+        </Paragraph>
+
+        <details class="coutline mt-4 rounded-lg">
+          <summary
+            class="chover-bg cfocus-visible text-ctextdark cursor-pointer rounded-lg px-4 py-3 text-sm font-medium transition"
+          >
+            cloud environment bootstrap script
+          </summary>
+          <pre
+            class="text-ctext bg-cbg overflow-x-auto rounded-b-lg px-4 py-3 font-mono text-xs"><code>{bootstrapScript}</code></pre>
+        </details>
+
+        <Paragraph className="mt-8">
+          Then direnv takes over per project. Every repo's <code>.envrc</code>{
+            " "
+          }
+          loads the Nix dev shell and decrypts secrets the moment I{" "}
+          <code>cd</code> into it:
+        </Paragraph>
+
+        <details class="coutline mt-4 rounded-lg">
+          <summary
+            class="chover-bg cfocus-visible text-ctextdark cursor-pointer rounded-lg px-4 py-3 text-sm font-medium transition"
+          >
+            .envrc
+          </summary>
+          <pre
+            class="text-ctext bg-cbg overflow-x-auto rounded-b-lg px-4 py-3 font-mono text-xs"><code>{envrc}</code></pre>
+        </details>
+
+        <Paragraph className="mt-8">
+          And the flake declaring that shell is where the actual commands live:
+          a dev server, a CI-equivalent script, a deploy, a preview-deploy, so
+          the agent runs <code>nix run .#deploy</code>{" "}
+          instead of memorizing a project-specific incantation. A trimmed-down version
+          of the shape every repo uses:
+        </Paragraph>
+
+        <details class="coutline mt-4 rounded-lg">
+          <summary
+            class="chover-bg cfocus-visible text-ctextdark cursor-pointer rounded-lg px-4 py-3 text-sm font-medium transition"
+          >
+            flake.nix
+          </summary>
+          <pre
+            class="text-ctext bg-cbg overflow-x-auto rounded-b-lg px-4 py-3 font-mono text-xs"><code>{flakeNix}</code></pre>
+        </details>
 
         <Paragraph className="mt-8 text-sm text-gray-600 italic">
           Note: The thoughts, substance, and structure of this article are mine.
