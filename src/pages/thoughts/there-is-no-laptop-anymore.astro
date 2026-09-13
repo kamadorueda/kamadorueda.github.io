@@ -264,10 +264,12 @@ fi`;
             " "
           }
           <code>wrangler deploy</code>. That uploads a real Worker Version,
-          reachable at its own <code>dev-*.workers.dev</code> URL, with zero effect
-          on production traffic. I look at that URL, and only once it's right does
-          a second, explicit command promote it to production. Staging isn't a separate
-          account, a separate deploy target, or a separate anything, it's an argument.
+          reachable at its own{" "}
+          <code>dev-&lt;name&gt;.&lt;subdomain&gt;.workers.dev</code> URL, with zero
+          effect on production traffic. I look at that URL, and only once it's right
+          does a second, explicit command promote it to production. Staging isn't
+          a separate account, a separate deploy target, or a separate anything, it's
+          an argument.
         </Paragraph>
 
         <Paragraph>
