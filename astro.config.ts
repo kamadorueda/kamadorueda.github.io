@@ -1,9 +1,13 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import AstroPWA from "@vite-pwa/astro";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://kamadorueda.com",
+  vite: {
+    plugins: [tailwindcss()],
+  },
   integrations: [
     react(),
     AstroPWA({
