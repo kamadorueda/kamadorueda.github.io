@@ -235,21 +235,19 @@ const getIcon = (icon?: string) => {
         <Header.Secondary>Apps</Header.Secondary>
         <Paragraph>Live apps I've built and run myself:</Paragraph>
         <UnorderedList>
-          {
-            APPS.map((app) => (
-              <ListItem key={app.name}>
-                <ExternalLink to={app.url}>{app.name}</ExternalLink>:{" "}
-                {app.description} (
-                <ExternalLink to={app.devUrl}>dev</ExternalLink>
-                {app.repoUrl && (
-                  <>
-                    , <ExternalLink to={app.repoUrl}>repo</ExternalLink>
-                  </>
-                )}
-                ).
-              </ListItem>
-            ))
-          }
+          {APPS.map((app) => (
+            <ListItem key={app.name}>
+              <ExternalLink to={app.url}>{app.name}</ExternalLink>:{" "}
+              {app.description} (
+              <ExternalLink to={app.devUrl}>dev</ExternalLink>
+              {app.repoUrl && (
+                <>
+                  , <ExternalLink to={app.repoUrl}>repo</ExternalLink>
+                </>
+              )}
+              ).
+            </ListItem>
+          ))}
         </UnorderedList>
       </section>
 
@@ -260,19 +258,17 @@ const getIcon = (icon?: string) => {
           requests I made during my time there:
         </Paragraph>
         <UnorderedList>
-          {
-            PROFESSIONAL_CONTRIBUTIONS.map((project) => {
-              const Icon = getIcon(project.icon);
-              return (
-                <ListItem key={project.name}>
-                  <ExternalLink to={project.url}>
-                    {Icon && <Icon className="mr-2 inline h-4 w-4" />}
-                    {project.name}: {project.description}.
-                  </ExternalLink>
-                </ListItem>
-              );
-            })
-          }
+          {PROFESSIONAL_CONTRIBUTIONS.map((project) => {
+            const Icon = getIcon(project.icon);
+            return (
+              <ListItem key={project.name}>
+                <ExternalLink to={project.url}>
+                  {Icon && <Icon className="mr-2 inline h-4 w-4" />}
+                  {project.name}: {project.description}.
+                </ExternalLink>
+              </ListItem>
+            );
+          })}
         </UnorderedList>
       </section>
 
@@ -285,19 +281,17 @@ const getIcon = (icon?: string) => {
           it can be improved.
         </Paragraph>
         <UnorderedList>
-          {
-            PERSONAL_PROJECTS.map((project) => {
-              const Icon = getIcon(project.icon);
-              return (
-                <ListItem key={project.name}>
-                  <ExternalLink to={project.url}>
-                    {Icon && <Icon className="mr-2 inline h-4 w-4" />}
-                    {project.name}: {project.description}.
-                  </ExternalLink>
-                </ListItem>
-              );
-            })
-          }
+          {PERSONAL_PROJECTS.map((project) => {
+            const Icon = getIcon(project.icon);
+            return (
+              <ListItem key={project.name}>
+                <ExternalLink to={project.url}>
+                  {Icon && <Icon className="mr-2 inline h-4 w-4" />}
+                  {project.name}: {project.description}.
+                </ExternalLink>
+              </ListItem>
+            );
+          })}
         </UnorderedList>
       </section>
 
@@ -309,21 +303,19 @@ const getIcon = (icon?: string) => {
           author but that I've tried to make better with my contributions:
         </Paragraph>
         <UnorderedList>
-          {
-            OPEN_SOURCE_CONTRIBUTIONS.map((project) => {
-              const Icon = getIcon(project.icon);
-              return (
-                <ListItem key={project.name}>
-                  <ExternalLink
-                    to={project.url + "/pulls?q=is%3Apr+author%3Akamadorueda"}
-                  >
-                    {Icon && <Icon className="mr-2 inline h-4 w-4" />}
-                    {project.name}: {project.description}.
-                  </ExternalLink>
-                </ListItem>
-              );
-            })
-          }
+          {OPEN_SOURCE_CONTRIBUTIONS.map((project) => {
+            const Icon = getIcon(project.icon);
+            return (
+              <ListItem key={project.name}>
+                <ExternalLink
+                  to={project.url + "/pulls?q=is%3Apr+author%3Akamadorueda"}
+                >
+                  {Icon && <Icon className="mr-2 inline h-4 w-4" />}
+                  {project.name}: {project.description}.
+                </ExternalLink>
+              </ListItem>
+            );
+          })}
         </UnorderedList>
       </section>
 
@@ -335,19 +327,17 @@ const getIcon = (icon?: string) => {
           better way.
         </Paragraph>
         <UnorderedList>
-          {
-            OTHER_PERSONAL_PROJECTS.map((project) => {
-              const Icon = getIcon(project.icon);
-              return (
-                <ListItem key={project.name}>
-                  <ExternalLink to={project.url}>
-                    {Icon && <Icon className="mr-2 inline h-4 w-4" />}
-                    {project.name}: {project.description}.
-                  </ExternalLink>
-                </ListItem>
-              );
-            })
-          }
+          {OTHER_PERSONAL_PROJECTS.map((project) => {
+            const Icon = getIcon(project.icon);
+            return (
+              <ListItem key={project.name}>
+                <ExternalLink to={project.url}>
+                  {Icon && <Icon className="mr-2 inline h-4 w-4" />}
+                  {project.name}: {project.description}.
+                </ExternalLink>
+              </ListItem>
+            );
+          })}
         </UnorderedList>
       </section>
 

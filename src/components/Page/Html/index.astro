@@ -50,22 +50,20 @@ const ogType = match(og)
     <meta property="og:description" content={ogDescription} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={ogUrl} />
-    {
-      match(og)
-        .with({ type: "article" }, (article) => (
-          <>
-            <meta
-              property="article:published_time"
-              content={article.publishedTime.toISOString()}
-            />
-            {article.tags.map((tag) => (
-              <meta key={tag} property="article:tag" content={tag} />
-            ))}
-          </>
-        ))
-        .with({ type: "website" }, () => null)
-        .exhaustive()
-    }
+    {match(og)
+      .with({ type: "article" }, (article) => (
+        <>
+          <meta
+            property="article:published_time"
+            content={article.publishedTime.toISOString()}
+          />
+          {article.tags.map((tag) => (
+            <meta key={tag} property="article:tag" content={tag} />
+          ))}
+        </>
+      ))
+      .with({ type: "website" }, () => null)
+      .exhaustive()}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={ogDescription} />
@@ -87,6 +85,7 @@ const ogType = match(og)
     <script
       type="module"
       src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "73b5955990dd42b1a73e9a029d8af861"}'></script>
+      data-cf-beacon='{"token": "73b5955990dd42b1a73e9a029d8af861"}'
+    ></script>
   </body>
 </html>

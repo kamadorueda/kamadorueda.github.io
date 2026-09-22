@@ -78,25 +78,23 @@ const paintings = [
         <ExternalLink to="https://en.wikipedia.org/wiki/Still_life">
           Still Life
         </ExternalLink>
-        &nbsp;and animals that I painted with acrylics. You can click on any of the
-        images below to see them in maximum resolution.
+        &nbsp;and animals that I painted with acrylics. You can click on any of
+        the images below to see them in maximum resolution.
       </Paragraph>
       <ul class="mt-4 columns-2 gap-4 space-y-4 md:columns-3">
-        {
-          paintings.map((painting) => (
-            <li>
-              <ExternalLink className={link} to={painting.image.src}>
-                <Image
-                  src={painting.image}
-                  alt={painting.alt}
-                  class={imgClass}
-                  loading="lazy"
-                  densities={[1, 1.5, 2]}
-                />
-              </ExternalLink>
-            </li>
-          ))
-        }
+        {paintings.map((painting) => (
+          <li>
+            <ExternalLink className={link} to={painting.image.src}>
+              <Image
+                src={painting.image}
+                alt={painting.alt}
+                class={imgClass}
+                loading="lazy"
+                densities={[1, 1.5, 2]}
+              />
+            </ExternalLink>
+          </li>
+        ))}
       </ul>
       <Paragraph>
         All paintings were made with four colors:&nbsp;
@@ -104,21 +102,15 @@ const paintings = [
           Cadmium Red
         </ExternalLink>
         ,&nbsp;
-        <ExternalLink
-          to="https://mgraham.com/acrylic-paints/cadmium-yellow-060/"
-        >
+        <ExternalLink to="https://mgraham.com/acrylic-paints/cadmium-yellow-060/">
           Cadmium Yellow
         </ExternalLink>
         ,&nbsp;
-        <ExternalLink
-          to="https://mgraham.com/acrylic-paints/ultramarine-blue-190/"
-        >
+        <ExternalLink to="https://mgraham.com/acrylic-paints/ultramarine-blue-190/">
           Ultramarine Blue
         </ExternalLink>
         , and&nbsp;
-        <ExternalLink
-          to="https://mgraham.com/acrylic-paints/titanium-white-180/"
-        >
+        <ExternalLink to="https://mgraham.com/acrylic-paints/titanium-white-180/">
           Titanium White,
         </ExternalLink>
         &nbsp;which I mix by hand.
@@ -128,8 +120,8 @@ const paintings = [
         <ExternalLink to="https://en.wikipedia.org/wiki/Portrait">
           portrait
         </ExternalLink>
-        &nbsp;to the collection at some point. For now, some of the paintings I like
-        the most decorate the walls in my home.
+        &nbsp;to the collection at some point. For now, some of the paintings I
+        like the most decorate the walls in my home.
       </Paragraph>
     </Main>
     <Footer />

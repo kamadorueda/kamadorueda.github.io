@@ -66,20 +66,18 @@ const allThoughts = [
         time. You can click on any of them to read more.
       </Paragraph>
       <UnorderedList>
-        {
-          allThoughts.map((thought) => (
-            <ListItem>
-              <InternalLink to={`/thoughts/${thought.metadata.id}`}>
-                {thought.metadata.title}.
-              </InternalLink>
-              <span class="text-ctext ml-2 text-xs">
-                {formatDate(thought.metadata.timestamp)}
-                {" • "}
-                {thought.metadata.minutes} minutes read.
-              </span>
-            </ListItem>
-          ))
-        }
+        {allThoughts.map((thought) => (
+          <ListItem>
+            <InternalLink to={`/thoughts/${thought.metadata.id}`}>
+              {thought.metadata.title}.
+            </InternalLink>
+            <span class="text-ctext ml-2 text-xs">
+              {formatDate(thought.metadata.timestamp)}
+              {" • "}
+              {thought.metadata.minutes} minutes read.
+            </span>
+          </ListItem>
+        ))}
       </UnorderedList>
     </Main>
     <Footer />
