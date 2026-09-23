@@ -16,8 +16,8 @@
     "@types/node": "^26.6.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.70.0",
-    "@typescript-eslint/parser": "^8.70.0",
+    "@typescript-eslint/eslint-plugin": "^8.70.1",
+    "@typescript-eslint/parser": "^8.70.1",
     "@vite-pwa/astro": "^1.2.0",
     "@vitejs/plugin-react": "^6.1.1",
     "@vitest/coverage-v8": "^5.0.1",
@@ -38,9 +38,9 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "sharp": "^0.35.4",
     "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.0",
+    "typescript": "^6.0.3",
     "vitest": "^5.0.1",
-    "wrangler": "^4.135.0"
+    "wrangler": "^4.136.1"
   },
   "name": "kamadorueda",
   "private": true,
