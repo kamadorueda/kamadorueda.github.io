@@ -7,7 +7,7 @@
     "ts-pattern": "^5.9.0"
   },
   "devDependencies": {
-    "@astrojs/react": "^6.0.6",
+    "@astrojs/react": "^7.0.0",
     "@eslint/js": "10.0.1",
     "@tailwindcss/vite": "4.3.3",
     "@testing-library/jest-dom": "^7.0.1",
@@ -21,7 +21,7 @@
     "@vite-pwa/astro": "^1.2.0",
     "@vitejs/plugin-react": "^6.1.1",
     "@vitest/coverage-v8": "^5.0.1",
-    "astro": "^7.3.3",
+    "astro": "^7.3.4",
     "astro-eslint-parser": "^3.1.0",
     "eslint": "^10.11.0",
     "eslint-config-react": "^1.1.7",
@@ -38,9 +38,9 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "sharp": "^0.35.4",
     "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vitest": "^5.0.1",
-    "wrangler": "^4.136.1"
+    "wrangler": "^4.136.3"
   },
   "name": "kamadorueda",
   "private": true,
